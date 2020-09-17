@@ -5,8 +5,8 @@
 - Marking learned words
 - Finding new words in paragraphs
 ## User
-### All of people who want to study English effectively.
+All of people who want to study English effectively.
 ## Authors
-### ** - Trần Trí Thức (*Leader*) - 19522321**
-### ** - Phạm Võ Di Thiên - 19522267**
-### ** - Phạm Nguyễn Minh Thắng - 19522216**
+- Trần Trí Thức (*Leader*) - 19522321
+- Phạm Võ Di Thiên - 19522267
+- Phạm Nguyễn Minh Thắng - 19522216
