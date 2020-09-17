@@ -5,4 +5,4 @@ Programmer supports studying English
 - Marking learned words
 - Finding new words in paragraphs
 ## User
-### All of people who wanting to study English easily.
+### All of people who want to study English easily.
