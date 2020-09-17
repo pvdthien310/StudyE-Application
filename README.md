@@ -1,5 +1,5 @@
 # **StudyE-Application**
-Programmer supports studying English
+Program supports studying English
 ## Features
 - Dictionary
 - Marking learned words
