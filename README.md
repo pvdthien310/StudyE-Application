@@ -1,9 +1,13 @@
 # **StudyE-Application**
 *The program supports user in studying English*
 ## Features
-- Dictionary
+- Dictionary English - Vietnamese
 - Marking learned words
 - Finding new words in paragraphs
+- Checked word list
+- List of irregular verbs
+- Add user optional meaning
+
 ## User
 All of people who want to study English effectively.
 ## Authors
