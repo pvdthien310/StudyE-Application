@@ -4,7 +4,6 @@
 - Dictionary English - Vietnamese
 - Marking learned words
 - Finding new words in paragraphs
-- Checked word list
 - List of irregular verbs
 - Add user optional meaning
 
