@@ -6,6 +6,7 @@
 - Finding new words in paragraphs
 - List of irregular verbs
 - Add user optional meaning
+- Display https://ninjamock.com/s/DHDR5Gx
 
 ## User
 All of people who want to study English effectively.
