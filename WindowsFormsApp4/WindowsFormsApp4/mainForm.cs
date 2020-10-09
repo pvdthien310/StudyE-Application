@@ -20,8 +20,14 @@ namespace WindowsFormsApp4
         public mainForm(startForm parent)
         {
             this.parent = parent;
+            InitializeComponent();
         }
         private void mainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }
