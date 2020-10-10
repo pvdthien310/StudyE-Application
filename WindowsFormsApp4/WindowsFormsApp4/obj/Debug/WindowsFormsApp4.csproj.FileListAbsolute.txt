@@ -20,3 +20,14 @@ C:\Users\Thang's PC\Downloads\StudyE-Application\WindowsFormsApp4\WindowsFormsAp
 C:\Users\Thang's PC\Downloads\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.CoreCompileInputs.cache
 C:\Users\Thang's PC\Downloads\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.exe
 C:\Users\Thang's PC\Downloads\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.pdb
+C:\Users\Thang's PC\Downloads\StudyE-Application2\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe.config
+C:\Users\Thang's PC\Downloads\StudyE-Application2\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe
+C:\Users\Thang's PC\Downloads\StudyE-Application2\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.pdb
+C:\Users\Thang's PC\Downloads\StudyE-Application2\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csprojAssemblyReference.cache
+C:\Users\Thang's PC\Downloads\StudyE-Application2\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.startForm.resources
+C:\Users\Thang's PC\Downloads\StudyE-Application2\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.mainForm.resources
+C:\Users\Thang's PC\Downloads\StudyE-Application2\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Properties.Resources.resources
+C:\Users\Thang's PC\Downloads\StudyE-Application2\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.GenerateResource.cache
+C:\Users\Thang's PC\Downloads\StudyE-Application2\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.CoreCompileInputs.cache
+C:\Users\Thang's PC\Downloads\StudyE-Application2\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.exe
+C:\Users\Thang's PC\Downloads\StudyE-Application2\StudyE-Application\WindowsFormsApp4\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.pdb
