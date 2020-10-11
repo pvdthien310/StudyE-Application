@@ -123,6 +123,16 @@ namespace WindowsFormsApp4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hinh_nen_dep_cho_laptop_1366x768_1 {
+            get {
+                object obj = ResourceManager.GetObject("hinh-nen-dep-cho-laptop-1366x768-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap startbutton {
             get {
                 object obj = ResourceManager.GetObject("startbutton", resourceCulture);
