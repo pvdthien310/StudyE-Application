@@ -121,6 +121,7 @@
   <data name="120705059_650350512517675_6777537412685970096_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\120705059_650350512517675_6777537412685970096_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="hinh-nen-dep-cho-laptop-1366x768-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hinh-nen-dep-cho-laptop-1366x768-1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -129,6 +130,10 @@
   </data>
   <data name="wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="startbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\startbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
   </data>
   <data name="682131" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\682131.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,10 +156,15 @@
   <data name="120493222_376415436853049_8370949804703623154_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\120493222_376415436853049_8370949804703623154_n.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="startbutton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\startbutton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wall.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="682132" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\682132.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="hinh-nen-dep-cho-laptop-1366x768-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hinh-nen-dep-cho-laptop-1366x768-1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
   </data>
 </root>
