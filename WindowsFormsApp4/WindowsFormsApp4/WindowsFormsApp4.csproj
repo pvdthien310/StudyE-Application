@@ -113,5 +113,8 @@
   <ItemGroup>
     <None Include="Resources\button2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-nen-dep-cho-laptop-1366x768-1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
