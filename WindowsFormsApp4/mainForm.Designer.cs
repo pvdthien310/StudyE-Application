@@ -39,6 +39,12 @@
             this.TuBatQuyTacTab = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ThemTuMoiTab = new System.Windows.Forms.TabPage();
+            this.NGUYENMAU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUAKHUDON = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUAKHUPHANTU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGHIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.VietAnhTab.SuspendLayout();
             this.AnhVietTab.SuspendLayout();
             this.TuBatQuyTacTab.SuspendLayout();
@@ -133,6 +139,8 @@
             // 
             this.TuBatQuyTacTab.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
             this.TuBatQuyTacTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TuBatQuyTacTab.Controls.Add(this.button2);
+            this.TuBatQuyTacTab.Controls.Add(this.textBox1);
             this.TuBatQuyTacTab.Controls.Add(this.dataGridView1);
             this.TuBatQuyTacTab.Location = new System.Drawing.Point(4, 22);
             this.TuBatQuyTacTab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -145,12 +153,22 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(266, 126);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NGUYENMAU,
+            this.QUAKHUDON,
+            this.QUAKHUPHANTU,
+            this.NGHIA});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dataGridView1.Location = new System.Drawing.Point(105, 290);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(761, 261);
+            this.dataGridView1.Size = new System.Drawing.Size(941, 376);
             this.dataGridView1.TabIndex = 0;
             // 
             // ThemTuMoiTab
@@ -167,6 +185,56 @@
             this.ThemTuMoiTab.Text = "Thêm từ mới";
             this.ThemTuMoiTab.UseVisualStyleBackColor = true;
             // 
+            // NGUYENMAU
+            // 
+            this.NGUYENMAU.DataPropertyName = "NGUYENMAU";
+            this.NGUYENMAU.HeaderText = "Nguyên mẫu";
+            this.NGUYENMAU.MinimumWidth = 8;
+            this.NGUYENMAU.Name = "NGUYENMAU";
+            this.NGUYENMAU.ReadOnly = true;
+            // 
+            // QUAKHUDON
+            // 
+            this.QUAKHUDON.DataPropertyName = "QUAKHUDON";
+            this.QUAKHUDON.HeaderText = "Quá khứ đơn";
+            this.QUAKHUDON.MinimumWidth = 8;
+            this.QUAKHUDON.Name = "QUAKHUDON";
+            this.QUAKHUDON.ReadOnly = true;
+            // 
+            // QUAKHUPHANTU
+            // 
+            this.QUAKHUPHANTU.DataPropertyName = "QUAKHUPHANTU";
+            this.QUAKHUPHANTU.HeaderText = "Quá khứ phân từ";
+            this.QUAKHUPHANTU.MinimumWidth = 8;
+            this.QUAKHUPHANTU.Name = "QUAKHUPHANTU";
+            this.QUAKHUPHANTU.ReadOnly = true;
+            // 
+            // NGHIA
+            // 
+            this.NGHIA.DataPropertyName = "NGHIA";
+            this.NGHIA.HeaderText = "Nghĩa";
+            this.NGHIA.MinimumWidth = 8;
+            this.NGHIA.Name = "NGHIA";
+            this.NGHIA.ReadOnly = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(224, 172);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(597, 40);
+            this.textBox1.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(891, 172);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 39);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Tìm kiếm";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -181,6 +249,7 @@
             this.VietAnhTab.ResumeLayout(false);
             this.AnhVietTab.ResumeLayout(false);
             this.TuBatQuyTacTab.ResumeLayout(false);
+            this.TuBatQuyTacTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -198,5 +267,11 @@
         private System.Windows.Forms.TabPage ThemTuMoiTab;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGUYENMAU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUAKHUDON;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUAKHUPHANTU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGHIA;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
