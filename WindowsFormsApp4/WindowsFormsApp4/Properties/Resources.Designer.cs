@@ -63,6 +63,16 @@ namespace WindowsFormsApp4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1024px_Magnifying_glass_icon_svg {
+            get {
+                object obj = ResourceManager.GetObject("1024px-Magnifying_glass_icon.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _120493222_376415436853049_8370949804703623154_n {
             get {
                 object obj = ResourceManager.GetObject("120493222_376415436853049_8370949804703623154_n", resourceCulture);
@@ -86,6 +96,36 @@ namespace WindowsFormsApp4.Properties {
         internal static System.Drawing.Bitmap _629055 {
             get {
                 object obj = ResourceManager.GetObject("629055", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _68213 {
+            get {
+                object obj = ResourceManager.GetObject("68213", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _682131 {
+            get {
+                object obj = ResourceManager.GetObject("682131", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _682132 {
+            get {
+                object obj = ResourceManager.GetObject("682132", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
