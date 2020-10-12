@@ -26,7 +26,7 @@ namespace WindowsFormsApp4
             InitializeComponent();
         }
         //thuc code
-        SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=DTBQT;Integrated Security=True");
+        SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=dTBQT1;Integrated Security=True");
         private void ketnoicsdl(string sql)
         {
             cnn.Open();
@@ -44,7 +44,7 @@ namespace WindowsFormsApp4
         {
             //MessageBox.Show("  dfd ");
             string sql = "select * from DTBQT";
-            //ketnoicsdl(sql);
+            ketnoicsdl(sql);
         }
        
         /// <summary>
