@@ -43,13 +43,10 @@
             this.TraDoanTab = new System.Windows.Forms.TabPage();
             this.TuDaTra = new System.Windows.Forms.TabPage();
             this.TuBatQuyTacTab = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ThemTuMoiTab = new System.Windows.Forms.TabPage();
             this.VietAnhTab.SuspendLayout();
             this.AnhVietTab.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.TuBatQuyTacTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // VietAnhTab
@@ -214,7 +211,6 @@
             // 
             this.TuBatQuyTacTab.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
             this.TuBatQuyTacTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TuBatQuyTacTab.Controls.Add(this.dataGridView1);
             this.TuBatQuyTacTab.Location = new System.Drawing.Point(4, 22);
             this.TuBatQuyTacTab.Name = "TuBatQuyTacTab";
             this.TuBatQuyTacTab.Padding = new System.Windows.Forms.Padding(3);
@@ -222,16 +218,6 @@
             this.TuBatQuyTacTab.TabIndex = 4;
             this.TuBatQuyTacTab.Text = "Từ bất quy tắc";
             this.TuBatQuyTacTab.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(272, 58);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(160, 97);
-            this.dataGridView1.TabIndex = 0;
             // 
             // ThemTuMoiTab
             // 
@@ -262,8 +248,6 @@
             this.AnhVietTab.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.TuBatQuyTacTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,7 +262,6 @@
         private System.Windows.Forms.TabPage TuBatQuyTacTab;
         private System.Windows.Forms.TabPage ThemTuMoiTab;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox resultBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox resultBox2;
