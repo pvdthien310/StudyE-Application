@@ -36,7 +36,7 @@ namespace WindowsFormsApp4
             DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
             da.Fill(dt);  // đổ dữ liệu vào kho
             cnn.Close();  // đóng kết nối
-            dataGridView1.DataSource = dt; //đổ dữ liệu vào datagridview
+            dataGridView5.DataSource = dt; //đổ dữ liệu vào datagridview
         }
 
         private void mainForm_Load(object sender, EventArgs e)
@@ -45,22 +45,22 @@ namespace WindowsFormsApp4
             ketnoicsdl(sql);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            button2.Enabled = !button2.Enabled;
-            string sql = "select * from DTBQT where NGUYENMAU = '" + textBox1.Text.Trim() + "' or QUAKHUDON = '" + textBox1.Text.Trim() + "' or QUAKHUPHANTU = '" + textBox1.Text.Trim() + "'";
+            button5.Enabled = !button5.Enabled;
+            string sql = "select * from DTBQT where NGUYENMAU = '" + textBox5.Text.Trim() + "' or QUAKHUDON = '" + textBox5.Text.Trim() + "' or QUAKHUPHANTU = '" + textBox5.Text.Trim() + "'";
             ketnoicsdl(sql);
-            textBox1.Text = "";
-            button2.Enabled = !button2.Enabled;
+            textBox5.Text = "";
+            button5.Enabled = !button5.Enabled;
         }
 
   
 
-        private void textBox1_KeyDown_1(object sender, KeyEventArgs e)
+        private void textBox5_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                this.button2_Click(sender, e);
+                this.button5_Click(sender, e);
             }
 
         }
