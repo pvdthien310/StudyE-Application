@@ -25,10 +25,7 @@ namespace WindowsFormsApp4
             this.parent = parent;
             InitializeComponent();
         }
-        private void mainForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
        
         
@@ -39,7 +36,13 @@ namespace WindowsFormsApp4
         private void ConnectDatabseEV()
         {
             mycntEV.Open(); // mo ket noi 
-
+            if (textBox1.Text == "")
+            {
+                // kiểm tra exception
+                resultBox1.Text = "Vui lòng nhập từ cần tra !!";
+                mycntEV.Close();
+                return;
+            }
             string search = "select * from TableSource1 where Name = '" + textBox1.Text.Trim() + "'";
             SqlCommand com = new SqlCommand(search, mycntEV); // truy van cau lenh vao sql
             //com.CommandType = CommandType.Text;
@@ -63,28 +66,35 @@ namespace WindowsFormsApp4
             {
                 resultBox1.Text = "Đéo có dữ liệu hjhj :>>";
             }
-           
-            mycntEV.Close();
+            textBox1.Clear(); // Xóa từ cũ tránh trường hợp bị đùn gây bug
+
+            mycntEV.Close(); // đóng kết nối
 
         }
         private void ConnectDatabseVE()
         {
             mycntVE.Open(); // mo ket noi 
 
-            string search = "select * from TableData where Name = N'@" + textBox2.Text.Trim() + "'";
-            SqlCommand com = new SqlCommand(search, mycntVE); // truy van cau lenh vao sql
-            //com.CommandType = CommandType.Text;
-            SqlDataAdapter ada = new SqlDataAdapter(com); // chuyen data tu sql ve trong ada
-            DataTable dt = new DataTable();
-            ada.Fill(dt); // do data tu ada va dt
-            
-            if (dt.Rows.Count > 0)
+            if (textBox2.Text == "")
             {
-                Design_UI_Word_VE(dt.Rows[0]["Meaning"].ToString().Trim());
+                resultBox2.Text = "Vui lòng nhập từ cần tra !!";
+                mycntVE.Close();
+                return;
+            }
 
+            string search2 = "select * from TableData where Name = N'@" + textBox2.Text.Trim() + "'";
+            SqlCommand com2 = new SqlCommand(search2, mycntVE); // truy van cau lenh vao sql
+            //com.CommandType = CommandType.Text;
+            SqlDataAdapter ada2 = new SqlDataAdapter(com2); // chuyen data tu sql ve trong ada2
+            DataTable dt2 = new DataTable();
+            ada2.Fill(dt2); // do data tu ada2 va0 dt2
+            
+            if (dt2.Rows.Count > 0)
+            {
 
                 // Thuc hien chuyen string tu database sang dang form tieu chuan (Viet - Anh)
-                //Design_UI_Word_VE(dt.Rows[0]["Meaning"].ToString().Trim());
+                Design_UI_Word_VE(dt2.Rows[0]["Meaning"].ToString().Trim());
+
 
 
 
@@ -93,10 +103,12 @@ namespace WindowsFormsApp4
             }
             else
             {
-               resultBox1.Text = "Đéo có dữ liệu :>>";
+               resultBox2.Text = "Đéo có dữ liệu :>>";
             }
-            
-            mycntVE.Close();
+            textBox2.Clear(); // Xóa từ cũ tránh trường hợp bị đùn gây bug
+
+
+            mycntVE.Close(); // đóng kết nối
 
         }
         private void Design_UI_Word_VE(string temp)
@@ -122,7 +134,6 @@ namespace WindowsFormsApp4
                 }
                 else if (lines[i][0] == '=')
                 {
-
                     show_line += "\r\n" + "\t\t" + "-" + fix_lines.Trim();
                 }
                 else if (lines[i][0] == '+')
@@ -176,12 +187,16 @@ namespace WindowsFormsApp4
 
         private void button1_Click(object sender, EventArgs e)
         {
+            button1.Enabled = !button1.Enabled;
             ConnectDatabseEV();
+            button1.Enabled = !button1.Enabled;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            button2.Enabled = !button2.Enabled;
             ConnectDatabseVE();
+            button2.Enabled = !button2.Enabled;
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)

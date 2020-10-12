@@ -89,7 +89,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(97, 56);
+            this.label1.Location = new System.Drawing.Point(101, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 28);
             this.label1.TabIndex = 4;
@@ -256,7 +256,6 @@
             this.MaximizeBox = false;
             this.Name = "mainForm";
             this.Text = "StudyE";
-            this.Load += new System.EventHandler(this.mainForm_Load);
             this.VietAnhTab.ResumeLayout(false);
             this.AnhVietTab.ResumeLayout(false);
             this.AnhVietTab.PerformLayout();
