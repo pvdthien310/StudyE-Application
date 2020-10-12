@@ -25,11 +25,7 @@ namespace WindowsFormsApp4
             this.parent = parent;
             InitializeComponent();
         }
-        
-
        
-        
-        
         /// <summary>
         /// // Thien code 
         /// </summary>
@@ -146,42 +142,9 @@ namespace WindowsFormsApp4
 
             }
             // xuất ra ngoài 
-            resultBox2.Text = show_line.Trim(); }
-
-        string[] lines = temp.Split('|');
-        // show_lines là chuỗi result 
-        string show_line = "";
-        // lưu chuỗi để thực hiện các tao thác tách và xét 
-        string fix_lines;
-            for (int i = 1; i<lines.Length; i++)
-            {
-                fix_lines = lines[i];
-                // Tác chuỗi lấy từ vị trí thứ 1 trong chuỗi ( ý nghĩa là tách các kí tự phân định design @ * - = ra khỏi chuỗi )
-                fix_lines = fix_lines.Substring(1);
-                if (lines[i][0] == '*')
-                {
-                    show_line += fix_lines.Trim();
-                }
-                else if (lines[i][0] == '-')
-                {
-                    show_line += "\r\n" + "\t" + "*" + fix_lines.Trim();
-                }
-                else if (lines[i][0] == '=')
-{
-    show_line += "\r\n" + "\t\t" + "-" + fix_lines.Trim();
-}
-else if (lines[i][0] == '+')
-{
-    show_line += ":" + fix_lines.Trim();
-}
-
-            }
-            // xuất ra ngoài 
-            resultBox2.Text = show_line.Trim();
-
-
-
-private void Design_UI_Word_EV(string temp)
+            resultBox2.Text = show_line.Trim(); 
+        }
+        private void Design_UI_Word_EV(string temp)
         {
 
             string[] lines = temp.Split('|');
@@ -226,7 +189,6 @@ private void Design_UI_Word_EV(string temp)
             ConnectDatabseEV();
             button1.Enabled = !button1.Enabled;
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
 //<<<<<<< HEAD
@@ -243,7 +205,6 @@ private void Design_UI_Word_EV(string temp)
                 this.button1_Click(sender, e);
             }
         }
-
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -252,7 +213,6 @@ private void Design_UI_Word_EV(string temp)
             }
         }
 
-        
         /// <summary>
         /// // Thien code end
         /// </summary>

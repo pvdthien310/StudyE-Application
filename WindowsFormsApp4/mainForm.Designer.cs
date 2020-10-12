@@ -43,19 +43,12 @@
             this.TraDoanTab = new System.Windows.Forms.TabPage();
             this.TuDaTra = new System.Windows.Forms.TabPage();
             this.TuBatQuyTacTab = new System.Windows.Forms.TabPage();
-//<<<<<<< HEAD
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-//=======
-//>>>>>>> master
             this.ThemTuMoiTab = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.VietAnhTab.SuspendLayout();
             this.AnhVietTab.SuspendLayout();
             this.tabPage2.SuspendLayout();
-//<<<<<<< HEAD
-            this.TuBatQuyTacTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-//=======
-//>>>>>>> master
             this.SuspendLayout();
             // 
             // VietAnhTab
@@ -95,9 +88,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-//<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(101, 56);
-
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 28);
             this.label1.TabIndex = 4;
@@ -158,7 +149,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(97, 56);
+            this.label2.Location = new System.Drawing.Point(101, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 28);
             this.label2.TabIndex = 7;
@@ -230,16 +221,6 @@
             this.TuBatQuyTacTab.Text = "Từ bất quy tắc";
             this.TuBatQuyTacTab.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(272, 58);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(160, 97);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // ThemTuMoiTab
             // 
             this.ThemTuMoiTab.AllowDrop = true;
@@ -252,6 +233,16 @@
             this.ThemTuMoiTab.TabIndex = 5;
             this.ThemTuMoiTab.Text = "Thêm từ mới";
             this.ThemTuMoiTab.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(272, 58);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.Size = new System.Drawing.Size(160, 97);
+            this.dataGridView1.TabIndex = 0;
             // 
             // mainForm
             // 
@@ -268,11 +259,7 @@
             this.AnhVietTab.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-//<<<<<<< HEAD
-            this.TuBatQuyTacTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-//=======
-//>>>>>>> master
             this.ResumeLayout(false);
 
         }
