@@ -95,6 +95,7 @@ namespace WindowsFormsApp4
                 // Thuc hien chuyen string tu database sang dang form tieu chuan (Viet - Anh)
                 Design_UI_Word_VE(dt2.Rows[0]["Meaning"].ToString().Trim());
 
+//<<<<<<< HEAD
 
 
 
@@ -111,8 +112,41 @@ namespace WindowsFormsApp4
             mycntVE.Close(); // đóng kết nối
 
         }
+
         private void Design_UI_Word_VE(string temp)
         {
+
+            string[] lines = temp.Split('|');
+            // show_lines là chuỗi result 
+            string show_line = "";
+            // lưu chuỗi để thực hiện các tao thác tách và xét 
+            string fix_lines;
+            for (int i = 1; i < lines.Length; i++)
+            {
+                fix_lines = lines[i];
+                // Tác chuỗi lấy từ vị trí thứ 1 trong chuỗi ( ý nghĩa là tách các kí tự phân định design @ * - = ra khỏi chuỗi )
+                fix_lines = fix_lines.Substring(1);
+                if (lines[i][0] == '*')
+                {
+                    show_line += fix_lines.Trim();
+                }
+                else if (lines[i][0] == '-')
+                {
+                    show_line += "\r\n" + "\t" + "*" + fix_lines.Trim();
+                }
+                else if (lines[i][0] == '=')
+                {
+
+                    show_line += "\r\n" + "\t\t" + "-" + fix_lines.Trim();
+                }
+                else if (lines[i][0] == '+')
+                {
+                    show_line += ":" + fix_lines.Trim();
+                }
+
+            }
+            // xuất ra ngoài 
+            resultBox2.Text = show_line.Trim();
 
             string[] lines = temp.Split('|');
             // show_lines là chuỗi result 
@@ -187,6 +221,7 @@ namespace WindowsFormsApp4
 
         private void button1_Click(object sender, EventArgs e)
         {
+//<<<<<<< HEAD
             button1.Enabled = !button1.Enabled;
             ConnectDatabseEV();
             button1.Enabled = !button1.Enabled;
@@ -194,9 +229,11 @@ namespace WindowsFormsApp4
 
         private void button2_Click(object sender, EventArgs e)
         {
+//<<<<<<< HEAD
             button2.Enabled = !button2.Enabled;
             ConnectDatabseVE();
             button2.Enabled = !button2.Enabled;
+
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)

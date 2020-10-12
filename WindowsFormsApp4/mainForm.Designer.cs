@@ -43,13 +43,19 @@
             this.TraDoanTab = new System.Windows.Forms.TabPage();
             this.TuDaTra = new System.Windows.Forms.TabPage();
             this.TuBatQuyTacTab = new System.Windows.Forms.TabPage();
+//<<<<<<< HEAD
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+//=======
+//>>>>>>> master
             this.ThemTuMoiTab = new System.Windows.Forms.TabPage();
             this.VietAnhTab.SuspendLayout();
             this.AnhVietTab.SuspendLayout();
             this.tabPage2.SuspendLayout();
+//<<<<<<< HEAD
             this.TuBatQuyTacTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+//=======
+//>>>>>>> master
             this.SuspendLayout();
             // 
             // VietAnhTab
@@ -89,7 +95,9 @@
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MintCream;
+//<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(101, 56);
+
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 28);
             this.label1.TabIndex = 4;
@@ -214,7 +222,6 @@
             // 
             this.TuBatQuyTacTab.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
             this.TuBatQuyTacTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TuBatQuyTacTab.Controls.Add(this.dataGridView1);
             this.TuBatQuyTacTab.Location = new System.Drawing.Point(4, 22);
             this.TuBatQuyTacTab.Name = "TuBatQuyTacTab";
             this.TuBatQuyTacTab.Padding = new System.Windows.Forms.Padding(3);
@@ -261,8 +268,11 @@
             this.AnhVietTab.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+//<<<<<<< HEAD
             this.TuBatQuyTacTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+//=======
+//>>>>>>> master
             this.ResumeLayout(false);
 
         }
@@ -277,7 +287,10 @@
         private System.Windows.Forms.TabPage TuBatQuyTacTab;
         private System.Windows.Forms.TabPage ThemTuMoiTab;
         private System.Windows.Forms.Button button1;
+//<<<<<<< HEAD
         private System.Windows.Forms.DataGridView dataGridView1;
+//=======
+//>>>>>>> master
         private System.Windows.Forms.TextBox resultBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox resultBox2;
