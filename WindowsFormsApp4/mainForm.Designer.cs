@@ -53,6 +53,7 @@
             this.ThemTuMoiTab = new System.Windows.Forms.TabPage();
             this.VietAnhTab.SuspendLayout();
             this.AnhVietTab.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.TuBatQuyTacTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.SuspendLayout();
@@ -233,7 +234,7 @@
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(594, 112);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(73, 25);
             this.button5.TabIndex = 2;
@@ -245,7 +246,7 @@
             // 
             this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(149, 112);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(399, 27);
@@ -266,7 +267,7 @@
             this.NGHIA});
             this.dataGridView5.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView5.Location = new System.Drawing.Point(70, 188);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView5.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.ReadOnly = true;
             this.dataGridView5.RowHeadersWidth = 62;
@@ -318,16 +319,6 @@
             this.ThemTuMoiTab.Text = "Thêm từ mới";
             this.ThemTuMoiTab.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            //this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            //this.dataGridView1.Location = new System.Drawing.Point(272, 58);
-            //this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            //this.dataGridView1.Name = "dataGridView1";
-            //this.dataGridView1.RowHeadersWidth = 62;
-            //this.dataGridView1.Size = new System.Drawing.Size(160, 97);
-            //this.dataGridView1.TabIndex = 0;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,8 +329,12 @@
             this.MaximizeBox = false;
             this.Name = "mainForm";
             this.Text = "StudyE";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.VietAnhTab.ResumeLayout(false);
             this.AnhVietTab.ResumeLayout(false);
+            this.AnhVietTab.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.TuBatQuyTacTab.ResumeLayout(false);
             this.TuBatQuyTacTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();

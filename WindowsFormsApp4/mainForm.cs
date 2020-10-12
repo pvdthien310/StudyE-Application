@@ -13,8 +13,8 @@ namespace WindowsFormsApp4
 {
     public partial class mainForm : Form
     {
-        SqlConnection mycntVE = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=V-ESource;Integrated Security=True");
-        SqlConnection mycntEV = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=E-VSource;Integrated Security=True");
+        SqlConnection mycntVE = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=VE;Integrated Security=True");
+        SqlConnection mycntEV = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=EV;Integrated Security=True");
         public startForm parent;
         public mainForm()
         {
@@ -42,8 +42,9 @@ namespace WindowsFormsApp4
 
         private void mainForm_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show("  dfd ");
             string sql = "select * from DTBQT";
-            ketnoicsdl(sql);
+            //ketnoicsdl(sql);
         }
        
         /// <summary>
@@ -248,6 +249,7 @@ namespace WindowsFormsApp4
                 this.button2_Click(sender, e);
             }
         }
+
 
         /// <summary>
         /// // Thien code end
