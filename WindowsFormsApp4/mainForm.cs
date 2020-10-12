@@ -26,10 +26,10 @@ namespace WindowsFormsApp4
         }
 
         SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=DTBQT;Integrated Security=True");
-        private void ketnoicsdl()
+        private void ketnoicsdl(string sql)
         {
             cnn.Open();
-            string sql = "select * from DTBQT";  // lay het du lieu trong bang sinh vien
+              // lay het du lieu trong bang sinh vien
             SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
@@ -41,7 +41,8 @@ namespace WindowsFormsApp4
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            ketnoicsdl();
+            string sql = "select * from DTBQT";
+            ketnoicsdl(sql);
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -51,6 +52,21 @@ namespace WindowsFormsApp4
 
         private void button2_Click(object sender, EventArgs e)
         {
+            button2.Enabled = !button2.Enabled;
+            string sql = "select * from DTBQT where NGUYENMAU = '" + textBox1.Text.Trim() + "' or QUAKHUDON = '" + textBox1.Text.Trim() + "' or QUAKHUPHANTU = '" + textBox1.Text.Trim() + "'";
+            ketnoicsdl(sql);
+            textBox1.Text = "";
+            button2.Enabled = !button2.Enabled;
+        }
+
+  
+
+        private void textBox1_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.button2_Click(sender, e);
+            }
 
         }
     }

@@ -37,14 +37,14 @@
             this.TraDoanTab = new System.Windows.Forms.TabPage();
             this.TuDaTra = new System.Windows.Forms.TabPage();
             this.TuBatQuyTacTab = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ThemTuMoiTab = new System.Windows.Forms.TabPage();
             this.NGUYENMAU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUAKHUDON = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QUAKHUPHANTU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGHIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ThemTuMoiTab = new System.Windows.Forms.TabPage();
             this.VietAnhTab.SuspendLayout();
             this.AnhVietTab.SuspendLayout();
             this.TuBatQuyTacTab.SuspendLayout();
@@ -151,6 +151,26 @@
             this.TuBatQuyTacTab.Text = "Từ bất quy tắc";
             this.TuBatQuyTacTab.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(891, 172);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 39);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Tìm kiếm";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(224, 172);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(597, 40);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown_1);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -170,20 +190,6 @@
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(941, 376);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // ThemTuMoiTab
-            // 
-            this.ThemTuMoiTab.AllowDrop = true;
-            this.ThemTuMoiTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ThemTuMoiTab.Location = new System.Drawing.Point(4, 22);
-            this.ThemTuMoiTab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ThemTuMoiTab.Name = "ThemTuMoiTab";
-            this.ThemTuMoiTab.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ThemTuMoiTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ThemTuMoiTab.Size = new System.Drawing.Size(1186, 666);
-            this.ThemTuMoiTab.TabIndex = 5;
-            this.ThemTuMoiTab.Text = "Thêm từ mới";
-            this.ThemTuMoiTab.UseVisualStyleBackColor = true;
             // 
             // NGUYENMAU
             // 
@@ -217,24 +223,19 @@
             this.NGHIA.Name = "NGHIA";
             this.NGHIA.ReadOnly = true;
             // 
-            // textBox1
+            // ThemTuMoiTab
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(224, 172);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(597, 40);
-            this.textBox1.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(891, 172);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 39);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Tìm kiếm";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.ThemTuMoiTab.AllowDrop = true;
+            this.ThemTuMoiTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ThemTuMoiTab.Location = new System.Drawing.Point(4, 22);
+            this.ThemTuMoiTab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ThemTuMoiTab.Name = "ThemTuMoiTab";
+            this.ThemTuMoiTab.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ThemTuMoiTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ThemTuMoiTab.Size = new System.Drawing.Size(1186, 666);
+            this.ThemTuMoiTab.TabIndex = 5;
+            this.ThemTuMoiTab.Text = "Thêm từ mới";
+            this.ThemTuMoiTab.UseVisualStyleBackColor = true;
             // 
             // mainForm
             // 
