@@ -24,7 +24,7 @@ namespace WindowsFormsApp4
             this.parent = parent;
             InitializeComponent();
         }
-
+        //thuc code
         SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=DTBQT;Integrated Security=True");
         private void ketnoicsdl(string sql)
         {
@@ -43,11 +43,6 @@ namespace WindowsFormsApp4
         {
             string sql = "select * from DTBQT";
             ketnoicsdl(sql);
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -69,5 +64,6 @@ namespace WindowsFormsApp4
             }
 
         }
+        //end thuc code
     }
 }
