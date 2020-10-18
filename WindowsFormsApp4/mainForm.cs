@@ -81,7 +81,7 @@ namespace WindowsFormsApp4
             }
             else
             {
-                resultBox1.Text = "Đéo có dữ liệu hjhj :>>";
+                resultBox1.Text = "Không có dữ liệu";
             }
             textBox1.Clear(); // Xóa từ cũ tránh trường hợp bị đùn gây bug
 
