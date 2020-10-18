@@ -13,8 +13,8 @@ namespace WindowsFormsApp4
 {
     public partial class mainForm : Form
     {
-        SqlConnection mycntVE = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=VE;Integrated Security=True");
-        SqlConnection mycntEV = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=EV;Integrated Security=True");
+        SqlConnection mycntVE = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=EV;Integrated Security=True");
+        SqlConnection mycntEV = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=EV;Integrated Security=True");
         public startForm parent;
         public mainForm()
         {
@@ -26,7 +26,7 @@ namespace WindowsFormsApp4
             InitializeComponent();
         }
         //thuc code
-        SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=dTBQT1;Integrated Security=True");
+        SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=EV;Integrated Security=True");
         private void ketnoicsdl(string sql)
         {
             cnn.Open();
@@ -250,6 +250,7 @@ namespace WindowsFormsApp4
             }
         }
 
+      
 
         /// <summary>
         /// // Thien code end

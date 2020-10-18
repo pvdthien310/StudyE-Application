@@ -1,4 +1,9 @@
 ﻿
+CREATE TABLE TableData(
+ID INT PRIMARY KEY,
+Name NVARCHAR(50),
+Meaning NVARCHAR(3000)
+)
 
 --drop table TableData
 --elete from TableData

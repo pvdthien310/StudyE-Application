@@ -68,10 +68,11 @@
             this.VietAnhTab.Controls.Add(this.TuBatQuyTacTab);
             this.VietAnhTab.Controls.Add(this.ThemTuMoiTab);
             this.VietAnhTab.ItemSize = new System.Drawing.Size(132, 18);
-            this.VietAnhTab.Location = new System.Drawing.Point(1, 1);
+            this.VietAnhTab.Location = new System.Drawing.Point(2, 2);
+            this.VietAnhTab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.VietAnhTab.Name = "VietAnhTab";
             this.VietAnhTab.SelectedIndex = 0;
-            this.VietAnhTab.Size = new System.Drawing.Size(796, 450);
+            this.VietAnhTab.Size = new System.Drawing.Size(1194, 692);
             this.VietAnhTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.VietAnhTab.TabIndex = 0;
             // 
@@ -83,9 +84,10 @@
             this.AnhVietTab.Controls.Add(this.textBox1);
             this.AnhVietTab.Controls.Add(this.button1);
             this.AnhVietTab.Location = new System.Drawing.Point(4, 22);
+            this.AnhVietTab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AnhVietTab.Name = "AnhVietTab";
-            this.AnhVietTab.Padding = new System.Windows.Forms.Padding(3);
-            this.AnhVietTab.Size = new System.Drawing.Size(788, 424);
+            this.AnhVietTab.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.AnhVietTab.Size = new System.Drawing.Size(1186, 666);
             this.AnhVietTab.TabIndex = 0;
             this.AnhVietTab.Text = "Anh -  Việt";
             this.AnhVietTab.ToolTipText = " ";
@@ -95,9 +97,10 @@
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(101, 56);
+            this.label1.Location = new System.Drawing.Point(152, 86);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 28);
+            this.label1.Size = new System.Drawing.Size(195, 43);
             this.label1.TabIndex = 4;
             this.label1.Text = "Từ cần tra ";
             // 
@@ -106,21 +109,23 @@
             this.resultBox1.BackColor = System.Drawing.Color.White;
             this.resultBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultBox1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.resultBox1.Location = new System.Drawing.Point(77, 129);
+            this.resultBox1.Location = new System.Drawing.Point(116, 198);
+            this.resultBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.resultBox1.Multiline = true;
             this.resultBox1.Name = "resultBox1";
             this.resultBox1.ReadOnly = true;
             this.resultBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.resultBox1.Size = new System.Drawing.Size(643, 292);
+            this.resultBox1.Size = new System.Drawing.Size(962, 447);
             this.resultBox1.TabIndex = 3;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(233, 53);
+            this.textBox1.Location = new System.Drawing.Point(350, 82);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(303, 28);
+            this.textBox1.Size = new System.Drawing.Size(452, 41);
             this.textBox1.TabIndex = 0;
             this.textBox1.Tag = "Nhập từ bạn muốn tra";
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
@@ -128,9 +133,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(613, 53);
+            this.button1.Location = new System.Drawing.Point(920, 82);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 28);
+            this.button1.Size = new System.Drawing.Size(160, 43);
             this.button1.TabIndex = 1;
             this.button1.Text = "Tìm kiếm";
             this.button1.UseVisualStyleBackColor = true;
@@ -145,9 +151,10 @@
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(788, 424);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage2.Size = new System.Drawing.Size(1186, 666);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Việt - Anh";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -156,9 +163,10 @@
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(101, 56);
+            this.label2.Location = new System.Drawing.Point(152, 86);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 28);
+            this.label2.Size = new System.Drawing.Size(162, 43);
             this.label2.TabIndex = 7;
             this.label2.Text = "Từ cần tra ";
             // 
@@ -167,29 +175,32 @@
             this.resultBox2.BackColor = System.Drawing.Color.White;
             this.resultBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultBox2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.resultBox2.Location = new System.Drawing.Point(77, 129);
+            this.resultBox2.Location = new System.Drawing.Point(116, 198);
+            this.resultBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.resultBox2.Multiline = true;
             this.resultBox2.Name = "resultBox2";
             this.resultBox2.ReadOnly = true;
             this.resultBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.resultBox2.Size = new System.Drawing.Size(643, 292);
+            this.resultBox2.Size = new System.Drawing.Size(962, 447);
             this.resultBox2.TabIndex = 6;
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(233, 53);
+            this.textBox2.Location = new System.Drawing.Point(350, 82);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(303, 28);
+            this.textBox2.Size = new System.Drawing.Size(452, 41);
             this.textBox2.TabIndex = 0;
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(613, 53);
+            this.button2.Location = new System.Drawing.Point(920, 82);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 28);
+            this.button2.Size = new System.Drawing.Size(160, 43);
             this.button2.TabIndex = 1;
             this.button2.Text = "Tìm kiếm";
             this.button2.UseVisualStyleBackColor = true;
@@ -198,9 +209,10 @@
             // TraDoanTab
             // 
             this.TraDoanTab.Location = new System.Drawing.Point(4, 22);
+            this.TraDoanTab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TraDoanTab.Name = "TraDoanTab";
-            this.TraDoanTab.Padding = new System.Windows.Forms.Padding(3);
-            this.TraDoanTab.Size = new System.Drawing.Size(788, 424);
+            this.TraDoanTab.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TraDoanTab.Size = new System.Drawing.Size(1186, 666);
             this.TraDoanTab.TabIndex = 2;
             this.TraDoanTab.Text = "Tra đoạn";
             this.TraDoanTab.UseVisualStyleBackColor = true;
@@ -209,9 +221,10 @@
             // 
             this.TuDaTra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TuDaTra.Location = new System.Drawing.Point(4, 22);
+            this.TuDaTra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TuDaTra.Name = "TuDaTra";
-            this.TuDaTra.Padding = new System.Windows.Forms.Padding(3);
-            this.TuDaTra.Size = new System.Drawing.Size(788, 424);
+            this.TuDaTra.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TuDaTra.Size = new System.Drawing.Size(1186, 666);
             this.TuDaTra.TabIndex = 3;
             this.TuDaTra.Text = "Từ đã tra";
             this.TuDaTra.UseVisualStyleBackColor = true;
@@ -224,19 +237,19 @@
             this.TuBatQuyTacTab.Controls.Add(this.textBox5);
             this.TuBatQuyTacTab.Controls.Add(this.dataGridView5);
             this.TuBatQuyTacTab.Location = new System.Drawing.Point(4, 22);
+            this.TuBatQuyTacTab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TuBatQuyTacTab.Name = "TuBatQuyTacTab";
-            this.TuBatQuyTacTab.Padding = new System.Windows.Forms.Padding(3);
-            this.TuBatQuyTacTab.Size = new System.Drawing.Size(788, 424);
+            this.TuBatQuyTacTab.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TuBatQuyTacTab.Size = new System.Drawing.Size(1186, 666);
             this.TuBatQuyTacTab.TabIndex = 4;
             this.TuBatQuyTacTab.Text = "Từ bất quy tắc";
             this.TuBatQuyTacTab.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(594, 112);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Location = new System.Drawing.Point(891, 172);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(73, 25);
+            this.button5.Size = new System.Drawing.Size(110, 38);
             this.button5.TabIndex = 2;
             this.button5.Text = "Tìm kiếm";
             this.button5.UseVisualStyleBackColor = true;
@@ -245,11 +258,10 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(149, 112);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox5.Location = new System.Drawing.Point(224, 172);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(399, 27);
+            this.textBox5.Size = new System.Drawing.Size(596, 39);
             this.textBox5.TabIndex = 1;
             this.textBox5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox5_KeyDown);
             // 
@@ -266,12 +278,11 @@
             this.QUAKHUPHANTU,
             this.NGHIA});
             this.dataGridView5.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dataGridView5.Location = new System.Drawing.Point(70, 188);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView5.Location = new System.Drawing.Point(105, 289);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.ReadOnly = true;
             this.dataGridView5.RowHeadersWidth = 62;
-            this.dataGridView5.Size = new System.Drawing.Size(627, 244);
+            this.dataGridView5.Size = new System.Drawing.Size(940, 375);
             this.dataGridView5.TabIndex = 0;
             // 
             // NGUYENMAU
@@ -311,21 +322,23 @@
             this.ThemTuMoiTab.AllowDrop = true;
             this.ThemTuMoiTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ThemTuMoiTab.Location = new System.Drawing.Point(4, 22);
+            this.ThemTuMoiTab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ThemTuMoiTab.Name = "ThemTuMoiTab";
-            this.ThemTuMoiTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ThemTuMoiTab.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ThemTuMoiTab.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ThemTuMoiTab.Size = new System.Drawing.Size(788, 424);
+            this.ThemTuMoiTab.Size = new System.Drawing.Size(1186, 666);
             this.ThemTuMoiTab.TabIndex = 5;
             this.ThemTuMoiTab.Text = "Thêm từ mới";
             this.ThemTuMoiTab.UseVisualStyleBackColor = true;
             // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 450);
+            this.ClientSize = new System.Drawing.Size(1194, 692);
             this.Controls.Add(this.VietAnhTab);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "mainForm";
             this.Text = "StudyE";
