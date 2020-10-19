@@ -62,6 +62,7 @@ namespace WindowsFormsApp4
         }
         public void InsertWordToSearchedTable(string Name, string Meaning, int check)
         {
+            Meaning = Meaning.Replace("'", "`");
             SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=SearchedWord;Integrated Security=True");
             mycntSW.Open();
             int ID;
