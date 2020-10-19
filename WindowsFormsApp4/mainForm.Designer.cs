@@ -42,6 +42,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.TraDoanTab = new System.Windows.Forms.TabPage();
             this.TuDaTra = new System.Windows.Forms.TabPage();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.TuBatQuyTacTab = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -51,12 +53,27 @@
             this.QUAKHUPHANTU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGHIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThemTuMoiTab = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.comboBox6_1 = new System.Windows.Forms.ComboBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox6_3 = new System.Windows.Forms.TextBox();
+            this.textBox6_2 = new System.Windows.Forms.TextBox();
+            this.comboBox6_2 = new System.Windows.Forms.ComboBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameofWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Meaning = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.VietAnhTab.SuspendLayout();
             this.AnhVietTab.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.TuBatQuyTacTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.TuDaTra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.ThemTuMoiTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // VietAnhTab
@@ -105,6 +122,7 @@
             // resultBox1
             // 
             this.resultBox1.BackColor = System.Drawing.Color.White;
+            this.resultBox1.Cursor = System.Windows.Forms.Cursors.No;
             this.resultBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultBox1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.resultBox1.Location = new System.Drawing.Point(77, 129);
@@ -117,14 +135,18 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.Gray;
             this.textBox1.Location = new System.Drawing.Point(233, 53);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(303, 28);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Tag = "Nhập từ bạn muốn tra";
+            this.textBox1.Tag = "";
+            this.textBox1.Text = "Nhập Từ Cần Tra";
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // button1
             // 
@@ -166,6 +188,7 @@
             // resultBox2
             // 
             this.resultBox2.BackColor = System.Drawing.Color.White;
+            this.resultBox2.Cursor = System.Windows.Forms.Cursors.No;
             this.resultBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultBox2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.resultBox2.Location = new System.Drawing.Point(77, 129);
@@ -178,13 +201,17 @@
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.Gray;
             this.textBox2.Location = new System.Drawing.Point(233, 53);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(303, 28);
             this.textBox2.TabIndex = 0;
+            this.textBox2.Text = "Nhập Từ Cần Tra";
+            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // button2
             // 
@@ -208,7 +235,12 @@
             // 
             // TuDaTra
             // 
+            this.TuDaTra.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
             this.TuDaTra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TuDaTra.Controls.Add(this.label8);
+            this.TuDaTra.Controls.Add(this.label7);
+            this.TuDaTra.Controls.Add(this.comboBox4);
+            this.TuDaTra.Controls.Add(this.dataGridView4);
             this.TuDaTra.Location = new System.Drawing.Point(4, 22);
             this.TuDaTra.Name = "TuDaTra";
             this.TuDaTra.Padding = new System.Windows.Forms.Padding(3);
@@ -216,6 +248,38 @@
             this.TuDaTra.TabIndex = 3;
             this.TuDaTra.Text = "Từ đã tra";
             this.TuDaTra.UseVisualStyleBackColor = true;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Việt - Anh",
+            "Anh - Việt"});
+            this.comboBox4.Location = new System.Drawing.Point(151, 47);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(163, 21);
+            this.comboBox4.TabIndex = 1;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AllowUserToResizeColumns = false;
+            this.dataGridView4.AllowUserToResizeRows = false;
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.ColumnHeadersVisible = false;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.NameofWord,
+            this.Meaning});
+            this.dataGridView4.Location = new System.Drawing.Point(133, 104);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.Size = new System.Drawing.Size(527, 311);
+            this.dataGridView4.TabIndex = 0;
             // 
             // TuBatQuyTacTab
             // 
@@ -312,7 +376,18 @@
             // ThemTuMoiTab
             // 
             this.ThemTuMoiTab.AllowDrop = true;
+            this.ThemTuMoiTab.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
             this.ThemTuMoiTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ThemTuMoiTab.Controls.Add(this.label6);
+            this.ThemTuMoiTab.Controls.Add(this.label5);
+            this.ThemTuMoiTab.Controls.Add(this.label4);
+            this.ThemTuMoiTab.Controls.Add(this.label3);
+            this.ThemTuMoiTab.Controls.Add(this.comboBox6_1);
+            this.ThemTuMoiTab.Controls.Add(this.button6);
+            this.ThemTuMoiTab.Controls.Add(this.textBox6_3);
+            this.ThemTuMoiTab.Controls.Add(this.textBox6_2);
+            this.ThemTuMoiTab.Controls.Add(this.comboBox6_2);
+            this.ThemTuMoiTab.Controls.Add(this.textBox6);
             this.ThemTuMoiTab.Location = new System.Drawing.Point(4, 22);
             this.ThemTuMoiTab.Name = "ThemTuMoiTab";
             this.ThemTuMoiTab.Padding = new System.Windows.Forms.Padding(3);
@@ -322,15 +397,166 @@
             this.ThemTuMoiTab.Text = "Thêm từ mới";
             this.ThemTuMoiTab.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(21, 211);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(127, 22);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Nghĩa Của Từ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(25, 150);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(123, 22);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Phân Loại Từ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(46, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 22);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Tên Từ";
+            // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.MintCream;
-            this.label3.Location = new System.Drawing.Point(74, 56);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(25, 55);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 28);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Từ cần tra ";
+            this.label3.Size = new System.Drawing.Size(119, 22);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Loại Từ Điển";
+            // 
+            // comboBox6_1
+            // 
+            this.comboBox6_1.FormattingEnabled = true;
+            this.comboBox6_1.Items.AddRange(new object[] {
+            "Việt - Anh",
+            "Anh - Việt"});
+            this.comboBox6_1.Location = new System.Drawing.Point(206, 58);
+            this.comboBox6_1.Name = "comboBox6_1";
+            this.comboBox6_1.Size = new System.Drawing.Size(119, 21);
+            this.comboBox6_1.TabIndex = 6;
+            this.comboBox6_1.SelectedIndexChanged += new System.EventHandler(this.comboBox6_1_SelectedIndexChanged);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(575, 80);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(110, 41);
+            this.button6.TabIndex = 5;
+            this.button6.Tag = "";
+            this.button6.Text = "Thêm Từ";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // textBox6_3
+            // 
+            this.textBox6_3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6_3.ForeColor = System.Drawing.Color.Gray;
+            this.textBox6_3.Location = new System.Drawing.Point(206, 211);
+            this.textBox6_3.Multiline = true;
+            this.textBox6_3.Name = "textBox6_3";
+            this.textBox6_3.Size = new System.Drawing.Size(421, 177);
+            this.textBox6_3.TabIndex = 4;
+            this.textBox6_3.Text = "Nhập Nghĩa Của Từ";
+            this.textBox6_3.Enter += new System.EventHandler(this.textBox6_3_Enter);
+            this.textBox6_3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox6_3_KeyDown);
+            this.textBox6_3.Leave += new System.EventHandler(this.textBox6_3_Leave);
+            // 
+            // textBox6_2
+            // 
+            this.textBox6_2.Location = new System.Drawing.Point(374, 153);
+            this.textBox6_2.Name = "textBox6_2";
+            this.textBox6_2.Size = new System.Drawing.Size(124, 20);
+            this.textBox6_2.TabIndex = 3;
+            this.textBox6_2.Tag = "Nhập loại từ";
+            this.textBox6_2.Visible = false;
+            // 
+            // comboBox6_2
+            // 
+            this.comboBox6_2.FormattingEnabled = true;
+            this.comboBox6_2.Items.AddRange(new object[] {
+            "Verb",
+            "Noun",
+            "Adj",
+            "Adv",
+            "Other"});
+            this.comboBox6_2.Location = new System.Drawing.Point(206, 152);
+            this.comboBox6_2.Name = "comboBox6_2";
+            this.comboBox6_2.Size = new System.Drawing.Size(127, 21);
+            this.comboBox6_2.TabIndex = 1;
+            this.comboBox6_2.SelectedValueChanged += new System.EventHandler(this.comboBox6_2_SelectedValueChanged);
+            // 
+            // textBox6
+            // 
+            this.textBox6.ForeColor = System.Drawing.Color.Gray;
+            this.textBox6.Location = new System.Drawing.Point(206, 101);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(287, 20);
+            this.textBox6.TabIndex = 0;
+            this.textBox6.Tag = "";
+            this.textBox6.Text = "Nhập Tên Từ";
+            this.textBox6.Enter += new System.EventHandler(this.textBox6_Enter);
+            this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // NameofWord
+            // 
+            this.NameofWord.DataPropertyName = "Name";
+            this.NameofWord.HeaderText = "Name";
+            this.NameofWord.Name = "NameofWord";
+            this.NameofWord.ReadOnly = true;
+            // 
+            // Meaning
+            // 
+            this.Meaning.DataPropertyName = "Meaning";
+            this.Meaning.HeaderText = "Meaning";
+            this.Meaning.Name = "Meaning";
+            this.Meaning.ReadOnly = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(43, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 22);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Từ Điển";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(24, 104);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 22);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Danh Sách";
             // 
             // mainForm
             // 
@@ -348,9 +574,11 @@
             this.AnhVietTab.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.TuBatQuyTacTab.ResumeLayout(false);
-            this.TuBatQuyTacTab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.TuDaTra.ResumeLayout(false);
+            this.TuDaTra.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.ThemTuMoiTab.ResumeLayout(false);
+            this.ThemTuMoiTab.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -373,6 +601,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox5;
 //<<<<<<< HEAD
+        //private System.Windows.Forms.DataGridView dataGridView1;
 //=======
 //>>>>>>> master
         private System.Windows.Forms.TextBox resultBox1;
@@ -382,6 +611,22 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox6_2;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox6_2;
+        private System.Windows.Forms.TextBox textBox6_3;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ComboBox comboBox6_1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameofWord;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Meaning;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
