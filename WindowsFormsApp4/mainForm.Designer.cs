@@ -45,6 +45,13 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.TuBatQuyTacTab = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.NGUYENMAU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUAKHUDON = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUAKHUPHANTU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGHIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThemTuMoiTab = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -106,7 +113,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(101, 56);
+            this.label1.Location = new System.Drawing.Point(74, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 28);
             this.label1.TabIndex = 4;
@@ -172,7 +179,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(101, 56);
+            this.label2.Location = new System.Drawing.Point(74, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 28);
             this.label2.TabIndex = 7;
@@ -278,6 +285,10 @@
             // 
             this.TuBatQuyTacTab.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
             this.TuBatQuyTacTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TuBatQuyTacTab.Controls.Add(this.label3);
+            this.TuBatQuyTacTab.Controls.Add(this.button5);
+            this.TuBatQuyTacTab.Controls.Add(this.textBox5);
+            this.TuBatQuyTacTab.Controls.Add(this.dataGridView5);
             this.TuBatQuyTacTab.Location = new System.Drawing.Point(4, 22);
             this.TuBatQuyTacTab.Name = "TuBatQuyTacTab";
             this.TuBatQuyTacTab.Padding = new System.Windows.Forms.Padding(3);
@@ -285,6 +296,82 @@
             this.TuBatQuyTacTab.TabIndex = 4;
             this.TuBatQuyTacTab.Text = "Từ bất quy tắc";
             this.TuBatQuyTacTab.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(613, 53);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(107, 28);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Tìm kiếm";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(233, 53);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(303, 28);
+            this.textBox5.TabIndex = 1;
+            this.textBox5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox5_KeyDown);
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NGUYENMAU,
+            this.QUAKHUDON,
+            this.QUAKHUPHANTU,
+            this.NGHIA});
+            this.dataGridView5.GridColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dataGridView5.Location = new System.Drawing.Point(77, 129);
+            this.dataGridView5.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
+            this.dataGridView5.RowHeadersWidth = 62;
+            this.dataGridView5.Size = new System.Drawing.Size(643, 292);
+            this.dataGridView5.TabIndex = 0;
+            // 
+            // NGUYENMAU
+            // 
+            this.NGUYENMAU.DataPropertyName = "NGUYENMAU";
+            this.NGUYENMAU.HeaderText = "Nguyên mẫu";
+            this.NGUYENMAU.MinimumWidth = 8;
+            this.NGUYENMAU.Name = "NGUYENMAU";
+            this.NGUYENMAU.ReadOnly = true;
+            // 
+            // QUAKHUDON
+            // 
+            this.QUAKHUDON.DataPropertyName = "QUAKHUDON";
+            this.QUAKHUDON.HeaderText = "Quá khứ đơn";
+            this.QUAKHUDON.MinimumWidth = 8;
+            this.QUAKHUDON.Name = "QUAKHUDON";
+            this.QUAKHUDON.ReadOnly = true;
+            // 
+            // QUAKHUPHANTU
+            // 
+            this.QUAKHUPHANTU.DataPropertyName = "QUAKHUPHANTU";
+            this.QUAKHUPHANTU.HeaderText = "Quá khứ phân từ";
+            this.QUAKHUPHANTU.MinimumWidth = 8;
+            this.QUAKHUPHANTU.Name = "QUAKHUPHANTU";
+            this.QUAKHUPHANTU.ReadOnly = true;
+            // 
+            // NGHIA
+            // 
+            this.NGHIA.DataPropertyName = "NGHIA";
+            this.NGHIA.HeaderText = "Nghĩa";
+            this.NGHIA.MinimumWidth = 8;
+            this.NGHIA.Name = "NGHIA";
+            this.NGHIA.ReadOnly = true;
             // 
             // ThemTuMoiTab
             // 
@@ -481,6 +568,7 @@
             this.MaximizeBox = false;
             this.Name = "mainForm";
             this.Text = "StudyE";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.VietAnhTab.ResumeLayout(false);
             this.AnhVietTab.ResumeLayout(false);
             this.AnhVietTab.PerformLayout();
@@ -505,6 +593,13 @@
         private System.Windows.Forms.TabPage TuBatQuyTacTab;
         private System.Windows.Forms.TabPage ThemTuMoiTab;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGUYENMAU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUAKHUDON;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUAKHUPHANTU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGHIA;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox5;
 //<<<<<<< HEAD
         //private System.Windows.Forms.DataGridView dataGridView1;
 //=======
