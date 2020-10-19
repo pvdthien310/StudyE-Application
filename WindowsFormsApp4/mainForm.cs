@@ -27,11 +27,7 @@ namespace WindowsFormsApp4
             this.parent = parent;
             InitializeComponent();
         }
-        
-
        
-        
-        
         /// <summary>
         /// // Thien code 
         /// </summary>
@@ -95,14 +91,9 @@ namespace WindowsFormsApp4
             
             if (dt2.Rows.Count > 0)
             {
-
                 // Thuc hien chuyen string tu database sang dang form tieu chuan (Viet - Anh)
                 Design_UI_Word_VE(dt2.Rows[0]["Meaning"].ToString().Trim());
-
                // DataManager.Instance.InsertWordToSearchedTable(dt2.Rows[0]["Name"].ToString().Trim(), dt2.Rows[0]["Meaning"].ToString().Trim(), 0);
-
-
-
                 //word = dt.Rows[0]["Meaning"].ToString().Trim();
                 //textBox1.Text = dt.Rows[1]["Meaning"].ToString().Trim();
             }
@@ -116,6 +107,7 @@ namespace WindowsFormsApp4
             mycntVE.Close(); // đóng kết nối
 
         }
+
         private void Design_UI_Word_VE(string temp)
         {
 
@@ -139,6 +131,7 @@ namespace WindowsFormsApp4
                 }
                 else if (lines[i][0] == '=')
                 {
+
                     show_line += "\r\n" + "\t\t" + "-" + fix_lines.Trim();
                 }
                 else if (lines[i][0] == '+')
@@ -148,10 +141,8 @@ namespace WindowsFormsApp4
 
             }
             // xuất ra ngoài 
-            resultBox2.Text = show_line.Trim();
-
+            resultBox2.Text = show_line.Trim(); 
         }
-
         private void Design_UI_Word_EV(string temp)
         {
 
@@ -192,16 +183,18 @@ namespace WindowsFormsApp4
 
         private void button1_Click(object sender, EventArgs e)
         {
+//<<<<<<< HEAD
             button1.Enabled = !button1.Enabled;
             ConnectDatabseEV();
             button1.Enabled = !button1.Enabled;
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
+//<<<<<<< HEAD
             button2.Enabled = !button2.Enabled;
             ConnectDatabseVE();
             button2.Enabled = !button2.Enabled;
+
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -211,7 +204,6 @@ namespace WindowsFormsApp4
                 this.button1_Click(sender, e);
             }
         }
-
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
