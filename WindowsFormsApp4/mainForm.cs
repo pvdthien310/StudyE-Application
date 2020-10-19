@@ -28,11 +28,11 @@ namespace WindowsFormsApp4
             InitializeComponent();
         }
         //thuc code
-        SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=dTBQT1;Integrated Security=True");
+        SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=DTBQT;Integrated Security=True");
         private void ketnoicsdl(string sql)
         {
             cnn.Open();
-              // lay het du lieu trong bang sinh vien
+              // lay het du lieu trong bang DTBQT
             SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
