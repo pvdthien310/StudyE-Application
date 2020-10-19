@@ -56,13 +56,16 @@
             this.textBox6_2 = new System.Windows.Forms.TextBox();
             this.comboBox6_2 = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameofWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Meaning = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.VietAnhTab.SuspendLayout();
             this.AnhVietTab.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.TuDaTra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            this.TuBatQuyTacTab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ThemTuMoiTab.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -225,7 +228,10 @@
             // 
             // TuDaTra
             // 
+            this.TuDaTra.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
             this.TuDaTra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TuDaTra.Controls.Add(this.label8);
+            this.TuDaTra.Controls.Add(this.label7);
             this.TuDaTra.Controls.Add(this.comboBox4);
             this.TuDaTra.Controls.Add(this.dataGridView4);
             this.TuDaTra.Location = new System.Drawing.Point(4, 22);
@@ -242,7 +248,7 @@
             this.comboBox4.Items.AddRange(new object[] {
             "Việt - Anh",
             "Anh - Việt"});
-            this.comboBox4.Location = new System.Drawing.Point(133, 45);
+            this.comboBox4.Location = new System.Drawing.Point(151, 47);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(163, 21);
             this.comboBox4.TabIndex = 1;
@@ -250,12 +256,21 @@
             // 
             // dataGridView4
             // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AllowUserToResizeColumns = false;
+            this.dataGridView4.AllowUserToResizeRows = false;
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.ColumnHeadersVisible = false;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.NameofWord,
+            this.Meaning});
             this.dataGridView4.Location = new System.Drawing.Point(133, 104);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(527, 296);
+            this.dataGridView4.Size = new System.Drawing.Size(527, 311);
             this.dataGridView4.TabIndex = 0;
             // 
             // TuBatQuyTacTab
@@ -412,6 +427,49 @@
             this.textBox6.Enter += new System.EventHandler(this.textBox6_Enter);
             this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // NameofWord
+            // 
+            this.NameofWord.DataPropertyName = "Name";
+            this.NameofWord.HeaderText = "Name";
+            this.NameofWord.Name = "NameofWord";
+            this.NameofWord.ReadOnly = true;
+            // 
+            // Meaning
+            // 
+            this.Meaning.DataPropertyName = "Meaning";
+            this.Meaning.HeaderText = "Meaning";
+            this.Meaning.Name = "Meaning";
+            this.Meaning.ReadOnly = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(43, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 21);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Từ Điển";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(24, 104);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 21);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Danh Sách";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,9 +486,8 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.TuDaTra.ResumeLayout(false);
+            this.TuDaTra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            this.TuBatQuyTacTab.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ThemTuMoiTab.ResumeLayout(false);
             this.ThemTuMoiTab.PerformLayout();
             this.ResumeLayout(false);
@@ -448,7 +505,7 @@
         private System.Windows.Forms.TabPage ThemTuMoiTab;
         private System.Windows.Forms.Button button1;
 //<<<<<<< HEAD
-        private System.Windows.Forms.DataGridView dataGridView1;
+        //private System.Windows.Forms.DataGridView dataGridView1;
 //=======
 //>>>>>>> master
         private System.Windows.Forms.TextBox resultBox1;
@@ -470,5 +527,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameofWord;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Meaning;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }

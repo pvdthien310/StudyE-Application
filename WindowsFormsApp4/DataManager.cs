@@ -67,23 +67,20 @@ namespace WindowsFormsApp4
             int ID;
             if (check == 1)
             {
-                string queryID = "select max(ID) from EV_Word";
+                string queryID = "SELECT COUNT(*) FROM  EV_Word";
                 SqlCommand cmd = new SqlCommand(queryID, mycntSW);
-
-                if (Convert.ToInt32(cmd.ExecuteScalar()) == null) { ID = 0; }
-                else { ID = Convert.ToInt32(cmd.ExecuteScalar()) + 1; }
-
+                ID = Convert.ToInt32(cmd.ExecuteScalar()) + 1;
                 string queryInsert = "INSERT INTO EV_Word VALUES (" + ID.ToString() +",'" + Name + "',N'" + Meaning + "')";
                 SqlCommand cmd2 = new SqlCommand(queryInsert, mycntSW);
                 cmd2.ExecuteNonQuery();
             }
             else
             {
-                string queryID = "select max(ID) from VE_Word";
+                string queryID = "SELECT COUNT(*) FROM  VE_Word";
                 SqlCommand cmd = new SqlCommand(queryID, mycntSW);
 
-                if (cmd.ExecuteScalar() == null ) { ID = 0; }
-                else { ID = Convert.ToInt32(cmd.ExecuteScalar()) + 1; }
+                
+              ID = Convert.ToInt32(cmd.ExecuteScalar()) + 1; 
 
                 string queryInsert = "INSERT INTO VE_Word (ID,Name,Meaning) VALUES (" + ID.ToString() + ",N'" + Name + "',N'" + Meaning + "')";
 

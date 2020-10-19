@@ -51,15 +51,7 @@ namespace WindowsFormsApp4
             if (dt.Rows.Count > 0)
             {
                 Design_UI_Word_EV(dt.Rows[0]["Meaning"].ToString().Trim());
-
-
-                // Thuc hien chuyen string tu database sang dang form tieu chuan (Viet - Anh)
-                //Design_UI_Word_VE(dt.Rows[0]["Meaning"].ToString().Trim());
-
-               // DataManager.Instance.InsertWordToSearchedTable(dt.Rows[0]["Name"].ToString().Trim(), dt.Rows[0]["Meaning"].ToString().Trim(), 1);
-
-                //word = dt.Rows[0]["Meaning"].ToString().Trim();
-                //textBox1.Text = dt.Rows[1]["Meaning"].ToString().Trim();
+                DataManager.Instance.InsertWordToSearchedTable(dt.Rows[0]["Name"].ToString().Trim(), dt.Rows[0]["Meaning"].ToString().Trim(), 1);
             }
             else
             {
@@ -93,9 +85,7 @@ namespace WindowsFormsApp4
             {
                 // Thuc hien chuyen string tu database sang dang form tieu chuan (Viet - Anh)
                 Design_UI_Word_VE(dt2.Rows[0]["Meaning"].ToString().Trim());
-               // DataManager.Instance.InsertWordToSearchedTable(dt2.Rows[0]["Name"].ToString().Trim(), dt2.Rows[0]["Meaning"].ToString().Trim(), 0);
-                //word = dt.Rows[0]["Meaning"].ToString().Trim();
-                //textBox1.Text = dt.Rows[1]["Meaning"].ToString().Trim();
+                DataManager.Instance.InsertWordToSearchedTable(dt2.Rows[0]["Name"].ToString().Trim(), dt2.Rows[0]["Meaning"].ToString().Trim(), 0);
             }
             else
             {
@@ -460,6 +450,8 @@ namespace WindowsFormsApp4
         {
             DataManager.Instance.Upload_Searched_Word(comboBox4.SelectedItem.ToString(), dataGridView4);
         }
+
+       
 
         /// <summary>
         /// // Thien code end
