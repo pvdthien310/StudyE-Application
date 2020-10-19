@@ -57,11 +57,13 @@ namespace WindowsFormsApp4
             SqlDataAdapter adaSW = new SqlDataAdapter(cmdSW); // chuyen data tu sql ve trong ada
             DataTable dtSW = new DataTable();
             adaSW.Fill(dtSW);
+            mycntSW.Close();
             dest.DataSource = dtSW;
 
         }
         public void InsertWordToSearchedTable(string Name, string Meaning, int check)
         {
+            Meaning = Meaning.Replace("'", "`");
             SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=SearchedWord;Integrated Security=True");
             mycntSW.Open();
             int ID;

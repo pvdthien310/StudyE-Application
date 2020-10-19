@@ -313,7 +313,10 @@ namespace WindowsFormsApp4
                     if (dt4.Rows.Count > 0)
                     {
                         MessageBox.Show("Từ bạn thêm đã có trong dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
+                        if (textBox6_2.Visible == true)
+                        {
+                            textBox6_2.Visible = !textBox6_2.Visible;
+                        }
                     }
                     else
                     {
@@ -335,6 +338,7 @@ namespace WindowsFormsApp4
                         MessageBox.Show("Từ bạn vừa nhập đã được thêm","Thông báo !",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
                     textBox6.Text = textBox6_2.Text = textBox6_3.Text = "";
+                    comboBox6_2.SelectedItem = comboBox6_2.Items[0];
                     mycntEV.Close();
                     /* mycntEV.Dispose();*/ // Giai phong tai nguyen
                 }
