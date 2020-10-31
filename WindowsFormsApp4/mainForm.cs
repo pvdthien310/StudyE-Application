@@ -588,11 +588,45 @@ namespace WindowsFormsApp4
                 }
                  else
                  {
-                Environment.Exit(0);
+                    Application.Exit();
                  }
         }
 
-        
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string[] arr1 = new string[] { "á", "à", "ả", "ã", "ạ", "â", "ấ", "ầ", "ẩ", "ẫ", "ậ", "ă", "ắ", "ằ", "ẳ", "ẵ", "ặ",
+             "đ", "é","è","ẻ","ẽ","ẹ","ê","ế","ề","ể","ễ","ệ","í","ì","ỉ","ĩ","ị","ó","ò","ỏ","õ","ọ","ô","ố","ồ","ổ","ỗ","ộ","ơ","ớ","ờ","ở","ỡ","ợ","ú","ù","ủ","ũ","ụ","ư","ứ","ừ","ử","ữ","ự","ý","ỳ","ỷ","ỹ","ỵ","0","1","2","3","4","5","6","7","8","9",};
+            int n = textBox1.TextLength;
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                if (textBox1.Text.IndexOf(arr1[i]) != -1)
+                {
+                    label1_1.Text = "Bạn vừa nhập chuỗi có dấu hoặc có số. Vui lòng kiểm tra hoặc chúng tôi sẽ thực hiện chuyển kiểu tự động khi bạn thực hiện dịch đoạn !";
+                    label1_1.ForeColor = Color.Red;
+                    return;
+                }
+            }
+
+            label1_1.Text = "";
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            string[] arr1 = new string[] {"0","1","2","3","4","5","6","7","8","9",};
+            int n = textBox2.TextLength;
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                if (textBox2.Text.IndexOf(arr1[i]) != -1)
+                {
+                    label2_1.Text = "Bạn vừa nhập chuỗi có số. Vui lòng kiểm tra !";
+                    label2_1.ForeColor = Color.Red;
+                    if (button2.Enabled == true) button2.Enabled = !button2.Enabled;
+                    return;
+                }
+            }
+            if (button2.Enabled == false) button2.Enabled = !button2.Enabled;
+            label2_1.Text = "";
+        }
 
         /// <summary>
         /// // Thien code end

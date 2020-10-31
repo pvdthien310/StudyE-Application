@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.VietAnhTab = new System.Windows.Forms.TabControl();
             this.AnhVietTab = new System.Windows.Forms.TabPage();
+            this.label1_1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.resultBox1 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -78,6 +79,7 @@
             this.comboBox6_2 = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
+            this.label2_1 = new System.Windows.Forms.Label();
             this.VietAnhTab.SuspendLayout();
             this.AnhVietTab.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -110,6 +112,7 @@
             // AnhVietTab
             // 
             this.AnhVietTab.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
+            this.AnhVietTab.Controls.Add(this.label1_1);
             this.AnhVietTab.Controls.Add(this.label1);
             this.AnhVietTab.Controls.Add(this.resultBox1);
             this.AnhVietTab.Controls.Add(this.textBox1);
@@ -122,6 +125,14 @@
             this.AnhVietTab.Text = "Anh -  Việt";
             this.AnhVietTab.ToolTipText = " ";
             this.AnhVietTab.UseVisualStyleBackColor = true;
+            // 
+            // label1_1
+            // 
+            this.label1_1.AutoSize = true;
+            this.label1_1.Location = new System.Drawing.Point(190, 99);
+            this.label1_1.Name = "label1_1";
+            this.label1_1.Size = new System.Drawing.Size(0, 13);
+            this.label1_1.TabIndex = 5;
             // 
             // label1
             // 
@@ -158,6 +169,7 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.Tag = "";
             this.textBox1.Text = "Nhập Từ Cần Tra";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
@@ -176,6 +188,7 @@
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
+            this.tabPage2.Controls.Add(this.label2_1);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.resultBox2);
             this.tabPage2.Controls.Add(this.textBox2);
@@ -223,6 +236,7 @@
             this.textBox2.Size = new System.Drawing.Size(303, 28);
             this.textBox2.TabIndex = 0;
             this.textBox2.Text = "Nhập Từ Cần Tra";
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
@@ -667,6 +681,15 @@
             // 
             this.openFileDialog3.FileName = "openFileDialog1";
             // 
+            // label2_1
+            // 
+            this.label2_1.AutoSize = true;
+            this.label2_1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2_1.Location = new System.Drawing.Point(144, 93);
+            this.label2_1.Name = "label2_1";
+            this.label2_1.Size = new System.Drawing.Size(0, 14);
+            this.label2_1.TabIndex = 8;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -752,5 +775,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MeaningWord;
         private System.Windows.Forms.OpenFileDialog openFileDialog3;
         private System.Windows.Forms.Label label3_1;
+        private System.Windows.Forms.Label label1_1;
+        private System.Windows.Forms.Label label2_1;
     }
 }
