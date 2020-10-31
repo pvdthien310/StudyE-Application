@@ -578,7 +578,22 @@ namespace WindowsFormsApp4
             label3_1.Text = "";
         }
 
+        private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {         
+                DialogResult result;
+                result = MessageBox.Show("Bạn có muốn thoát chương trình không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                 else
+                 {
+                Environment.Exit(0);
+                 }
+        }
+
         
+
         /// <summary>
         /// // Thien code end
         /// </summary>

@@ -677,6 +677,7 @@
             this.MaximizeBox = false;
             this.Name = "mainForm";
             this.Text = "StudyE";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainForm_FormClosing);
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.VietAnhTab.ResumeLayout(false);
             this.AnhVietTab.ResumeLayout(false);
