@@ -57,6 +57,7 @@ namespace WindowsFormsApp4
             SqlDataAdapter adaSW = new SqlDataAdapter(cmdSW); // chuyen data tu sql ve trong ada
             DataTable dtSW = new DataTable();
             adaSW.Fill(dtSW);
+            mycntSW.Close();
             dest.DataSource = dtSW;
 
         }
