@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace WindowsFormsApp4
 {
     public partial class mainForm : Form
     {
+        public searchedWordList EV_SWlist = new searchedWordList();
         SqlConnection mycntVE = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=VESource;Integrated Security=True");
         SqlConnection mycntEV = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=EVSource;Integrated Security=True");
         public startForm parent;
@@ -47,6 +49,13 @@ namespace WindowsFormsApp4
             //MessageBox.Show("  dfd ");
             string sql = "select * from DTBQT";
             ketnoicsdl(sql);
+
+            // Đổ dữ liệu vào class SearchedWord 
+            
+            //searchedWordList VE_SWlist = new searchedWordList();
+            DataManager.Instance.LoadSWToList(EV_SWlist);
+            //DataManager.Instance.LoadSWToList(VE_SWlist);
+
         }
        
         /// <summary>
@@ -73,6 +82,8 @@ namespace WindowsFormsApp4
             {
                 Design_UI_Word_EV(dt.Rows[0]["Meaning"].ToString().Trim());
                 DataManager.Instance.InsertWordToSearchedTable(dt.Rows[0]["Name"].ToString().Trim(), dt.Rows[0]["Meaning"].ToString().Trim(), 1);
+                // Them tu vao class tu EV da tra
+                EV_SWlist.list.Add(new Word(Convert.ToInt32(dt.Rows[0]["ID"].ToString().Trim()),dt.Rows[0]["Name"].ToString().Trim(), dt.Rows[0]["Meaning"].ToString().Trim()));
             }
             else
             {
@@ -117,7 +128,7 @@ namespace WindowsFormsApp4
 
             mycntVE.Close(); // đóng kết nối
         }
-
+        
         private void button5_Click(object sender, EventArgs e)
         {
             button5.Enabled = !button5.Enabled;
@@ -492,8 +503,82 @@ namespace WindowsFormsApp4
             DataManager.Instance.Upload_Searched_Word(comboBox4.SelectedItem.ToString(), dataGridView4);
         }
 
-       
+        private void button3_2_Click(object sender, EventArgs e)
+        {
+            if (label3_1.Text != "")
+            {
+                if (MessageBox.Show("Chương trình sẽ dịch tự động loại bỏ dấu bạn có đồng ý không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                {
+                    return;
+                }
+             }
+            string paragraph = richTextBox3.Text;
+            paragraph = paragraph.ToLower();
+            paragraph = DataManager.Instance.RemoveUnicode(paragraph);
+            paragraph = DataManager.Instance.RemoveSpecialCharacters(ref paragraph);
+            paragraph = paragraph.Replace("\n"," ");
+            string[] processedParagraph = paragraph.Split(' ');
+            DataManager.Instance.TranslateParagraph(processedParagraph, dataGridView3,ref EV_SWlist);
 
+        }
+
+        private void TraDoanTab_Leave(object sender, EventArgs e)
+        {
+            richTextBox3.Text = "";
+            dataGridView3.Rows.Clear();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            openFileDialog3.Filter = "Plain text (*.txt)| *.txt";
+            try
+            {
+                if (openFileDialog3.ShowDialog() == DialogResult.OK)
+                {
+                    Stream stream = openFileDialog3.OpenFile();
+                    StreamReader sr = new StreamReader(stream);
+                    richTextBox3.Text = sr.ReadToEnd();
+                    sr.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                string message = "Không thể đọc File !";
+                string title = "Thông báo";
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView3.SelectedRows.Count > 0)
+            {
+                supportForm support = new supportForm(this, this.dataGridView3.SelectedRows[0].Cells[0].Value.ToString());
+                support.Show();
+            }
+        }
+
+        private void richTextBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (richTextBox3.Text == "") dataGridView3.Rows.Clear();
+            string[] arr1 = new string[] { "á", "à", "ả", "ã", "ạ", "â", "ấ", "ầ", "ẩ", "ẫ", "ậ", "ă", "ắ", "ằ", "ẳ", "ẵ", "ặ",
+             "đ", "é","è","ẻ","ẽ","ẹ","ê","ế","ề","ể","ễ","ệ","í","ì","ỉ","ĩ","ị","ó","ò","ỏ","õ","ọ","ô","ố","ồ","ổ","ỗ","ộ","ơ","ớ","ờ","ở","ỡ","ợ","ú","ù","ủ","ũ","ụ","ư","ứ","ừ","ử","ữ","ự","ý","ỳ","ỷ","ỹ","ỵ","0","1","2","3","4","5","6","7","8","9",};
+            int n = richTextBox3.TextLength;
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                if (richTextBox3.Text.IndexOf(arr1[i]) != -1)
+                {
+                    label3_1.Text = "Bạn vừa nhập chuỗi có dấu hoặc có số. Vui lòng kiểm tra hoặc chúng tôi sẽ thực hiện chuyển kiểu tự động khi bạn thực hiện dịch đoạn !";
+                    label3_1.ForeColor = Color.Red;
+                    return;
+                }
+            }
+
+            label3_1.Text = "";
+        }
+
+        
         /// <summary>
         /// // Thien code end
         /// </summary>
