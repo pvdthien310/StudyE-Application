@@ -38,6 +38,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label2_1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.resultBox2 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.TraDoanTab = new System.Windows.Forms.TabPage();
             this.label3_1 = new System.Windows.Forms.Label();
             this.button3_2 = new System.Windows.Forms.Button();
-            this.button3_1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.NameWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +79,6 @@
             this.comboBox6_2 = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
-            this.label2_1 = new System.Windows.Forms.Label();
             this.VietAnhTab.SuspendLayout();
             this.AnhVietTab.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -129,7 +128,7 @@
             // label1_1
             // 
             this.label1_1.AutoSize = true;
-            this.label1_1.Location = new System.Drawing.Point(190, 99);
+            this.label1_1.Location = new System.Drawing.Point(148, 99);
             this.label1_1.Name = "label1_1";
             this.label1_1.Size = new System.Drawing.Size(0, 13);
             this.label1_1.TabIndex = 5;
@@ -202,6 +201,15 @@
             this.tabPage2.Text = "Việt - Anh";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label2_1
+            // 
+            this.label2_1.AutoSize = true;
+            this.label2_1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2_1.Location = new System.Drawing.Point(144, 93);
+            this.label2_1.Name = "label2_1";
+            this.label2_1.Size = new System.Drawing.Size(0, 14);
+            this.label2_1.TabIndex = 8;
+            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -253,9 +261,9 @@
             // 
             // TraDoanTab
             // 
+            this.TraDoanTab.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
             this.TraDoanTab.Controls.Add(this.label3_1);
             this.TraDoanTab.Controls.Add(this.button3_2);
-            this.TraDoanTab.Controls.Add(this.button3_1);
             this.TraDoanTab.Controls.Add(this.button3);
             this.TraDoanTab.Controls.Add(this.dataGridView3);
             this.TraDoanTab.Controls.Add(this.richTextBox3);
@@ -270,14 +278,14 @@
             // 
             // label3_1
             // 
-            this.label3_1.Location = new System.Drawing.Point(26, 74);
+            this.label3_1.Location = new System.Drawing.Point(121, 24);
             this.label3_1.Name = "label3_1";
-            this.label3_1.Size = new System.Drawing.Size(303, 50);
+            this.label3_1.Size = new System.Drawing.Size(219, 50);
             this.label3_1.TabIndex = 5;
             // 
             // button3_2
             // 
-            this.button3_2.Location = new System.Drawing.Point(534, 45);
+            this.button3_2.Location = new System.Drawing.Point(349, 41);
             this.button3_2.Name = "button3_2";
             this.button3_2.Size = new System.Drawing.Size(99, 33);
             this.button3_2.TabIndex = 4;
@@ -285,18 +293,9 @@
             this.button3_2.UseVisualStyleBackColor = true;
             this.button3_2.Click += new System.EventHandler(this.button3_2_Click);
             // 
-            // button3_1
-            // 
-            this.button3_1.Location = new System.Drawing.Point(230, 27);
-            this.button3_1.Name = "button3_1";
-            this.button3_1.Size = new System.Drawing.Size(99, 33);
-            this.button3_1.TabIndex = 3;
-            this.button3_1.Text = "button4";
-            this.button3_1.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(55, 27);
+            this.button3.Location = new System.Drawing.Point(16, 38);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(99, 33);
             this.button3.TabIndex = 2;
@@ -323,10 +322,10 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView3.Location = new System.Drawing.Point(349, 93);
+            this.dataGridView3.Location = new System.Drawing.Point(349, 80);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(515, 309);
+            this.dataGridView3.Size = new System.Drawing.Size(515, 322);
             this.dataGridView3.TabIndex = 1;
             this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
             // 
@@ -347,9 +346,9 @@
             this.richTextBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.richTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.richTextBox3.Location = new System.Drawing.Point(16, 127);
+            this.richTextBox3.Location = new System.Drawing.Point(16, 77);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(313, 275);
+            this.richTextBox3.Size = new System.Drawing.Size(313, 325);
             this.richTextBox3.TabIndex = 0;
             this.richTextBox3.Text = "";
             this.richTextBox3.TextChanged += new System.EventHandler(this.richTextBox3_TextChanged);
@@ -681,15 +680,6 @@
             // 
             this.openFileDialog3.FileName = "openFileDialog1";
             // 
-            // label2_1
-            // 
-            this.label2_1.AutoSize = true;
-            this.label2_1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2_1.Location = new System.Drawing.Point(144, 93);
-            this.label2_1.Name = "label2_1";
-            this.label2_1.Size = new System.Drawing.Size(0, 14);
-            this.label2_1.TabIndex = 8;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -767,7 +757,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button3_2;
-        private System.Windows.Forms.Button button3_1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.RichTextBox richTextBox3;
