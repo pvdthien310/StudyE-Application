@@ -7,7 +7,7 @@
 - List of irregular verbs
 - Add user optional meaning
 - Display https://www.figma.com/file/xteVhPgp7kRJlzYJZyG8As/Untitled?node-id=0%3A1
-- Plant https://trello.com/estudy7
+- Plan https://trello.com/estudy7
 ## User
 All of people who want to study English effectively.
 ## Authors
