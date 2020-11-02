@@ -133,7 +133,10 @@ namespace WindowsFormsApp4
         private void button5_Click(object sender, EventArgs e)
         {
             button5.Enabled = !button5.Enabled;
-            string sql = "select * from DTBQT where NGUYENMAU = '" + textBox5.Text.Trim() + "' or QUAKHUDON = '" + textBox5.Text.Trim() + "' or QUAKHUPHANTU = '" + textBox5.Text.Trim() + "'";
+            string sql;
+            if (textBox5.Text == "") sql = "select * from DTBQT";
+            else
+            sql = "select * from DTBQT where NGUYENMAU = '" + textBox5.Text.Trim() + "' or QUAKHUDON = '" + textBox5.Text.Trim() + "' or QUAKHUPHANTU = '" + textBox5.Text.Trim() + "'";
             ketnoicsdl(sql);
             textBox5.Text = "";
             button5.Enabled = !button5.Enabled;
