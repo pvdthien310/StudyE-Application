@@ -147,7 +147,9 @@ namespace WindowsFormsApp4
         {
         	if (e.KeyCode == Keys.Enter)
             {
+                AcceptButton = button5;
                 this.button5_Click(sender, e);
+               
             }
         }
         private void Design_UI_Word_VE(string temp)
@@ -248,6 +250,7 @@ namespace WindowsFormsApp4
         }
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
+            
             if (e.KeyCode == Keys.Enter)
             {
                 this.button2_Click(sender, e);
@@ -518,9 +521,9 @@ namespace WindowsFormsApp4
              }
             string paragraph = richTextBox3.Text;
             paragraph = paragraph.ToLower();
+            paragraph = paragraph.Replace("\n", " ");
             paragraph = DataManager.Instance.RemoveUnicode(paragraph);
             paragraph = DataManager.Instance.RemoveSpecialCharacters(ref paragraph);
-            paragraph = paragraph.Replace("\n"," ");
             string[] processedParagraph = paragraph.Split(' ');
             DataManager.Instance.TranslateParagraph(processedParagraph, dataGridView3,ref EV_SWlist);
 
@@ -573,7 +576,7 @@ namespace WindowsFormsApp4
             {
                 if (richTextBox3.Text.IndexOf(arr1[i]) != -1)
                 {
-                    label3_1.Text = "Bạn vừa nhập chuỗi có dấu hoặc có số. Vui lòng kiểm tra hoặc chúng tôi sẽ thực hiện chuyển kiểu tự động khi bạn thực hiện dịch đoạn !";
+                    label3_1.Text = "Bạn vừa nhập chuỗi có dấu hoặc có số. Vui lòng kiểm tra !";
                     label3_1.ForeColor = Color.Red;
                     return;
                 }

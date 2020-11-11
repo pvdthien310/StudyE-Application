@@ -80,12 +80,8 @@ namespace WindowsFormsApp4
             {
                 string queryID = "SELECT COUNT(*) FROM  VE_Word";
                 SqlCommand cmd = new SqlCommand(queryID, mycntSW);
-
-                
-              ID = Convert.ToInt32(cmd.ExecuteScalar()) + 1; 
-
+                ID = Convert.ToInt32(cmd.ExecuteScalar()) + 1; 
                 string queryInsert = "INSERT INTO VE_Word (ID,Name,Meaning) VALUES (" + ID.ToString() + ",N'" + Name + "',N'" + Meaning + "')";
-
                 SqlCommand cmd2 = new SqlCommand(queryInsert, mycntSW);
                 cmd2.ExecuteNonQuery();
             }

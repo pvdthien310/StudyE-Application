@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.VietAnhTab = new System.Windows.Forms.TabControl();
-            this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
             this.AnhVietTab = new System.Windows.Forms.TabPage();
             this.speak = new System.Windows.Forms.Button();
             this.label1_1 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.TraDoanTab = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.label3_1 = new System.Windows.Forms.Label();
             this.button3_2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -54,7 +54,6 @@
             this.MeaningWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.TuDaTra = new System.Windows.Forms.TabPage();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -62,6 +61,7 @@
             this.NameofWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Meaning = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TuBatQuyTacTab = new System.Windows.Forms.TabPage();
+            this.speak5 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
@@ -80,8 +80,8 @@
             this.textBox6_2 = new System.Windows.Forms.TextBox();
             this.comboBox6_2 = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.speak5 = new System.Windows.Forms.Button();
+            this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
+            this.label5_1 = new System.Windows.Forms.Label();
             this.VietAnhTab.SuspendLayout();
             this.AnhVietTab.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -112,10 +112,6 @@
             this.VietAnhTab.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.VietAnhTab.TabIndex = 0;
             // 
-            // openFileDialog3
-            // 
-            this.openFileDialog3.FileName = "openFileDialog1";
-            // 
             // AnhVietTab
             // 
             this.AnhVietTab.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
@@ -139,7 +135,7 @@
             // 
             this.speak.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.pngtree_speaker_icon_isolated_png_image_1727903;
             this.speak.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.speak.Location = new System.Drawing.Point(827, 79);
+            this.speak.Location = new System.Drawing.Point(896, 79);
             this.speak.Name = "speak";
             this.speak.Size = new System.Drawing.Size(48, 43);
             this.speak.TabIndex = 6;
@@ -159,7 +155,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MintCream;
-            this.label1.Location = new System.Drawing.Point(111, 86);
+            this.label1.Location = new System.Drawing.Point(165, 86);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(195, 43);
@@ -172,7 +168,7 @@
             this.resultBox1.Cursor = System.Windows.Forms.Cursors.No;
             this.resultBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultBox1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.resultBox1.Location = new System.Drawing.Point(116, 198);
+            this.resultBox1.Location = new System.Drawing.Point(174, 198);
             this.resultBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.resultBox1.Multiline = true;
             this.resultBox1.Name = "resultBox1";
@@ -185,7 +181,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(350, 82);
+            this.textBox1.Location = new System.Drawing.Point(408, 82);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -201,7 +197,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(901, 77);
+            this.button1.Location = new System.Drawing.Point(975, 77);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 43);
@@ -242,7 +238,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MintCream;
-            this.label2.Location = new System.Drawing.Point(111, 86);
+            this.label2.Location = new System.Drawing.Point(165, 86);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(162, 43);
@@ -255,7 +251,7 @@
             this.resultBox2.Cursor = System.Windows.Forms.Cursors.No;
             this.resultBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultBox2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.resultBox2.Location = new System.Drawing.Point(116, 198);
+            this.resultBox2.Location = new System.Drawing.Point(174, 198);
             this.resultBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.resultBox2.Multiline = true;
             this.resultBox2.Name = "resultBox2";
@@ -268,7 +264,7 @@
             // 
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.Gray;
-            this.textBox2.Location = new System.Drawing.Point(350, 82);
+            this.textBox2.Location = new System.Drawing.Point(408, 82);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -282,7 +278,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(920, 82);
+            this.button2.Location = new System.Drawing.Point(975, 77);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(160, 43);
@@ -310,17 +306,29 @@
             this.TraDoanTab.UseVisualStyleBackColor = true;
             this.TraDoanTab.Leave += new System.EventHandler(this.TraDoanTab_Leave);
             // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.pngtree_speaker_icon_isolated_png_image_1727903;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Location = new System.Drawing.Point(186, 58);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(54, 52);
+            this.button4.TabIndex = 6;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // label3_1
             // 
-            this.label3_1.Location = new System.Drawing.Point(182, 37);
+            this.label3_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3_1.Location = new System.Drawing.Point(256, 58);
             this.label3_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3_1.Name = "label3_1";
-            this.label3_1.Size = new System.Drawing.Size(328, 77);
+            this.label3_1.Size = new System.Drawing.Size(251, 51);
             this.label3_1.TabIndex = 5;
             // 
             // button3_2
             // 
-            this.button3_2.Location = new System.Drawing.Point(524, 63);
+            this.button3_2.Location = new System.Drawing.Point(524, 58);
             this.button3_2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3_2.Name = "button3_2";
             this.button3_2.Size = new System.Drawing.Size(148, 51);
@@ -359,12 +367,12 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView3.Location = new System.Drawing.Point(524, 123);
+            this.dataGridView3.Location = new System.Drawing.Point(524, 118);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 62;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(772, 495);
+            this.dataGridView3.Size = new System.Drawing.Size(772, 500);
             this.dataGridView3.TabIndex = 1;
             this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
             // 
@@ -390,7 +398,7 @@
             this.richTextBox3.Location = new System.Drawing.Point(24, 118);
             this.richTextBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(468, 498);
+            this.richTextBox3.Size = new System.Drawing.Size(483, 498);
             this.richTextBox3.TabIndex = 0;
             this.richTextBox3.Text = "";
             this.richTextBox3.TextChanged += new System.EventHandler(this.richTextBox3_TextChanged);
@@ -399,7 +407,6 @@
             // 
             this.TuDaTra.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
             this.TuDaTra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TuDaTra.Controls.Add(this.label8);
             this.TuDaTra.Controls.Add(this.label7);
             this.TuDaTra.Controls.Add(this.comboBox4);
             this.TuDaTra.Controls.Add(this.dataGridView4);
@@ -412,27 +419,15 @@
             this.TuDaTra.Text = "Từ đã tra";
             this.TuDaTra.UseVisualStyleBackColor = true;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(36, 160);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(148, 32);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Danh Sách";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(64, 69);
+            this.label7.Location = new System.Drawing.Point(168, 86);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 32);
+            this.label7.Size = new System.Drawing.Size(127, 36);
             this.label7.TabIndex = 2;
             this.label7.Text = "Từ Điển";
             // 
@@ -442,7 +437,7 @@
             this.comboBox4.Items.AddRange(new object[] {
             "Việt - Anh",
             "Anh - Việt"});
-            this.comboBox4.Location = new System.Drawing.Point(226, 72);
+            this.comboBox4.Location = new System.Drawing.Point(315, 89);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(242, 28);
@@ -462,12 +457,12 @@
             this.ID,
             this.NameofWord,
             this.Meaning});
-            this.dataGridView4.Location = new System.Drawing.Point(200, 160);
+            this.dataGridView4.Location = new System.Drawing.Point(174, 198);
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.RowHeadersWidth = 62;
-            this.dataGridView4.Size = new System.Drawing.Size(790, 478);
+            this.dataGridView4.Size = new System.Drawing.Size(964, 449);
             this.dataGridView4.TabIndex = 0;
             // 
             // ID
@@ -498,6 +493,7 @@
             // 
             this.TuBatQuyTacTab.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
             this.TuBatQuyTacTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TuBatQuyTacTab.Controls.Add(this.label5_1);
             this.TuBatQuyTacTab.Controls.Add(this.speak5);
             this.TuBatQuyTacTab.Controls.Add(this.button5);
             this.TuBatQuyTacTab.Controls.Add(this.textBox5);
@@ -511,10 +507,21 @@
             this.TuBatQuyTacTab.Text = "Từ bất quy tắc";
             this.TuBatQuyTacTab.UseVisualStyleBackColor = true;
             // 
+            // speak5
+            // 
+            this.speak5.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.pngtree_speaker_icon_isolated_png_image_1727903;
+            this.speak5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.speak5.Location = new System.Drawing.Point(896, 79);
+            this.speak5.Name = "speak5";
+            this.speak5.Size = new System.Drawing.Size(50, 41);
+            this.speak5.TabIndex = 3;
+            this.speak5.UseVisualStyleBackColor = true;
+            this.speak5.Click += new System.EventHandler(this.speak5_Click);
+            // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(920, 82);
+            this.button5.Location = new System.Drawing.Point(975, 77);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(160, 43);
             this.button5.TabIndex = 2;
@@ -525,7 +532,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(350, 82);
+            this.textBox5.Location = new System.Drawing.Point(408, 82);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(452, 41);
@@ -545,11 +552,11 @@
             this.QUAKHUPHANTU,
             this.NGHIA});
             this.dataGridView5.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dataGridView5.Location = new System.Drawing.Point(116, 198);
+            this.dataGridView5.Location = new System.Drawing.Point(174, 198);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.ReadOnly = true;
             this.dataGridView5.RowHeadersWidth = 62;
-            this.dataGridView5.Size = new System.Drawing.Size(964, 449);
+            this.dataGridView5.Size = new System.Drawing.Size(962, 447);
             this.dataGridView5.TabIndex = 0;
             // 
             // NGUYENMAU
@@ -614,7 +621,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(32, 325);
+            this.label6.Location = new System.Drawing.Point(42, 299);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(188, 32);
@@ -626,7 +633,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(38, 231);
+            this.label5.Location = new System.Drawing.Point(42, 231);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(182, 32);
@@ -638,7 +645,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(69, 152);
+            this.label4.Location = new System.Drawing.Point(42, 161);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 32);
@@ -663,7 +670,7 @@
             this.comboBox6_1.Items.AddRange(new object[] {
             "Việt - Anh",
             "Anh - Việt"});
-            this.comboBox6_1.Location = new System.Drawing.Point(309, 89);
+            this.comboBox6_1.Location = new System.Drawing.Point(309, 92);
             this.comboBox6_1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox6_1.Name = "comboBox6_1";
             this.comboBox6_1.Size = new System.Drawing.Size(176, 28);
@@ -673,10 +680,10 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(862, 123);
+            this.button6.Location = new System.Drawing.Point(826, 237);
             this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(165, 63);
+            this.button6.Size = new System.Drawing.Size(164, 56);
             this.button6.TabIndex = 5;
             this.button6.Tag = "";
             this.button6.Text = "Thêm Từ";
@@ -687,11 +694,11 @@
             // 
             this.textBox6_3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6_3.ForeColor = System.Drawing.Color.Gray;
-            this.textBox6_3.Location = new System.Drawing.Point(309, 325);
+            this.textBox6_3.Location = new System.Drawing.Point(309, 301);
             this.textBox6_3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox6_3.Multiline = true;
             this.textBox6_3.Name = "textBox6_3";
-            this.textBox6_3.Size = new System.Drawing.Size(630, 270);
+            this.textBox6_3.Size = new System.Drawing.Size(681, 334);
             this.textBox6_3.TabIndex = 4;
             this.textBox6_3.Text = "Nhập Nghĩa Của Từ";
             this.textBox6_3.Enter += new System.EventHandler(this.textBox6_3_Enter);
@@ -700,7 +707,7 @@
             // 
             // textBox6_2
             // 
-            this.textBox6_2.Location = new System.Drawing.Point(561, 235);
+            this.textBox6_2.Location = new System.Drawing.Point(553, 237);
             this.textBox6_2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox6_2.Name = "textBox6_2";
             this.textBox6_2.Size = new System.Drawing.Size(184, 26);
@@ -717,7 +724,7 @@
             "Adj",
             "Adv",
             "Other"});
-            this.comboBox6_2.Location = new System.Drawing.Point(309, 234);
+            this.comboBox6_2.Location = new System.Drawing.Point(309, 235);
             this.comboBox6_2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox6_2.Name = "comboBox6_2";
             this.comboBox6_2.Size = new System.Drawing.Size(188, 28);
@@ -727,7 +734,7 @@
             // textBox6
             // 
             this.textBox6.ForeColor = System.Drawing.Color.Gray;
-            this.textBox6.Location = new System.Drawing.Point(309, 155);
+            this.textBox6.Location = new System.Drawing.Point(309, 164);
             this.textBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(428, 26);
@@ -737,27 +744,20 @@
             this.textBox6.Enter += new System.EventHandler(this.textBox6_Enter);
             this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
             // 
-            // button4
+            // openFileDialog3
             // 
-            this.button4.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.pngtree_speaker_icon_isolated_png_image_1727903;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(186, 58);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(54, 52);
-            this.button4.TabIndex = 6;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.openFileDialog3.FileName = "openFileDialog1";
             // 
-            // speak5
+            // label5_1
             // 
-            this.speak5.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.pngtree_speaker_icon_isolated_png_image_1727903;
-            this.speak5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.speak5.Location = new System.Drawing.Point(825, 82);
-            this.speak5.Name = "speak5";
-            this.speak5.Size = new System.Drawing.Size(50, 41);
-            this.speak5.TabIndex = 3;
-            this.speak5.UseVisualStyleBackColor = true;
-            this.speak5.Click += new System.EventHandler(this.speak5_Click);
+            this.label5_1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5_1.ForeColor = System.Drawing.Color.MintCream;
+            this.label5_1.Location = new System.Drawing.Point(165, 86);
+            this.label5_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5_1.Name = "label5_1";
+            this.label5_1.Size = new System.Drawing.Size(162, 43);
+            this.label5_1.TabIndex = 8;
+            this.label5_1.Text = "Từ cần tra ";
             // 
             // mainForm
             // 
@@ -834,7 +834,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameofWord;
         private System.Windows.Forms.DataGridViewTextBoxColumn Meaning;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button3_2;
         private System.Windows.Forms.Button button3;
@@ -849,5 +848,6 @@
         private System.Windows.Forms.Button speak;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button speak5;
+        private System.Windows.Forms.Label label5_1;
     }
 }
