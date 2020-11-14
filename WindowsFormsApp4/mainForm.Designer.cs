@@ -133,7 +133,7 @@
             // 
             // speak
             // 
-            this.speak.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.pngtree_speaker_icon_isolated_png_image_1727903;
+
             this.speak.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.speak.Location = new System.Drawing.Point(896, 79);
             this.speak.Name = "speak";
@@ -746,10 +746,21 @@
             // 
             // openFileDialog3
             // 
+<<<<<<< Updated upstream
             this.openFileDialog3.FileName = "openFileDialog1";
+=======
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Location = new System.Drawing.Point(186, 58);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(54, 52);
+            this.button4.TabIndex = 6;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+>>>>>>> Stashed changes
             // 
             // label5_1
             // 
+<<<<<<< Updated upstream
             this.label5_1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5_1.ForeColor = System.Drawing.Color.MintCream;
             this.label5_1.Location = new System.Drawing.Point(165, 86);
@@ -758,6 +769,16 @@
             this.label5_1.Size = new System.Drawing.Size(162, 43);
             this.label5_1.TabIndex = 8;
             this.label5_1.Text = "Từ cần tra ";
+=======
+
+            this.speak5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.speak5.Location = new System.Drawing.Point(825, 82);
+            this.speak5.Name = "speak5";
+            this.speak5.Size = new System.Drawing.Size(50, 41);
+            this.speak5.TabIndex = 3;
+            this.speak5.UseVisualStyleBackColor = true;
+            this.speak5.Click += new System.EventHandler(this.speak5_Click);
+>>>>>>> Stashed changes
             // 
             // mainForm
             // 
