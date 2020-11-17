@@ -16,7 +16,13 @@ namespace WindowsFormsApp4
     {
         //thêm từ master
         public searchedWordList EV_SWlist = new searchedWordList();
+<<<<<<< Updated upstream
         SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True");
+=======
+        SqlConnection mycntVE/* = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True")*/;
+        SqlConnection mycntEV /*= new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True")*/;
+        SqlConnection cnn /*= new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True")*/;
+>>>>>>> Stashed changes
         public startForm parent;
         static int EVSource_Length;
         static int VESource_Length;
@@ -65,8 +71,18 @@ namespace WindowsFormsApp4
             //--
             //Load dữ liệu
             string sql = "select * from DTBQT";
+<<<<<<< Updated upstream
             ketnoicsdl(sql);
             DataManager.Instance.LoadSWToList(EV_SWlist);
+=======
+            //ketnoicsdl(sql);
+
+            // Đổ dữ liệu vào class SearchedWord 
+
+            //searchedWordList VE_SWlist = new searchedWordList();
+            //DataManager.Instance.LoadSWToList(EV_SWlist);
+            //DataManager.Instance.LoadSWToList(VE_SWlist);
+>>>>>>> Stashed changes
             //
         }
         private void TabChose_Click(object sender, EventArgs e)
