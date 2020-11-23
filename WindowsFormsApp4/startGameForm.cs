@@ -412,6 +412,11 @@ namespace WindowsFormsApp4
 
         private void guna2Button2_Practise_Click(object sender, EventArgs e)
         {
+            if (this.parent.EV_SWlist.list.Count < 100)
+            {
+                MessageBox.Show("Your Look-Up Words List Isn't Enough To Start The Game !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             isChallenge = 0;
             guna2Panel2.Visible = false;
             guna2Panel3.Visible = true;
@@ -502,7 +507,7 @@ namespace WindowsFormsApp4
             // this.guna2Button2_Practise.Location = new System.Drawing.Point(340, 200);
             this.guna2Button2_Practise.Size = new System.Drawing.Size(200, 90);
             guna2panel2_practise.Visible = true;
-            label_practise_intro.Text = " Challenge yourself with your look-up words. ( Your look-up words (in E-V) must comprise more than 50 ) ";
+            label_practise_intro.Text = " Challenge yourself with your look-up words. ( Your look-up words (in E-V) must comprise more than 100 ) ";
             this.label_practise_intro.Padding = new System.Windows.Forms.Padding(5, 20, 5, 5);
             label_practise_intro.Visible = true;
            // guna2panel2_practise_effect.Visible = false;
@@ -518,7 +523,7 @@ namespace WindowsFormsApp4
 
             this.guna2Button2_Practise.Size = new System.Drawing.Size(180, 70);
             guna2panel2_practise.Visible = false;
-            label_practise_intro.Text = " Challenge yourself with your look-up words. ( Your look-up words (in E-V) must comprise more than 50 ) ";
+            label_practise_intro.Text = " Challenge yourself with your look-up words. ( Your look-up words (in E-V) must comprise more than 100 ) ";
             this.label_practise_intro.Padding = new System.Windows.Forms.Padding(5, 20, 5, 5);
             label_practise_intro.Visible = false;
           //  guna2panel2_practise_effect.Visible = false;
