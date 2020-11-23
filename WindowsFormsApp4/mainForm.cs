@@ -27,7 +27,7 @@ namespace WindowsFormsApp4
         public mainForm()
         {
             InitializeComponent();
-            guna2Panel_home.BringToFront();
+            
             timer = new Timer();
             timer.Interval = 100;
             timer.Enabled = true;
@@ -251,7 +251,7 @@ namespace WindowsFormsApp4
         {
             this.parent = parent;
             InitializeComponent();
-
+            guna2Panel_home.BringToFront();
             timer = new Timer();
             timer.Interval = 100;
             timer.Enabled = true;
@@ -931,8 +931,8 @@ namespace WindowsFormsApp4
 
         private void guna2Button_Game_Click(object sender, EventArgs e)
         {
-            startGameForm a = new startGameForm();
-            this.Close();
+            startGameForm a = new startGameForm(this);
+            this.Hide();
             a.Show();
         }
 

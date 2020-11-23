@@ -12,17 +12,21 @@ namespace WindowsFormsApp4
 {
     public partial class ResultForm : Form
     {
-        private GameForm parent;
+        public mainForm grand_parent_parent;
+        public startGameForm  grand_parent;
+        public GameForm parent;
         private int current_question = 1;
         private Guna.UI2.WinForms.Guna2Button[] listbtn;
         //public ResultForm()
         //{
         //    InitializeComponent();
         //}
-        public ResultForm(GameForm parent)
+        public ResultForm(GameForm parent,startGameForm grand_parent,mainForm grand_parent_parent)
         {
             InitializeComponent();
             listbtn = new Guna.UI2.WinForms.Guna2Button[parent.gameManager.quesData.number_question];
+            this.grand_parent = grand_parent;
+            this.grand_parent_parent = grand_parent_parent;
             this.parent = parent;
             string a = "Câu ";
             for (int i = parent.gameManager.quesData.number_question-1; i >= 0; i--)
@@ -151,6 +155,29 @@ namespace WindowsFormsApp4
         {
             guna2TextBox_SearchWord.Clear();
             panel_Question.BringToFront();
+        }
+
+        private void CircleButton_Exit_Click(object sender, EventArgs e)
+        {
+            this.grand_parent_parent.Close();
+            this.parent.Close();
+            this.grand_parent.Close();
+            this.Close();
+            mainForm newmainForm = new mainForm();
+            newmainForm.Show();
+        }
+
+        private void CircleButton_Again_Click(object sender, EventArgs e)
+        {
+            startGameForm newgame = new startGameForm(this.grand_parent_parent);
+            this.parent.Close();
+            this.grand_parent.Close();
+            this.grand_parent_parent.Close();
+            this.Close();
+            newgame.Show();
+            
+            
+
         }
     }
 }

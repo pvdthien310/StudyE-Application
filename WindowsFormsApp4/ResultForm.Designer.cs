@@ -35,12 +35,12 @@
             this.guna2ButtonA = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button_Question = new Guna.UI2.WinForms.Guna2Button();
             this.panel_Question_2 = new System.Windows.Forms.Panel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.CircleButton_back = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2TextBox_SearchWord = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel_ListQuestion = new Guna.UI2.WinForms.Guna2Panel();
             this.CircleButton_Again = new Guna.UI2.WinForms.Guna2CircleButton();
             this.CircleButton_Exit = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel_Question.SuspendLayout();
             this.panel_Question_2.SuspendLayout();
             this.SuspendLayout();
@@ -53,9 +53,9 @@
             this.panel_Question.Controls.Add(this.guna2ButtonB);
             this.panel_Question.Controls.Add(this.guna2ButtonA);
             this.panel_Question.Controls.Add(this.guna2Button_Question);
-            this.panel_Question.Location = new System.Drawing.Point(317, 63);
+            this.panel_Question.Location = new System.Drawing.Point(317, 68);
             this.panel_Question.Name = "panel_Question";
-            this.panel_Question.Size = new System.Drawing.Size(646, 486);
+            this.panel_Question.Size = new System.Drawing.Size(646, 481);
             this.panel_Question.TabIndex = 1;
             // 
             // guna2ButtonD
@@ -149,6 +149,17 @@
             this.panel_Question_2.Size = new System.Drawing.Size(646, 481);
             this.panel_Question_2.TabIndex = 2;
             // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(236, 19);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(159, 34);
+            this.guna2HtmlLabel1.TabIndex = 7;
+            this.guna2HtmlLabel1.Text = "Tra Từ Nhanh ";
+            // 
             // CircleButton_back
             // 
             this.CircleButton_back.CheckedState.Parent = this.CircleButton_back;
@@ -216,6 +227,7 @@
             this.CircleButton_Again.Size = new System.Drawing.Size(63, 62);
             this.CircleButton_Again.TabIndex = 7;
             this.CircleButton_Again.Text = "Delete Thu";
+            this.CircleButton_Again.Click += new System.EventHandler(this.CircleButton_Again_Click);
             // 
             // CircleButton_Exit
             // 
@@ -232,17 +244,7 @@
             this.CircleButton_Exit.Size = new System.Drawing.Size(63, 62);
             this.CircleButton_Exit.TabIndex = 8;
             this.CircleButton_Exit.Text = "Delete Hue";
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(236, 19);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(159, 34);
-            this.guna2HtmlLabel1.TabIndex = 7;
-            this.guna2HtmlLabel1.Text = "Tra Từ Nhanh ";
+            this.CircleButton_Exit.Click += new System.EventHandler(this.CircleButton_Exit_Click);
             // 
             // ResultForm
             // 

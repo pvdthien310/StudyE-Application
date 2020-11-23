@@ -38,6 +38,7 @@ namespace WindowsFormsApp4
         int char_action_goback = 0;
         int Q_finish_delay = 1000;
         public GameForm childgameform;
+        public mainForm parent;
 
         // Quan ly game
         
@@ -46,7 +47,7 @@ namespace WindowsFormsApp4
 
         // nhac
         
-        private WindowsMediaPlayer music = new WindowsMediaPlayer();
+        public WindowsMediaPlayer music = new WindowsMediaPlayer();
         public startGameForm()
         {
             InitializeComponent();
@@ -71,6 +72,35 @@ namespace WindowsFormsApp4
             //pictureBox1.BackColor = Color.Transparent;
             
           
+
+
+
+        }
+        public startGameForm(mainForm parent)
+        {
+            InitializeComponent();
+            this.parent = parent;
+            graphics = this.CreateGraphics();
+            //DoubleBuffered = true;
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            // Tạo back buffer
+            backBuffer = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
+            // Lấy ảnh sprite
+            sprite = new Bitmap("yasuosprite.png");
+            creep = new Bitmap("creep.png");
+            index = 0; // 0: chua tra loi, 1: dung, 2:sai
+            //this.ControlBox = false;
+            this.Text = String.Empty;
+            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            ///
+            music.URL = "FallenKingdom.mp3";
+            music.settings.volume = 30;
+            music.controls.play();
+
+
+            //pictureBox1.BackColor = Color.Transparent;
+
+
 
 
 
@@ -138,72 +168,72 @@ namespace WindowsFormsApp4
         //        { index++; }        
         //        location_char += 20;
         //        location_creep -= 20;
-                
-                
+
+
         //    }
-           
+
 
 
 
 
         //}
-       //private void timer_Tick(object sender, EventArgs e)
-       // {
-       //     if (location_char >= (location_creep -30) && isCorrect == 1 && Q_finish_delay > 0)
-       //     {
-                
-       //         Bitmap char_action = new Bitmap("yasuosprite_action.png");
+        //private void timer_Tick(object sender, EventArgs e)
+        // {
+        //     if (location_char >= (location_creep -30) && isCorrect == 1 && Q_finish_delay > 0)
+        //     {
 
-       //         Bitmap creep_death = new Bitmap("creep_death.png");
-       //         creep = new Bitmap("creep.png");
-       //         Graphics g = Graphics.FromImage(backBuffer);
-       //         Bitmap background_char = new Bitmap("background_char.jpg");
-       //         background_char.MakeTransparent();
-       //         g.DrawImage(background_char, 2, 1);
-       //         g.SmoothingMode = SmoothingMode.AntiAlias;
-       //         g.DrawImage(char_action, location_char, 210, new Rectangle(0, 0, 200, 110), GraphicsUnit.Pixel);
-       //         if (Q_finish_delay == 500) g.DrawImage(creep, location_creep, 250, new Rectangle(0, 0, 84, 110), GraphicsUnit.Pixel);
-       //         else
-       //             g.DrawImage(creep_death, location_creep + 60, 250, new Rectangle(0, 0, 84, 110), GraphicsUnit.Pixel);
-       //         g.Dispose();
-                
-       //         isCorrect--;
-       //         if (Q_finish_delay == 0) Q_check = 0;
-       //         else Q_finish_delay--;// da chem xong ;
-       //         char_action_goback = 1; // check xem char da ve vi tri ban dau chua
-       //         graphics.DrawImageUnscaled(backBuffer, 0, 0);
-       //         return;
-       //     }
-       //     else if (location_char >= 330 && isCorrect == 0)
-       //     {
+        //         Bitmap char_action = new Bitmap("yasuosprite_action.png");
 
-       //         Bitmap char_action = new Bitmap("yasuosprite_action.png");
+        //         Bitmap creep_death = new Bitmap("creep_death.png");
+        //         creep = new Bitmap("creep.png");
+        //         Graphics g = Graphics.FromImage(backBuffer);
+        //         Bitmap background_char = new Bitmap("background_char.jpg");
+        //         background_char.MakeTransparent();
+        //         g.DrawImage(background_char, 2, 1);
+        //         g.SmoothingMode = SmoothingMode.AntiAlias;
+        //         g.DrawImage(char_action, location_char, 210, new Rectangle(0, 0, 200, 110), GraphicsUnit.Pixel);
+        //         if (Q_finish_delay == 500) g.DrawImage(creep, location_creep, 250, new Rectangle(0, 0, 84, 110), GraphicsUnit.Pixel);
+        //         else
+        //             g.DrawImage(creep_death, location_creep + 60, 250, new Rectangle(0, 0, 84, 110), GraphicsUnit.Pixel);
+        //         g.Dispose();
 
-       //         Bitmap creep_death = new Bitmap("creep_death.png");
-       //         Graphics g = Graphics.FromImage(backBuffer);
-       //         Bitmap background_char = new Bitmap("background_char.jpg");
-       //         background_char.MakeTransparent();
-       //         g.DrawImage(background_char, 2, 1);
-       //         g.SmoothingMode = SmoothingMode.AntiAlias;
-       //         g.DrawImage(char_action, location_char, 210, new Rectangle(0, 0, 200, 110), GraphicsUnit.Pixel);
-       //         g.DrawImage(creep_death, location_creep + 60, 250, new Rectangle(0, 0, 84, 110), GraphicsUnit.Pixel);
-       //         g.Dispose();
-       //         graphics.DrawImageUnscaled(backBuffer, 0, 0);
-       //         isCorrect--;
-       //         Q_check = 1; // da chem xong ;
-       //         char_action_goback = 1; // check xem char da ve vi tri ban dau chua
-       //     }
+        //         isCorrect--;
+        //         if (Q_finish_delay == 0) Q_check = 0;
+        //         else Q_finish_delay--;// da chem xong ;
+        //         char_action_goback = 1; // check xem char da ve vi tri ban dau chua
+        //         graphics.DrawImageUnscaled(backBuffer, 0, 0);
+        //         return;
+        //     }
+        //     else if (location_char >= 330 && isCorrect == 0)
+        //     {
 
-       //     //backBuffer.Dispose();
-       //     //backBuffer = new Bitmap(this.ClientSize.Width,this.ClientSize.Height);    
-       //     Render();
-       //     // Vẽ lên màn hình
-       //     graphics.DrawImageUnscaled(backBuffer, 0, 0);
+        //         Bitmap char_action = new Bitmap("yasuosprite_action.png");
+
+        //         Bitmap creep_death = new Bitmap("creep_death.png");
+        //         Graphics g = Graphics.FromImage(backBuffer);
+        //         Bitmap background_char = new Bitmap("background_char.jpg");
+        //         background_char.MakeTransparent();
+        //         g.DrawImage(background_char, 2, 1);
+        //         g.SmoothingMode = SmoothingMode.AntiAlias;
+        //         g.DrawImage(char_action, location_char, 210, new Rectangle(0, 0, 200, 110), GraphicsUnit.Pixel);
+        //         g.DrawImage(creep_death, location_creep + 60, 250, new Rectangle(0, 0, 84, 110), GraphicsUnit.Pixel);
+        //         g.Dispose();
+        //         graphics.DrawImageUnscaled(backBuffer, 0, 0);
+        //         isCorrect--;
+        //         Q_check = 1; // da chem xong ;
+        //         char_action_goback = 1; // check xem char da ve vi tri ban dau chua
+        //     }
+
+        //     //backBuffer.Dispose();
+        //     //backBuffer = new Bitmap(this.ClientSize.Width,this.ClientSize.Height);    
+        //     Render();
+        //     // Vẽ lên màn hình
+        //     graphics.DrawImageUnscaled(backBuffer, 0, 0);
 
 
 
-       // }
-        
+        // }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Enabled = !timer1.Enabled;

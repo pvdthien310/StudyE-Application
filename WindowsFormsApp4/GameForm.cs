@@ -230,9 +230,10 @@ namespace WindowsFormsApp4
         }
         public void OpenResultForm()
         {
+            this.parent.music.controls.stop();
             this.Hide();
             this.parent.Hide();
-            resultgameform = new ResultForm(this);
+            resultgameform = new ResultForm(this,this.parent,this.parent.parent);
             //resultgameform.TopLevel = false;
             resultgameform.FormBorderStyle = FormBorderStyle.None;
             resultgameform.Dock = DockStyle.Fill;
