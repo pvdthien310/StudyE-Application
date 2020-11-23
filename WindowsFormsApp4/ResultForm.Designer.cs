@@ -39,8 +39,8 @@
             this.CircleButton_back = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2TextBox_SearchWord = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel_ListQuestion = new Guna.UI2.WinForms.Guna2Panel();
-            this.CircleButton_Again = new Guna.UI2.WinForms.Guna2CircleButton();
             this.CircleButton_Exit = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel_Question.SuspendLayout();
             this.panel_Question_2.SuspendLayout();
             this.SuspendLayout();
@@ -212,23 +212,6 @@
             this.panel_ListQuestion.Size = new System.Drawing.Size(284, 480);
             this.panel_ListQuestion.TabIndex = 3;
             // 
-            // CircleButton_Again
-            // 
-            this.CircleButton_Again.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.skyhill;
-            this.CircleButton_Again.CheckedState.Parent = this.CircleButton_Again;
-            this.CircleButton_Again.CustomImages.Parent = this.CircleButton_Again;
-            this.CircleButton_Again.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.CircleButton_Again.ForeColor = System.Drawing.Color.White;
-            this.CircleButton_Again.HoverState.Parent = this.CircleButton_Again;
-            this.CircleButton_Again.Location = new System.Drawing.Point(20, 2);
-            this.CircleButton_Again.Name = "CircleButton_Again";
-            this.CircleButton_Again.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.CircleButton_Again.ShadowDecoration.Parent = this.CircleButton_Again;
-            this.CircleButton_Again.Size = new System.Drawing.Size(63, 62);
-            this.CircleButton_Again.TabIndex = 7;
-            this.CircleButton_Again.Text = "Delete Thu";
-            this.CircleButton_Again.Click += new System.EventHandler(this.CircleButton_Again_Click);
-            // 
             // CircleButton_Exit
             // 
             this.CircleButton_Exit.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.skyhill;
@@ -246,6 +229,24 @@
             this.CircleButton_Exit.Text = "Delete Hue";
             this.CircleButton_Exit.Click += new System.EventHandler(this.CircleButton_Exit_Click);
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2Button1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.skyhill;
+            this.guna2Button1.BorderRadius = 20;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.Location = new System.Drawing.Point(27, 12);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button1.TabIndex = 9;
+            this.guna2Button1.Text = "guna2Button1";
+            // 
             // ResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,8 +254,8 @@
             this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.skyhill;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.CircleButton_Exit);
-            this.Controls.Add(this.CircleButton_Again);
             this.Controls.Add(this.panel_Question_2);
             this.Controls.Add(this.panel_Question);
             this.Controls.Add(this.panel_ListQuestion);
@@ -281,7 +282,7 @@
         private Guna.UI2.WinForms.Guna2Panel panel_ListQuestion;
         private Guna.UI2.WinForms.Guna2CircleButton CircleButton_back;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2CircleButton CircleButton_Again;
         private Guna.UI2.WinForms.Guna2CircleButton CircleButton_Exit;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
