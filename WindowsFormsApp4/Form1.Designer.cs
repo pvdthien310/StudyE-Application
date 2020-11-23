@@ -35,7 +35,7 @@
             // startButton
             // 
             this.startButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.startButton.Image = global::WindowsFormsApp4.Properties.Resources.button1;
+            //this.startButton.Image = global::WindowsFormsApp4.Properties.Resources.button1;
             this.startButton.Location = new System.Drawing.Point(333, 317);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(133, 51);
@@ -47,7 +47,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.wall;
+            //this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.wall;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.startButton);

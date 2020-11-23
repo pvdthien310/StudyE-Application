@@ -43,11 +43,11 @@ namespace WindowsFormsApp4
         {
             mycnt.Open();
             string query = "";
-            if (request == "Anh - Việt")
+            if (request == "Từ Điển Anh - Việt")
             {
                 query = "select * from EV_SearchedWord ";
             }
-            else if (request == "Việt - Anh")
+            else if (request == "Từ Điển Việt - Anh")
             {
                 query = "select * from VE_SearchedWord ";
             }

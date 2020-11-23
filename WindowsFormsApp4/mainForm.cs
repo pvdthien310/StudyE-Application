@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using System.Data.SqlClient;
 using System.Speech.Synthesis;
+
 namespace WindowsFormsApp4
 {
     public partial class mainForm : Form
     {
+        Timer timer;
+        int effect1 = 0;
+        int effect2 = 0;
         //thêm từ master
         public searchedWordList EV_SWlist = new searchedWordList();
         SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True");
@@ -21,240 +24,247 @@ namespace WindowsFormsApp4
         static int EVSource_Length;
         static int VESource_Length;
         //
-
         public mainForm()
         {
             InitializeComponent();
+            timer = new Timer();
+            timer.Interval = 100;
+            timer.Enabled = true;
+            timer.Tick += new EventHandler(timer_tick);
+
+        }
+        private void timer_tick(object sender, EventArgs e)
+        {
+            //if (this.guna2Button_test.Size.Width < 500)
+            //    this.guna2Button_User.Size = new System.Drawing.Size(this.guna2Button_test.Width + 80, 74);
+            if (effect1 == 0 && effect2 == 0)
+            {
+                this.guna2Button_Game.Size = new System.Drawing.Size(5, 74);
+                this.guna2Button_FlashCard.Size = new System.Drawing.Size(5, 74);
+                this.guna2Button_User.Size = new System.Drawing.Size(5, 74);
+                this.guna2Button_Location.Size = new System.Drawing.Size(5, 74);
+            }
+            if (effect1 < 5)
+            {
+                this.guna2Button_Game.Size = new System.Drawing.Size(this.guna2Button_Game.Width + 29, 74);
+                this.guna2Button_FlashCard.Size = new System.Drawing.Size(this.guna2Button_FlashCard.Width + 29, 74);
+                this.guna2Button_User.Size = new System.Drawing.Size(this.guna2Button_User.Width + 29, 74);
+                effect1++;
+            }
+            if (effect2 < 5)
+            {
+                this.guna2Button_Location.Size = new System.Drawing.Size(this.guna2Button_Location.Width + 34, 74);
+                effect2++;
+            }
+                if (effect1 >= 5 && effect2 >= 5 )
+            {
+                effect1 = effect2 = 0;
+                timer.Enabled = false;
+            }
+        }
+       
+        private void Reset_Status_Button(object sender, EventArgs e)
+        {
+            if (sender == panel5 || sender == pictureBox_logo)
+            {
+                // TextBox s = sender as TextBox;
+                guna2Button_Location.Text = "Home";
+                this.guna2Button_Location.FillColor = System.Drawing.SystemColors.ActiveCaption;
+                timer.Enabled = true;
+            }
+            else
+            {
+                this.guna2Button_Location.FillColor = System.Drawing.Color.MediumAquamarine;
+            }
+            if (sender != guna2Button_E_V)
+            {
+                guna2Button_E_V.ImageAlign = HorizontalAlignment.Left;
+                this.guna2Button_E_V.ForeColor = System.Drawing.Color.White;
+                this.guna2Button_E_V.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.guna2Button_E_V.FillColor = System.Drawing.Color.Transparent;
+
+            }
+            else guna2Button_Location.Text = guna2Button_E_V.Text;
+                
+            if (sender != guna2Button_V_E)
+            {
+                guna2Button_V_E.ImageAlign = HorizontalAlignment.Left;
+                this.guna2Button_V_E.ForeColor = System.Drawing.Color.White;
+                this.guna2Button_V_E.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.guna2Button_V_E.FillColor = System.Drawing.Color.Transparent;
+            }
+            else
+            {
+                guna2Button_Location.Text = guna2Button_V_E.Text;
+            }
+            if (sender != guna2Button_TraDoan)
+            {
+                guna2Button_TraDoan.ImageAlign = HorizontalAlignment.Left;
+                this.guna2Button_TraDoan.ForeColor = System.Drawing.Color.White;
+                this.guna2Button_TraDoan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.guna2Button_TraDoan.FillColor = System.Drawing.Color.Transparent;
+
+            }
+            else guna2Button_Location.Text = guna2Button_TraDoan.Text;
+            if (sender != guna2Button_TuKho)
+            {
+                guna2Button_TuKho.ImageAlign = HorizontalAlignment.Left;
+                this.guna2Button_TuKho.ForeColor = System.Drawing.Color.White;
+                this.guna2Button_TuKho.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.guna2Button_TuKho.FillColor = System.Drawing.Color.Transparent;             
+            }
+            else guna2Button_Location.Text = guna2Button_TuKho.Text;
+            if (sender != guna2Button_DTBQT)
+            {
+                guna2Button_DTBQT.ImageAlign = HorizontalAlignment.Left;
+                this.guna2Button_DTBQT.ForeColor = System.Drawing.Color.White;
+                this.guna2Button_DTBQT.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.guna2Button_DTBQT.FillColor = System.Drawing.Color.Transparent;
+            }
+            else guna2Button_Location.Text = guna2Button_DTBQT.Text; 
+            
+             
+            if (sender != guna2Button_SearchedWord)
+            {
+                guna2Button_SearchedWord.ImageAlign = HorizontalAlignment.Left;
+                this.guna2Button_SearchedWord.ForeColor = System.Drawing.Color.White;
+                this.guna2Button_SearchedWord.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.guna2Button_SearchedWord.FillColor = System.Drawing.Color.Transparent;              
+            }
+            else guna2Button_Location.Text = guna2Button_SearchedWord.Text;
+
+            if (sender != guna2Button_Add)
+            {
+                guna2Button_Add.ImageAlign = HorizontalAlignment.Left;
+                this.guna2Button_Add.ForeColor = System.Drawing.Color.White;
+                this.guna2Button_Add.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                this.guna2Button_Add.FillColor = System.Drawing.Color.Transparent;
+            }
+            else guna2Button_Location.Text = guna2Button_Add.Text;
+        }
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            guna2Panel_E_V.BringToFront();
+            guna2Button_E_V.ImageAlign = HorizontalAlignment.Right;
+            this.guna2Button_E_V.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button_E_V.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold | FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_E_V.FillColor = System.Drawing.Color.White;
+            Reset_Status_Button(sender, e);
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            guna2Panel_V_E.BringToFront();
+            guna2Button_V_E.ImageAlign = HorizontalAlignment.Right;
+            this.guna2Button_V_E.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button_V_E.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold | FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_V_E.FillColor = System.Drawing.Color.White;
+            Reset_Status_Button(sender, e);
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            guna2Panel_TraDoan.BringToFront();
+            guna2Button_TraDoan.ImageAlign = HorizontalAlignment.Right;
+            this.guna2Button_TraDoan.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button_TraDoan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold | FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_TraDoan.FillColor = System.Drawing.Color.White;
+            Reset_Status_Button(sender, e);
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            guna2Panel_TuKho.BringToFront();
+            guna2Button_TuKho.ImageAlign = HorizontalAlignment.Right;
+            this.guna2Button_TuKho.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button_TuKho.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold | FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_TuKho.FillColor = System.Drawing.Color.White;
+            Reset_Status_Button(sender, e);
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            guna2Panel_DTBQT.BringToFront();
+            guna2Button_DTBQT.ImageAlign = HorizontalAlignment.Right;
+            this.guna2Button_DTBQT.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button_DTBQT.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold | FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_DTBQT.FillColor = System.Drawing.Color.White;
+            Reset_Status_Button(sender, e);
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            guna2Panel_SearchedWord.BringToFront();
+            guna2Button_SearchedWord.ImageAlign = HorizontalAlignment.Right;
+            this.guna2Button_SearchedWord.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button_SearchedWord.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold | FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_SearchedWord.FillColor = System.Drawing.Color.White;
+            Reset_Status_Button(sender, e);
+        }
+
+       
+
+        private void panel5_Click(object sender, EventArgs e)
+        {
+            Reset_Status_Button(sender, e);
+            guna2Panel_home.BringToFront();
             
         }
 
-        //thêm từ master
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Reset_Status_Button(sender, e);
+            guna2Panel_home.BringToFront();
+            
+
+
+
+        }
+
+        private void guna2Button11_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void guna2Button_Add_Click(object sender, EventArgs e)
+        {
+            //guna2Button_test.Visible = true;
+            //guna2Button_User.Visible = false;
+            //guna2Button_FlashCard.Visible = false;
+            //guna2Button_Game.Visible = false;
+            //timer.Enabled = true;
+            guna2Panel_Add.BringToFront();
+            guna2Button_Add.ImageAlign = HorizontalAlignment.Right;
+            this.guna2Button_Add.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button_Add.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold | FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_Add.FillColor = System.Drawing.Color.White;
+            Reset_Status_Button(sender, e);
+        }
+
+
+
+
+
         public mainForm(startForm parent)
         {
             this.parent = parent;
             InitializeComponent();
-        }
-        //
 
+            timer = new Timer();
+            timer.Interval = 100;
+            timer.Enabled = true;
+            timer.Tick += new EventHandler(timer_tick);
+        }
         private void mainForm_Load(object sender, EventArgs e)
         {
-            //Design load
-            AVbutton.Checked = true;
-            TDVbutton.Checked = false;
-            TDTbutton.Checked = false;
-            DTBQTbutton.Checked = false;
-            TKbutton.Checked = false;
-            VAbutton.Checked = false;
-            TTMbutton.Checked = false;
-
-            Panel1.Visible = true;
-            Panel2.Visible = false;
-            Panel3.Visible = false;
-            Panel4.Visible = false;
-            Panel5.Visible = false;
-            Panel6.Visible = false;
-            Panel7.Visible = false;
-
-            AVbutton.ForeColor = System.Drawing.Color.DodgerBlue;
-            TDVbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            TDTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            DTBQTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            TKbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            VAbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            TTMbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            //--
             //Load dữ liệu
             string sql = "select * from DTBQT";
             ketnoicsdl(sql);
             DataManager.Instance.LoadSWToList(EV_SWlist);
             //
+            isDichDoanRadio.Checked = true;
         }
-        private void TabChose_Click(object sender, EventArgs e)
-        {
-            if(sender == AVbutton)
-            {
-                AVbutton.Checked = true;
-                TDVbutton.Checked = false;
-                TDTbutton.Checked = false;
-                DTBQTbutton.Checked = false;
-                TKbutton.Checked = false;
-                VAbutton.Checked = false;
-                TTMbutton.Checked = false;
-
-                Panel1.Visible = true;
-                Panel2.Visible = false;
-                Panel3.Visible = false;
-                Panel4.Visible = false;
-                Panel5.Visible = false;
-                Panel6.Visible = false;
-                Panel7.Visible = false;
-
-                AVbutton.ForeColor = System.Drawing.Color.DodgerBlue;
-                TDVbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TDTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                DTBQTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TKbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                VAbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TTMbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            }    
-            else if(sender == VAbutton)
-            {
-                AVbutton.Checked = false;
-                TDVbutton.Checked = false;
-                TDTbutton.Checked = false;
-                DTBQTbutton.Checked = false;
-                TKbutton.Checked = false;
-                VAbutton.Checked = true;
-                TTMbutton.Checked = false;
-
-                Panel1.Visible = false;
-                Panel2.Visible = true;
-                Panel3.Visible = false;
-                Panel4.Visible = false;
-                Panel5.Visible = false;
-                Panel6.Visible = false;
-                Panel7.Visible = false;
-
-                AVbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TDVbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TDTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                DTBQTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TKbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                VAbutton.ForeColor = System.Drawing.Color.DodgerBlue;
-                TTMbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            }  
-            else if(sender == TDVbutton)
-            {
-                AVbutton.Checked = false;
-                TDVbutton.Checked = true;
-                TDTbutton.Checked = false;
-                DTBQTbutton.Checked = false;
-                TKbutton.Checked = false;
-                VAbutton.Checked = false;
-                TTMbutton.Checked = false;
-
-                Panel1.Visible = false;
-                Panel2.Visible = false;
-                Panel3.Visible = true;
-                Panel4.Visible = false;
-                Panel5.Visible = false;
-                Panel6.Visible = false;
-                Panel7.Visible = false;
-
-                AVbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TDVbutton.ForeColor = System.Drawing.Color.DodgerBlue;
-                TDTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                DTBQTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TKbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                VAbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TTMbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            } 
-            else if(sender == TDTbutton)
-            {
-                AVbutton.Checked = false;
-                TDVbutton.Checked = false;
-                TDTbutton.Checked = true;
-                DTBQTbutton.Checked = false;
-                TKbutton.Checked = false;
-                VAbutton.Checked = false;
-                TTMbutton.Checked = false;
-
-                Panel1.Visible = false;
-                Panel2.Visible = false;
-                Panel3.Visible = false;
-                Panel4.Visible = true;
-                Panel5.Visible = false;
-                Panel6.Visible = false;
-                Panel7.Visible = false;
-
-                AVbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TDVbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TDTbutton.ForeColor = System.Drawing.Color.DodgerBlue;
-                DTBQTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TKbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                VAbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TTMbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            } 
-            else if(sender == DTBQTbutton)
-            {
-                AVbutton.Checked = false;
-                TDVbutton.Checked = false;
-                TDTbutton.Checked = false;
-                DTBQTbutton.Checked = true;
-                TKbutton.Checked = false;
-                VAbutton.Checked = false;
-                TTMbutton.Checked = false;
-
-                Panel1.Visible = false;
-                Panel2.Visible = false;
-                Panel3.Visible = false;
-                Panel4.Visible = false;
-                Panel5.Visible = true;
-                Panel6.Visible = false;
-                Panel7.Visible = false;
-
-                AVbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TDVbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TDTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                DTBQTbutton.ForeColor = System.Drawing.Color.DodgerBlue;
-                TKbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                VAbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TTMbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            }    
-            else if(sender == TKbutton)
-            {
-                AVbutton.Checked = false;
-                TDVbutton.Checked = false;
-                TDTbutton.Checked = false;
-                DTBQTbutton.Checked = false;
-                TKbutton.Checked = true;
-                VAbutton.Checked = false;
-                TTMbutton.Checked = false;
-
-                Panel1.Visible = false;
-                Panel2.Visible = false;
-                Panel3.Visible = false;
-                Panel4.Visible = false;
-                Panel5.Visible = false;
-                Panel6.Visible = true;
-                Panel7.Visible = false;
-
-                AVbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TDVbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TDTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                DTBQTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TKbutton.ForeColor = System.Drawing.Color.DodgerBlue;
-                VAbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TTMbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            }    
-            else if(sender == TTMbutton)
-            {
-                AVbutton.Checked = false;
-                TDVbutton.Checked = false;
-                TDTbutton.Checked = false;
-                DTBQTbutton.Checked = false;
-                TKbutton.Checked = false;
-                VAbutton.Checked = false;
-                TTMbutton.Checked = true;
-
-                Panel1.Visible = false;
-                Panel2.Visible = false;
-                Panel3.Visible = false;
-                Panel4.Visible = false;
-                Panel5.Visible = false;
-                Panel6.Visible = false;
-                Panel7.Visible = true;
-
-                AVbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TDVbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TDTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                DTBQTbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TKbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                VAbutton.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-                TTMbutton.ForeColor = System.Drawing.Color.DodgerBlue;
-            }    
-        }
-
         private void ketnoicsdl(string sql)
         {
             mycnt.Open();
@@ -267,6 +277,7 @@ namespace WindowsFormsApp4
             mycnt.Close();  // đóng kết nối
             dataGridView5.DataSource = dt; //đổ dữ liệu vào datagridview
         }
+
         private void ConnectDatabseEV()
         {
             mycnt.Open(); // mo ket noi 
@@ -293,7 +304,9 @@ namespace WindowsFormsApp4
             {
                 resultBox1.Text = "Không có dữ liệu hjhj :>>";
             }
+
             //textBox1.Clear(); // Xóa từ cũ tránh trường hợp bị đùn gây bug
+            
             mycnt.Close(); // đóng kết nối
         }
         private void ConnectDatabseVE()
@@ -346,7 +359,7 @@ namespace WindowsFormsApp4
                 this.button5_Click(sender, e);
             }
         }
-        private void Design_UI_Word_VE(string temp)
+        public void Design_UI_Word_VE(string temp)
         {
 
             string[] lines = temp.Split('|');
@@ -381,7 +394,7 @@ namespace WindowsFormsApp4
             // xuất ra ngoài 
             resultBox2.Text = show_line.Trim();
         }
-        private void Design_UI_Word_EV(string temp)
+        public void Design_UI_Word_EV(string temp)
         {
 
             string[] lines = temp.Split('|');
@@ -699,13 +712,13 @@ namespace WindowsFormsApp4
 
         private void button3_2_Click(object sender, EventArgs e)
         {
-            if (label3_1.Text != "")
-            {
-                if (MessageBox.Show("Chương trình sẽ dịch tự động loại bỏ dấu bạn có đồng ý không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
-                {
-                    return;
-                }
-            }
+            //if (label3_1.Text != "")
+            //{
+            //    if (MessageBox.Show("Chương trình sẽ dịch tự động loại bỏ dấu bạn có đồng ý không ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+            //    {
+            //        return;
+            //    }
+            //}
             string paragraph = richTextBox3.Text;
             paragraph = paragraph.ToLower();
             paragraph = DataManager.Instance.RemoveUnicode(paragraph);
@@ -713,6 +726,20 @@ namespace WindowsFormsApp4
             paragraph = paragraph.Replace("\n", " ");
             string[] processedParagraph = paragraph.Split(' ');
             DataManager.Instance.TranslateParagraph(processedParagraph, dataGridView3, ref EV_SWlist);
+
+
+            string strTranslatedText = null;
+            try
+            {
+                Translator.LanguageServiceClient client = new Translator.LanguageServiceClient();
+                client = new Translator.LanguageServiceClient();
+                strTranslatedText = client.Translate("6CE9C85A41571C050C379F60DA173D286384E0F2", richTextBox3.Text, "", "vi");
+                resultForTranslator.Text = strTranslatedText;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -723,10 +750,10 @@ namespace WindowsFormsApp4
             {
                 if (openFileDialog3.ShowDialog() == DialogResult.OK)
                 {
-                    Stream stream = openFileDialog3.OpenFile();
-                    StreamReader sr = new StreamReader(stream);
-                    richTextBox3.Text = sr.ReadToEnd();
-                    sr.Close();
+                    //Stream stream = openFileDialog3.OpenFile();
+                    //StreamReader sr = new StreamReader(stream);
+                    //richTextBox3.Text = sr.ReadToEnd();
+                    //sr.Close();
                 }
             }
             catch (Exception ex)
@@ -749,21 +776,21 @@ namespace WindowsFormsApp4
 
         private void richTextBox3_TextChanged(object sender, EventArgs e)
         {
-            if (richTextBox3.Text == "") dataGridView3.Rows.Clear();
-            string[] arr1 = new string[] { "á", "à", "ả", "ã", "ạ", "â", "ấ", "ầ", "ẩ", "ẫ", "ậ", "ă", "ắ", "ằ", "ẳ", "ẵ", "ặ",
-             "đ", "é","è","ẻ","ẽ","ẹ","ê","ế","ề","ể","ễ","ệ","í","ì","ỉ","ĩ","ị","ó","ò","ỏ","õ","ọ","ô","ố","ồ","ổ","ỗ","ộ","ơ","ớ","ờ","ở","ỡ","ợ","ú","ù","ủ","ũ","ụ","ư","ứ","ừ","ử","ữ","ự","ý","ỳ","ỷ","ỹ","ỵ","0","1","2","3","4","5","6","7","8","9",};
-            int n = richTextBox3.TextLength;
-            for (int i = 0; i < arr1.Length; i++)
-            {
-                if (richTextBox3.Text.IndexOf(arr1[i]) != -1)
-                {
-                    label3_1.Text = "Bạn vừa nhập chuỗi có dấu hoặc có số. Vui lòng kiểm tra hoặc chúng tôi sẽ thực hiện chuyển kiểu tự động khi bạn thực hiện dịch đoạn !";
-                    label3_1.ForeColor = Color.Red;
-                    return;
-                }
-            }
+            //if (richTextBox3.Text == "") dataGridView3.Rows.Clear();
+            //string[] arr1 = new string[] { "á", "à", "ả", "ã", "ạ", "â", "ấ", "ầ", "ẩ", "ẫ", "ậ", "ă", "ắ", "ằ", "ẳ", "ẵ", "ặ",
+            // "đ", "é","è","ẻ","ẽ","ẹ","ê","ế","ề","ể","ễ","ệ","í","ì","ỉ","ĩ","ị","ó","ò","ỏ","õ","ọ","ô","ố","ồ","ổ","ỗ","ộ","ơ","ớ","ờ","ở","ỡ","ợ","ú","ù","ủ","ũ","ụ","ư","ứ","ừ","ử","ữ","ự","ý","ỳ","ỷ","ỹ","ỵ","0","1","2","3","4","5","6","7","8","9",};
+            //int n = richTextBox3.TextLength;
+            //for (int i = 0; i < arr1.Length; i++)
+            //{
+            //    if (richTextBox3.Text.IndexOf(arr1[i]) != -1)
+            //    {
+            //        label3_1.Text = "Bạn vừa nhập chuỗi có dấu hoặc có số. Vui lòng kiểm tra hoặc chúng tôi sẽ thực hiện chuyển kiểu tự động khi bạn thực hiện dịch đoạn !";
+            //        label3_1.ForeColor = Color.Red;
+            //        return;
+            //    }
+            //}
 
-            label3_1.Text = "";
+            //label3_1.Text = "";
         }
 
         private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -859,7 +886,7 @@ namespace WindowsFormsApp4
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         s = dt.Rows[i]["Name"].ToString();
-                        s = s.Remove(0,1);
+                        s = s.Remove(0, 1);
                         textBox2.AutoCompleteCustomSource.Add(s);
                     }
                     textBox2.TextChanged -= textBox2_TextChanged;
@@ -881,7 +908,7 @@ namespace WindowsFormsApp4
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string text = richTextBox3.Text;
+            string text = richTextBox3_1.Text;
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
             synth.Speak(text);
@@ -900,6 +927,26 @@ namespace WindowsFormsApp4
             if (e.KeyChar <= 'z' && e.KeyChar >= 'a' || e.KeyChar == (char)Keys.Back)
                 textBox2.TextChanged += textBox2_TextChanged;
         }
-        //
+
+        private void guna2Button_Game_Click(object sender, EventArgs e)
+        {
+            startGameForm a = new startGameForm();
+            this.Close();
+            a.Show();
+        }
+
+        private void Translator_Mode(object sender, EventArgs e)
+        {
+            if(isDichDoanRadio.Checked)
+            {
+                isTraDoanRadio.Checked = false;
+                resultForTranslator.BringToFront();
+            }
+            else
+            {
+                isDichDoanRadio.Checked = false;
+                dataGridView3.BringToFront();
+            }
+        }    
     }
 }
