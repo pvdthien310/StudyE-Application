@@ -27,7 +27,7 @@ namespace WindowsFormsApp4
         public mainForm()
         {
             InitializeComponent();
-            
+            guna2Panel_home.BringToFront();
             timer = new Timer();
             timer.Interval = 100;
             timer.Enabled = true;
