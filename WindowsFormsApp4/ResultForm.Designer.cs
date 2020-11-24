@@ -53,9 +53,9 @@
             this.panel_Question.Controls.Add(this.guna2ButtonB);
             this.panel_Question.Controls.Add(this.guna2ButtonA);
             this.panel_Question.Controls.Add(this.guna2Button_Question);
-            this.panel_Question.Location = new System.Drawing.Point(317, 68);
+            this.panel_Question.Location = new System.Drawing.Point(317, 87);
             this.panel_Question.Name = "panel_Question";
-            this.panel_Question.Size = new System.Drawing.Size(646, 481);
+            this.panel_Question.Size = new System.Drawing.Size(646, 462);
             this.panel_Question.TabIndex = 1;
             // 
             // guna2ButtonD
@@ -143,9 +143,9 @@
             this.panel_Question_2.Controls.Add(this.guna2HtmlLabel1);
             this.panel_Question_2.Controls.Add(this.CircleButton_back);
             this.panel_Question_2.Controls.Add(this.guna2TextBox_SearchWord);
-            this.panel_Question_2.Location = new System.Drawing.Point(317, 68);
+            this.panel_Question_2.Location = new System.Drawing.Point(317, 87);
             this.panel_Question_2.Name = "panel_Question_2";
-            this.panel_Question_2.Size = new System.Drawing.Size(646, 481);
+            this.panel_Question_2.Size = new System.Drawing.Size(646, 462);
             this.panel_Question_2.TabIndex = 2;
             // 
             // guna2HtmlLabel1
@@ -207,10 +207,10 @@
             // 
             this.panel_ListQuestion.AutoScroll = true;
             this.panel_ListQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.panel_ListQuestion.Location = new System.Drawing.Point(27, 68);
+            this.panel_ListQuestion.Location = new System.Drawing.Point(27, 102);
             this.panel_ListQuestion.Name = "panel_ListQuestion";
             this.panel_ListQuestion.ShadowDecoration.Parent = this.panel_ListQuestion;
-            this.panel_ListQuestion.Size = new System.Drawing.Size(284, 480);
+            this.panel_ListQuestion.Size = new System.Drawing.Size(284, 450);
             this.panel_ListQuestion.TabIndex = 3;
             // 
             // CircleButton_Exit

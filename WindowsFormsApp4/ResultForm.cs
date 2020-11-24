@@ -35,7 +35,7 @@ namespace WindowsFormsApp4
                 a = a + (i+1).ToString();
                 listbtn[i] = new Guna.UI2.WinForms.Guna2Button() { Text = a, Size = new System.Drawing.Size(30, 50) };
                 listbtn[i].BorderRadius = 20;
-                listbtn[i].Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                listbtn[i].Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
                 
                 if (this.parent.gameManager.quesData.Result[i] == 1)
