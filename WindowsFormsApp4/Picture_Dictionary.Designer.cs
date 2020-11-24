@@ -72,6 +72,7 @@
             this.b4.ShadowDecoration.Parent = this.b4;
             this.b4.Size = new System.Drawing.Size(85, 85);
             this.b4.TabIndex = 0;
+            this.b4.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b3
             // 
@@ -90,6 +91,7 @@
             this.b3.ShadowDecoration.Parent = this.b3;
             this.b3.Size = new System.Drawing.Size(85, 85);
             this.b3.TabIndex = 0;
+            this.b3.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b2
             // 
@@ -108,6 +110,7 @@
             this.b2.ShadowDecoration.Parent = this.b2;
             this.b2.Size = new System.Drawing.Size(85, 85);
             this.b2.TabIndex = 0;
+            this.b2.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b5
             // 
@@ -126,6 +129,7 @@
             this.b5.ShadowDecoration.Parent = this.b5;
             this.b5.Size = new System.Drawing.Size(85, 85);
             this.b5.TabIndex = 0;
+            this.b5.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b6
             // 
@@ -144,6 +148,7 @@
             this.b6.ShadowDecoration.Parent = this.b6;
             this.b6.Size = new System.Drawing.Size(85, 85);
             this.b6.TabIndex = 0;
+            this.b6.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b1
             // 
@@ -162,6 +167,7 @@
             this.b1.ShadowDecoration.Parent = this.b1;
             this.b1.Size = new System.Drawing.Size(85, 85);
             this.b1.TabIndex = 0;
+            this.b1.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b7
             // 
@@ -180,6 +186,7 @@
             this.b7.ShadowDecoration.Parent = this.b7;
             this.b7.Size = new System.Drawing.Size(85, 85);
             this.b7.TabIndex = 0;
+            this.b7.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b11
             // 
@@ -198,6 +205,7 @@
             this.b11.ShadowDecoration.Parent = this.b11;
             this.b11.Size = new System.Drawing.Size(85, 85);
             this.b11.TabIndex = 0;
+            this.b11.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b12
             // 
@@ -216,6 +224,7 @@
             this.b12.ShadowDecoration.Parent = this.b12;
             this.b12.Size = new System.Drawing.Size(85, 85);
             this.b12.TabIndex = 0;
+            this.b12.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b13
             // 
@@ -234,6 +243,7 @@
             this.b13.ShadowDecoration.Parent = this.b13;
             this.b13.Size = new System.Drawing.Size(85, 85);
             this.b13.TabIndex = 0;
+            this.b13.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b14
             // 
@@ -252,6 +262,7 @@
             this.b14.ShadowDecoration.Parent = this.b14;
             this.b14.Size = new System.Drawing.Size(85, 85);
             this.b14.TabIndex = 0;
+            this.b14.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b10
             // 
@@ -270,6 +281,7 @@
             this.b10.ShadowDecoration.Parent = this.b10;
             this.b10.Size = new System.Drawing.Size(85, 85);
             this.b10.TabIndex = 0;
+            this.b10.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b9
             // 
@@ -288,6 +300,7 @@
             this.b9.ShadowDecoration.Parent = this.b9;
             this.b9.Size = new System.Drawing.Size(85, 85);
             this.b9.TabIndex = 0;
+            this.b9.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b8
             // 
@@ -306,6 +319,7 @@
             this.b8.ShadowDecoration.Parent = this.b8;
             this.b8.Size = new System.Drawing.Size(85, 85);
             this.b8.TabIndex = 0;
+            this.b8.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b18
             // 
@@ -324,6 +338,7 @@
             this.b18.ShadowDecoration.Parent = this.b18;
             this.b18.Size = new System.Drawing.Size(85, 85);
             this.b18.TabIndex = 0;
+            this.b18.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b19
             // 
@@ -342,6 +357,7 @@
             this.b19.ShadowDecoration.Parent = this.b19;
             this.b19.Size = new System.Drawing.Size(85, 85);
             this.b19.TabIndex = 0;
+            this.b19.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b20
             // 
@@ -360,6 +376,7 @@
             this.b20.ShadowDecoration.Parent = this.b20;
             this.b20.Size = new System.Drawing.Size(85, 85);
             this.b20.TabIndex = 0;
+            this.b20.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b17
             // 
@@ -378,6 +395,7 @@
             this.b17.ShadowDecoration.Parent = this.b17;
             this.b17.Size = new System.Drawing.Size(85, 85);
             this.b17.TabIndex = 0;
+            this.b17.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b16
             // 
@@ -396,6 +414,7 @@
             this.b16.ShadowDecoration.Parent = this.b16;
             this.b16.Size = new System.Drawing.Size(85, 85);
             this.b16.TabIndex = 0;
+            this.b16.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b15
             // 
@@ -414,6 +433,7 @@
             this.b15.ShadowDecoration.Parent = this.b15;
             this.b15.Size = new System.Drawing.Size(85, 85);
             this.b15.TabIndex = 0;
+            this.b15.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b24
             // 
@@ -432,6 +452,7 @@
             this.b24.ShadowDecoration.Parent = this.b24;
             this.b24.Size = new System.Drawing.Size(85, 85);
             this.b24.TabIndex = 0;
+            this.b24.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b25
             // 
@@ -450,6 +471,7 @@
             this.b25.ShadowDecoration.Parent = this.b25;
             this.b25.Size = new System.Drawing.Size(85, 85);
             this.b25.TabIndex = 0;
+            this.b25.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b23
             // 
@@ -468,6 +490,7 @@
             this.b23.ShadowDecoration.Parent = this.b23;
             this.b23.Size = new System.Drawing.Size(85, 85);
             this.b23.TabIndex = 0;
+            this.b23.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b22
             // 
@@ -486,6 +509,7 @@
             this.b22.ShadowDecoration.Parent = this.b22;
             this.b22.Size = new System.Drawing.Size(85, 85);
             this.b22.TabIndex = 0;
+            this.b22.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // b21
             // 
@@ -504,6 +528,7 @@
             this.b21.ShadowDecoration.Parent = this.b21;
             this.b21.Size = new System.Drawing.Size(85, 85);
             this.b21.TabIndex = 0;
+            this.b21.Click += new System.EventHandler(this.TabChose_Click);
             // 
             // Picture_Dictionary
             // 

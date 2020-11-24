@@ -17,11 +17,21 @@ namespace WindowsFormsApp4
         {
             InitializeComponent();
         }
-        public Picture_Dictionary( mainForm parent)
+        public Picture_Dictionary(mainForm parent)
         {
             this.Parent = parent;
             InitializeComponent();
         }
-        
+        private void TabChose_Click(object sender, EventArgs e)
+        {
+            if (sender == b1)
+            {
+
+            }
+            else if (sender == b2)
+            {
+
+            }
+        }
     }
 }
