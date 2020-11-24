@@ -10,6 +10,7 @@ namespace WindowsFormsApp4
     {
         public Question[] List;
         public int[] Result;
+        public int[] User_choose;
         public Database database;
         public int number_question;
 
@@ -18,6 +19,7 @@ namespace WindowsFormsApp4
             List = new Question[number];
             Result = new int[number];
             number_question = number;
+            User_choose = new int[number];
             switch (isChallenge)
             {
                 case 1:

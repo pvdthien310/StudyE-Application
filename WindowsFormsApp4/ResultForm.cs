@@ -35,8 +35,19 @@ namespace WindowsFormsApp4
                 a = a + (i+1).ToString();
                 listbtn[i] = new Guna.UI2.WinForms.Guna2Button() { Text = a, Size = new System.Drawing.Size(30, 50) };
                 listbtn[i].BorderRadius = 20;
-                listbtn[i].Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                listbtn[i].FillColor = System.Drawing.SystemColors.ActiveCaption;
+                listbtn[i].Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+                
+                if (this.parent.gameManager.quesData.Result[i] == 1)
+                {
+                    //listbtn[i].FillColor = System.Drawing.SystemColors.ActiveCaption;
+                    listbtn[i].FillColor = System.Drawing.Color.MediumSeaGreen;
+                }
+                else
+                {
+                    listbtn[i].FillColor = System.Drawing.Color.IndianRed;
+
+                }
                 listbtn[i].ForeColor = System.Drawing.Color.White;
                 panel_ListQuestion.Controls.Add(listbtn[i]);
                 listbtn[i].Dock = DockStyle.Top;
@@ -58,6 +69,10 @@ namespace WindowsFormsApp4
                 {
                     listbtn[i].Enabled = false;
                 }
+                else
+                {
+                   
+                }
                 //listbtn[i].CheckedChanged += (s, e) =>
                 //{
                 //    string temp = listbtn[i].Text.Substring(listbtn[i].Text.Length - 1, 1);
@@ -68,7 +83,91 @@ namespace WindowsFormsApp4
         }
         private void OpenQuestion(int i)
         {
+
+            this.guna2ButtonA.FillColor = System.Drawing.Color.Teal;
+            this.guna2ButtonB.FillColor = System.Drawing.Color.Teal;
+            this.guna2ButtonC.FillColor = System.Drawing.Color.Teal;
+            this.guna2ButtonD.FillColor = System.Drawing.Color.Teal;
+            //this.guna2ButtonA.FillColor = System.Drawing.SystemColors.ActiveCaption;
+            //this.guna2ButtonB.FillColor = System.Drawing.SystemColors.ActiveCaption;
+            //this.guna2ButtonC.FillColor = System.Drawing.SystemColors.ActiveCaption;
+            //this.guna2ButtonD.FillColor = System.Drawing.SystemColors.ActiveCaption;
             guna2Button_Question.Text = "Nghĩa Của Từ : " + parent.gameManager.quesData.List[i].question + " Là Gì ?";
+            if (this.parent.gameManager.quesData.Result[i] == 1)
+            {
+                switch (this.parent.gameManager.quesData.User_choose[i])
+                {
+                    case 1:
+                        {
+                            this.guna2ButtonA.FillColor = System.Drawing.Color.MediumSeaGreen;
+                            break;
+                        }
+                    case 2:
+                        {
+                            this.guna2ButtonB.FillColor = System.Drawing.Color.MediumSeaGreen;
+                            break;
+                        }
+                    case 3:
+                        {
+                            this.guna2ButtonC.FillColor = System.Drawing.Color.MediumSeaGreen;
+                            break;
+                        }
+                    case 4:
+                        {
+                            this.guna2ButtonD.FillColor = System.Drawing.Color.MediumSeaGreen;
+                            break;
+                        }
+                }
+            }
+            if (this.parent.gameManager.quesData.Result[i] == 0)
+            {
+                switch (this.parent.gameManager.quesData.User_choose[i])
+                {
+                    case 1:
+                        {
+                            this.guna2ButtonA.FillColor = System.Drawing.Color.IndianRed;
+                            break;
+                        }
+                    case 2:
+                        {
+                            this.guna2ButtonB.FillColor = System.Drawing.Color.IndianRed;
+                            break;
+                        }
+                    case 3:
+                        {
+                            this.guna2ButtonC.FillColor = System.Drawing.Color.IndianRed;
+                            break;
+                        }
+                    case 4:
+                        {
+                            this.guna2ButtonD.FillColor = System.Drawing.Color.IndianRed;
+                            break;
+                        }
+                }
+                switch (this.parent.gameManager.quesData.List[i].correctIndex)
+                {
+                    case 1:
+                        {
+                            this.guna2ButtonA.FillColor = System.Drawing.Color.MediumSeaGreen;
+                            break;
+                        }
+                    case 2:
+                        {
+                            this.guna2ButtonB.FillColor = System.Drawing.Color.MediumSeaGreen;
+                            break;
+                        }
+                    case 3:
+                        {
+                            this.guna2ButtonC.FillColor = System.Drawing.Color.MediumSeaGreen;
+                            break;
+                        }
+                    case 4:
+                        {
+                            this.guna2ButtonD.FillColor = System.Drawing.Color.MediumSeaGreen;
+                            break;
+                        }
+                }
+            }
             guna2ButtonA.Text = parent.process_answer(parent.gameManager.quesData.List[i].answerA);
             guna2ButtonB.Text = parent.process_answer(parent.gameManager.quesData.List[i].answerB);
             guna2ButtonC.Text = parent.process_answer(parent.gameManager.quesData.List[i].answerC);

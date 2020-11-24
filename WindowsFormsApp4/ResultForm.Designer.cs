@@ -64,7 +64,7 @@
             this.guna2ButtonD.CheckedState.Parent = this.guna2ButtonD;
             this.guna2ButtonD.CustomImages.Parent = this.guna2ButtonD;
             this.guna2ButtonD.FillColor = System.Drawing.Color.Teal;
-            this.guna2ButtonD.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2ButtonD.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2ButtonD.ForeColor = System.Drawing.Color.White;
             this.guna2ButtonD.HoverState.Parent = this.guna2ButtonD;
             this.guna2ButtonD.Location = new System.Drawing.Point(130, 398);
@@ -80,7 +80,7 @@
             this.guna2ButtonC.CheckedState.Parent = this.guna2ButtonC;
             this.guna2ButtonC.CustomImages.Parent = this.guna2ButtonC;
             this.guna2ButtonC.FillColor = System.Drawing.Color.Teal;
-            this.guna2ButtonC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2ButtonC.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2ButtonC.ForeColor = System.Drawing.Color.White;
             this.guna2ButtonC.HoverState.Parent = this.guna2ButtonC;
             this.guna2ButtonC.Location = new System.Drawing.Point(130, 320);
@@ -96,7 +96,7 @@
             this.guna2ButtonB.CheckedState.Parent = this.guna2ButtonB;
             this.guna2ButtonB.CustomImages.Parent = this.guna2ButtonB;
             this.guna2ButtonB.FillColor = System.Drawing.Color.Teal;
-            this.guna2ButtonB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2ButtonB.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2ButtonB.ForeColor = System.Drawing.Color.White;
             this.guna2ButtonB.HoverState.Parent = this.guna2ButtonB;
             this.guna2ButtonB.Location = new System.Drawing.Point(130, 242);
@@ -112,7 +112,7 @@
             this.guna2ButtonA.CheckedState.Parent = this.guna2ButtonA;
             this.guna2ButtonA.CustomImages.Parent = this.guna2ButtonA;
             this.guna2ButtonA.FillColor = System.Drawing.Color.Teal;
-            this.guna2ButtonA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2ButtonA.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2ButtonA.ForeColor = System.Drawing.Color.White;
             this.guna2ButtonA.HoverState.Parent = this.guna2ButtonA;
             this.guna2ButtonA.Location = new System.Drawing.Point(130, 164);
@@ -127,9 +127,8 @@
             this.guna2Button_Question.BorderRadius = 20;
             this.guna2Button_Question.CheckedState.Parent = this.guna2Button_Question;
             this.guna2Button_Question.CustomImages.Parent = this.guna2Button_Question;
-            this.guna2Button_Question.Enabled = false;
             this.guna2Button_Question.FillColor = System.Drawing.Color.Teal;
-            this.guna2Button_Question.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_Question.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_Question.ForeColor = System.Drawing.Color.White;
             this.guna2Button_Question.HoverState.Parent = this.guna2Button_Question;
             this.guna2Button_Question.Location = new System.Drawing.Point(84, 34);
@@ -140,7 +139,7 @@
             // 
             // panel_Question_2
             // 
-            this.panel_Question_2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel_Question_2.BackColor = System.Drawing.Color.Teal;
             this.panel_Question_2.Controls.Add(this.guna2HtmlLabel1);
             this.panel_Question_2.Controls.Add(this.CircleButton_back);
             this.panel_Question_2.Controls.Add(this.guna2TextBox_SearchWord);
@@ -153,7 +152,7 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.MintCream;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(236, 19);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(159, 34);
@@ -162,8 +161,10 @@
             // 
             // CircleButton_back
             // 
+            this.CircleButton_back.BackColor = System.Drawing.Color.Teal;
             this.CircleButton_back.CheckedState.Parent = this.CircleButton_back;
             this.CircleButton_back.CustomImages.Parent = this.CircleButton_back;
+            this.CircleButton_back.FillColor = System.Drawing.Color.IndianRed;
             this.CircleButton_back.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CircleButton_back.ForeColor = System.Drawing.Color.White;
             this.CircleButton_back.HoverState.Parent = this.CircleButton_back;
@@ -217,6 +218,7 @@
             this.CircleButton_Exit.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.skyhill;
             this.CircleButton_Exit.CheckedState.Parent = this.CircleButton_Exit;
             this.CircleButton_Exit.CustomImages.Parent = this.CircleButton_Exit;
+            this.CircleButton_Exit.FillColor = System.Drawing.SystemColors.ActiveCaption;
             this.CircleButton_Exit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CircleButton_Exit.ForeColor = System.Drawing.Color.White;
             this.CircleButton_Exit.HoverState.Parent = this.CircleButton_Exit;
@@ -231,11 +233,12 @@
             // 
             // guna2Button1
             // 
-            this.guna2Button1.BackColor = System.Drawing.SystemColors.Control;
+            this.guna2Button1.BackColor = System.Drawing.Color.White;
             this.guna2Button1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.skyhill;
             this.guna2Button1.BorderRadius = 20;
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.SystemColors.ActiveCaption;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
@@ -252,13 +255,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightCoral;
             this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.skyhill;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.panel_Question);
+            this.Controls.Add(this.panel_Question_2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.CircleButton_Exit);
-            this.Controls.Add(this.panel_Question_2);
-            this.Controls.Add(this.panel_Question);
             this.Controls.Add(this.panel_ListQuestion);
             this.DoubleBuffered = true;
             this.Name = "ResultForm";

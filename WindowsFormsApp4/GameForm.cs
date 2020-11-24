@@ -168,7 +168,7 @@ namespace WindowsFormsApp4
         }
         private void game_btnA_Click(object sender, EventArgs e)
         {
-            
+            this.gameManager.quesData.User_choose[this.gameManager.current_ques_index] = 1;
                 game_btnB.FillColor = Color.Gray;
                 game_btnC.FillColor = Color.Gray;
                 game_btnD.FillColor = Color.Gray;
@@ -182,6 +182,8 @@ namespace WindowsFormsApp4
 
         private void game_btnB_Click(object sender, EventArgs e)
         {
+            this.gameManager.quesData.User_choose[this.gameManager.current_ques_index] = 2;
+
             game_btnA.FillColor = Color.Gray;
             game_btnC.FillColor = Color.Gray;
             game_btnD.FillColor = Color.Gray;
@@ -194,6 +196,8 @@ namespace WindowsFormsApp4
 
         private void game_btnC_Click(object sender, EventArgs e)
         {
+            this.gameManager.quesData.User_choose[this.gameManager.current_ques_index] = 3;
+
             game_btnB.FillColor = Color.Gray;
             game_btnA.FillColor = Color.Gray;
             game_btnD.FillColor = Color.Gray;
@@ -206,6 +210,8 @@ namespace WindowsFormsApp4
 
         private void game_btnD_Click(object sender, EventArgs e)
         {
+            this.gameManager.quesData.User_choose[this.gameManager.current_ques_index] = 4;
+
             game_btnB.FillColor = Color.Gray;
             game_btnC.FillColor = Color.Gray;
             game_btnA.FillColor = Color.Gray;
