@@ -20,6 +20,10 @@ namespace WindowsFormsApp4
         public Picture_Dictionary( mainForm parent)
         {
             this.Parent = parent;
+            InitializeComponent();
         }
+
+        
+    
     }
 }

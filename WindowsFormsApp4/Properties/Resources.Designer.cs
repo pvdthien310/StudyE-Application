@@ -263,6 +263,16 @@ namespace WindowsFormsApp4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Giao_dien1 {
+            get {
+                object obj = ResourceManager.GetObject("Giao_dien1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap google_translate_3_555703 {
             get {
                 object obj = ResourceManager.GetObject("google-translate-3-555703", resourceCulture);
