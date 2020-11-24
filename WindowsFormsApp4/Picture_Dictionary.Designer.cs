@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Picture_Dictionary));
             this.b4 = new Guna.UI2.WinForms.Guna2Button();
             this.b3 = new Guna.UI2.WinForms.Guna2Button();
             this.b2 = new Guna.UI2.WinForms.Guna2Button();
@@ -55,13 +53,17 @@
             this.b23 = new Guna.UI2.WinForms.Guna2Button();
             this.b22 = new Guna.UI2.WinForms.Guna2Button();
             this.b21 = new Guna.UI2.WinForms.Guna2Button();
-            
             this.SuspendLayout();
             // 
             // b4
             // 
+            this.b4.BackColor = System.Drawing.Color.Transparent;
+            this.b4.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._12;
+            this.b4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b4.BorderRadius = 5;
             this.b4.CheckedState.Parent = this.b4;
             this.b4.CustomImages.Parent = this.b4;
+            this.b4.FillColor = System.Drawing.Color.Transparent;
             this.b4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b4.ForeColor = System.Drawing.Color.White;
             this.b4.HoverState.Parent = this.b4;
@@ -73,8 +75,13 @@
             // 
             // b3
             // 
+            this.b3.BackColor = System.Drawing.Color.Transparent;
+            this.b3.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._13;
+            this.b3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b3.BorderRadius = 5;
             this.b3.CheckedState.Parent = this.b3;
             this.b3.CustomImages.Parent = this.b3;
+            this.b3.FillColor = System.Drawing.Color.Transparent;
             this.b3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b3.ForeColor = System.Drawing.Color.White;
             this.b3.HoverState.Parent = this.b3;
@@ -86,8 +93,13 @@
             // 
             // b2
             // 
+            this.b2.BackColor = System.Drawing.Color.Transparent;
+            this.b2.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._14;
+            this.b2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b2.BorderRadius = 5;
             this.b2.CheckedState.Parent = this.b2;
             this.b2.CustomImages.Parent = this.b2;
+            this.b2.FillColor = System.Drawing.Color.Transparent;
             this.b2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b2.ForeColor = System.Drawing.Color.White;
             this.b2.HoverState.Parent = this.b2;
@@ -99,8 +111,13 @@
             // 
             // b5
             // 
+            this.b5.BackColor = System.Drawing.Color.Transparent;
+            this.b5.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._11;
+            this.b5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b5.BorderRadius = 5;
             this.b5.CheckedState.Parent = this.b5;
             this.b5.CustomImages.Parent = this.b5;
+            this.b5.FillColor = System.Drawing.Color.Transparent;
             this.b5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b5.ForeColor = System.Drawing.Color.White;
             this.b5.HoverState.Parent = this.b5;
@@ -112,8 +129,13 @@
             // 
             // b6
             // 
+            this.b6.BackColor = System.Drawing.Color.Transparent;
+            this.b6.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._10;
+            this.b6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b6.BorderRadius = 5;
             this.b6.CheckedState.Parent = this.b6;
             this.b6.CustomImages.Parent = this.b6;
+            this.b6.FillColor = System.Drawing.Color.Transparent;
             this.b6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b6.ForeColor = System.Drawing.Color.White;
             this.b6.HoverState.Parent = this.b6;
@@ -125,8 +147,13 @@
             // 
             // b1
             // 
+            this.b1.BackColor = System.Drawing.Color.Transparent;
+            this.b1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._23;
+            this.b1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b1.BorderRadius = 5;
             this.b1.CheckedState.Parent = this.b1;
             this.b1.CustomImages.Parent = this.b1;
+            this.b1.FillColor = System.Drawing.Color.Transparent;
             this.b1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b1.ForeColor = System.Drawing.Color.White;
             this.b1.HoverState.Parent = this.b1;
@@ -138,8 +165,13 @@
             // 
             // b7
             // 
+            this.b7.BackColor = System.Drawing.Color.Transparent;
+            this.b7.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._9;
+            this.b7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b7.BorderRadius = 5;
             this.b7.CheckedState.Parent = this.b7;
             this.b7.CustomImages.Parent = this.b7;
+            this.b7.FillColor = System.Drawing.Color.Transparent;
             this.b7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b7.ForeColor = System.Drawing.Color.White;
             this.b7.HoverState.Parent = this.b7;
@@ -151,8 +183,13 @@
             // 
             // b11
             // 
+            this.b11.BackColor = System.Drawing.Color.Transparent;
+            this.b11.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._3;
+            this.b11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b11.BorderRadius = 5;
             this.b11.CheckedState.Parent = this.b11;
             this.b11.CustomImages.Parent = this.b11;
+            this.b11.FillColor = System.Drawing.Color.Transparent;
             this.b11.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b11.ForeColor = System.Drawing.Color.White;
             this.b11.HoverState.Parent = this.b11;
@@ -164,8 +201,13 @@
             // 
             // b12
             // 
+            this.b12.BackColor = System.Drawing.Color.Transparent;
+            this.b12.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._24;
+            this.b12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b12.BorderRadius = 5;
             this.b12.CheckedState.Parent = this.b12;
             this.b12.CustomImages.Parent = this.b12;
+            this.b12.FillColor = System.Drawing.Color.Transparent;
             this.b12.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b12.ForeColor = System.Drawing.Color.White;
             this.b12.HoverState.Parent = this.b12;
@@ -177,8 +219,13 @@
             // 
             // b13
             // 
+            this.b13.BackColor = System.Drawing.Color.Transparent;
+            this.b13.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._4;
+            this.b13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b13.BorderRadius = 5;
             this.b13.CheckedState.Parent = this.b13;
             this.b13.CustomImages.Parent = this.b13;
+            this.b13.FillColor = System.Drawing.Color.Transparent;
             this.b13.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b13.ForeColor = System.Drawing.Color.White;
             this.b13.HoverState.Parent = this.b13;
@@ -190,8 +237,13 @@
             // 
             // b14
             // 
+            this.b14.BackColor = System.Drawing.Color.Transparent;
+            this.b14.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._5;
+            this.b14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b14.BorderRadius = 5;
             this.b14.CheckedState.Parent = this.b14;
             this.b14.CustomImages.Parent = this.b14;
+            this.b14.FillColor = System.Drawing.Color.Transparent;
             this.b14.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b14.ForeColor = System.Drawing.Color.White;
             this.b14.HoverState.Parent = this.b14;
@@ -203,8 +255,13 @@
             // 
             // b10
             // 
+            this.b10.BackColor = System.Drawing.Color.Transparent;
+            this.b10.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._2;
+            this.b10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b10.BorderRadius = 5;
             this.b10.CheckedState.Parent = this.b10;
             this.b10.CustomImages.Parent = this.b10;
+            this.b10.FillColor = System.Drawing.Color.Transparent;
             this.b10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b10.ForeColor = System.Drawing.Color.White;
             this.b10.HoverState.Parent = this.b10;
@@ -216,8 +273,13 @@
             // 
             // b9
             // 
+            this.b9.BackColor = System.Drawing.Color.Transparent;
+            this.b9.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._1;
+            this.b9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b9.BorderRadius = 5;
             this.b9.CheckedState.Parent = this.b9;
             this.b9.CustomImages.Parent = this.b9;
+            this.b9.FillColor = System.Drawing.Color.Transparent;
             this.b9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b9.ForeColor = System.Drawing.Color.White;
             this.b9.HoverState.Parent = this.b9;
@@ -229,8 +291,13 @@
             // 
             // b8
             // 
+            this.b8.BackColor = System.Drawing.Color.Transparent;
+            this.b8.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._8;
+            this.b8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b8.BorderRadius = 5;
             this.b8.CheckedState.Parent = this.b8;
             this.b8.CustomImages.Parent = this.b8;
+            this.b8.FillColor = System.Drawing.Color.Transparent;
             this.b8.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b8.ForeColor = System.Drawing.Color.White;
             this.b8.HoverState.Parent = this.b8;
@@ -242,8 +309,13 @@
             // 
             // b18
             // 
+            this.b18.BackColor = System.Drawing.Color.Transparent;
+            this.b18.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._18;
+            this.b18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b18.BorderRadius = 5;
             this.b18.CheckedState.Parent = this.b18;
             this.b18.CustomImages.Parent = this.b18;
+            this.b18.FillColor = System.Drawing.Color.Transparent;
             this.b18.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b18.ForeColor = System.Drawing.Color.White;
             this.b18.HoverState.Parent = this.b18;
@@ -255,8 +327,13 @@
             // 
             // b19
             // 
+            this.b19.BackColor = System.Drawing.Color.Transparent;
+            this.b19.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._25;
+            this.b19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b19.BorderRadius = 5;
             this.b19.CheckedState.Parent = this.b19;
             this.b19.CustomImages.Parent = this.b19;
+            this.b19.FillColor = System.Drawing.Color.Transparent;
             this.b19.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b19.ForeColor = System.Drawing.Color.White;
             this.b19.HoverState.Parent = this.b19;
@@ -268,8 +345,13 @@
             // 
             // b20
             // 
+            this.b20.BackColor = System.Drawing.Color.Transparent;
+            this.b20.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._22;
+            this.b20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b20.BorderRadius = 5;
             this.b20.CheckedState.Parent = this.b20;
             this.b20.CustomImages.Parent = this.b20;
+            this.b20.FillColor = System.Drawing.Color.Transparent;
             this.b20.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b20.ForeColor = System.Drawing.Color.White;
             this.b20.HoverState.Parent = this.b20;
@@ -281,8 +363,13 @@
             // 
             // b17
             // 
+            this.b17.BackColor = System.Drawing.Color.Transparent;
+            this.b17.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._16;
+            this.b17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b17.BorderRadius = 5;
             this.b17.CheckedState.Parent = this.b17;
             this.b17.CustomImages.Parent = this.b17;
+            this.b17.FillColor = System.Drawing.Color.Transparent;
             this.b17.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b17.ForeColor = System.Drawing.Color.White;
             this.b17.HoverState.Parent = this.b17;
@@ -294,8 +381,13 @@
             // 
             // b16
             // 
+            this.b16.BackColor = System.Drawing.Color.Transparent;
+            this.b16.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._7;
+            this.b16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b16.BorderRadius = 5;
             this.b16.CheckedState.Parent = this.b16;
             this.b16.CustomImages.Parent = this.b16;
+            this.b16.FillColor = System.Drawing.Color.Transparent;
             this.b16.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b16.ForeColor = System.Drawing.Color.White;
             this.b16.HoverState.Parent = this.b16;
@@ -307,8 +399,13 @@
             // 
             // b15
             // 
+            this.b15.BackColor = System.Drawing.Color.Transparent;
+            this.b15.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._6;
+            this.b15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b15.BorderRadius = 5;
             this.b15.CheckedState.Parent = this.b15;
             this.b15.CustomImages.Parent = this.b15;
+            this.b15.FillColor = System.Drawing.Color.Transparent;
             this.b15.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b15.ForeColor = System.Drawing.Color.White;
             this.b15.HoverState.Parent = this.b15;
@@ -320,8 +417,13 @@
             // 
             // b24
             // 
+            this.b24.BackColor = System.Drawing.Color.Transparent;
+            this.b24.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._17;
+            this.b24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b24.BorderRadius = 5;
             this.b24.CheckedState.Parent = this.b24;
             this.b24.CustomImages.Parent = this.b24;
+            this.b24.FillColor = System.Drawing.Color.Transparent;
             this.b24.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b24.ForeColor = System.Drawing.Color.White;
             this.b24.HoverState.Parent = this.b24;
@@ -333,8 +435,13 @@
             // 
             // b25
             // 
+            this.b25.BackColor = System.Drawing.Color.Transparent;
+            this.b25.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._15;
+            this.b25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b25.BorderRadius = 5;
             this.b25.CheckedState.Parent = this.b25;
             this.b25.CustomImages.Parent = this.b25;
+            this.b25.FillColor = System.Drawing.Color.Transparent;
             this.b25.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b25.ForeColor = System.Drawing.Color.White;
             this.b25.HoverState.Parent = this.b25;
@@ -346,8 +453,13 @@
             // 
             // b23
             // 
+            this.b23.BackColor = System.Drawing.Color.Transparent;
+            this.b23.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._19;
+            this.b23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b23.BorderRadius = 5;
             this.b23.CheckedState.Parent = this.b23;
             this.b23.CustomImages.Parent = this.b23;
+            this.b23.FillColor = System.Drawing.Color.Transparent;
             this.b23.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b23.ForeColor = System.Drawing.Color.White;
             this.b23.HoverState.Parent = this.b23;
@@ -359,8 +471,13 @@
             // 
             // b22
             // 
+            this.b22.BackColor = System.Drawing.Color.Transparent;
+            this.b22.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._20;
+            this.b22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b22.BorderRadius = 5;
             this.b22.CheckedState.Parent = this.b22;
             this.b22.CustomImages.Parent = this.b22;
+            this.b22.FillColor = System.Drawing.Color.Transparent;
             this.b22.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b22.ForeColor = System.Drawing.Color.White;
             this.b22.HoverState.Parent = this.b22;
@@ -372,8 +489,13 @@
             // 
             // b21
             // 
+            this.b21.BackColor = System.Drawing.Color.Transparent;
+            this.b21.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._21;
+            this.b21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.b21.BorderRadius = 5;
             this.b21.CheckedState.Parent = this.b21;
             this.b21.CustomImages.Parent = this.b21;
+            this.b21.FillColor = System.Drawing.Color.Transparent;
             this.b21.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b21.ForeColor = System.Drawing.Color.White;
             this.b21.HoverState.Parent = this.b21;
@@ -382,7 +504,6 @@
             this.b21.ShadowDecoration.Parent = this.b21;
             this.b21.Size = new System.Drawing.Size(85, 85);
             this.b21.TabIndex = 0;
-            
             // 
             // Picture_Dictionary
             // 

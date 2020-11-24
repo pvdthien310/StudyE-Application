@@ -22,8 +22,6 @@ namespace WindowsFormsApp4
             this.Parent = parent;
             InitializeComponent();
         }
-
         
-    
     }
 }
