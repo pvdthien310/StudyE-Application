@@ -24,7 +24,7 @@ namespace WindowsFormsApp4
         {
             list.Clear(); // Xóa dữ liệu để tránh bug ngoài ý muốn
 
-            SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True");
+            SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True");
             mycntSW.Open();
             // lay het du lieu trong bang DTBQT
             SqlCommand com = new SqlCommand("SELECT  TOP 50 * FROM EV_Source ORDER BY NEWID()", mycntSW);
