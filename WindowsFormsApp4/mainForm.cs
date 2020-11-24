@@ -19,7 +19,7 @@ namespace WindowsFormsApp4
         int effect2 = 0;
         //thêm từ master
         public searchedWordList EV_SWlist = new searchedWordList();
-        SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True");
+        SqlConnection mycnt = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True");
         public startForm parent;
         static int EVSource_Length;
         static int VESource_Length;
@@ -948,6 +948,13 @@ namespace WindowsFormsApp4
                 isDichDoanRadio.Checked = false;
                 dataGridView3.BringToFront();
             }
-        }    
+        }
+
+        private void guna2Button_FlashCard_Click(object sender, EventArgs e)
+        {
+            Picture_Dictionary picture_Dictionary = new Picture_Dictionary(this);
+            this.Hide();
+            picture_Dictionary.Show();
+        }
     }
 }
