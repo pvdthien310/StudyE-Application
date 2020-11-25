@@ -261,7 +261,7 @@ namespace WindowsFormsApp4
         {
             //Load dữ liệu
             string sql = "select * from DTBQT";
-            ketnoicsdl(sql);
+            //ketnoicsdl(sql);
             DataManager.Instance.LoadSWToList(EV_SWlist);
             //
             isDichDoanRadio.Checked = true;
