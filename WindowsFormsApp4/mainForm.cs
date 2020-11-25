@@ -19,7 +19,7 @@ namespace WindowsFormsApp4
         int effect2 = 0;
         //thêm từ master
         public searchedWordList EV_SWlist = new searchedWordList();
-        SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True");
+        SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True");
         public startForm parent;
         static int EVSource_Length;
         static int VESource_Length;
@@ -265,6 +265,7 @@ namespace WindowsFormsApp4
             DataManager.Instance.LoadSWToList(EV_SWlist);
             //
             isDichDoanRadio.Checked = true;
+            isTuKhoCheckBox.Visible = false;
         }
         private void ketnoicsdl(string sql)
         {
@@ -437,6 +438,24 @@ namespace WindowsFormsApp4
             button1.Enabled = !button1.Enabled;
             ConnectDatabseEV();
             button1.Enabled = !button1.Enabled;
+
+            //--support danh dau tu kho
+            string search = "select IsTuKho from EV_SOURCE where Name = '" + textBox1.Text.Trim() + "'";
+            SqlCommand com = new SqlCommand(search, mycnt); // truy van cau lenh vao sql
+            SqlDataAdapter ada = new SqlDataAdapter(com); // chuyen data tu sql ve trong ada
+            DataTable dt = new DataTable();
+            ada.Fill(dt); // do data tu ada va dt
+            mycnt.Close(); // đóng kết nối
+            if (dt.Rows.Count > 0)
+            {
+                isTuKhoCheckBox.Visible = true;
+                if (dt.Rows[0]["IsTuKho"].ToString() == "1")
+                    isTuKhoCheckBox.Checked = true;
+                else
+                    isTuKhoCheckBox.Checked = false;
+            }
+            else
+                isTuKhoCheckBox.Visible = false;
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -948,6 +967,38 @@ namespace WindowsFormsApp4
                 isDichDoanRadio.Checked = false;
                 dataGridView3.BringToFront();
             }
-        }    
+        }
+
+        private void isTuKhoCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (isTuKhoCheckBox.Checked == true)
+            {
+                mycnt.Open();
+                string update = "update EV_SOURCE set IsTuKho = 1 where Name = '" + textBox1.Text.Trim() + "'";
+                //SqlCommand com = new SqlCommand(update, mycnt);
+
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Connection = mycnt;
+                cmd.CommandText = update;
+                cmd.ExecuteNonQuery();
+
+                mycnt.Close();
+            }
+            else
+            {
+                mycnt.Open();
+                string update = "update EV_SOURCE set IsTuKho = 0 where Name = '" + textBox1.Text.Trim() + "'";
+                //SqlCommand com = new SqlCommand(update, mycnt);
+
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Connection = mycnt;
+                cmd.CommandText = update;
+                cmd.ExecuteNonQuery();
+
+                mycnt.Close();
+            }
+        }
     }
 }
