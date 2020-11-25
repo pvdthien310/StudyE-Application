@@ -956,5 +956,9 @@ namespace WindowsFormsApp4
             this.Hide();
             picture_Dictionary.Show();
         }
+
+
+       
+
     }
 }

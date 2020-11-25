@@ -53,6 +53,12 @@
             this.b23 = new Guna.UI2.WinForms.Guna2Button();
             this.b22 = new Guna.UI2.WinForms.Guna2Button();
             this.b21 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Right = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Pause = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // b4
@@ -530,6 +536,55 @@
             this.b21.TabIndex = 0;
             this.b21.Click += new System.EventHandler(this.TabChose_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.Right);
+            this.panel1.Controls.Add(this.Pause);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1061, 614);
+            this.panel1.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(183, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(662, 527);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Right
+            // 
+            this.Right.CheckedState.Parent = this.Right;
+            this.Right.CustomImages.Parent = this.Right;
+            this.Right.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Right.ForeColor = System.Drawing.Color.White;
+            this.Right.HoverState.Parent = this.Right;
+            this.Right.Location = new System.Drawing.Point(671, 459);
+            this.Right.Name = "Right";
+            this.Right.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Right.ShadowDecoration.Parent = this.Right;
+            this.Right.Size = new System.Drawing.Size(100, 100);
+            this.Right.TabIndex = 1;
+            this.Right.Text = "guna2CircleButton1";
+            this.Right.Click += new System.EventHandler(this.Right_Click);
+            // 
+            // Pause
+            // 
+            this.Pause.CheckedState.Parent = this.Pause;
+            this.Pause.CustomImages.Parent = this.Pause;
+            this.Pause.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Pause.ForeColor = System.Drawing.Color.White;
+            this.Pause.HoverState.Parent = this.Pause;
+            this.Pause.Location = new System.Drawing.Point(561, 459);
+            this.Pause.Name = "Pause";
+            this.Pause.ShadowDecoration.Parent = this.Pause;
+            this.Pause.Size = new System.Drawing.Size(100, 100);
+            this.Pause.TabIndex = 0;
+            this.Pause.Text = "guna2Button1";
+            this.Pause.Click += new System.EventHandler(this.Pause_Click);
+            // 
             // Picture_Dictionary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -537,6 +592,7 @@
             this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.Giao_dien1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1057, 614);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.b21);
             this.Controls.Add(this.b15);
             this.Controls.Add(this.b8);
@@ -565,6 +621,8 @@
             this.DoubleBuffered = true;
             this.Name = "Picture_Dictionary";
             this.Text = "Picture_Dictionary";
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -614,5 +672,9 @@
         private System.Windows.Forms.ImageList Music;
         private System.Windows.Forms.ImageList Nature;
         private System.Windows.Forms.ImageList Number;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2CircleButton Right;
+        private Guna.UI2.WinForms.Guna2Button Pause;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

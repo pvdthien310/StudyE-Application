@@ -1638,11 +1638,11 @@
             this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.kn6xJE1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1500, 769);
+            this.Controls.Add(this.guna2Panel_E_V);
             this.Controls.Add(this.guna2Panel_DTBQT);
             this.Controls.Add(this.guna2Panel_Add);
             this.Controls.Add(this.guna2Panel_TraDoan);
             this.Controls.Add(this.guna2Panel_V_E);
-            this.Controls.Add(this.guna2Panel_E_V);
             this.Controls.Add(this.guna2Panel_SearchedWord);
             this.Controls.Add(this.guna2Panel_TuKho);
             this.Controls.Add(this.guna2Panel_home);
