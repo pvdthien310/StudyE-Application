@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Speech.Synthesis;
+
 
 namespace WindowsFormsApp4
 {
@@ -140,7 +142,7 @@ namespace WindowsFormsApp4
         private void Pause_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
-            
+            currentPicture = 0;
         }
 
         private void Right_Click(object sender, EventArgs e)
@@ -156,6 +158,26 @@ namespace WindowsFormsApp4
             pictureBox1.Image = Image.FromFile(nameImage[currentPicture].FullName);
         }
 
-       
+        private void Left_Click(object sender, EventArgs e)
+        {
+            if (currentPicture >0)
+            {
+                currentPicture--;
+            }
+            else
+            {
+                currentPicture = nameImage.Count() - 1;
+            }
+            pictureBox1.Image = Image.FromFile(nameImage[currentPicture].FullName);
+        }
+
+        private void Speak_Click(object sender, EventArgs e)
+        {
+            string text = nameImage[currentPicture].Name;
+            text = text.Remove(text.Length - 3, 3);
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.SetOutputToDefaultAudioDevice();
+            synth.Speak(text);
+        }
     }
 }

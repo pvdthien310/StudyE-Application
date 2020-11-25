@@ -54,13 +54,15 @@
             this.b22 = new Guna.UI2.WinForms.Guna2Button();
             this.b21 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Left = new Guna.UI2.WinForms.Guna2CircleButton();
             this.Right = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.Speak = new Guna.UI2.WinForms.Guna2Button();
             this.Pause = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Speak = new Guna.UI2.WinForms.Guna2Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // b4
@@ -75,10 +77,10 @@
             this.b4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b4.ForeColor = System.Drawing.Color.White;
             this.b4.HoverState.Parent = this.b4;
-            this.b4.Location = new System.Drawing.Point(499, 173);
+            this.b4.Location = new System.Drawing.Point(474, 172);
             this.b4.Name = "b4";
             this.b4.ShadowDecoration.Parent = this.b4;
-            this.b4.Size = new System.Drawing.Size(85, 85);
+            this.b4.Size = new System.Drawing.Size(100, 100);
             this.b4.TabIndex = 0;
             this.b4.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -94,10 +96,10 @@
             this.b3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b3.ForeColor = System.Drawing.Color.White;
             this.b3.HoverState.Parent = this.b3;
-            this.b3.Location = new System.Drawing.Point(375, 173);
+            this.b3.Location = new System.Drawing.Point(350, 172);
             this.b3.Name = "b3";
             this.b3.ShadowDecoration.Parent = this.b3;
-            this.b3.Size = new System.Drawing.Size(85, 85);
+            this.b3.Size = new System.Drawing.Size(100, 100);
             this.b3.TabIndex = 0;
             this.b3.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -113,10 +115,10 @@
             this.b2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b2.ForeColor = System.Drawing.Color.White;
             this.b2.HoverState.Parent = this.b2;
-            this.b2.Location = new System.Drawing.Point(250, 173);
+            this.b2.Location = new System.Drawing.Point(225, 172);
             this.b2.Name = "b2";
             this.b2.ShadowDecoration.Parent = this.b2;
-            this.b2.Size = new System.Drawing.Size(85, 85);
+            this.b2.Size = new System.Drawing.Size(100, 100);
             this.b2.TabIndex = 0;
             this.b2.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -132,10 +134,10 @@
             this.b5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b5.ForeColor = System.Drawing.Color.White;
             this.b5.HoverState.Parent = this.b5;
-            this.b5.Location = new System.Drawing.Point(624, 173);
+            this.b5.Location = new System.Drawing.Point(599, 172);
             this.b5.Name = "b5";
             this.b5.ShadowDecoration.Parent = this.b5;
-            this.b5.Size = new System.Drawing.Size(85, 85);
+            this.b5.Size = new System.Drawing.Size(100, 100);
             this.b5.TabIndex = 0;
             this.b5.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -151,10 +153,10 @@
             this.b6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b6.ForeColor = System.Drawing.Color.White;
             this.b6.HoverState.Parent = this.b6;
-            this.b6.Location = new System.Drawing.Point(752, 173);
+            this.b6.Location = new System.Drawing.Point(727, 172);
             this.b6.Name = "b6";
             this.b6.ShadowDecoration.Parent = this.b6;
-            this.b6.Size = new System.Drawing.Size(85, 85);
+            this.b6.Size = new System.Drawing.Size(100, 100);
             this.b6.TabIndex = 0;
             this.b6.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -170,10 +172,10 @@
             this.b1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b1.ForeColor = System.Drawing.Color.White;
             this.b1.HoverState.Parent = this.b1;
-            this.b1.Location = new System.Drawing.Point(121, 173);
+            this.b1.Location = new System.Drawing.Point(96, 172);
             this.b1.Name = "b1";
             this.b1.ShadowDecoration.Parent = this.b1;
-            this.b1.Size = new System.Drawing.Size(85, 85);
+            this.b1.Size = new System.Drawing.Size(100, 100);
             this.b1.TabIndex = 0;
             this.b1.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -189,10 +191,10 @@
             this.b7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b7.ForeColor = System.Drawing.Color.White;
             this.b7.HoverState.Parent = this.b7;
-            this.b7.Location = new System.Drawing.Point(883, 173);
+            this.b7.Location = new System.Drawing.Point(858, 172);
             this.b7.Name = "b7";
             this.b7.ShadowDecoration.Parent = this.b7;
-            this.b7.Size = new System.Drawing.Size(85, 85);
+            this.b7.Size = new System.Drawing.Size(100, 100);
             this.b7.TabIndex = 0;
             this.b7.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -208,10 +210,10 @@
             this.b11.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b11.ForeColor = System.Drawing.Color.White;
             this.b11.HoverState.Parent = this.b11;
-            this.b11.Location = new System.Drawing.Point(499, 282);
+            this.b11.Location = new System.Drawing.Point(474, 281);
             this.b11.Name = "b11";
             this.b11.ShadowDecoration.Parent = this.b11;
-            this.b11.Size = new System.Drawing.Size(85, 85);
+            this.b11.Size = new System.Drawing.Size(100, 100);
             this.b11.TabIndex = 0;
             this.b11.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -227,10 +229,10 @@
             this.b12.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b12.ForeColor = System.Drawing.Color.White;
             this.b12.HoverState.Parent = this.b12;
-            this.b12.Location = new System.Drawing.Point(624, 282);
+            this.b12.Location = new System.Drawing.Point(599, 281);
             this.b12.Name = "b12";
             this.b12.ShadowDecoration.Parent = this.b12;
-            this.b12.Size = new System.Drawing.Size(85, 85);
+            this.b12.Size = new System.Drawing.Size(100, 100);
             this.b12.TabIndex = 0;
             this.b12.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -246,10 +248,10 @@
             this.b13.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b13.ForeColor = System.Drawing.Color.White;
             this.b13.HoverState.Parent = this.b13;
-            this.b13.Location = new System.Drawing.Point(752, 282);
+            this.b13.Location = new System.Drawing.Point(727, 281);
             this.b13.Name = "b13";
             this.b13.ShadowDecoration.Parent = this.b13;
-            this.b13.Size = new System.Drawing.Size(85, 85);
+            this.b13.Size = new System.Drawing.Size(100, 100);
             this.b13.TabIndex = 0;
             this.b13.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -265,10 +267,10 @@
             this.b14.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b14.ForeColor = System.Drawing.Color.White;
             this.b14.HoverState.Parent = this.b14;
-            this.b14.Location = new System.Drawing.Point(883, 282);
+            this.b14.Location = new System.Drawing.Point(858, 281);
             this.b14.Name = "b14";
             this.b14.ShadowDecoration.Parent = this.b14;
-            this.b14.Size = new System.Drawing.Size(85, 85);
+            this.b14.Size = new System.Drawing.Size(100, 100);
             this.b14.TabIndex = 0;
             this.b14.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -284,10 +286,10 @@
             this.b10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b10.ForeColor = System.Drawing.Color.White;
             this.b10.HoverState.Parent = this.b10;
-            this.b10.Location = new System.Drawing.Point(375, 282);
+            this.b10.Location = new System.Drawing.Point(350, 281);
             this.b10.Name = "b10";
             this.b10.ShadowDecoration.Parent = this.b10;
-            this.b10.Size = new System.Drawing.Size(85, 85);
+            this.b10.Size = new System.Drawing.Size(100, 100);
             this.b10.TabIndex = 0;
             this.b10.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -303,10 +305,10 @@
             this.b9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b9.ForeColor = System.Drawing.Color.White;
             this.b9.HoverState.Parent = this.b9;
-            this.b9.Location = new System.Drawing.Point(250, 282);
+            this.b9.Location = new System.Drawing.Point(225, 281);
             this.b9.Name = "b9";
             this.b9.ShadowDecoration.Parent = this.b9;
-            this.b9.Size = new System.Drawing.Size(85, 85);
+            this.b9.Size = new System.Drawing.Size(100, 100);
             this.b9.TabIndex = 0;
             this.b9.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -322,10 +324,10 @@
             this.b8.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b8.ForeColor = System.Drawing.Color.White;
             this.b8.HoverState.Parent = this.b8;
-            this.b8.Location = new System.Drawing.Point(121, 282);
+            this.b8.Location = new System.Drawing.Point(96, 281);
             this.b8.Name = "b8";
             this.b8.ShadowDecoration.Parent = this.b8;
-            this.b8.Size = new System.Drawing.Size(85, 85);
+            this.b8.Size = new System.Drawing.Size(100, 100);
             this.b8.TabIndex = 0;
             this.b8.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -341,10 +343,10 @@
             this.b18.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b18.ForeColor = System.Drawing.Color.White;
             this.b18.HoverState.Parent = this.b18;
-            this.b18.Location = new System.Drawing.Point(561, 396);
+            this.b18.Location = new System.Drawing.Point(536, 395);
             this.b18.Name = "b18";
             this.b18.ShadowDecoration.Parent = this.b18;
-            this.b18.Size = new System.Drawing.Size(85, 85);
+            this.b18.Size = new System.Drawing.Size(100, 100);
             this.b18.TabIndex = 0;
             this.b18.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -360,10 +362,10 @@
             this.b19.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b19.ForeColor = System.Drawing.Color.White;
             this.b19.HoverState.Parent = this.b19;
-            this.b19.Location = new System.Drawing.Point(686, 396);
+            this.b19.Location = new System.Drawing.Point(661, 395);
             this.b19.Name = "b19";
             this.b19.ShadowDecoration.Parent = this.b19;
-            this.b19.Size = new System.Drawing.Size(85, 85);
+            this.b19.Size = new System.Drawing.Size(100, 100);
             this.b19.TabIndex = 0;
             this.b19.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -379,10 +381,10 @@
             this.b20.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b20.ForeColor = System.Drawing.Color.White;
             this.b20.HoverState.Parent = this.b20;
-            this.b20.Location = new System.Drawing.Point(814, 396);
+            this.b20.Location = new System.Drawing.Point(789, 395);
             this.b20.Name = "b20";
             this.b20.ShadowDecoration.Parent = this.b20;
-            this.b20.Size = new System.Drawing.Size(85, 85);
+            this.b20.Size = new System.Drawing.Size(100, 100);
             this.b20.TabIndex = 0;
             this.b20.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -398,10 +400,10 @@
             this.b17.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b17.ForeColor = System.Drawing.Color.White;
             this.b17.HoverState.Parent = this.b17;
-            this.b17.Location = new System.Drawing.Point(437, 396);
+            this.b17.Location = new System.Drawing.Point(412, 395);
             this.b17.Name = "b17";
             this.b17.ShadowDecoration.Parent = this.b17;
-            this.b17.Size = new System.Drawing.Size(85, 85);
+            this.b17.Size = new System.Drawing.Size(100, 100);
             this.b17.TabIndex = 0;
             this.b17.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -417,10 +419,10 @@
             this.b16.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b16.ForeColor = System.Drawing.Color.White;
             this.b16.HoverState.Parent = this.b16;
-            this.b16.Location = new System.Drawing.Point(312, 396);
+            this.b16.Location = new System.Drawing.Point(287, 395);
             this.b16.Name = "b16";
             this.b16.ShadowDecoration.Parent = this.b16;
-            this.b16.Size = new System.Drawing.Size(85, 85);
+            this.b16.Size = new System.Drawing.Size(100, 100);
             this.b16.TabIndex = 0;
             this.b16.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -436,10 +438,10 @@
             this.b15.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b15.ForeColor = System.Drawing.Color.White;
             this.b15.HoverState.Parent = this.b15;
-            this.b15.Location = new System.Drawing.Point(183, 396);
+            this.b15.Location = new System.Drawing.Point(158, 395);
             this.b15.Name = "b15";
             this.b15.ShadowDecoration.Parent = this.b15;
-            this.b15.Size = new System.Drawing.Size(85, 85);
+            this.b15.Size = new System.Drawing.Size(100, 100);
             this.b15.TabIndex = 0;
             this.b15.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -455,10 +457,10 @@
             this.b24.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b24.ForeColor = System.Drawing.Color.White;
             this.b24.HoverState.Parent = this.b24;
-            this.b24.Location = new System.Drawing.Point(627, 506);
+            this.b24.Location = new System.Drawing.Point(602, 505);
             this.b24.Name = "b24";
             this.b24.ShadowDecoration.Parent = this.b24;
-            this.b24.Size = new System.Drawing.Size(85, 85);
+            this.b24.Size = new System.Drawing.Size(100, 100);
             this.b24.TabIndex = 0;
             this.b24.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -474,10 +476,10 @@
             this.b25.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b25.ForeColor = System.Drawing.Color.White;
             this.b25.HoverState.Parent = this.b25;
-            this.b25.Location = new System.Drawing.Point(752, 506);
+            this.b25.Location = new System.Drawing.Point(727, 505);
             this.b25.Name = "b25";
             this.b25.ShadowDecoration.Parent = this.b25;
-            this.b25.Size = new System.Drawing.Size(85, 85);
+            this.b25.Size = new System.Drawing.Size(100, 100);
             this.b25.TabIndex = 0;
             this.b25.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -493,10 +495,10 @@
             this.b23.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b23.ForeColor = System.Drawing.Color.White;
             this.b23.HoverState.Parent = this.b23;
-            this.b23.Location = new System.Drawing.Point(503, 506);
+            this.b23.Location = new System.Drawing.Point(478, 505);
             this.b23.Name = "b23";
             this.b23.ShadowDecoration.Parent = this.b23;
-            this.b23.Size = new System.Drawing.Size(85, 85);
+            this.b23.Size = new System.Drawing.Size(100, 100);
             this.b23.TabIndex = 0;
             this.b23.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -512,10 +514,10 @@
             this.b22.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b22.ForeColor = System.Drawing.Color.White;
             this.b22.HoverState.Parent = this.b22;
-            this.b22.Location = new System.Drawing.Point(378, 506);
+            this.b22.Location = new System.Drawing.Point(353, 505);
             this.b22.Name = "b22";
             this.b22.ShadowDecoration.Parent = this.b22;
-            this.b22.Size = new System.Drawing.Size(85, 85);
+            this.b22.Size = new System.Drawing.Size(100, 100);
             this.b22.TabIndex = 0;
             this.b22.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -531,10 +533,10 @@
             this.b21.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.b21.ForeColor = System.Drawing.Color.White;
             this.b21.HoverState.Parent = this.b21;
-            this.b21.Location = new System.Drawing.Point(249, 506);
+            this.b21.Location = new System.Drawing.Point(224, 505);
             this.b21.Name = "b21";
             this.b21.ShadowDecoration.Parent = this.b21;
-            this.b21.Size = new System.Drawing.Size(85, 85);
+            this.b21.Size = new System.Drawing.Size(100, 100);
             this.b21.TabIndex = 0;
             this.b21.Click += new System.EventHandler(this.TabChose_Click);
             // 
@@ -543,35 +545,32 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.Giao_dien11;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.guna2CircleButton1);
-            this.panel1.Controls.Add(this.Right);
-            this.panel1.Controls.Add(this.Speak);
-            this.panel1.Controls.Add(this.Pause);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1061, 666);
+            this.panel1.Size = new System.Drawing.Size(1059, 666);
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
             // 
-            // guna2CircleButton1
+            // Left
             // 
-            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.a;
-            this.guna2CircleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(327, 493);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(101, 101);
-            this.guna2CircleButton1.TabIndex = 1;
-            this.guna2CircleButton1.Click += new System.EventHandler(this.Right_Click);
+            this.Left.BackColor = System.Drawing.Color.Transparent;
+            this.Left.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.a;
+            this.Left.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Left.CheckedState.Parent = this.Left;
+            this.Left.CustomImages.Parent = this.Left;
+            this.Left.FillColor = System.Drawing.Color.Transparent;
+            this.Left.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Left.ForeColor = System.Drawing.Color.Transparent;
+            this.Left.HoverState.Parent = this.Left;
+            this.Left.Location = new System.Drawing.Point(10, 6);
+            this.Left.Name = "Left";
+            this.Left.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Left.ShadowDecoration.Parent = this.Left;
+            this.Left.Size = new System.Drawing.Size(101, 101);
+            this.Left.TabIndex = 3;
+            this.Left.Click += new System.EventHandler(this.Left_Click);
             // 
             // Right
             // 
@@ -584,32 +583,13 @@
             this.Right.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Right.ForeColor = System.Drawing.Color.Transparent;
             this.Right.HoverState.Parent = this.Right;
-            this.Right.Location = new System.Drawing.Point(632, 491);
+            this.Right.Location = new System.Drawing.Point(320, 6);
             this.Right.Name = "Right";
             this.Right.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Right.ShadowDecoration.Parent = this.Right;
             this.Right.Size = new System.Drawing.Size(101, 101);
             this.Right.TabIndex = 1;
             this.Right.Click += new System.EventHandler(this.Right_Click);
-            // 
-            // Speak
-            // 
-            this.Speak.BackColor = System.Drawing.Color.Transparent;
-            this.Speak.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.speak;
-            this.Speak.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Speak.BorderRadius = 10;
-            this.Speak.CheckedState.Parent = this.Speak;
-            this.Speak.CustomImages.Parent = this.Speak;
-            this.Speak.FillColor = System.Drawing.Color.Transparent;
-            this.Speak.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Speak.ForeColor = System.Drawing.Color.Transparent;
-            this.Speak.HoverState.Parent = this.Speak;
-            this.Speak.Location = new System.Drawing.Point(532, 493);
-            this.Speak.Name = "Speak";
-            this.Speak.ShadowDecoration.Parent = this.Speak;
-            this.Speak.Size = new System.Drawing.Size(97, 98);
-            this.Speak.TabIndex = 0;
-            this.Speak.Click += new System.EventHandler(this.Pause_Click);
             // 
             // Pause
             // 
@@ -623,7 +603,7 @@
             this.Pause.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Pause.ForeColor = System.Drawing.Color.Transparent;
             this.Pause.HoverState.Parent = this.Pause;
-            this.Pause.Location = new System.Drawing.Point(429, 494);
+            this.Pause.Location = new System.Drawing.Point(113, 6);
             this.Pause.Name = "Pause";
             this.Pause.ShadowDecoration.Parent = this.Pause;
             this.Pause.Size = new System.Drawing.Size(101, 101);
@@ -640,6 +620,37 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // Speak
+            // 
+            this.Speak.BackColor = System.Drawing.Color.Transparent;
+            this.Speak.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.speak;
+            this.Speak.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Speak.BorderRadius = 10;
+            this.Speak.CheckedState.Parent = this.Speak;
+            this.Speak.CustomImages.Parent = this.Speak;
+            this.Speak.FillColor = System.Drawing.Color.Transparent;
+            this.Speak.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Speak.ForeColor = System.Drawing.Color.Transparent;
+            this.Speak.HoverState.Parent = this.Speak;
+            this.Speak.Location = new System.Drawing.Point(218, 6);
+            this.Speak.Name = "Speak";
+            this.Speak.ShadowDecoration.Parent = this.Speak;
+            this.Speak.Size = new System.Drawing.Size(101, 101);
+            this.Speak.TabIndex = 4;
+            this.Speak.Click += new System.EventHandler(this.Speak_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.Pause);
+            this.panel2.Controls.Add(this.Speak);
+            this.panel2.Controls.Add(this.Right);
+            this.panel2.Controls.Add(this.Left);
+            this.panel2.Location = new System.Drawing.Point(312, 487);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(432, 116);
+            this.panel2.TabIndex = 5;
             // 
             // Picture_Dictionary
             // 
@@ -679,6 +690,7 @@
             this.Text = "Picture_Dictionary";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -732,7 +744,8 @@
         private Guna.UI2.WinForms.Guna2CircleButton Right;
         private Guna.UI2.WinForms.Guna2Button Pause;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2CircleButton Left;
         private Guna.UI2.WinForms.Guna2Button Speak;
+        private System.Windows.Forms.Panel panel2;
     }
 }
