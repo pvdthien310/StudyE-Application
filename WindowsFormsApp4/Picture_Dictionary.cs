@@ -32,9 +32,10 @@ namespace WindowsFormsApp4
         {
             if (sender == b1)
             {
-                group = "animal";
-                DirectoryInfo dGroup = new DirectoryInfo("./animal");
-                nameImage = dGroup.GetFiles(); 
+                group = "Animal";
+                DirectoryInfo dGroup = new DirectoryInfo("./PictureImage/Animal");
+                nameImage = dGroup.GetFiles();
+                panel1.Visible = true;
             }
             else if (sender == b2)
             {

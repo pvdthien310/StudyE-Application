@@ -538,6 +538,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.Right);
             this.panel1.Controls.Add(this.Pause);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -545,12 +546,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1061, 614);
             this.panel1.TabIndex = 1;
+            this.panel1.Visible = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(183, 51);
+            this.pictureBox1.Location = new System.Drawing.Point(250, 11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(662, 527);
+            this.pictureBox1.Size = new System.Drawing.Size(600, 600);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
