@@ -182,6 +182,16 @@ namespace WindowsFormsApp4
             this.guna2Button_TuKho.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold | FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_TuKho.FillColor = System.Drawing.Color.White;
             Reset_Status_Button(sender, e);
+
+            LoadTuKho();
+            addMenuStrip(sender, e);
+            int CountTuKho = TuKhoTabledatagridview.RowCount;
+            if (CountTuKho > 0)
+            {
+                TuKhoTabledatagridview.ContextMenuStrip.Enabled = true;
+            }
+            else
+                TuKhoTabledatagridview.ContextMenuStrip.Enabled = false;
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
@@ -266,6 +276,8 @@ namespace WindowsFormsApp4
             //
             isDichDoanRadio.Checked = true;
             isTuKhoCheckBox.Visible = false;
+
+            addMenuStrip(sender, e);
         }
         private void ketnoicsdl(string sql)
         {
@@ -280,6 +292,17 @@ namespace WindowsFormsApp4
             dataGridView5.DataSource = dt; //đổ dữ liệu vào datagridview
         }
 
+        private void LoadTuKho()
+        {
+            mycnt.Open();
+            string query = "select Name,Meaning from EV_SOURCE where IsTuKho = 1";
+            SqlCommand com = new SqlCommand(query, mycnt);
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            mycnt.Close();
+            TuKhoTabledatagridview.DataSource = dt;
+        }
         private void ConnectDatabseEV()
         {
             mycnt.Open(); // mo ket noi 
@@ -453,6 +476,8 @@ namespace WindowsFormsApp4
                     isTuKhoCheckBox.Checked = true;
                 else
                     isTuKhoCheckBox.Checked = false;
+                if (resultBox1.Text == "Vui lòng nhập từ cần tra !!")
+                    isTuKhoCheckBox.Visible = false;
             }
             else
                 isTuKhoCheckBox.Visible = false;
@@ -999,6 +1024,35 @@ namespace WindowsFormsApp4
 
                 mycnt.Close();
             }
+        }
+
+        void addMenuStrip(object sender, EventArgs ee)
+        {
+            TuKhoTabledatagridview.ContextMenuStrip = new ContextMenuStrip();
+            ToolStripItem del = new ToolStripButton("Xóa");
+            TuKhoTabledatagridview.ContextMenuStrip.Items.Add(del);
+
+            del.Click += (s, e) =>
+            {
+                string isSelect = TuKhoTabledatagridview.CurrentRow.Cells["Name"].Value.ToString();
+                TuKhoTabledatagridview.Rows.RemoveAt(TuKhoTabledatagridview.CurrentRow.Index);
+                mycnt.Open();
+                string update = "update EV_SOURCE set IsTuKho = 0 where Name ='" + isSelect + "'";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = mycnt;
+                cmd.CommandText = update;
+                cmd.ExecuteNonQuery();
+                mycnt.Close();
+                button1_Click(sender, ee);
+            };
+
+        }
+        private void TuKhoTabledatagridview_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (TuKhoTabledatagridview.RowCount > 0)
+                TuKhoTabledatagridview.ContextMenuStrip.Enabled = true;
+            else
+                TuKhoTabledatagridview.ContextMenuStrip.Enabled = false;
         }
     }
 }
