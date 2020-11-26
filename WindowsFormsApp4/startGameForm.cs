@@ -478,7 +478,7 @@ namespace WindowsFormsApp4
 
             this.guna2Button2_Challange.Size = new System.Drawing.Size(200, 90);
             guna2panel2_challenge.Visible = true;
-            this.label_challenge_intro.Padding = new System.Windows.Forms.Padding(5, 20, 5, 5);
+            this.label_challenge_intro.Margin = new System.Windows.Forms.Padding(20, 100, 10, 10);
             label_challenge_intro.Text = "Challenge yourself with over 100.000 different questions. ";
             label_challenge_intro.Visible = true;
            // guna2panel2_challenge_effect.Visible = false;
@@ -492,7 +492,7 @@ namespace WindowsFormsApp4
             this.guna2Button2_Challange.Size = new System.Drawing.Size(180, 70);
             guna2panel2_challenge.Visible = false;
             label_challenge_intro.Text = " Challenge yourself with over 100.000 different questions. ";
-            this.label_challenge_intro.Padding = new System.Windows.Forms.Padding(5, 20, 5, 5);
+            this.label_challenge_intro.Margin = new System.Windows.Forms.Padding(20, 100, 10, 10);
             label_challenge_intro.Visible = false;
             //guna2panel2_challenge_effect.Visible = false;
 
@@ -508,7 +508,7 @@ namespace WindowsFormsApp4
             this.guna2Button2_Practise.Size = new System.Drawing.Size(200, 90);
             guna2panel2_practise.Visible = true;
             label_practise_intro.Text = " Challenge yourself with your look-up words. ( Your look-up words (in E-V) must comprise more than 100 ) ";
-            this.label_practise_intro.Padding = new System.Windows.Forms.Padding(5, 20, 5, 5);
+            this.label_practise_intro.Margin = new System.Windows.Forms.Padding(15, 20, 10, 10);
             label_practise_intro.Visible = true;
            // guna2panel2_practise_effect.Visible = false;
 
@@ -524,10 +524,19 @@ namespace WindowsFormsApp4
             this.guna2Button2_Practise.Size = new System.Drawing.Size(180, 70);
             guna2panel2_practise.Visible = false;
             label_practise_intro.Text = " Challenge yourself with your look-up words. ( Your look-up words (in E-V) must comprise more than 100 ) ";
-            this.label_practise_intro.Padding = new System.Windows.Forms.Padding(5, 20, 5, 5);
+            this.label_practise_intro.Margin = new System.Windows.Forms.Padding(15, 20, 10, 10);
             label_practise_intro.Visible = false;
           //  guna2panel2_practise_effect.Visible = false;
 
+        }
+
+        private void ControlBox_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            music.controls.stop();
+            if ( this.parent!= null) this.parent.Close();
+            mainForm newmainform = new mainForm();
+            newmainform.Show();
         }
     }
 }

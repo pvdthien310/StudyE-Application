@@ -18,6 +18,7 @@ namespace WindowsFormsApp4
         
         private Bitmap sprite;
         private Bitmap creep;
+        private Bitmap alock;
         // Back buffer
         private Bitmap backBuffer;
         public Timer timer_;
@@ -48,7 +49,7 @@ namespace WindowsFormsApp4
             DoubleBuffered = true;
             this.parent = parent;
 
-           
+            alock = new Bitmap("lock.png");
             creep = new Bitmap("creep.png");
             index = 0; // 0: chua tra loi, 1: dung, 2:sai
             gameManager = new GameManager(isChallenge, whatCharacter);
@@ -101,7 +102,7 @@ namespace WindowsFormsApp4
                 timer_.Enabled = false;
               
             }
-            timer_.Interval = 120;
+            timer_.Interval = 100;
             if (isCorrect == 1 || isCorrect == 2 || isCorrect == 3 || index1 == 0)
             this.Invalidate();
         }
@@ -131,6 +132,7 @@ namespace WindowsFormsApp4
                 e.Graphics.DrawImage(background_char, new Rectangle(0, 0, 1000, 600), new Rectangle(0, 0, 1280, 720), GraphicsUnit.Pixel);
                 e.Graphics.DrawImage(creep, location_creep, 430, new Rectangle(0, 0, 88, 110), GraphicsUnit.Pixel);
                 e.Graphics.DrawImage(sprite, location_char, 385, new Rectangle(0, 0, 88, 108), GraphicsUnit.Pixel);
+                e.Graphics.DrawImage(alock, new Rectangle(465, 142, 55, 70), new Rectangle(0, 0, 193, 244),GraphicsUnit.Pixel);
 
                 index1++;
                 return;
@@ -140,8 +142,9 @@ namespace WindowsFormsApp4
                 //e.graphics.drawimage(background_char, 2, 1);
                // e.Graphics.DrawImage(background_char, new Rectangle(0, 0, 1000, 590), new Rectangle(0, 0, 929, 393), GraphicsUnit.Pixel);
                 e.Graphics.DrawImage(background_char, new Rectangle(0, 0, 1000, 600), new Rectangle(0, 0, 1280, 720), GraphicsUnit.Pixel);
-                e.Graphics.DrawImage(creep, location_creep, 430, new Rectangle(0, 0, 88, 110), GraphicsUnit.Pixel);
+                e.Graphics.DrawImage(creep, location_creep, 430, new Rectangle(0, 0, 88, 110), GraphicsUnit.Pixel);              
                 e.Graphics.DrawImage(sprite, location_char, 385, new Rectangle(0, 0, 88, 113), GraphicsUnit.Pixel);
+                e.Graphics.DrawImage(alock, new Rectangle(465, 142, 55, 70), new Rectangle(0, 0, 193, 244), GraphicsUnit.Pixel);
                 gameManager.current_ques_index++;
                 LoadQuestion();
                 Reset_Status();
@@ -228,11 +231,11 @@ namespace WindowsFormsApp4
                 OpenResultForm();
                 return;
             }
-            game_question.Text = "Nghĩa Của Từ : "+ gameManager.quesData.List[gameManager.current_ques_index].question + " Là Gì ?";
-            game_btnA.Text = process_answer(gameManager.quesData.List[gameManager.current_ques_index].answerA);
-            game_btnB.Text = process_answer(gameManager.quesData.List[gameManager.current_ques_index].answerB);
-            game_btnC.Text = process_answer(gameManager.quesData.List[gameManager.current_ques_index].answerC);
-            game_btnD.Text = process_answer(gameManager.quesData.List[gameManager.current_ques_index].answerD);
+            game_question.Text = gameManager.quesData.List[gameManager.current_ques_index].question + " ?";
+            game_btnA.Text = "A. " + process_answer(gameManager.quesData.List[gameManager.current_ques_index].answerA);
+            game_btnB.Text = "B. " + process_answer(gameManager.quesData.List[gameManager.current_ques_index].answerB);
+            game_btnC.Text = "C. " + process_answer(gameManager.quesData.List[gameManager.current_ques_index].answerC);
+            game_btnD.Text = "D. " + process_answer(gameManager.quesData.List[gameManager.current_ques_index].answerD);
         }
         public void OpenResultForm()
         {

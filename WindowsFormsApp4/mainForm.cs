@@ -23,6 +23,7 @@ namespace WindowsFormsApp4
         public startForm parent;
         static int EVSource_Length;
         static int VESource_Length;
+        bool IsQuery = false;
         //
         public mainForm()
         {
@@ -743,10 +744,10 @@ namespace WindowsFormsApp4
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (textBox2.Text == "")
             {
-                textBox1.Text = "Nhập Từ Cần Tra";
-                textBox1.ForeColor = Color.Gray;
+                textBox2.Text = "Nhập Từ Cần Tra";
+                textBox2.ForeColor = Color.Gray;
             }
         }
 
@@ -868,28 +869,40 @@ namespace WindowsFormsApp4
             //}
 
             //label1_1.Text = "";
-
-            mycnt.Open(); // mo ket noi 
-            if (textBox1.Text == "")
+            try
             {
-                mycnt.Close();
-                return;
-            }
-            else
-            {
-                string search = "select top(10) * from EV_SOURCE where Name like '" + textBox1.Text.Trim() + "%'";
-                SqlCommand com = new SqlCommand(search, mycnt); // truy van cau lenh vao sql
-                SqlDataAdapter ada = new SqlDataAdapter(com); // chuyen data tu sql ve trong ada
-                DataTable dt = new DataTable();
-                ada.Fill(dt); // do data tu ada va dt
-                mycnt.Close(); // đóng kết nối
-                textBox1.AutoCompleteCustomSource.Clear();
-                if (dt.Rows.Count > 0)
+                if (!IsQuery)
                 {
-                    for (int i = 0; i < dt.Rows.Count; i++)
-                        textBox1.AutoCompleteCustomSource.Add(dt.Rows[i]["Name"].ToString());
-                    textBox1.TextChanged -= textBox1_TextChanged;
+                    mycnt.Open(); // mo ket noi 
+                    if (textBox1.Text == "")
+                    {
+                        textBox1.AutoCompleteCustomSource.Clear();
+                        mycnt.Close();
+                        return;
+                    }
+                    else
+                    {
+                        string search = "select top(10) * from EV_SOURCE where Name like '" + textBox1.Text.Trim() + "%'";
+                        IsQuery = true;
+                        SqlCommand com = new SqlCommand(search, mycnt); // truy van cau lenh vao sql  
+                        SqlDataAdapter ada = new SqlDataAdapter(com); // chuyen data tu sql ve trong ada
+                        DataTable dt = new DataTable();
+                        ada.Fill(dt); // do data tu ada va dt
+                        mycnt.Close(); // đóng kết nối
+                        
+                        if (dt.Rows.Count > 0)
+                        {
+                            for (int i = 0; i < dt.Rows.Count; i++)
+                                textBox1.AutoCompleteCustomSource.Add(dt.Rows[i]["Name"].ToString());
+                            textBox1.TextChanged -= textBox1_TextChanged;
+                        }
+                        IsQuery = false;
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Quá nhanh");
             }
         }
 
@@ -924,7 +937,7 @@ namespace WindowsFormsApp4
                 DataTable dt = new DataTable();
                 ada.Fill(dt); // do data tu ada va dt
                 mycnt.Close(); // đóng kết nối
-                textBox2.AutoCompleteCustomSource.Clear();
+                //textBox2.AutoCompleteCustomSource.Clear();
                 string s;
                 if (dt.Rows.Count > 0)
                 {
@@ -940,7 +953,7 @@ namespace WindowsFormsApp4
         }
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar <= 'z' && e.KeyChar >= 'a' || e.KeyChar == (char)Keys.Back)
+            if (e.KeyChar <= 'z' && e.KeyChar >= 'a' || (e.KeyChar == (char)Keys.Back && textBox1.Text == "") )
                 textBox1.TextChanged += textBox1_TextChanged;
         }
         private void speak_Click(object sender, EventArgs e)
@@ -1025,7 +1038,6 @@ namespace WindowsFormsApp4
                 mycnt.Close();
             }
         }
-
         void addMenuStrip(object sender, EventArgs ee)
         {
             TuKhoTabledatagridview.ContextMenuStrip = new ContextMenuStrip();
@@ -1053,6 +1065,13 @@ namespace WindowsFormsApp4
                 TuKhoTabledatagridview.ContextMenuStrip.Enabled = true;
             else
                 TuKhoTabledatagridview.ContextMenuStrip.Enabled = false;
+        }
+
+        private void guna2Button_FlashCard_Click(object sender, EventArgs e)
+        {
+            Picture_Dictionary a = new Picture_Dictionary(this);
+            this.Hide();
+            a.Show();
         }
     }
 }

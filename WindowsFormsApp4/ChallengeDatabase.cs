@@ -13,7 +13,7 @@ namespace WindowsFormsApp4
 
         public ChallengeDatabase()
         {
-            list = new List<Word>(50);
+            list = new List<Word>(1000);
             this.LoadDataFromSQL();
         }
         public ChallengeDatabase(Word member)
@@ -27,9 +27,10 @@ namespace WindowsFormsApp4
             SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True");
             mycntSW.Open();
             // lay het du lieu trong bang DTBQT
-            SqlCommand com = new SqlCommand("SELECT  TOP 50 * FROM EV_Source ORDER BY NEWID()", mycntSW);
+            SqlCommand com = new SqlCommand("SELECT TOP 500 ID,NAME,MEANING FROM EV_Source ORDER BY NEWID()", mycntSW);
+            //com.CommandTimeout = 150;
             //SqlCommand com = new SqlCommand("SELECT * FROM TableSource1", mycntSW); //bat dau truy van
-            com.CommandType = CommandType.Text;
+            //com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
             DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
             da.Fill(dt);  // đổ dữ liệu vào kho

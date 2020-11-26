@@ -82,6 +82,10 @@
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantheon.cs" />
+    <Compile Include="Picture_Dictionary.cs" />
+    <Compile Include="Picture_Dictionary.Designer.cs">
+      <DependentUpon>Picture_Dictionary.cs</DependentUpon>
+    </Compile>
     <Compile Include="PractiseDatabase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Picture_Dictionary.resx">
+      <DependentUpon>Picture_Dictionary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -263,6 +270,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\again.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\again1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\goback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\background_khung.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Giao_dien1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

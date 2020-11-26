@@ -44,7 +44,7 @@
             this.game_btnD.CheckedState.Parent = this.game_btnD;
             this.game_btnD.CustomImages.Parent = this.game_btnD;
             this.game_btnD.FillColor = System.Drawing.Color.Teal;
-            this.game_btnD.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.game_btnD.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.game_btnD.ForeColor = System.Drawing.Color.White;
             this.game_btnD.HoverState.Parent = this.game_btnD;
             this.game_btnD.Location = new System.Drawing.Point(570, 212);
@@ -63,7 +63,7 @@
             this.game_btnB.CheckedState.Parent = this.game_btnB;
             this.game_btnB.CustomImages.Parent = this.game_btnB;
             this.game_btnB.FillColor = System.Drawing.Color.Teal;
-            this.game_btnB.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.game_btnB.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.game_btnB.ForeColor = System.Drawing.Color.White;
             this.game_btnB.HoverState.Parent = this.game_btnB;
             this.game_btnB.Location = new System.Drawing.Point(570, 142);
@@ -82,7 +82,7 @@
             this.game_btnC.CheckedState.Parent = this.game_btnC;
             this.game_btnC.CustomImages.Parent = this.game_btnC;
             this.game_btnC.FillColor = System.Drawing.Color.Teal;
-            this.game_btnC.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.game_btnC.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.game_btnC.ForeColor = System.Drawing.Color.White;
             this.game_btnC.HoverState.Parent = this.game_btnC;
             this.game_btnC.Location = new System.Drawing.Point(117, 212);
@@ -101,7 +101,7 @@
             this.game_btnA.CheckedState.Parent = this.game_btnA;
             this.game_btnA.CustomImages.Parent = this.game_btnA;
             this.game_btnA.FillColor = System.Drawing.Color.Teal;
-            this.game_btnA.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.game_btnA.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.game_btnA.ForeColor = System.Drawing.Color.White;
             this.game_btnA.HoverState.Parent = this.game_btnA;
             this.game_btnA.Location = new System.Drawing.Point(117, 142);
@@ -120,7 +120,7 @@
             this.game_question.CheckedState.Parent = this.game_question;
             this.game_question.CustomImages.Parent = this.game_question;
             this.game_question.FillColor = System.Drawing.Color.Teal;
-            this.game_question.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.game_question.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.game_question.ForeColor = System.Drawing.Color.White;
             this.game_question.HoverState.Parent = this.game_question;
             this.game_question.Location = new System.Drawing.Point(77, 26);

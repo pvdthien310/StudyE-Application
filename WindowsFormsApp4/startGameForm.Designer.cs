@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label_practise_intro = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.label_challenge_intro = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Tile_mode = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2panel2_challenge = new Guna.UI2.WinForms.Guna2Panel();
-            this.label_challenge_intro = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2panel2_practise = new Guna.UI2.WinForms.Guna2Panel();
-            this.label_practise_intro = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button2_Practise = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2_Challange = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -54,9 +54,9 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.ControlBox_minimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.ControlBox_Close = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.ControlBox_minimize = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2.SuspendLayout();
             this.guna2panel2_challenge.SuspendLayout();
             this.guna2panel2_practise.SuspendLayout();
@@ -87,6 +87,36 @@
             this.guna2Panel2.TabIndex = 1;
             this.guna2Panel2.Visible = false;
             // 
+            // label_practise_intro
+            // 
+            this.label_practise_intro.AutoSize = false;
+            this.label_practise_intro.BackColor = System.Drawing.Color.Transparent;
+            this.label_practise_intro.Enabled = false;
+            this.label_practise_intro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_practise_intro.Location = new System.Drawing.Point(21, 18);
+            this.label_practise_intro.Margin = new System.Windows.Forms.Padding(15, 20, 10, 10);
+            this.label_practise_intro.Name = "label_practise_intro";
+            this.label_practise_intro.Size = new System.Drawing.Size(174, 174);
+            this.label_practise_intro.TabIndex = 0;
+            this.label_practise_intro.Text = "guna2HtmlLabel2";
+            this.label_practise_intro.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_practise_intro.Visible = false;
+            // 
+            // label_challenge_intro
+            // 
+            this.label_challenge_intro.AutoSize = false;
+            this.label_challenge_intro.BackColor = System.Drawing.Color.Transparent;
+            this.label_challenge_intro.Enabled = false;
+            this.label_challenge_intro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_challenge_intro.Location = new System.Drawing.Point(19, 20);
+            this.label_challenge_intro.Margin = new System.Windows.Forms.Padding(20, 100, 10, 10);
+            this.label_challenge_intro.Name = "label_challenge_intro";
+            this.label_challenge_intro.Size = new System.Drawing.Size(175, 167);
+            this.label_challenge_intro.TabIndex = 0;
+            this.label_challenge_intro.Text = "guna2HtmlLabel2";
+            this.label_challenge_intro.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_challenge_intro.Visible = false;
+            // 
             // Tile_mode
             // 
             this.Tile_mode.BackColor = System.Drawing.Color.Transparent;
@@ -106,34 +136,24 @@
             // 
             // guna2panel2_challenge
             // 
-            this.guna2panel2_challenge.BackColor = System.Drawing.Color.Teal;
+            this.guna2panel2_challenge.BackColor = System.Drawing.Color.Transparent;
+            this.guna2panel2_challenge.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.background_khung;
+            this.guna2panel2_challenge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2panel2_challenge.BorderRadius = 15;
             this.guna2panel2_challenge.Controls.Add(this.label_challenge_intro);
             this.guna2panel2_challenge.Enabled = false;
-            this.guna2panel2_challenge.Location = new System.Drawing.Point(668, 181);
+            this.guna2panel2_challenge.Location = new System.Drawing.Point(668, 182);
             this.guna2panel2_challenge.Name = "guna2panel2_challenge";
             this.guna2panel2_challenge.ShadowDecoration.Parent = this.guna2panel2_challenge;
-            this.guna2panel2_challenge.Size = new System.Drawing.Size(215, 204);
+            this.guna2panel2_challenge.Size = new System.Drawing.Size(210, 203);
             this.guna2panel2_challenge.TabIndex = 3;
             this.guna2panel2_challenge.Visible = false;
             // 
-            // label_challenge_intro
-            // 
-            this.label_challenge_intro.AutoSize = false;
-            this.label_challenge_intro.BackColor = System.Drawing.Color.White;
-            this.label_challenge_intro.Enabled = false;
-            this.label_challenge_intro.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_challenge_intro.Location = new System.Drawing.Point(14, 11);
-            this.label_challenge_intro.Name = "label_challenge_intro";
-            this.label_challenge_intro.Size = new System.Drawing.Size(189, 179);
-            this.label_challenge_intro.TabIndex = 0;
-            this.label_challenge_intro.Text = "guna2HtmlLabel2";
-            this.label_challenge_intro.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_challenge_intro.Visible = false;
-            // 
             // guna2panel2_practise
             // 
-            this.guna2panel2_practise.BackColor = System.Drawing.Color.Teal;
+            this.guna2panel2_practise.BackColor = System.Drawing.Color.Transparent;
+            this.guna2panel2_practise.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.background_khung1;
+            this.guna2panel2_practise.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2panel2_practise.BorderColor = System.Drawing.Color.Transparent;
             this.guna2panel2_practise.BorderRadius = 15;
             this.guna2panel2_practise.Controls.Add(this.label_practise_intro);
@@ -145,20 +165,6 @@
             this.guna2panel2_practise.Size = new System.Drawing.Size(215, 204);
             this.guna2panel2_practise.TabIndex = 2;
             this.guna2panel2_practise.Visible = false;
-            // 
-            // label_practise_intro
-            // 
-            this.label_practise_intro.AutoSize = false;
-            this.label_practise_intro.BackColor = System.Drawing.Color.White;
-            this.label_practise_intro.Enabled = false;
-            this.label_practise_intro.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_practise_intro.Location = new System.Drawing.Point(14, 11);
-            this.label_practise_intro.Name = "label_practise_intro";
-            this.label_practise_intro.Size = new System.Drawing.Size(188, 180);
-            this.label_practise_intro.TabIndex = 0;
-            this.label_practise_intro.Text = "guna2HtmlLabel2";
-            this.label_practise_intro.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_practise_intro.Visible = false;
             // 
             // guna2Button2_Practise
             // 
@@ -429,17 +435,18 @@
             this.guna2Button1.MouseEnter += new System.EventHandler(this.guna2Button1_MouseEnter);
             this.guna2Button1.MouseLeave += new System.EventHandler(this.guna2Button1_MouseLeave);
             // 
-            // guna2Panel4
+            // ControlBox_Close
             // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.Gainsboro;
-            this.guna2Panel4.Controls.Add(this.ControlBox_minimize);
-            this.guna2Panel4.Controls.Add(this.ControlBox_Close);
-            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
-            this.guna2Panel4.Size = new System.Drawing.Size(1000, 22);
-            this.guna2Panel4.TabIndex = 3;
+            this.ControlBox_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ControlBox_Close.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
+            this.ControlBox_Close.HoverState.Parent = this.ControlBox_Close;
+            this.ControlBox_Close.IconColor = System.Drawing.Color.White;
+            this.ControlBox_Close.Location = new System.Drawing.Point(944, 0);
+            this.ControlBox_Close.Name = "ControlBox_Close";
+            this.ControlBox_Close.ShadowDecoration.Parent = this.ControlBox_Close;
+            this.ControlBox_Close.Size = new System.Drawing.Size(55, 22);
+            this.ControlBox_Close.TabIndex = 0;
+            this.ControlBox_Close.Click += new System.EventHandler(this.ControlBox_Close_Click);
             // 
             // ControlBox_minimize
             // 
@@ -454,17 +461,17 @@
             this.ControlBox_minimize.Size = new System.Drawing.Size(55, 22);
             this.ControlBox_minimize.TabIndex = 2;
             // 
-            // ControlBox_Close
+            // guna2Panel4
             // 
-            this.ControlBox_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ControlBox_Close.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
-            this.ControlBox_Close.HoverState.Parent = this.ControlBox_Close;
-            this.ControlBox_Close.IconColor = System.Drawing.Color.White;
-            this.ControlBox_Close.Location = new System.Drawing.Point(944, 0);
-            this.ControlBox_Close.Name = "ControlBox_Close";
-            this.ControlBox_Close.ShadowDecoration.Parent = this.ControlBox_Close;
-            this.ControlBox_Close.Size = new System.Drawing.Size(55, 22);
-            this.ControlBox_Close.TabIndex = 0;
+            this.guna2Panel4.BackColor = System.Drawing.Color.Gainsboro;
+            this.guna2Panel4.Controls.Add(this.ControlBox_minimize);
+            this.guna2Panel4.Controls.Add(this.ControlBox_Close);
+            this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel4.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
+            this.guna2Panel4.Size = new System.Drawing.Size(1000, 22);
+            this.guna2Panel4.TabIndex = 3;
             // 
             // startGameForm
             // 
@@ -525,12 +532,12 @@
         private Guna.UI2.WinForms.Guna2Panel guna2panel2_challenge;
         private Guna.UI2.WinForms.Guna2Panel guna2panel2_practise;
         private Guna.UI2.WinForms.Guna2HtmlLabel label_practise_intro;
-        private Guna.UI2.WinForms.Guna2HtmlLabel label_challenge_intro;
         private Guna.UI2.WinForms.Guna2TileButton Tile_mode;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2ControlBox ControlBox_minimize;
-        private Guna.UI2.WinForms.Guna2ControlBox ControlBox_Close;
         private Guna.UI2.WinForms.Guna2Button Title_ChooseChar;
+        private Guna.UI2.WinForms.Guna2HtmlLabel label_challenge_intro;
+        private Guna.UI2.WinForms.Guna2ControlBox ControlBox_Close;
+        private Guna.UI2.WinForms.Guna2ControlBox ControlBox_minimize;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
     }
 }
 
