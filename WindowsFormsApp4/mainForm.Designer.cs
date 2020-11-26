@@ -113,8 +113,6 @@
             this.dataGridView4 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel_TuKho = new Guna.UI2.WinForms.Guna2Panel();
             this.TuKhoTabledatagridview = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.NameOfHardWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MeanOfHardWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel_Add = new Guna.UI2.WinForms.Guna2Panel();
             this.button6 = new Guna.UI2.WinForms.Guna2Button();
             this.label7_1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -127,6 +125,8 @@
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2AnimateWindow2 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2AnimateWindow3 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.NameOfHardWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MeanOfHardWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
@@ -242,7 +242,6 @@
             // 
             // guna2Button_Add
             // 
-            this.guna2Button_Add.Animated = true;
             this.guna2Button_Add.BorderRadius = 15;
             this.guna2Button_Add.CheckedState.Parent = this.guna2Button_Add;
             this.guna2Button_Add.CustomImages.Parent = this.guna2Button_Add;
@@ -291,7 +290,6 @@
             // 
             // guna2Button_SearchedWord
             // 
-            this.guna2Button_SearchedWord.Animated = true;
             this.guna2Button_SearchedWord.BorderRadius = 15;
             this.guna2Button_SearchedWord.CheckedState.Parent = this.guna2Button_SearchedWord;
             this.guna2Button_SearchedWord.CustomImages.Parent = this.guna2Button_SearchedWord;
@@ -312,7 +310,6 @@
             // 
             // guna2Button_DTBQT
             // 
-            this.guna2Button_DTBQT.Animated = true;
             this.guna2Button_DTBQT.BorderRadius = 15;
             this.guna2Button_DTBQT.CheckedState.Parent = this.guna2Button_DTBQT;
             this.guna2Button_DTBQT.CustomImages.Parent = this.guna2Button_DTBQT;
@@ -333,7 +330,6 @@
             // 
             // guna2Button_TuKho
             // 
-            this.guna2Button_TuKho.Animated = true;
             this.guna2Button_TuKho.BorderRadius = 15;
             this.guna2Button_TuKho.CheckedState.Parent = this.guna2Button_TuKho;
             this.guna2Button_TuKho.CustomImages.Parent = this.guna2Button_TuKho;
@@ -354,7 +350,6 @@
             // 
             // guna2Button_TraDoan
             // 
-            this.guna2Button_TraDoan.Animated = true;
             this.guna2Button_TraDoan.BorderRadius = 15;
             this.guna2Button_TraDoan.CheckedState.Parent = this.guna2Button_TraDoan;
             this.guna2Button_TraDoan.CustomImages.Parent = this.guna2Button_TraDoan;
@@ -375,7 +370,6 @@
             // 
             // guna2Button_V_E
             // 
-            this.guna2Button_V_E.Animated = true;
             this.guna2Button_V_E.BorderRadius = 15;
             this.guna2Button_V_E.CheckedState.Parent = this.guna2Button_V_E;
             this.guna2Button_V_E.CustomImages.Parent = this.guna2Button_V_E;
@@ -396,7 +390,6 @@
             // 
             // guna2Button_E_V
             // 
-            this.guna2Button_E_V.Animated = true;
             this.guna2Button_E_V.BorderRadius = 15;
             this.guna2Button_E_V.CheckedState.Parent = this.guna2Button_E_V;
             this.guna2Button_E_V.CustomImages.Parent = this.guna2Button_E_V;
@@ -1458,16 +1451,6 @@
             this.TuKhoTabledatagridview.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.TuKhoTabledatagridview.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.TuKhoTabledatagridview_RowsRemoved);
             // 
-            // NameOfHardWord
-            // 
-            this.NameOfHardWord.HeaderText = "Name";
-            this.NameOfHardWord.Name = "NameOfHardWord";
-            // 
-            // MeanOfHardWord
-            // 
-            this.MeanOfHardWord.HeaderText = "Meaning";
-            this.MeanOfHardWord.Name = "MeanOfHardWord";
-            // 
             // guna2Panel_Add
             // 
             this.guna2Panel_Add.BackColor = System.Drawing.Color.Transparent;
@@ -1645,6 +1628,18 @@
             this.comboBox6_2.TabIndex = 0;
             this.comboBox6_2.SelectedValueChanged += new System.EventHandler(this.comboBox6_2_SelectedValueChanged);
             // 
+            // NameOfHardWord
+            // 
+            this.NameOfHardWord.HeaderText = "Name";
+            this.NameOfHardWord.Name = "NameOfHardWord";
+            this.NameOfHardWord.Visible = false;
+            // 
+            // MeanOfHardWord
+            // 
+            this.MeanOfHardWord.HeaderText = "Meaning";
+            this.MeanOfHardWord.Name = "MeanOfHardWord";
+            this.MeanOfHardWord.Visible = false;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1653,9 +1648,9 @@
             this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.kn6xJE1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1000, 500);
+            this.Controls.Add(this.guna2Panel_TuKho);
             this.Controls.Add(this.guna2Panel_DTBQT);
             this.Controls.Add(this.guna2Panel_V_E);
-            this.Controls.Add(this.guna2Panel_TuKho);
             this.Controls.Add(this.guna2Panel_E_V);
             this.Controls.Add(this.guna2Panel_Add);
             this.Controls.Add(this.guna2Panel_TraDoan);

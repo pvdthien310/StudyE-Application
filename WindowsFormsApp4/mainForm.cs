@@ -873,6 +873,7 @@ namespace WindowsFormsApp4
             {
                 if (!IsQuery)
                 {
+                    IsQuery = true;
                     mycnt.Open(); // mo ket noi 
                     if (textBox1.Text == "")
                     {
@@ -883,7 +884,7 @@ namespace WindowsFormsApp4
                     else
                     {
                         string search = "select top(10) * from EV_SOURCE where Name like '" + textBox1.Text.Trim() + "%'";
-                        IsQuery = true;
+                        
                         SqlCommand com = new SqlCommand(search, mycnt); // truy van cau lenh vao sql  
                         SqlDataAdapter ada = new SqlDataAdapter(com); // chuyen data tu sql ve trong ada
                         DataTable dt = new DataTable();
@@ -896,9 +897,9 @@ namespace WindowsFormsApp4
                                 textBox1.AutoCompleteCustomSource.Add(dt.Rows[i]["Name"].ToString());
                             textBox1.TextChanged -= textBox1_TextChanged;
                         }
-                        IsQuery = false;
                     }
                 }
+                IsQuery = false;
             }
             catch (Exception)
             {
