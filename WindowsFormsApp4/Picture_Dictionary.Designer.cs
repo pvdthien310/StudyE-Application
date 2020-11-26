@@ -54,15 +54,17 @@
             this.b22 = new Guna.UI2.WinForms.Guna2Button();
             this.b21 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Left = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.Right = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.Pause = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Speak = new Guna.UI2.WinForms.Guna2Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Pause = new Guna.UI2.WinForms.Guna2Button();
+            this.Speak = new Guna.UI2.WinForms.Guna2Button();
+            this.Right = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Left = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // b4
@@ -70,7 +72,7 @@
             this.b4.BackColor = System.Drawing.Color.Transparent;
             this.b4.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._12;
             this.b4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b4.BorderRadius = 5;
+            this.b4.BorderRadius = 7;
             this.b4.CheckedState.Parent = this.b4;
             this.b4.CustomImages.Parent = this.b4;
             this.b4.FillColor = System.Drawing.Color.Transparent;
@@ -89,7 +91,7 @@
             this.b3.BackColor = System.Drawing.Color.Transparent;
             this.b3.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._13;
             this.b3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b3.BorderRadius = 5;
+            this.b3.BorderRadius = 7;
             this.b3.CheckedState.Parent = this.b3;
             this.b3.CustomImages.Parent = this.b3;
             this.b3.FillColor = System.Drawing.Color.Transparent;
@@ -108,7 +110,7 @@
             this.b2.BackColor = System.Drawing.Color.Transparent;
             this.b2.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._14;
             this.b2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b2.BorderRadius = 5;
+            this.b2.BorderRadius = 7;
             this.b2.CheckedState.Parent = this.b2;
             this.b2.CustomImages.Parent = this.b2;
             this.b2.FillColor = System.Drawing.Color.Transparent;
@@ -127,7 +129,7 @@
             this.b5.BackColor = System.Drawing.Color.Transparent;
             this.b5.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._11;
             this.b5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b5.BorderRadius = 5;
+            this.b5.BorderRadius = 7;
             this.b5.CheckedState.Parent = this.b5;
             this.b5.CustomImages.Parent = this.b5;
             this.b5.FillColor = System.Drawing.Color.Transparent;
@@ -146,7 +148,7 @@
             this.b6.BackColor = System.Drawing.Color.Transparent;
             this.b6.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._10;
             this.b6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b6.BorderRadius = 5;
+            this.b6.BorderRadius = 7;
             this.b6.CheckedState.Parent = this.b6;
             this.b6.CustomImages.Parent = this.b6;
             this.b6.FillColor = System.Drawing.Color.Transparent;
@@ -165,7 +167,7 @@
             this.b1.BackColor = System.Drawing.Color.Transparent;
             this.b1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._23;
             this.b1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b1.BorderRadius = 5;
+            this.b1.BorderRadius = 7;
             this.b1.CheckedState.Parent = this.b1;
             this.b1.CustomImages.Parent = this.b1;
             this.b1.FillColor = System.Drawing.Color.Transparent;
@@ -184,7 +186,7 @@
             this.b7.BackColor = System.Drawing.Color.Transparent;
             this.b7.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._9;
             this.b7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b7.BorderRadius = 5;
+            this.b7.BorderRadius = 7;
             this.b7.CheckedState.Parent = this.b7;
             this.b7.CustomImages.Parent = this.b7;
             this.b7.FillColor = System.Drawing.Color.Transparent;
@@ -203,7 +205,7 @@
             this.b11.BackColor = System.Drawing.Color.Transparent;
             this.b11.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._3;
             this.b11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b11.BorderRadius = 5;
+            this.b11.BorderRadius = 7;
             this.b11.CheckedState.Parent = this.b11;
             this.b11.CustomImages.Parent = this.b11;
             this.b11.FillColor = System.Drawing.Color.Transparent;
@@ -222,7 +224,7 @@
             this.b12.BackColor = System.Drawing.Color.Transparent;
             this.b12.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._24;
             this.b12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b12.BorderRadius = 5;
+            this.b12.BorderRadius = 7;
             this.b12.CheckedState.Parent = this.b12;
             this.b12.CustomImages.Parent = this.b12;
             this.b12.FillColor = System.Drawing.Color.Transparent;
@@ -241,7 +243,7 @@
             this.b13.BackColor = System.Drawing.Color.Transparent;
             this.b13.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._4;
             this.b13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b13.BorderRadius = 5;
+            this.b13.BorderRadius = 7;
             this.b13.CheckedState.Parent = this.b13;
             this.b13.CustomImages.Parent = this.b13;
             this.b13.FillColor = System.Drawing.Color.Transparent;
@@ -260,7 +262,7 @@
             this.b14.BackColor = System.Drawing.Color.Transparent;
             this.b14.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._5;
             this.b14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b14.BorderRadius = 5;
+            this.b14.BorderRadius = 7;
             this.b14.CheckedState.Parent = this.b14;
             this.b14.CustomImages.Parent = this.b14;
             this.b14.FillColor = System.Drawing.Color.Transparent;
@@ -279,7 +281,7 @@
             this.b10.BackColor = System.Drawing.Color.Transparent;
             this.b10.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._2;
             this.b10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b10.BorderRadius = 5;
+            this.b10.BorderRadius = 7;
             this.b10.CheckedState.Parent = this.b10;
             this.b10.CustomImages.Parent = this.b10;
             this.b10.FillColor = System.Drawing.Color.Transparent;
@@ -298,7 +300,7 @@
             this.b9.BackColor = System.Drawing.Color.Transparent;
             this.b9.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._1;
             this.b9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b9.BorderRadius = 5;
+            this.b9.BorderRadius = 7;
             this.b9.CheckedState.Parent = this.b9;
             this.b9.CustomImages.Parent = this.b9;
             this.b9.FillColor = System.Drawing.Color.Transparent;
@@ -317,7 +319,7 @@
             this.b8.BackColor = System.Drawing.Color.Transparent;
             this.b8.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._8;
             this.b8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b8.BorderRadius = 5;
+            this.b8.BorderRadius = 7;
             this.b8.CheckedState.Parent = this.b8;
             this.b8.CustomImages.Parent = this.b8;
             this.b8.FillColor = System.Drawing.Color.Transparent;
@@ -336,7 +338,7 @@
             this.b18.BackColor = System.Drawing.Color.Transparent;
             this.b18.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._18;
             this.b18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b18.BorderRadius = 5;
+            this.b18.BorderRadius = 7;
             this.b18.CheckedState.Parent = this.b18;
             this.b18.CustomImages.Parent = this.b18;
             this.b18.FillColor = System.Drawing.Color.Transparent;
@@ -355,7 +357,7 @@
             this.b19.BackColor = System.Drawing.Color.Transparent;
             this.b19.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._25;
             this.b19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b19.BorderRadius = 5;
+            this.b19.BorderRadius = 7;
             this.b19.CheckedState.Parent = this.b19;
             this.b19.CustomImages.Parent = this.b19;
             this.b19.FillColor = System.Drawing.Color.Transparent;
@@ -374,7 +376,7 @@
             this.b20.BackColor = System.Drawing.Color.Transparent;
             this.b20.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._22;
             this.b20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b20.BorderRadius = 5;
+            this.b20.BorderRadius = 7;
             this.b20.CheckedState.Parent = this.b20;
             this.b20.CustomImages.Parent = this.b20;
             this.b20.FillColor = System.Drawing.Color.Transparent;
@@ -393,7 +395,7 @@
             this.b17.BackColor = System.Drawing.Color.Transparent;
             this.b17.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._16;
             this.b17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b17.BorderRadius = 5;
+            this.b17.BorderRadius = 7;
             this.b17.CheckedState.Parent = this.b17;
             this.b17.CustomImages.Parent = this.b17;
             this.b17.FillColor = System.Drawing.Color.Transparent;
@@ -412,7 +414,7 @@
             this.b16.BackColor = System.Drawing.Color.Transparent;
             this.b16.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._7;
             this.b16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b16.BorderRadius = 5;
+            this.b16.BorderRadius = 7;
             this.b16.CheckedState.Parent = this.b16;
             this.b16.CustomImages.Parent = this.b16;
             this.b16.FillColor = System.Drawing.Color.Transparent;
@@ -431,7 +433,7 @@
             this.b15.BackColor = System.Drawing.Color.Transparent;
             this.b15.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._6;
             this.b15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b15.BorderRadius = 5;
+            this.b15.BorderRadius = 7;
             this.b15.CheckedState.Parent = this.b15;
             this.b15.CustomImages.Parent = this.b15;
             this.b15.FillColor = System.Drawing.Color.Transparent;
@@ -450,7 +452,7 @@
             this.b24.BackColor = System.Drawing.Color.Transparent;
             this.b24.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._17;
             this.b24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b24.BorderRadius = 5;
+            this.b24.BorderRadius = 7;
             this.b24.CheckedState.Parent = this.b24;
             this.b24.CustomImages.Parent = this.b24;
             this.b24.FillColor = System.Drawing.Color.Transparent;
@@ -469,7 +471,7 @@
             this.b25.BackColor = System.Drawing.Color.Transparent;
             this.b25.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._15;
             this.b25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b25.BorderRadius = 5;
+            this.b25.BorderRadius = 7;
             this.b25.CheckedState.Parent = this.b25;
             this.b25.CustomImages.Parent = this.b25;
             this.b25.FillColor = System.Drawing.Color.Transparent;
@@ -488,7 +490,7 @@
             this.b23.BackColor = System.Drawing.Color.Transparent;
             this.b23.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._19;
             this.b23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b23.BorderRadius = 5;
+            this.b23.BorderRadius = 7;
             this.b23.CheckedState.Parent = this.b23;
             this.b23.CustomImages.Parent = this.b23;
             this.b23.FillColor = System.Drawing.Color.Transparent;
@@ -507,7 +509,7 @@
             this.b22.BackColor = System.Drawing.Color.Transparent;
             this.b22.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._20;
             this.b22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b22.BorderRadius = 5;
+            this.b22.BorderRadius = 7;
             this.b22.CheckedState.Parent = this.b22;
             this.b22.CustomImages.Parent = this.b22;
             this.b22.FillColor = System.Drawing.Color.Transparent;
@@ -526,7 +528,7 @@
             this.b21.BackColor = System.Drawing.Color.Transparent;
             this.b21.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._21;
             this.b21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.b21.BorderRadius = 5;
+            this.b21.BorderRadius = 7;
             this.b21.CheckedState.Parent = this.b21;
             this.b21.CustomImages.Parent = this.b21;
             this.b21.FillColor = System.Drawing.Color.Transparent;
@@ -545,6 +547,8 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.Giao_dien11;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -553,24 +557,71 @@
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
             // 
-            // Left
+            // panel4
             // 
-            this.Left.BackColor = System.Drawing.Color.Transparent;
-            this.Left.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.a;
-            this.Left.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Left.CheckedState.Parent = this.Left;
-            this.Left.CustomImages.Parent = this.Left;
-            this.Left.FillColor = System.Drawing.Color.Transparent;
-            this.Left.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Left.ForeColor = System.Drawing.Color.Transparent;
-            this.Left.HoverState.Parent = this.Left;
-            this.Left.Location = new System.Drawing.Point(10, 6);
-            this.Left.Name = "Left";
-            this.Left.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.Left.ShadowDecoration.Parent = this.Left;
-            this.Left.Size = new System.Drawing.Size(101, 101);
-            this.Left.TabIndex = 3;
-            this.Left.Click += new System.EventHandler(this.Left_Click);
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Location = new System.Drawing.Point(863, 517);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(100, 81);
+            this.panel4.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Location = new System.Drawing.Point(98, 517);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(100, 81);
+            this.panel3.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.Pause);
+            this.panel2.Controls.Add(this.Speak);
+            this.panel2.Controls.Add(this.Right);
+            this.panel2.Controls.Add(this.Left);
+            this.panel2.Location = new System.Drawing.Point(312, 487);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(432, 116);
+            this.panel2.TabIndex = 5;
+            // 
+            // Pause
+            // 
+            this.Pause.BackColor = System.Drawing.Color.Transparent;
+            this.Pause.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.pause;
+            this.Pause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pause.BorderRadius = 12;
+            this.Pause.CheckedState.Parent = this.Pause;
+            this.Pause.CustomImages.Parent = this.Pause;
+            this.Pause.FillColor = System.Drawing.Color.Transparent;
+            this.Pause.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Pause.ForeColor = System.Drawing.Color.Transparent;
+            this.Pause.HoverState.Parent = this.Pause;
+            this.Pause.Location = new System.Drawing.Point(113, 6);
+            this.Pause.Name = "Pause";
+            this.Pause.ShadowDecoration.Parent = this.Pause;
+            this.Pause.Size = new System.Drawing.Size(101, 101);
+            this.Pause.TabIndex = 0;
+            this.Pause.Click += new System.EventHandler(this.Pause_Click);
+            // 
+            // Speak
+            // 
+            this.Speak.BackColor = System.Drawing.Color.Transparent;
+            this.Speak.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.speak;
+            this.Speak.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Speak.BorderRadius = 12;
+            this.Speak.CheckedState.Parent = this.Speak;
+            this.Speak.CustomImages.Parent = this.Speak;
+            this.Speak.FillColor = System.Drawing.Color.Transparent;
+            this.Speak.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Speak.ForeColor = System.Drawing.Color.Transparent;
+            this.Speak.HoverState.Parent = this.Speak;
+            this.Speak.Location = new System.Drawing.Point(218, 6);
+            this.Speak.Name = "Speak";
+            this.Speak.ShadowDecoration.Parent = this.Speak;
+            this.Speak.Size = new System.Drawing.Size(101, 101);
+            this.Speak.TabIndex = 4;
+            this.Speak.Click += new System.EventHandler(this.Speak_Click);
             // 
             // Right
             // 
@@ -591,24 +642,24 @@
             this.Right.TabIndex = 1;
             this.Right.Click += new System.EventHandler(this.Right_Click);
             // 
-            // Pause
+            // Left
             // 
-            this.Pause.BackColor = System.Drawing.Color.Transparent;
-            this.Pause.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.pause;
-            this.Pause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Pause.BorderRadius = 10;
-            this.Pause.CheckedState.Parent = this.Pause;
-            this.Pause.CustomImages.Parent = this.Pause;
-            this.Pause.FillColor = System.Drawing.Color.Transparent;
-            this.Pause.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Pause.ForeColor = System.Drawing.Color.Transparent;
-            this.Pause.HoverState.Parent = this.Pause;
-            this.Pause.Location = new System.Drawing.Point(113, 6);
-            this.Pause.Name = "Pause";
-            this.Pause.ShadowDecoration.Parent = this.Pause;
-            this.Pause.Size = new System.Drawing.Size(101, 101);
-            this.Pause.TabIndex = 0;
-            this.Pause.Click += new System.EventHandler(this.Pause_Click);
+            this.Left.BackColor = System.Drawing.Color.Transparent;
+            this.Left.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.a;
+            this.Left.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Left.CheckedState.Parent = this.Left;
+            this.Left.CustomImages.Parent = this.Left;
+            this.Left.FillColor = System.Drawing.Color.Transparent;
+            this.Left.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Left.ForeColor = System.Drawing.Color.Transparent;
+            this.Left.HoverState.Parent = this.Left;
+            this.Left.Location = new System.Drawing.Point(10, 6);
+            this.Left.Name = "Left";
+            this.Left.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Left.ShadowDecoration.Parent = this.Left;
+            this.Left.Size = new System.Drawing.Size(101, 101);
+            this.Left.TabIndex = 3;
+            this.Left.Click += new System.EventHandler(this.Left_Click);
             // 
             // pictureBox1
             // 
@@ -621,37 +672,6 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // Speak
-            // 
-            this.Speak.BackColor = System.Drawing.Color.Transparent;
-            this.Speak.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.speak;
-            this.Speak.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Speak.BorderRadius = 10;
-            this.Speak.CheckedState.Parent = this.Speak;
-            this.Speak.CustomImages.Parent = this.Speak;
-            this.Speak.FillColor = System.Drawing.Color.Transparent;
-            this.Speak.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Speak.ForeColor = System.Drawing.Color.Transparent;
-            this.Speak.HoverState.Parent = this.Speak;
-            this.Speak.Location = new System.Drawing.Point(218, 6);
-            this.Speak.Name = "Speak";
-            this.Speak.ShadowDecoration.Parent = this.Speak;
-            this.Speak.Size = new System.Drawing.Size(101, 101);
-            this.Speak.TabIndex = 4;
-            this.Speak.Click += new System.EventHandler(this.Speak_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.Pause);
-            this.panel2.Controls.Add(this.Speak);
-            this.panel2.Controls.Add(this.Right);
-            this.panel2.Controls.Add(this.Left);
-            this.panel2.Location = new System.Drawing.Point(312, 487);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(432, 116);
-            this.panel2.TabIndex = 5;
-            // 
             // Picture_Dictionary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -659,6 +679,7 @@
             this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.Giao_dien1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1057, 664);
+            this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.b21);
             this.Controls.Add(this.b15);
@@ -689,8 +710,8 @@
             this.Name = "Picture_Dictionary";
             this.Text = "Picture_Dictionary";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -747,5 +768,7 @@
         private Guna.UI2.WinForms.Guna2CircleButton Left;
         private Guna.UI2.WinForms.Guna2Button Speak;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
     }
 }

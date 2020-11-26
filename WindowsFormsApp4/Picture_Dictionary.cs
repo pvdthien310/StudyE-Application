@@ -75,7 +75,7 @@ namespace WindowsFormsApp4
             }
             else if (sender == b11)
             {
-                group = "Counties";
+                group = "Countries";
             }
             else if (sender == b12)
             {
@@ -179,5 +179,7 @@ namespace WindowsFormsApp4
             synth.SetOutputToDefaultAudioDevice();
             synth.Speak(text);
         }
+
+       
     }
 }
