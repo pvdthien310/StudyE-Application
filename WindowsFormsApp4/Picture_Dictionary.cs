@@ -180,6 +180,10 @@ namespace WindowsFormsApp4
             synth.Speak(text);
         }
 
-       
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Parent.Show();
+        }
     }
 }
