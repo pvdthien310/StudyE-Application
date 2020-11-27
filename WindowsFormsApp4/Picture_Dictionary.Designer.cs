@@ -782,6 +782,7 @@
             this.Controls.Add(this.b5);
             this.Controls.Add(this.b4);
             this.DoubleBuffered = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Picture_Dictionary";
             this.Text = "Picture_Dictionary";
