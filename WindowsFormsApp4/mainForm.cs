@@ -19,7 +19,7 @@ namespace WindowsFormsApp4
         int effect2 = 0;
         //thêm từ master
         public searchedWordList EV_SWlist = new searchedWordList();
-        SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True");
+        SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True");
         public startForm parent;
         static int EVSource_Length;
         static int VESource_Length;
@@ -208,6 +208,10 @@ namespace WindowsFormsApp4
         private void guna2Button6_Click(object sender, EventArgs e)
         {
             guna2Panel_SearchedWord.BringToFront();
+            if (comboBox4.SelectedItem ==null)
+            {
+                comboBox4.SelectedItem = comboBox4.Items[0];
+            }
             guna2Button_SearchedWord.ImageAlign = HorizontalAlignment.Right;
             this.guna2Button_SearchedWord.ForeColor = System.Drawing.Color.Black;
             this.guna2Button_SearchedWord.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold | FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -252,6 +256,8 @@ namespace WindowsFormsApp4
             this.guna2Button_Add.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold | FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_Add.FillColor = System.Drawing.Color.White;
             Reset_Status_Button(sender, e);
+            if (comboBox6_1.SelectedItem == null)
+            comboBox6_1.SelectedItem = "Anh - Việt";
         }
 
 
@@ -1073,6 +1079,28 @@ namespace WindowsFormsApp4
             Picture_Dictionary a = new Picture_Dictionary(this);
             this.Hide();
             a.Show();
+        }
+
+        private void textBox5_Leave(object sender, EventArgs e)
+        {
+            if (textBox5.Text == "")
+            {
+                textBox5.Text = "Nhập Từ Cần Tra";
+                textBox5.ForeColor = Color.Gray;
+            }
+        }
+
+        private void textBox5_Enter(object sender, EventArgs e)
+        {
+            if (textBox5.Text == "Nhập Từ Cần Tra")
+            {
+                textBox5.Text = "";
+                textBox5.ForeColor = Color.Black;
+            }
+            else
+            {
+                textBox5.ForeColor = Color.Black;
+            }
         }
     }
 }

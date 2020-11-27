@@ -13,7 +13,7 @@ namespace WindowsFormsApp4
 
         public ChallengeDatabase()
         {
-            list = new List<Word>(1000);
+            list = new List<Word>(500);
             this.LoadDataFromSQL();
         }
         public ChallengeDatabase(Word member)
@@ -24,9 +24,9 @@ namespace WindowsFormsApp4
         {
             list.Clear(); // Xóa dữ liệu để tránh bug ngoài ý muốn
 
-            SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True");
+            SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True");
             mycntSW.Open();
-            // lay het du lieu trong bang DTBQT
+            // lay het du lieu trong bang DTBQT 
             SqlCommand com = new SqlCommand("SELECT TOP 500 ID,NAME,MEANING FROM EV_Source ORDER BY NEWID()", mycntSW);
             //com.CommandTimeout = 150;
             //SqlCommand com = new SqlCommand("SELECT * FROM TableSource1", mycntSW); //bat dau truy van
