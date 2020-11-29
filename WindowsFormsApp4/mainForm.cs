@@ -519,7 +519,7 @@ namespace WindowsFormsApp4
             }
             else if ((comboBox6_2.SelectedItem.ToString() == "Other" || comboBox6_2.SelectedItem.ToString() == "Khác" ) && textBox6_2.Text == "")
             {
-                MessageBox.Show("Bạn đã chưa điền hoặc chọn thông tin đầy đủ 1!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn đã chưa điền hoặc chọn thông tin đầy đủ !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //if (textBox6_2.Visible == true)
                 //{
                 //    textBox6_2.Visible = !textBox6_2.Visible;
