@@ -538,5 +538,23 @@ namespace WindowsFormsApp4
             mainForm newmainform = new mainForm();
             newmainform.Show();
         }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.parent.Show();
+        }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.parent.Show();
+        }
+
+        private void guna2CircleButton3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.parent.Show();
+        }
     }
 }

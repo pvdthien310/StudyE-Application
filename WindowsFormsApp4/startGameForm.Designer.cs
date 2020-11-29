@@ -31,11 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label_practise_intro = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.label_challenge_intro = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.Tile_mode = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2panel2_challenge = new Guna.UI2.WinForms.Guna2Panel();
+            this.label_challenge_intro = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2panel2_practise = new Guna.UI2.WinForms.Guna2Panel();
+            this.label_practise_intro = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button2_Practise = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2_Challange = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -57,6 +58,8 @@
             this.ControlBox_Close = new Guna.UI2.WinForms.Guna2ControlBox();
             this.ControlBox_minimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2Panel2.SuspendLayout();
             this.guna2panel2_challenge.SuspendLayout();
             this.guna2panel2_practise.SuspendLayout();
@@ -75,6 +78,7 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel2.Controls.Add(this.guna2CircleButton1);
             this.guna2Panel2.Controls.Add(this.Tile_mode);
             this.guna2Panel2.Controls.Add(this.guna2panel2_challenge);
             this.guna2Panel2.Controls.Add(this.guna2panel2_practise);
@@ -87,35 +91,23 @@
             this.guna2Panel2.TabIndex = 1;
             this.guna2Panel2.Visible = false;
             // 
-            // label_practise_intro
+            // guna2CircleButton1
             // 
-            this.label_practise_intro.AutoSize = false;
-            this.label_practise_intro.BackColor = System.Drawing.Color.Transparent;
-            this.label_practise_intro.Enabled = false;
-            this.label_practise_intro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_practise_intro.Location = new System.Drawing.Point(21, 18);
-            this.label_practise_intro.Margin = new System.Windows.Forms.Padding(15, 20, 10, 10);
-            this.label_practise_intro.Name = "label_practise_intro";
-            this.label_practise_intro.Size = new System.Drawing.Size(174, 174);
-            this.label_practise_intro.TabIndex = 0;
-            this.label_practise_intro.Text = "guna2HtmlLabel2";
-            this.label_practise_intro.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_practise_intro.Visible = false;
-            // 
-            // label_challenge_intro
-            // 
-            this.label_challenge_intro.AutoSize = false;
-            this.label_challenge_intro.BackColor = System.Drawing.Color.Transparent;
-            this.label_challenge_intro.Enabled = false;
-            this.label_challenge_intro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_challenge_intro.Location = new System.Drawing.Point(19, 20);
-            this.label_challenge_intro.Margin = new System.Windows.Forms.Padding(20, 100, 10, 10);
-            this.label_challenge_intro.Name = "label_challenge_intro";
-            this.label_challenge_intro.Size = new System.Drawing.Size(175, 167);
-            this.label_challenge_intro.TabIndex = 0;
-            this.label_challenge_intro.Text = "guna2HtmlLabel2";
-            this.label_challenge_intro.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_challenge_intro.Visible = false;
+            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.Image = global::WindowsFormsApp4.Properties.Resources.home;
+            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(60, 60);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(3, 0);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(60, 60);
+            this.guna2CircleButton1.TabIndex = 5;
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // Tile_mode
             // 
@@ -149,6 +141,21 @@
             this.guna2panel2_challenge.TabIndex = 3;
             this.guna2panel2_challenge.Visible = false;
             // 
+            // label_challenge_intro
+            // 
+            this.label_challenge_intro.AutoSize = false;
+            this.label_challenge_intro.BackColor = System.Drawing.Color.Transparent;
+            this.label_challenge_intro.Enabled = false;
+            this.label_challenge_intro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_challenge_intro.Location = new System.Drawing.Point(19, 20);
+            this.label_challenge_intro.Margin = new System.Windows.Forms.Padding(20, 100, 10, 10);
+            this.label_challenge_intro.Name = "label_challenge_intro";
+            this.label_challenge_intro.Size = new System.Drawing.Size(175, 167);
+            this.label_challenge_intro.TabIndex = 0;
+            this.label_challenge_intro.Text = "guna2HtmlLabel2";
+            this.label_challenge_intro.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_challenge_intro.Visible = false;
+            // 
             // guna2panel2_practise
             // 
             this.guna2panel2_practise.BackColor = System.Drawing.Color.Transparent;
@@ -165,6 +172,21 @@
             this.guna2panel2_practise.Size = new System.Drawing.Size(215, 204);
             this.guna2panel2_practise.TabIndex = 2;
             this.guna2panel2_practise.Visible = false;
+            // 
+            // label_practise_intro
+            // 
+            this.label_practise_intro.AutoSize = false;
+            this.label_practise_intro.BackColor = System.Drawing.Color.Transparent;
+            this.label_practise_intro.Enabled = false;
+            this.label_practise_intro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_practise_intro.Location = new System.Drawing.Point(21, 18);
+            this.label_practise_intro.Margin = new System.Windows.Forms.Padding(15, 20, 10, 10);
+            this.label_practise_intro.Name = "label_practise_intro";
+            this.label_practise_intro.Size = new System.Drawing.Size(174, 174);
+            this.label_practise_intro.TabIndex = 0;
+            this.label_practise_intro.Text = "guna2HtmlLabel2";
+            this.label_practise_intro.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_practise_intro.Visible = false;
             // 
             // guna2Button2_Practise
             // 
@@ -208,6 +230,7 @@
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel3.Controls.Add(this.guna2CircleButton2);
             this.guna2Panel3.Controls.Add(this.Title_ChooseChar);
             this.guna2Panel3.Controls.Add(this.guna2HtmlLabel3_Speech);
             this.guna2Panel3.Controls.Add(this.guna2Button3_Choose);
@@ -394,6 +417,7 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel1.Controls.Add(this.guna2CircleButton3);
             this.guna2Panel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.ForeColor = System.Drawing.Color.Black;
@@ -473,6 +497,42 @@
             this.guna2Panel4.Size = new System.Drawing.Size(1000, 22);
             this.guna2Panel4.TabIndex = 3;
             // 
+            // guna2CircleButton2
+            // 
+            this.guna2CircleButton2.CheckedState.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.CustomImages.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton2.HoverState.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.Image = global::WindowsFormsApp4.Properties.Resources.home;
+            this.guna2CircleButton2.ImageSize = new System.Drawing.Size(60, 60);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(0, 0);
+            this.guna2CircleButton2.Name = "guna2CircleButton2";
+            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton2.ShadowDecoration.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.Size = new System.Drawing.Size(60, 60);
+            this.guna2CircleButton2.TabIndex = 12;
+            this.guna2CircleButton2.Click += new System.EventHandler(this.guna2CircleButton2_Click);
+            // 
+            // guna2CircleButton3
+            // 
+            this.guna2CircleButton3.CheckedState.Parent = this.guna2CircleButton3;
+            this.guna2CircleButton3.CustomImages.Parent = this.guna2CircleButton3;
+            this.guna2CircleButton3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton3.HoverState.Parent = this.guna2CircleButton3;
+            this.guna2CircleButton3.Image = global::WindowsFormsApp4.Properties.Resources.home;
+            this.guna2CircleButton3.ImageSize = new System.Drawing.Size(60, 60);
+            this.guna2CircleButton3.Location = new System.Drawing.Point(0, 0);
+            this.guna2CircleButton3.Name = "guna2CircleButton3";
+            this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton3.ShadowDecoration.Parent = this.guna2CircleButton3;
+            this.guna2CircleButton3.Size = new System.Drawing.Size(60, 60);
+            this.guna2CircleButton3.TabIndex = 13;
+            this.guna2CircleButton3.Click += new System.EventHandler(this.guna2CircleButton3_Click);
+            // 
             // startGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,10 +541,10 @@
             this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel4);
+            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.guna2Panel3);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "startGameForm";
@@ -538,6 +598,9 @@
         private Guna.UI2.WinForms.Guna2ControlBox ControlBox_Close;
         private Guna.UI2.WinForms.Guna2ControlBox ControlBox_minimize;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
     }
 }
 
