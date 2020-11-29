@@ -39,6 +39,7 @@ namespace WindowsFormsApp4
         int Q_finish_delay = 1000;
         public GameForm childgameform;
         public mainForm parent;
+        public int ismusicon = 1;
 
         // Quan ly game
         
@@ -269,6 +270,7 @@ namespace WindowsFormsApp4
             music.controls.stop();
             guna2Panel1.Visible = false;
             guna2Panel2.Visible = true;
+            guna2Circle_music.BringToFront();
             music.URL = "panel2_3_music.mp3";
             music.controls.play();
         }
@@ -277,6 +279,7 @@ namespace WindowsFormsApp4
             isChallenge = 1;
             guna2Panel2.Visible = false;
             guna2Panel3.Visible = true;
+            guna2Circle_music.BringToFront();
             Bitmap darius_char = new Bitmap(@"darius.png");
             guna2PictureBox3.BackColor = Color.Transparent;
             darius_char.MakeTransparent();
@@ -418,6 +421,7 @@ namespace WindowsFormsApp4
                 return;
             }
             isChallenge = 0;
+            
             guna2Panel2.Visible = false;
             guna2Panel3.Visible = true;
             Bitmap darius_char = new Bitmap(@"darius.png");
@@ -555,6 +559,21 @@ namespace WindowsFormsApp4
         {
             this.Close();
             this.parent.Show();
+        }
+
+        private void guna2Circle_music_Click(object sender, EventArgs e)
+        {
+            if (ismusicon == 1)
+            {
+                music.controls.stop();
+                ismusicon--;
+            }
+            else
+            {
+                music.controls.play();
+                ismusicon++;
+            }
+            
         }
     }
 }

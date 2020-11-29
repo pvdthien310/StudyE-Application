@@ -503,6 +503,16 @@ namespace WindowsFormsApp4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background1 {
+            get {
+                object obj = ResourceManager.GetObject("background1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap c7de824e_b549_4802_90eb_b7e2e5378a77_200x200 {
             get {
                 object obj = ResourceManager.GetObject("c7de824e-b549-4802-90eb-b7e2e5378a77_200x200", resourceCulture);
@@ -786,6 +796,26 @@ namespace WindowsFormsApp4.Properties {
         internal static System.Drawing.Bitmap left1 {
             get {
                 object obj = ResourceManager.GetObject("left1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap music {
+            get {
+                object obj = ResourceManager.GetObject("music", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap music1 {
+            get {
+                object obj = ResourceManager.GetObject("music1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -22,6 +22,7 @@ namespace WindowsFormsApp4
         // Back buffer
         private Bitmap backBuffer;
         public Timer timer_;
+        public Bitmap heart;
 
 
         public Timer timer_countdown; // dem thoi gian tra loi cau hoi
@@ -43,6 +44,7 @@ namespace WindowsFormsApp4
         int Q_check = 0;
         int isCorrect = 0;
         int char_action_goback = 0; // 0 la da di ve roi 1 la chua di ve 2 la moi di ve -> chuyen cau khac
+        public int user_lives;
 
         public ResultForm resultgameform;
 
@@ -54,9 +56,11 @@ namespace WindowsFormsApp4
             InitializeComponent();
             DoubleBuffered = true;
             this.parent = parent;
-
-            alock = new Bitmap("lock.png");
+            user_lives = 3;
+            alock = new Bitmap("lock1.png");
             creep = new Bitmap("creep.png");
+
+            heart = new Bitmap("heart.png");
             index = 0; // 0: chua tra loi, 1: dung, 2:sai
             gameManager = new GameManager(isChallenge, whatCharacter);
             LoadQuestion();
@@ -134,7 +138,7 @@ namespace WindowsFormsApp4
             if (isCorrect == 1)
             {
                 timer_countdown.Enabled = false;
-                gameManager.userCharacter.Correct_action(e, ref isCorrect, ref Q_check, ref char_action_goback, ref location_char, ref location_creep);
+                gameManager.userCharacter.Correct_action(e, ref isCorrect, ref Q_check, ref char_action_goback, ref location_char, ref location_creep);              
                 return;
 
             }
@@ -142,6 +146,7 @@ namespace WindowsFormsApp4
             {
                 timer_countdown.Enabled = false;
                 gameManager.userCharacter.Incorrect_action(e, ref isCorrect, ref Q_check, ref char_action_goback, ref location_char, ref location_creep);
+                
                 return;
 
             }
@@ -151,11 +156,16 @@ namespace WindowsFormsApp4
                 e.Graphics.DrawImage(background_char, new Rectangle(0, 0, 1000, 600), new Rectangle(0, 0, 1280, 720), GraphicsUnit.Pixel);
                 e.Graphics.DrawImage(creep, location_creep, 430, new Rectangle(0, 0, 88, 110), GraphicsUnit.Pixel);
                 e.Graphics.DrawImage(sprite, location_char, 385, new Rectangle(0, 0, 88, 108), GraphicsUnit.Pixel);
-                e.Graphics.DrawImage(alock, new Rectangle(465, 142, 55, 70), new Rectangle(0, 0, 193, 244), GraphicsUnit.Pixel);
+                e.Graphics.DrawImage(alock, new Rectangle(465, 142, 65, 70), new Rectangle(0, 0, 90, 90), GraphicsUnit.Pixel);
                 e.Graphics.DrawString(gameManager.username, new Font("Segoe UI", 14f, FontStyle.Bold), Brushes.White, new Point(90, 510));
-                e.Graphics.DrawString(score.ToString(), new Font("Segoe UI", 14f, FontStyle.Bold), Brushes.MediumSeaGreen, new Point(477, 225));
-
+                e.Graphics.DrawString(score.ToString(), new Font("Segoe UI", 14f, FontStyle.Bold), Brushes.MediumSeaGreen, new Point(482, 223));
                 e.Graphics.DrawImage(avatar, new Rectangle(20, 500, 60, 60), new Rectangle(0, 0, 80, 85), GraphicsUnit.Pixel);
+                if (user_lives > 0)                
+                    e.Graphics.DrawImage(heart, new Rectangle(90, 535, 20, 20), new Rectangle(0, 0, 225, 225), GraphicsUnit.Pixel);
+                if (user_lives > 1)
+                    e.Graphics.DrawImage(heart, new Rectangle(112, 535, 20, 20), new Rectangle(0, 0, 225, 225), GraphicsUnit.Pixel);
+                if (user_lives > 2)
+                    e.Graphics.DrawImage(heart, new Rectangle(134, 535, 20, 20), new Rectangle(0, 0, 225, 225), GraphicsUnit.Pixel);
                 //index1++;
                 return;
             }
@@ -165,8 +175,17 @@ namespace WindowsFormsApp4
                 // e.Graphics.DrawImage(background_char, new Rectangle(0, 0, 1000, 590), new Rectangle(0, 0, 929, 393), GraphicsUnit.Pixel);
                 e.Graphics.DrawImage(background_char, new Rectangle(0, 0, 1000, 600), new Rectangle(0, 0, 1280, 720), GraphicsUnit.Pixel);
                 e.Graphics.DrawImage(creep, location_creep, 430, new Rectangle(0, 0, 88, 110), GraphicsUnit.Pixel);
-                e.Graphics.DrawImage(sprite, location_char, 385, new Rectangle(0, 0, 88, 113), GraphicsUnit.Pixel);
-                e.Graphics.DrawImage(alock, new Rectangle(465, 142, 55, 70), new Rectangle(0, 0, 193, 244), GraphicsUnit.Pixel);
+                e.Graphics.DrawImage(sprite, location_char, 385, new Rectangle(0, 0, 88, 113), GraphicsUnit.Pixel);              
+                e.Graphics.DrawImage(alock, new Rectangle(465, 142, 65, 70), new Rectangle(0, 0, 90, 90), GraphicsUnit.Pixel);
+                e.Graphics.DrawString(score.ToString(), new Font("Segoe UI", 14f, FontStyle.Bold), Brushes.MediumSeaGreen, new Point(482, 223));
+                e.Graphics.DrawImage(avatar, new Rectangle(20, 500, 60, 60), new Rectangle(0, 0, 80, 85), GraphicsUnit.Pixel);
+                if (user_lives > 0)
+                    e.Graphics.DrawImage(heart, new Rectangle(90, 535, 20, 20), new Rectangle(0, 0, 225, 225), GraphicsUnit.Pixel);
+                if (user_lives > 1)
+                    e.Graphics.DrawImage(heart, new Rectangle(112, 535, 20, 20), new Rectangle(0, 0, 225, 225), GraphicsUnit.Pixel);
+                if (user_lives > 2)
+                    e.Graphics.DrawImage(heart, new Rectangle(134, 535, 20, 20), new Rectangle(0, 0, 225, 225), GraphicsUnit.Pixel);
+
                 gameManager.current_ques_index++;
                 LoadQuestion();
                 Reset_Status();
@@ -310,7 +329,23 @@ namespace WindowsFormsApp4
             else
             {
                 gameManager.quesData.Result[gameManager.current_ques_index] = 0;
+                user_lives--;
                 return 2;
+                
+            }
+        }
+
+        private void guna2CircleButton5_Click(object sender, EventArgs e)
+        {
+            if (ismusicon == 1)
+            {
+                music.controls.stop();
+                ismusicon--;
+            }
+            else
+            {
+                music.controls.play();
+                ismusicon++;
             }
         }
     }
