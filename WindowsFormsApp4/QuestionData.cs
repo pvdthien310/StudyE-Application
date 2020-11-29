@@ -27,7 +27,7 @@ namespace WindowsFormsApp4
                         this.database = new ChallengeDatabase();
                         break;
                     }
-                case 2:
+                case 0:
                     {
                         this.database = new PractiseDatabase();
                         break;

@@ -24,10 +24,10 @@ namespace WindowsFormsApp4
         {
             list.Clear(); // Xóa dữ liệu để tránh bug ngoài ý muốn
 
-            SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=SearchedWord;Integrated Security=True");
+            SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True");
             mycntSW.Open();
             // lay het du lieu trong bang DTBQT
-            SqlCommand com = new SqlCommand("SELECT * FROM EV_Word", mycntSW); //bat dau truy van
+            SqlCommand com = new SqlCommand("SELECT DISTINCT NAME,MEANING,ID FROM EV_SearchedWord", mycntSW); //bat dau truy van
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
             DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
@@ -35,7 +35,7 @@ namespace WindowsFormsApp4
 
             foreach (DataRow row in dt.Rows)
             {
-                int ID = Convert.ToInt32(row["ID"].ToString());
+                int ID = Convert.ToInt32(1);
                 string Name = row["Name"].ToString();
                 string Meaning = row["Meaning"].ToString();
                 list.Add(new Word(ID, Name, Meaning));
