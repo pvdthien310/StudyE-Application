@@ -17,9 +17,10 @@ namespace WindowsFormsApp4
         Timer timer;
         int effect1 = 0;
         int effect2 = 0;
-        //thêm từ master
+        //thêm từ master  
         public searchedWordList EV_SWlist = new searchedWordList();
-        SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True");
+        SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True"); // Của Thắng
+        //SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True"); // Của Thiên
         public startForm parent;
         static int EVSource_Length;
         static int VESource_Length;
@@ -302,7 +303,7 @@ namespace WindowsFormsApp4
         private void LoadTuKho()
         {
             mycnt.Open();
-            string query = "select Name,Meaning from EV_SOURCE where IsTuKho = 1";
+            string query = "select Name,Meaning from TUKHO";
             SqlCommand com = new SqlCommand(query, mycnt);
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataTable dt = new DataTable();
@@ -881,9 +882,6 @@ namespace WindowsFormsApp4
             //label1_1.Text = "";
             try
             {
-                if (!IsQuery)
-                {
-                    IsQuery = true;
                     mycnt.Open(); // mo ket noi 
                     if (textBox1.Text == "")
                     {
@@ -893,23 +891,22 @@ namespace WindowsFormsApp4
                     }
                     else
                     {
-                        string search = "select top(10) * from EV_SOURCE where Name like '" + textBox1.Text.Trim() + "%'";
-                        
-                        SqlCommand com = new SqlCommand(search, mycnt); // truy van cau lenh vao sql  
+                        string search = "select top(50) Name from EV_SOURCE where Name like '" + textBox1.Text.Trim() + "%'";
+                    
+                    SqlCommand com = new SqlCommand(search, mycnt); // truy van cau lenh vao sql  
                         SqlDataAdapter ada = new SqlDataAdapter(com); // chuyen data tu sql ve trong ada
                         DataTable dt = new DataTable();
                         ada.Fill(dt); // do data tu ada va dt
                         mycnt.Close(); // đóng kết nối
-                        
+                    AutoCompleteStringCollection tb = new AutoCompleteStringCollection();
                         if (dt.Rows.Count > 0)
                         {
                             for (int i = 0; i < dt.Rows.Count; i++)
-                                textBox1.AutoCompleteCustomSource.Add(dt.Rows[i]["Name"].ToString());
+                                tb.Add(dt.Rows[i]["Name"].ToString());
+                        textBox1.AutoCompleteCustomSource = tb;
                             textBox1.TextChanged -= textBox1_TextChanged;
                         }
                     }
-                }
-                IsQuery = false;
             }
             catch (Exception)
             {
@@ -942,7 +939,7 @@ namespace WindowsFormsApp4
             }
             else
             {
-                string search = "select top(10) * from VE_SOURCE where Name like N'@" + textBox2.Text.Trim() + "%'";
+                string search = "select top(50) Name from VE_SOURCE where Name like N'@" + textBox2.Text.Trim() + "%'";
                 SqlCommand com = new SqlCommand(search, mycnt); // truy van cau lenh vao sql
                 SqlDataAdapter ada = new SqlDataAdapter(com); // chuyen data tu sql ve trong ada
                 DataTable dt = new DataTable();
@@ -950,14 +947,16 @@ namespace WindowsFormsApp4
                 mycnt.Close(); // đóng kết nối
                 //textBox2.AutoCompleteCustomSource.Clear();
                 string s;
+                AutoCompleteStringCollection tb = new AutoCompleteStringCollection();
                 if (dt.Rows.Count > 0)
                 {
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         s = dt.Rows[i]["Name"].ToString();
                         s = s.Remove(0, 1);
-                        textBox2.AutoCompleteCustomSource.Add(s);
+                        tb.Add(s);
                     }
+                    textBox2.AutoCompleteCustomSource = tb;
                     textBox2.TextChanged -= textBox2_TextChanged;
                 }
             }
@@ -993,7 +992,7 @@ namespace WindowsFormsApp4
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar <= 'z' && e.KeyChar >= 'a' || e.KeyChar == (char)Keys.Back)
+            if (e.KeyChar <= 'z' && e.KeyChar >= 'a' || (e.KeyChar == (char)Keys.Back && textBox2.Text == ""))
                 textBox2.TextChanged += textBox2_TextChanged;
         }
 
@@ -1020,31 +1019,65 @@ namespace WindowsFormsApp4
 
         private void isTuKhoCheckBox_CheckedChanged(object sender, EventArgs e)
         {
+
+            mycnt.Open();
+            string find = "select Name from TUKHO where Name = '" + textBox1.Text.Trim() + "'";
+            SqlCommand cmdfind = new SqlCommand(find, mycnt);
+            SqlDataAdapter isExistData = new SqlDataAdapter(cmdfind);
+            DataTable isExistTb = new DataTable();
+            isExistData.Fill(isExistTb);
+            mycnt.Close();
+
             if (isTuKhoCheckBox.Checked == true)
             {
                 mycnt.Open();
+
                 string update = "update EV_SOURCE set IsTuKho = 1 where Name = '" + textBox1.Text.Trim() + "'";
-                //SqlCommand com = new SqlCommand(update, mycnt);
-
                 SqlCommand cmd = new SqlCommand();
-
                 cmd.Connection = mycnt;
                 cmd.CommandText = update;
                 cmd.ExecuteNonQuery();
+
+                if (isExistTb.Rows.Count == 0)
+                {
+                    string search = "select ID,Name,Meaning from EV_SOURCE where Name = '" + textBox1.Text.Trim() + "'";
+                    SqlCommand cmd2 = new SqlCommand(search, mycnt);
+                    SqlDataAdapter data = new SqlDataAdapter(cmd2);
+                    DataTable tb = new DataTable();
+                    data.Fill(tb);
+
+                    string meaning = tb.Rows[0]["Meaning"].ToString();
+                    meaning = meaning.Replace("'", "`");
+                    string add = "insert into TUKHO(ID,Name, Meaning) values ('" + tb.Rows[0]["ID"].ToString() + "','" + tb.Rows[0]["Name"].ToString() + "',N'" + meaning + "')";
+                    SqlCommand cmd3 = new SqlCommand();
+                    cmd3.Connection = mycnt;
+                    cmd3.CommandText = add;
+                    cmd3.ExecuteNonQuery();
+                }
 
                 mycnt.Close();
             }
             else
             {
                 mycnt.Open();
+
                 string update = "update EV_SOURCE set IsTuKho = 0 where Name = '" + textBox1.Text.Trim() + "'";
-                //SqlCommand com = new SqlCommand(update, mycnt);
-
                 SqlCommand cmd = new SqlCommand();
-
                 cmd.Connection = mycnt;
                 cmd.CommandText = update;
                 cmd.ExecuteNonQuery();
+
+                string search = "select Name from EV_SOURCE where Name = '" + textBox1.Text.Trim() + "'";
+                SqlCommand cmd2 = new SqlCommand(search, mycnt);
+                SqlDataAdapter data = new SqlDataAdapter(cmd2);
+                DataTable tb = new DataTable();
+                data.Fill(tb);
+
+                string del = "delete from TUKHO where Name = '" + tb.Rows[0]["Name"].ToString() + "'";
+                SqlCommand cmd3 = new SqlCommand();
+                cmd3.Connection = mycnt;
+                cmd3.CommandText = del;
+                cmd3.ExecuteNonQuery();
 
                 mycnt.Close();
             }
@@ -1105,6 +1138,42 @@ namespace WindowsFormsApp4
             {
                 textBox5.ForeColor = Color.Black;
             }
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            mycnt.Open(); // mo ket noi 
+            if (textBox5.Text == "")
+            {
+                textBox1.AutoCompleteCustomSource.Clear();
+                mycnt.Close();
+                return;
+            }
+            else
+            {
+                //string se = "select top(50) * from EV_SOURCE where Name like '" + textBox1.Text.Trim() + "%'";
+                string search = "select top(50) * from DTBQT where NGUYENMAU like '" + textBox5.Text.Trim() + "%" + "' or QUAKHUDON like '" + textBox5.Text.Trim() + "%" + "' or QUAKHUPHANTU like '" + textBox5.Text.Trim() + "%" + "'";
+                SqlCommand com = new SqlCommand(search, mycnt); // truy van cau lenh vao sql  
+                SqlDataAdapter ada = new SqlDataAdapter(com); // chuyen data tu sql ve trong ada
+                DataTable dt = new DataTable();
+                ada.Fill(dt); // do data tu ada va dt
+                mycnt.Close(); // đóng kết nối
+                AutoCompleteStringCollection tb = new AutoCompleteStringCollection();
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                        for(int j = 0; j < 3; j++)
+                            tb.Add(dt.Rows[i][j].ToString());
+                    textBox5.AutoCompleteCustomSource = tb;
+                    textBox5.TextChanged -= textBox5_TextChanged;
+                }
+            }
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar <= 'z' && e.KeyChar >= 'a' || (e.KeyChar == (char)Keys.Back && textBox5.Text == ""))
+                textBox5.TextChanged += textBox5_TextChanged;
         }
     }
 }
