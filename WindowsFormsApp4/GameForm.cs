@@ -110,7 +110,8 @@ namespace WindowsFormsApp4
             score--;
             if (score == 0)
             {
-                isCorrect = 2;
+                isCorrect = this.Check_Answer(99);
+                //isCorrect = 2;
             }
         }
         private void timer_Tick(object sender, EventArgs e)
@@ -159,7 +160,11 @@ namespace WindowsFormsApp4
                 e.Graphics.DrawImage(sprite, location_char, 385, new Rectangle(0, 0, 88, 108), GraphicsUnit.Pixel);
                 e.Graphics.DrawImage(alock, new Rectangle(465, 142, 65, 70), new Rectangle(0, 0, 90, 90), GraphicsUnit.Pixel);
                 e.Graphics.DrawString(gameManager.username, new Font("Segoe UI", 14f, FontStyle.Bold), Brushes.White, new Point(90, 510));
+                if (score > 5)
                 e.Graphics.DrawString(score.ToString(), new Font("Segoe UI", 14f, FontStyle.Bold), Brushes.MediumSeaGreen, new Point(482, 223));
+                else
+                e.Graphics.DrawString(score.ToString(), new Font("Segoe UI", 14f, FontStyle.Bold), Brushes.Red, new Point(482, 223));
+
                 e.Graphics.DrawImage(avatar, new Rectangle(20, 500, 60, 60), new Rectangle(0, 0, 80, 85), GraphicsUnit.Pixel);
                 if (user_lives > 0)                
                     e.Graphics.DrawImage(heart, new Rectangle(90, 535, 20, 20), new Rectangle(0, 0, 225, 225), GraphicsUnit.Pixel);
@@ -321,6 +326,12 @@ namespace WindowsFormsApp4
         }
         private int Check_Answer(int user_answer)
         {
+            if (user_answer > 4)
+            {
+                gameManager.quesData.Result[gameManager.current_ques_index] = 0;
+                user_lives--;
+                return 2;
+            }
 
             if (user_answer == gameManager.quesData.List[gameManager.current_ques_index].correctIndex)
             {

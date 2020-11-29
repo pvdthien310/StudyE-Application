@@ -138,7 +138,7 @@
             this.Tile_mode.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tile_mode.ForeColor = System.Drawing.Color.White;
             this.Tile_mode.HoverState.Parent = this.Tile_mode;
-            this.Tile_mode.Location = new System.Drawing.Point(349, 57);
+            this.Tile_mode.Location = new System.Drawing.Point(344, 57);
             this.Tile_mode.Name = "Tile_mode";
             this.Tile_mode.ShadowDecoration.Parent = this.Tile_mode;
             this.Tile_mode.Size = new System.Drawing.Size(284, 37);
@@ -370,7 +370,7 @@
             this.guna2TextBox3.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox3.HoverState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Location = new System.Drawing.Point(372, 120);
+            this.guna2TextBox3.Location = new System.Drawing.Point(373, 120);
             this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(7, 5, 7, 5);
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
@@ -382,7 +382,7 @@
             // 
             // guna2PictureBox3_Ar3
             // 
-            this.guna2PictureBox3_Ar3.Location = new System.Drawing.Point(735, 322);
+            this.guna2PictureBox3_Ar3.Location = new System.Drawing.Point(728, 322);
             this.guna2PictureBox3_Ar3.Name = "guna2PictureBox3_Ar3";
             this.guna2PictureBox3_Ar3.ShadowDecoration.Parent = this.guna2PictureBox3_Ar3;
             this.guna2PictureBox3_Ar3.Size = new System.Drawing.Size(44, 32);
@@ -391,7 +391,7 @@
             // 
             // guna2PictureBox3_Ar2
             // 
-            this.guna2PictureBox3_Ar2.Location = new System.Drawing.Point(466, 322);
+            this.guna2PictureBox3_Ar2.Location = new System.Drawing.Point(459, 322);
             this.guna2PictureBox3_Ar2.Name = "guna2PictureBox3_Ar2";
             this.guna2PictureBox3_Ar2.ShadowDecoration.Parent = this.guna2PictureBox3_Ar2;
             this.guna2PictureBox3_Ar2.Size = new System.Drawing.Size(44, 32);
@@ -400,7 +400,7 @@
             // 
             // guna2PictureBox3_Ar1
             // 
-            this.guna2PictureBox3_Ar1.Location = new System.Drawing.Point(200, 322);
+            this.guna2PictureBox3_Ar1.Location = new System.Drawing.Point(193, 322);
             this.guna2PictureBox3_Ar1.Name = "guna2PictureBox3_Ar1";
             this.guna2PictureBox3_Ar1.ShadowDecoration.Parent = this.guna2PictureBox3_Ar1;
             this.guna2PictureBox3_Ar1.Size = new System.Drawing.Size(44, 32);
@@ -410,7 +410,7 @@
             // guna2PictureBox3_3
             // 
             this.guna2PictureBox3_3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.guna2PictureBox3_3.Location = new System.Drawing.Point(735, 382);
+            this.guna2PictureBox3_3.Location = new System.Drawing.Point(728, 382);
             this.guna2PictureBox3_3.Name = "guna2PictureBox3_3";
             this.guna2PictureBox3_3.ShadowDecoration.Parent = this.guna2PictureBox3_3;
             this.guna2PictureBox3_3.Size = new System.Drawing.Size(113, 95);
@@ -421,7 +421,7 @@
             // 
             this.guna2PictureBox3_2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.guna2PictureBox3_2.FillColor = System.Drawing.Color.White;
-            this.guna2PictureBox3_2.Location = new System.Drawing.Point(442, 382);
+            this.guna2PictureBox3_2.Location = new System.Drawing.Point(435, 382);
             this.guna2PictureBox3_2.Name = "guna2PictureBox3_2";
             this.guna2PictureBox3_2.ShadowDecoration.Parent = this.guna2PictureBox3_2;
             this.guna2PictureBox3_2.Size = new System.Drawing.Size(141, 95);
@@ -431,7 +431,7 @@
             // guna2PictureBox3
             // 
             this.guna2PictureBox3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(173, 382);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(166, 382);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
             this.guna2PictureBox3.Size = new System.Drawing.Size(116, 95);
@@ -537,7 +537,7 @@
             this.guna2CircleButton_Left.Name = "guna2CircleButton_Left";
             this.guna2CircleButton_Left.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton_Left.ShadowDecoration.Parent = this.guna2CircleButton_Left;
-            this.guna2CircleButton_Left.Size = new System.Drawing.Size(75, 62);
+            this.guna2CircleButton_Left.Size = new System.Drawing.Size(70, 62);
             this.guna2CircleButton_Left.TabIndex = 16;
             this.guna2CircleButton_Left.Click += new System.EventHandler(this.guna2Button3_Left_Click);
             // 
@@ -556,7 +556,7 @@
             this.guna2CircleButton_Right.Name = "guna2CircleButton_Right";
             this.guna2CircleButton_Right.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton_Right.ShadowDecoration.Parent = this.guna2CircleButton_Right;
-            this.guna2CircleButton_Right.Size = new System.Drawing.Size(75, 62);
+            this.guna2CircleButton_Right.Size = new System.Drawing.Size(70, 62);
             this.guna2CircleButton_Right.TabIndex = 17;
             this.guna2CircleButton_Right.Click += new System.EventHandler(this.guna2Button3_Right_Click);
             // 

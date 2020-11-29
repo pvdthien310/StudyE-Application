@@ -477,7 +477,7 @@ namespace WindowsFormsApp4
         {
             guna2Button1.ForeColor = Color.White;
             this.guna2Button1.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.Location = new System.Drawing.Point(383, 258);
+            this.guna2Button1.Location = new System.Drawing.Point(383, 267);
             //this.guna2Button1.Location = new System.Drawing.Point(guna2Button1.Location.X, guna2Button1.Location.Y);
 
             this.guna2Button1.Size = new System.Drawing.Size(210, 57);
