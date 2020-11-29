@@ -517,13 +517,14 @@ namespace WindowsFormsApp4
             {
                 MessageBox.Show("Bạn đã chưa điền hoặc chọn thông tin đầy đủ !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (comboBox6_2.SelectedItem.ToString() == "Other" && textBox6_2.Text == "")
+            else if ((comboBox6_2.SelectedItem.ToString() == "Other" || comboBox6_2.SelectedItem.ToString() == "Khác" ) && textBox6_2.Text == "")
             {
-                MessageBox.Show("Bạn đã chưa điền hoặc chọn thông tin đầy đủ !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (textBox6_2.Visible == true)
-                {
-                    textBox6_2.Visible = !textBox6_2.Visible;
-                }
+                MessageBox.Show("Bạn đã chưa điền hoặc chọn thông tin đầy đủ 1!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //if (textBox6_2.Visible == true)
+                //{
+                //    textBox6_2.Visible = !textBox6_2.Visible;
+                //}
+                
             }
             else
             {
@@ -571,7 +572,6 @@ namespace WindowsFormsApp4
                     comboBox6_2.SelectedItem = comboBox6_2.Items[0];
                     mycnt.Close();
 
-
                 }
                 ////  Thêm từ Anh - việt
                 else if (comboBox6_1.SelectedItem.ToString() == "Anh - Việt")
@@ -612,7 +612,10 @@ namespace WindowsFormsApp4
                     comboBox6_2.SelectedItem = comboBox6_2.Items[0];
                     mycnt.Close();
                 }
+                textBox6_2.Visible = false;
             }
+            
+
 
         }
 
@@ -628,6 +631,7 @@ namespace WindowsFormsApp4
             }
             else
             {
+                textBox6_2.Visible = false;
                 return;
             }
         }
