@@ -271,8 +271,18 @@ namespace WindowsFormsApp4
             guna2Panel1.Visible = false;
             guna2Panel2.Visible = true;
             guna2Circle_music.BringToFront();
-            music.URL = "panel2_3_music.mp3";
-            music.controls.play();
+
+            if (ismusicon == 1)
+            {
+                music.URL = "panel2_3_music.mp3";
+                music.controls.play();
+            }
+            else
+            {
+                music.URL = "panel2_3_music.mp3";
+                music.controls.stop();
+            }
+
         }
         private void guna2Button2_Challange_Click(object sender, EventArgs e)
         {
@@ -545,18 +555,21 @@ namespace WindowsFormsApp4
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
+            music.close();
             this.Close();
             this.parent.Show();
         }
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
+            music.close();
             this.Close();
             this.parent.Show();
         }
 
         private void guna2CircleButton3_Click(object sender, EventArgs e)
         {
+            music.close();
             this.Close();
             this.parent.Show();
         }
@@ -574,6 +587,25 @@ namespace WindowsFormsApp4
                 ismusicon++;
             }
             
+        }
+
+        private void guna2Button3_Choose_MouseEnter(object sender, EventArgs e)
+        {
+            guna2Button3_Choose.ForeColor = Color.Black;
+            this.guna2Button3_Choose.Font = new System.Drawing.Font("Showcard Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.guna2Button1.Location = new System.Drawing.Point(337, 204);
+            this.guna2Button3_Choose.Location = new System.Drawing.Point(guna2Button3_Choose.Location.X - 20, guna2Button3_Choose.Location.Y - 10);
+            this.guna2Button3_Choose.Size = new System.Drawing.Size(180, 70);
+        }
+
+        private void guna2Button3_Choose_MouseLeave(object sender, EventArgs e)
+        {
+            guna2Button3_Choose.ForeColor = Color.White;
+            this.guna2Button3_Choose.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button3_Choose.Location = new System.Drawing.Point(430, 190);
+            //this.guna2Button1.Location = new System.Drawing.Point(guna2Button1.Location.X, guna2Button1.Location.Y);
+
+            this.guna2Button3_Choose.Size = new System.Drawing.Size(140, 50);
         }
     }
 }

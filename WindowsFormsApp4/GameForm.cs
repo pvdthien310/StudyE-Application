@@ -50,6 +50,7 @@ namespace WindowsFormsApp4
 
         // Quan ly game 
         public GameManager gameManager;
+        public int ismusicon1 = 1;
 
         public GameForm(int isChallenge, int whatCharacter, startGameForm parent)
         {
@@ -125,7 +126,7 @@ namespace WindowsFormsApp4
                 timer_.Enabled = false;
 
             }
-            timer_.Interval = 100;
+            timer_.Interval = 50;
             if (isCorrect == 1 || isCorrect == 2 || isCorrect == 3 || index1 == 0)
                 this.Invalidate();
         }
@@ -337,16 +338,24 @@ namespace WindowsFormsApp4
 
         private void guna2CircleButton5_Click(object sender, EventArgs e)
         {
-            if (ismusicon == 1)
+            if (ismusicon1 == 1)
             {
-                music.controls.stop();
-                ismusicon--;
+                this.parent.music.controls.stop();
+                ismusicon1--;
             }
             else
             {
-                music.controls.play();
-                ismusicon++;
+                this.parent.music.controls.play();
+                ismusicon1++;
             }
+        }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.parent.parent.Show();
+            this.parent.Close();
+            
         }
     }
 }

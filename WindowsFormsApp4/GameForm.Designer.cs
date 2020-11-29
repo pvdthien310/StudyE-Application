@@ -35,6 +35,7 @@
             this.game_btnA = new Guna.UI2.WinForms.Guna2Button();
             this.game_question = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Circle_music_game = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.SuspendLayout();
             // 
             // game_btnD
@@ -133,7 +134,8 @@
             // 
             // guna2Circle_music_game
             // 
-            this.guna2Circle_music_game.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Circle_music_game.BackColor = System.Drawing.Color.Black;
+            this.guna2Circle_music_game.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.background;
             this.guna2Circle_music_game.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Circle_music_game.CheckedState.Parent = this.guna2Circle_music_game;
             this.guna2Circle_music_game.CustomImages.Parent = this.guna2Circle_music_game;
@@ -143,13 +145,33 @@
             this.guna2Circle_music_game.HoverState.Parent = this.guna2Circle_music_game;
             this.guna2Circle_music_game.Image = global::WindowsFormsApp4.Properties.Resources.music1;
             this.guna2Circle_music_game.ImageSize = new System.Drawing.Size(60, 60);
-            this.guna2Circle_music_game.Location = new System.Drawing.Point(917, 41);
+            this.guna2Circle_music_game.Location = new System.Drawing.Point(918, 9);
             this.guna2Circle_music_game.Name = "guna2Circle_music_game";
             this.guna2Circle_music_game.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2Circle_music_game.ShadowDecoration.Parent = this.guna2Circle_music_game;
             this.guna2Circle_music_game.Size = new System.Drawing.Size(60, 60);
             this.guna2Circle_music_game.TabIndex = 16;
             this.guna2Circle_music_game.Click += new System.EventHandler(this.guna2CircleButton5_Click);
+            // 
+            // guna2CircleButton2
+            // 
+            this.guna2CircleButton2.BackColor = System.Drawing.Color.White;
+            this.guna2CircleButton2.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.background;
+            this.guna2CircleButton2.CheckedState.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.CustomImages.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton2.HoverState.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.Image = global::WindowsFormsApp4.Properties.Resources.home;
+            this.guna2CircleButton2.ImageSize = new System.Drawing.Size(60, 60);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(5, 9);
+            this.guna2CircleButton2.Name = "guna2CircleButton2";
+            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton2.ShadowDecoration.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.Size = new System.Drawing.Size(60, 60);
+            this.guna2CircleButton2.TabIndex = 17;
+            this.guna2CircleButton2.Click += new System.EventHandler(this.guna2CircleButton2_Click);
             // 
             // GameForm
             // 
@@ -159,6 +181,7 @@
             this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.background_char;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.guna2CircleButton2);
             this.Controls.Add(this.guna2Circle_music_game);
             this.Controls.Add(this.game_btnD);
             this.Controls.Add(this.game_btnB);
@@ -166,6 +189,7 @@
             this.Controls.Add(this.game_btnA);
             this.Controls.Add(this.game_question);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameForm";
@@ -182,5 +206,6 @@
         private Guna.UI2.WinForms.Guna2Button game_btnB;
         private Guna.UI2.WinForms.Guna2Button game_btnD;
         private Guna.UI2.WinForms.Guna2CircleButton guna2Circle_music_game;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
     }
 }
