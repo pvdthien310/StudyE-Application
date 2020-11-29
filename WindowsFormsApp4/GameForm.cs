@@ -15,13 +15,19 @@ namespace WindowsFormsApp4
     {
         public startGameForm parent;
         Bitmap gamebackground = new Bitmap("background.jpg");
-        
+        private Bitmap avatar;
         private Bitmap sprite;
         private Bitmap creep;
         private Bitmap alock;
         // Back buffer
         private Bitmap backBuffer;
         public Timer timer_;
+
+
+        public Timer timer_countdown; // dem thoi gian tra loi cau hoi
+        public int score = 20;
+
+
         public Graphics graphics;
         // Số thự tự của frame (16 frame ảnh)
         private int index;
@@ -42,8 +48,8 @@ namespace WindowsFormsApp4
 
         // Quan ly game 
         public GameManager gameManager;
-       
-        public GameForm(int isChallenge,int whatCharacter,startGameForm parent)
+
+        public GameForm(int isChallenge, int whatCharacter, startGameForm parent)
         {
             InitializeComponent();
             DoubleBuffered = true;
@@ -60,8 +66,14 @@ namespace WindowsFormsApp4
             timer_.Enabled = true;
             timer_.Tick += new EventHandler(timer_Tick);
             ///
-
-            Bitmap avatar = new Bitmap(gameManager.userCharacter.avatar);
+            timer_countdown = new Timer();
+            timer_countdown.Interval = 1000;
+            timer_countdown.Enabled = true;
+            timer_countdown.Tick += new EventHandler(timer_countdown_Tick);
+            //
+            gameManager.username = this.parent.guna2TextBox3.Text;
+            //
+            avatar = new Bitmap(gameManager.userCharacter.avatar);
             //pictureBox_avatar.BackColor = Color.Transparent;
             //gameManager.userCharacter.avatar.MakeTransparent();
             //pictureBox_avatar.Image = gameManager.userCharacter.avatar;
@@ -88,7 +100,14 @@ namespace WindowsFormsApp4
 
 
         }
-  
+        private void timer_countdown_Tick(object sender, EventArgs e)
+        {
+            score--;
+            if (score == 0)
+            {
+                isCorrect = 2;
+            }
+        }
         private void timer_Tick(object sender, EventArgs e)
         {
             //if (isCorrect == 0 && char_action_goback == 0)
@@ -100,63 +119,66 @@ namespace WindowsFormsApp4
             {
                 OpenResultForm();
                 timer_.Enabled = false;
-              
+
             }
             timer_.Interval = 100;
             if (isCorrect == 1 || isCorrect == 2 || isCorrect == 3 || index1 == 0)
-            this.Invalidate();
+                this.Invalidate();
         }
         public int index1 = 0;
         private void GameForm_Paint(object sender, PaintEventArgs e)
         {
-           // curFrameColumn = index % 4;
+            // curFrameColumn = index % 4;
             Bitmap background_char = new Bitmap("background.jpg");
 
             if (isCorrect == 1)
             {
-                
-                gameManager.userCharacter.Correct_action(e, ref isCorrect, ref Q_check, ref char_action_goback,ref location_char,ref location_creep);
-                return;
-                
-            }
-            else if( isCorrect == 2)
-            {
-                
-                gameManager.userCharacter.Incorrect_action(e, ref isCorrect, ref Q_check, ref char_action_goback, ref location_char,ref location_creep);
+                timer_countdown.Enabled = false;
+                gameManager.userCharacter.Correct_action(e, ref isCorrect, ref Q_check, ref char_action_goback, ref location_char, ref location_creep);
                 return;
 
             }
-            if (char_action_goback == 0 && isCorrect == 0 ) 
+            else if (isCorrect == 2)
+            {
+                timer_countdown.Enabled = false;
+                gameManager.userCharacter.Incorrect_action(e, ref isCorrect, ref Q_check, ref char_action_goback, ref location_char, ref location_creep);
+                return;
+
+            }
+            if (char_action_goback == 0 && isCorrect == 0)
             {
                 //e.graphics.drawimage(background_char, 2, 1);
                 e.Graphics.DrawImage(background_char, new Rectangle(0, 0, 1000, 600), new Rectangle(0, 0, 1280, 720), GraphicsUnit.Pixel);
                 e.Graphics.DrawImage(creep, location_creep, 430, new Rectangle(0, 0, 88, 110), GraphicsUnit.Pixel);
                 e.Graphics.DrawImage(sprite, location_char, 385, new Rectangle(0, 0, 88, 108), GraphicsUnit.Pixel);
-                e.Graphics.DrawImage(alock, new Rectangle(465, 142, 55, 70), new Rectangle(0, 0, 193, 244),GraphicsUnit.Pixel);
+                e.Graphics.DrawImage(alock, new Rectangle(465, 142, 55, 70), new Rectangle(0, 0, 193, 244), GraphicsUnit.Pixel);
+                e.Graphics.DrawString(gameManager.username, new Font("Segoe UI", 14f, FontStyle.Bold), Brushes.White, new Point(90, 510));
+                e.Graphics.DrawString(score.ToString(), new Font("Segoe UI", 14f, FontStyle.Bold), Brushes.MediumSeaGreen, new Point(477, 225));
 
-                index1++;
+                e.Graphics.DrawImage(avatar, new Rectangle(20, 500, 60, 60), new Rectangle(0, 0, 80, 85), GraphicsUnit.Pixel);
+                //index1++;
                 return;
             }
-            if (char_action_goback == 0 && isCorrect == 3 )
+            if (char_action_goback == 0 && isCorrect == 3)
             {
                 //e.graphics.drawimage(background_char, 2, 1);
-               // e.Graphics.DrawImage(background_char, new Rectangle(0, 0, 1000, 590), new Rectangle(0, 0, 929, 393), GraphicsUnit.Pixel);
+                // e.Graphics.DrawImage(background_char, new Rectangle(0, 0, 1000, 590), new Rectangle(0, 0, 929, 393), GraphicsUnit.Pixel);
                 e.Graphics.DrawImage(background_char, new Rectangle(0, 0, 1000, 600), new Rectangle(0, 0, 1280, 720), GraphicsUnit.Pixel);
-                e.Graphics.DrawImage(creep, location_creep, 430, new Rectangle(0, 0, 88, 110), GraphicsUnit.Pixel);              
+                e.Graphics.DrawImage(creep, location_creep, 430, new Rectangle(0, 0, 88, 110), GraphicsUnit.Pixel);
                 e.Graphics.DrawImage(sprite, location_char, 385, new Rectangle(0, 0, 88, 113), GraphicsUnit.Pixel);
                 e.Graphics.DrawImage(alock, new Rectangle(465, 142, 55, 70), new Rectangle(0, 0, 193, 244), GraphicsUnit.Pixel);
                 gameManager.current_ques_index++;
                 LoadQuestion();
                 Reset_Status();
-
+                timer_countdown.Enabled = true;
                 isCorrect = 0;
-
-                index1++;
+                score = 20;
+                //index1++;
                 return;
             }
-           
 
-            }
+
+        }
         private void Reset_Status()
         {
             game_btnA.Enabled = true;
@@ -172,15 +194,15 @@ namespace WindowsFormsApp4
         private void game_btnA_Click(object sender, EventArgs e)
         {
             this.gameManager.quesData.User_choose[this.gameManager.current_ques_index] = 1;
-                game_btnB.FillColor = Color.Gray;
-                game_btnC.FillColor = Color.Gray;
-                game_btnD.FillColor = Color.Gray;
-                isCorrect = this.Check_Answer(1);
-                game_btnB.Enabled = false;
-                game_btnC.Enabled = false;
-                game_btnD.Enabled = false;
-               
-            
+            game_btnB.FillColor = Color.Gray;
+            game_btnC.FillColor = Color.Gray;
+            game_btnD.FillColor = Color.Gray;
+            isCorrect = this.Check_Answer(1);
+            game_btnB.Enabled = false;
+            game_btnC.Enabled = false;
+            game_btnD.Enabled = false;
+
+
         }
 
         private void game_btnB_Click(object sender, EventArgs e)
@@ -194,7 +216,7 @@ namespace WindowsFormsApp4
             game_btnA.Enabled = false;
             game_btnC.Enabled = false;
             game_btnD.Enabled = false;
-            
+
         }
 
         private void game_btnC_Click(object sender, EventArgs e)
@@ -204,11 +226,11 @@ namespace WindowsFormsApp4
             game_btnB.FillColor = Color.Gray;
             game_btnA.FillColor = Color.Gray;
             game_btnD.FillColor = Color.Gray;
-            isCorrect = this.Check_Answer(3); 
+            isCorrect = this.Check_Answer(3);
             game_btnB.Enabled = false;
             game_btnA.Enabled = false;
             game_btnD.Enabled = false;
-            
+
         }
 
         private void game_btnD_Click(object sender, EventArgs e)
@@ -222,7 +244,7 @@ namespace WindowsFormsApp4
             game_btnB.Enabled = false;
             game_btnC.Enabled = false;
             game_btnA.Enabled = false;
-            
+
         }
         private void LoadQuestion()
         {
@@ -242,7 +264,7 @@ namespace WindowsFormsApp4
             this.parent.music.controls.stop();
             this.Hide();
             this.parent.Hide();
-            resultgameform = new ResultForm(this,this.parent,this.parent.parent);
+            resultgameform = new ResultForm(this, this.parent, this.parent.parent);
             //resultgameform.TopLevel = false;
             resultgameform.FormBorderStyle = FormBorderStyle.None;
             resultgameform.Dock = DockStyle.Fill;
@@ -259,14 +281,14 @@ namespace WindowsFormsApp4
             {
                 fix_lines = lines[i];
                 fix_lines = fix_lines.Substring(1);
-               if (lines[i][0] == '*')
+                if (lines[i][0] == '*')
                 {
 
                     show_line += fix_lines.Trim();
                     index++;
                     if (index == 1) show_line += " - ";
                 }
-                else if (lines[i][0] == '-' )
+                else if (lines[i][0] == '-')
                 {
 
                     show_line += fix_lines.Trim();
@@ -279,7 +301,7 @@ namespace WindowsFormsApp4
         }
         private int Check_Answer(int user_answer)
         {
-            
+
             if (user_answer == gameManager.quesData.List[gameManager.current_ques_index].correctIndex)
             {
                 gameManager.quesData.Result[gameManager.current_ques_index] = 1;

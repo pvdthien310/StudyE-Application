@@ -15,7 +15,7 @@ namespace WindowsFormsApp4
             get { if (instance == null) instance = new GameManager(); return instance; }
             private set { instance = value; }
         }
-
+        public string username;
         public Character userCharacter; // nhan vat
         public QuestionData quesData;  // bộ xử lý câu hỏi
         public int current_ques_index = 0; // cau hoi hien tai duoc chieu tren mang hinh
