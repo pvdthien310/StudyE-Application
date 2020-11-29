@@ -40,7 +40,7 @@ namespace WindowsFormsApp4
                         break;
                     }
             }
-            quesData = new QuestionData(25, isChallenge);
+            quesData = new QuestionData(10, isChallenge);
 
         }
 
