@@ -23,7 +23,6 @@ namespace WindowsFormsApp4
         public startForm parent;
         static int EVSource_Length;
         static int VESource_Length;
-        bool IsQuery = false;
         //
         public mainForm()
         {
@@ -183,16 +182,6 @@ namespace WindowsFormsApp4
             this.guna2Button_TuKho.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold | FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_TuKho.FillColor = System.Drawing.Color.White;
             Reset_Status_Button(sender, e);
-
-            LoadTuKho();
-            addMenuStrip(sender, e);
-            int CountTuKho = TuKhoTabledatagridview.RowCount;
-            if (CountTuKho > 0)
-            {
-                TuKhoTabledatagridview.ContextMenuStrip.Enabled = true;
-            }
-            else
-                TuKhoTabledatagridview.ContextMenuStrip.Enabled = false;
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
@@ -272,13 +261,10 @@ namespace WindowsFormsApp4
         {
             //Load dữ liệu
             string sql = "select * from DTBQT";
-            ketnoicsdl(sql);
+            //ketnoicsdl(sql);
             DataManager.Instance.LoadSWToList(EV_SWlist);
             //
             isDichDoanRadio.Checked = true;
-            isTuKhoCheckBox.Visible = false;
-
-            addMenuStrip(sender, e);
         }
         private void ketnoicsdl(string sql)
         {
@@ -293,17 +279,6 @@ namespace WindowsFormsApp4
             dataGridView5.DataSource = dt; //đổ dữ liệu vào datagridview
         }
 
-        private void LoadTuKho()
-        {
-            mycnt.Open();
-            string query = "select Name,Meaning from EV_SOURCE where IsTuKho = 1";
-            SqlCommand com = new SqlCommand(query, mycnt);
-            SqlDataAdapter da = new SqlDataAdapter(com);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            mycnt.Close();
-            TuKhoTabledatagridview.DataSource = dt;
-        }
         private void ConnectDatabseEV()
         {
             mycnt.Open(); // mo ket noi 
@@ -462,26 +437,6 @@ namespace WindowsFormsApp4
             button1.Enabled = !button1.Enabled;
             ConnectDatabseEV();
             button1.Enabled = !button1.Enabled;
-
-            //--support danh dau tu kho
-            string search = "select IsTuKho from EV_SOURCE where Name = '" + textBox1.Text.Trim() + "'";
-            SqlCommand com = new SqlCommand(search, mycnt); // truy van cau lenh vao sql
-            SqlDataAdapter ada = new SqlDataAdapter(com); // chuyen data tu sql ve trong ada
-            DataTable dt = new DataTable();
-            ada.Fill(dt); // do data tu ada va dt
-            mycnt.Close(); // đóng kết nối
-            if (dt.Rows.Count > 0)
-            {
-                isTuKhoCheckBox.Visible = true;
-                if (dt.Rows[0]["IsTuKho"].ToString() == "1")
-                    isTuKhoCheckBox.Checked = true;
-                else
-                    isTuKhoCheckBox.Checked = false;
-                if (resultBox1.Text == "Vui lòng nhập từ cần tra !!")
-                    isTuKhoCheckBox.Visible = false;
-            }
-            else
-                isTuKhoCheckBox.Visible = false;
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -744,10 +699,10 @@ namespace WindowsFormsApp4
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
+            if (textBox1.Text == "")
             {
-                textBox2.Text = "Nhập Từ Cần Tra";
-                textBox2.ForeColor = Color.Gray;
+                textBox1.Text = "Nhập Từ Cần Tra";
+                textBox1.ForeColor = Color.Gray;
             }
         }
 
@@ -869,41 +824,28 @@ namespace WindowsFormsApp4
             //}
 
             //label1_1.Text = "";
-            try
+
+            mycnt.Open(); // mo ket noi 
+            if (textBox1.Text == "")
             {
-                if (!IsQuery)
-                {
-                    IsQuery = true;
-                    mycnt.Open(); // mo ket noi 
-                    if (textBox1.Text == "")
-                    {
-                        textBox1.AutoCompleteCustomSource.Clear();
-                        mycnt.Close();
-                        return;
-                    }
-                    else
-                    {
-                        string search = "select top(10) * from EV_SOURCE where Name like '" + textBox1.Text.Trim() + "%'";
-                        
-                        SqlCommand com = new SqlCommand(search, mycnt); // truy van cau lenh vao sql  
-                        SqlDataAdapter ada = new SqlDataAdapter(com); // chuyen data tu sql ve trong ada
-                        DataTable dt = new DataTable();
-                        ada.Fill(dt); // do data tu ada va dt
-                        mycnt.Close(); // đóng kết nối
-                        
-                        if (dt.Rows.Count > 0)
-                        {
-                            for (int i = 0; i < dt.Rows.Count; i++)
-                                textBox1.AutoCompleteCustomSource.Add(dt.Rows[i]["Name"].ToString());
-                            textBox1.TextChanged -= textBox1_TextChanged;
-                        }
-                    }
-                }
-                IsQuery = false;
+                mycnt.Close();
+                return;
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Quá nhanh");
+                string search = "select top(10) * from EV_SOURCE where Name like '" + textBox1.Text.Trim() + "%'";
+                SqlCommand com = new SqlCommand(search, mycnt); // truy van cau lenh vao sql
+                SqlDataAdapter ada = new SqlDataAdapter(com); // chuyen data tu sql ve trong ada
+                DataTable dt = new DataTable();
+                ada.Fill(dt); // do data tu ada va dt
+                mycnt.Close(); // đóng kết nối
+                textBox1.AutoCompleteCustomSource.Clear();
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                        textBox1.AutoCompleteCustomSource.Add(dt.Rows[i]["Name"].ToString());
+                    textBox1.TextChanged -= textBox1_TextChanged;
+                }
             }
         }
 
@@ -938,7 +880,7 @@ namespace WindowsFormsApp4
                 DataTable dt = new DataTable();
                 ada.Fill(dt); // do data tu ada va dt
                 mycnt.Close(); // đóng kết nối
-                //textBox2.AutoCompleteCustomSource.Clear();
+                textBox2.AutoCompleteCustomSource.Clear();
                 string s;
                 if (dt.Rows.Count > 0)
                 {
@@ -954,7 +896,7 @@ namespace WindowsFormsApp4
         }
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar <= 'z' && e.KeyChar >= 'a' || (e.KeyChar == (char)Keys.Back && textBox1.Text == "") )
+            if (e.KeyChar <= 'z' && e.KeyChar >= 'a' || e.KeyChar == (char)Keys.Back)
                 textBox1.TextChanged += textBox1_TextChanged;
         }
         private void speak_Click(object sender, EventArgs e)
@@ -1008,71 +950,15 @@ namespace WindowsFormsApp4
             }
         }
 
-        private void isTuKhoCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (isTuKhoCheckBox.Checked == true)
-            {
-                mycnt.Open();
-                string update = "update EV_SOURCE set IsTuKho = 1 where Name = '" + textBox1.Text.Trim() + "'";
-                //SqlCommand com = new SqlCommand(update, mycnt);
-
-                SqlCommand cmd = new SqlCommand();
-
-                cmd.Connection = mycnt;
-                cmd.CommandText = update;
-                cmd.ExecuteNonQuery();
-
-                mycnt.Close();
-            }
-            else
-            {
-                mycnt.Open();
-                string update = "update EV_SOURCE set IsTuKho = 0 where Name = '" + textBox1.Text.Trim() + "'";
-                //SqlCommand com = new SqlCommand(update, mycnt);
-
-                SqlCommand cmd = new SqlCommand();
-
-                cmd.Connection = mycnt;
-                cmd.CommandText = update;
-                cmd.ExecuteNonQuery();
-
-                mycnt.Close();
-            }
-        }
-        void addMenuStrip(object sender, EventArgs ee)
-        {
-            TuKhoTabledatagridview.ContextMenuStrip = new ContextMenuStrip();
-            ToolStripItem del = new ToolStripButton("Xóa");
-            TuKhoTabledatagridview.ContextMenuStrip.Items.Add(del);
-
-            del.Click += (s, e) =>
-            {
-                string isSelect = TuKhoTabledatagridview.CurrentRow.Cells["Name"].Value.ToString();
-                TuKhoTabledatagridview.Rows.RemoveAt(TuKhoTabledatagridview.CurrentRow.Index);
-                mycnt.Open();
-                string update = "update EV_SOURCE set IsTuKho = 0 where Name ='" + isSelect + "'";
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = mycnt;
-                cmd.CommandText = update;
-                cmd.ExecuteNonQuery();
-                mycnt.Close();
-                button1_Click(sender, ee);
-            };
-
-        }
-        private void TuKhoTabledatagridview_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            if (TuKhoTabledatagridview.RowCount > 0)
-                TuKhoTabledatagridview.ContextMenuStrip.Enabled = true;
-            else
-                TuKhoTabledatagridview.ContextMenuStrip.Enabled = false;
-        }
-
         private void guna2Button_FlashCard_Click(object sender, EventArgs e)
         {
-            Picture_Dictionary a = new Picture_Dictionary(this);
+            Picture_Dictionary picture_Dictionary = new Picture_Dictionary(this);
             this.Hide();
-            a.Show();
+            picture_Dictionary.Show();
         }
+
+
+       
+
     }
 }
