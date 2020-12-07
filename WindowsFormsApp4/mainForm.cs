@@ -19,8 +19,12 @@ namespace WindowsFormsApp4
         int effect2 = 0;
         //thêm từ master  
         public searchedWordList EV_SWlist = new searchedWordList();
+<<<<<<< HEAD
         SqlConnection mycnt = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True"); // Của Thắng
         //SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True"); // Của Thiên
+=======
+        SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True");
+>>>>>>> b92f7063894f3466f19de90f07598dfb0e89cb1b
         public startForm parent;
         static int EVSource_Length;
         static int VESource_Length;
