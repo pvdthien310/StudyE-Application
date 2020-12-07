@@ -35,7 +35,7 @@ namespace WindowsFormsApp4
             if (sender == b1)
             {
                 group = "Animal";
-                
+
             }
             else if (sender == b2)
             {
@@ -138,7 +138,7 @@ namespace WindowsFormsApp4
             panel1.Visible = true;
             pictureBox1.Image = Image.FromFile(nameImage[0].FullName);
         }
-       
+
         private void Pause_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
@@ -147,7 +147,7 @@ namespace WindowsFormsApp4
 
         private void Right_Click(object sender, EventArgs e)
         {
-            if(currentPicture< nameImage.Count() - 1 )
+            if (currentPicture < nameImage.Count() - 1)
             {
                 currentPicture++;
             }
@@ -160,7 +160,7 @@ namespace WindowsFormsApp4
 
         private void Left_Click(object sender, EventArgs e)
         {
-            if (currentPicture >0)
+            if (currentPicture > 0)
             {
                 currentPicture--;
             }

@@ -82,7 +82,9 @@
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantheon.cs" />
-    <Compile Include="Picture_Dictionary.cs" />
+    <Compile Include="Picture_Dictionary.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Picture_Dictionary.Designer.cs">
       <DependentUpon>Picture_Dictionary.cs</DependentUpon>
     </Compile>
