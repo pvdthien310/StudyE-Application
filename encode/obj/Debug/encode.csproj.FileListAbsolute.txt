@@ -1,0 +1,10 @@
+D:\Sourse_lttq\encode\encode\bin\Debug\encode.exe.config
+D:\Sourse_lttq\encode\encode\bin\Debug\encode.exe
+D:\Sourse_lttq\encode\encode\bin\Debug\encode.pdb
+D:\Sourse_lttq\encode\encode\obj\Debug\encode.csprojAssemblyReference.cache
+D:\Sourse_lttq\encode\encode\obj\Debug\encode.Form1.resources
+D:\Sourse_lttq\encode\encode\obj\Debug\encode.Properties.Resources.resources
+D:\Sourse_lttq\encode\encode\obj\Debug\encode.csproj.GenerateResource.cache
+D:\Sourse_lttq\encode\encode\obj\Debug\encode.csproj.CoreCompileInputs.cache
+D:\Sourse_lttq\encode\encode\obj\Debug\encode.exe
+D:\Sourse_lttq\encode\encode\obj\Debug\encode.pdb
