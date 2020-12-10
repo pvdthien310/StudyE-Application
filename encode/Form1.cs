@@ -21,7 +21,7 @@ namespace encode
         }
 
         public string url = "";
-
+        SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True");
         private void button1_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog dlg = new OpenFileDialog())
@@ -30,11 +30,13 @@ namespace encode
                 dlg.Title = "Open Image";
                 dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
                 dlg.Multiselect = true;
+                
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
+                    cnn.Open();
                     foreach (string temp in dlg.FileNames)
                     {
-                        i++;
+                        /*i++;
                         MemoryStream stream = new MemoryStream();
                         Image a = Image.FromFile(temp);
                         a.Save(stream, ImageFormat.Jpeg);
@@ -50,10 +52,27 @@ namespace encode
 
 
                         mydd.PICTURE_SOURSEs.InsertOnSubmit(picS);
-                        mydd.SubmitChanges();
+                        mydd.SubmitChanges();*/
 
+                        i++;
+                        MemoryStream stream = new MemoryStream();
+                        Image a = Image.FromFile(temp);
+                        a.Save(stream, ImageFormat.Jpeg);
+                        string tem = Path.GetFileName(temp);
+
+
+                        string GROUPPICTURE = new DirectoryInfo(temp).Parent.Name;
+                        
+                        
+                        string sql = "INSERT PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES ('" + GROUPPICTURE + "', " + i + ", '" + tem.Remove(tem.Length - 4, 4) + "', '" + stream.ToArray() + "')";
+                        SqlCommand cmd = cnn.CreateCommand();
+                        cmd.CommandText = sql;
+                        cmd.ExecuteNonQuery();
+                        
                     }
                     MessageBox.Show("Nhin tieu de", "Nhin noi dung");
+                    cnn.Close();  // đóng kết nối
+                    cnn.Dispose();
                 }
 
                 
@@ -73,7 +92,7 @@ namespace encode
 */
 
             cnn.Open();
-            string sql = "select * from PICTURE_SOURSE where NAME = 'cat'";  // lay het du lieu trong bang sinh vien
+            string sql = "select * from PICTURE_SOURSE where NAME = 'cat'"; 
             SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
@@ -101,7 +120,7 @@ namespace encode
                 {
                     foreach (string temp in dlg.FileNames)
                     {
-                        i++;
+                        /*i++;
                         MemoryStream stream = new MemoryStream();
                         Image a = Image.FromFile(temp);
                         a.Save(stream, ImageFormat.Jpeg);
@@ -117,7 +136,19 @@ namespace encode
 
 
                         mydd.PICTURE_SOURSEs.InsertOnSubmit(picS);
-                        mydd.SubmitChanges();
+                        mydd.SubmitChanges();*/
+
+
+
+
+                        FileInfo fileInfo = new FileInfo(temp);
+
+                        
+                        string newName = fileInfo.Name;
+                        newName = newName.Remove(newName.Length - 4, 4);
+                        fileInfo.MoveTo(fileInfo.Directory.FullName + "\\" + newName +".jpg");
+                        
+                        
 
                     }
                     MessageBox.Show("Nhin tieu de", "Nhin noi dung");
@@ -129,30 +160,27 @@ namespace encode
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ketnoicsdl();
-        }
-        SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True");
-        private void ketnoicsdl()
-        {
             cnn.Open();
-            string sql = "select * from PICTURE_SOURSE";  // lay het du lieu trong bang sinh vien
+            string sql = "select * from PICTURE_SOURSE ";  // lay het du lieu trong bang sinh vien
             SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
             DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
             da.Fill(dt);  // đổ dữ liệu vào kho
-            /*cnn.Close();  // đóng kết nối
-            dataGridView1.DataSource = dt; //đổ dữ liệu vào datagridview*/
+            //cnn.Close();  // đóng kết nối
+            //dataGridView1.DataSource = dt; //đổ dữ liệu vào datagridview
 
             MemoryStream ms = new MemoryStream((byte[])dt.Rows[0]["ENCODE"]);
             Image a = Image.FromStream(ms);
-            
-            //Image a = byteArrayToImage((byte[])dt.Rows[0]["ENCODE"]);
-            pictureBox1.Image = a;
 
-          
-           
+            //Image a = byteArrayToImage((byte[])dt.Rows[0]["ENCODE"]);
+            pictureBox1.BackgroundImage = a;
+
+            cnn.Close();
+            cnn.Dispose();
         }
+        
+        
         public Image byteArrayToImage(byte[] byteArrayIn)
         {
             MemoryStream ms = new MemoryStream(byteArrayIn);
