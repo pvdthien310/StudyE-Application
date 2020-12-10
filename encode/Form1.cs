@@ -143,7 +143,11 @@ namespace encode
             da.Fill(dt);  // đổ dữ liệu vào kho
             /*cnn.Close();  // đóng kết nối
             dataGridView1.DataSource = dt; //đổ dữ liệu vào datagridview*/
-            Image a = byteArrayToImage((byte[])dt.Rows[0]["ENCODE"]);
+
+            MemoryStream ms = new MemoryStream((byte[])dt.Rows[0]["ENCODE"]);
+            Image a = Image.FromStream(ms);
+            
+            //Image a = byteArrayToImage((byte[])dt.Rows[0]["ENCODE"]);
             pictureBox1.Image = a;
 
           
