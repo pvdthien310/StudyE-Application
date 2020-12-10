@@ -33,6 +33,9 @@ namespace encode
     partial void InsertPICTURE_SOURSE(PICTURE_SOURSE instance);
     partial void UpdatePICTURE_SOURSE(PICTURE_SOURSE instance);
     partial void DeletePICTURE_SOURSE(PICTURE_SOURSE instance);
+    partial void InsertPICTURE_BUTTON(PICTURE_BUTTON instance);
+    partial void UpdatePICTURE_BUTTON(PICTURE_BUTTON instance);
+    partial void DeletePICTURE_BUTTON(PICTURE_BUTTON instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -70,6 +73,14 @@ namespace encode
 			get
 			{
 				return this.GetTable<PICTURE_SOURSE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<PICTURE_BUTTON> PICTURE_BUTTONs
+		{
+			get
+			{
+				return this.GetTable<PICTURE_BUTTON>();
 			}
 		}
 	}
@@ -125,6 +136,116 @@ namespace encode
 					this.OnGROUPPICTUREChanged();
 				}
 			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME", DbType="VarChar(50)")]
+		public string NAME
+		{
+			get
+			{
+				return this._NAME;
+			}
+			set
+			{
+				if ((this._NAME != value))
+				{
+					this.OnNAMEChanging(value);
+					this.SendPropertyChanging();
+					this._NAME = value;
+					this.SendPropertyChanged("NAME");
+					this.OnNAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ENCODE", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary ENCODE
+		{
+			get
+			{
+				return this._ENCODE;
+			}
+			set
+			{
+				if ((this._ENCODE != value))
+				{
+					this.OnENCODEChanging(value);
+					this.SendPropertyChanging();
+					this._ENCODE = value;
+					this.SendPropertyChanged("ENCODE");
+					this.OnENCODEChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PICTURE_BUTTON")]
+	public partial class PICTURE_BUTTON : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _NAME;
+		
+		private System.Data.Linq.Binary _ENCODE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnNAMEChanging(string value);
+    partial void OnNAMEChanged();
+    partial void OnENCODEChanging(System.Data.Linq.Binary value);
+    partial void OnENCODEChanged();
+    #endregion
+		
+		public PICTURE_BUTTON()
+		{
+			OnCreated();
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]

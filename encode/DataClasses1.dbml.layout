@@ -5,7 +5,13 @@
     <classShape Id="11f9a306-8b48-4b35-b84b-6f7b40549f81" absoluteBounds="1.625, 1, 2, 1.5785953776041666">
       <DataClassMoniker Name="/DataClasses1DataContext/PICTURE_SOURSE" />
       <nestedChildShapes>
-        <elementListCompartment Id="4da38a7b-9fa5-4f16-a69f-874c2d640fa1" absoluteBounds="1.6400000000000001, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4da38a7b-9fa5-4f16-a69f-874c2d640fa1" absoluteBounds="1.64, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="24da6911-8237-4322-a2f3-66611172ecbc" absoluteBounds="4.125, 1.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClasses1DataContext/PICTURE_BUTTON" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1cc17731-a1b1-4bed-b5d1-611e4640f27b" absoluteBounds="4.14, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

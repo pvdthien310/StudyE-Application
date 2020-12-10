@@ -83,5 +83,43 @@ namespace encode
                 pictureBox1.Image = img;
             }*/
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                int i = 0;
+                dlg.Title = "Open Image";
+                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                dlg.Multiselect = true;
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    foreach (string temp in dlg.FileNames)
+                    {
+                        i++;
+                        MemoryStream stream = new MemoryStream();
+                        Image a = Image.FromFile(temp);
+                        a.Save(stream, ImageFormat.Jpeg);
+                        DataClasses1DataContext mydd = new DataClasses1DataContext();
+                        PICTURE_SOURSE picS = new PICTURE_SOURSE();
+                        string tem = Path.GetFileName(temp);
+
+
+                        picS.GROUPPICTURE = new DirectoryInfo(temp).Parent.Name;
+                        picS.ID = i;
+                        picS.NAME = tem.Remove(tem.Length - 4, 4);
+                        picS.ENCODE = stream.ToArray();
+
+
+                        mydd.PICTURE_SOURSEs.InsertOnSubmit(picS);
+                        mydd.SubmitChanges();
+
+                    }
+                    MessageBox.Show("Nhin tieu de", "Nhin noi dung");
+                }
+
+
+            }
+        }
     }
 }
