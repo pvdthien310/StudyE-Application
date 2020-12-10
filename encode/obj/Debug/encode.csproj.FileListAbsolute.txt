@@ -8,3 +8,13 @@ D:\Sourse_lttq\encode\encode\obj\Debug\encode.csproj.GenerateResource.cache
 D:\Sourse_lttq\encode\encode\obj\Debug\encode.csproj.CoreCompileInputs.cache
 D:\Sourse_lttq\encode\encode\obj\Debug\encode.exe
 D:\Sourse_lttq\encode\encode\obj\Debug\encode.pdb
+D:\StudyE-Application\encode\bin\Debug\encode.exe.config
+D:\StudyE-Application\encode\bin\Debug\encode.exe
+D:\StudyE-Application\encode\bin\Debug\encode.pdb
+D:\StudyE-Application\encode\obj\Debug\encode.csprojAssemblyReference.cache
+D:\StudyE-Application\encode\obj\Debug\encode.Form1.resources
+D:\StudyE-Application\encode\obj\Debug\encode.Properties.Resources.resources
+D:\StudyE-Application\encode\obj\Debug\encode.csproj.GenerateResource.cache
+D:\StudyE-Application\encode\obj\Debug\encode.csproj.CoreCompileInputs.cache
+D:\StudyE-Application\encode\obj\Debug\encode.exe
+D:\StudyE-Application\encode\obj\Debug\encode.pdb
