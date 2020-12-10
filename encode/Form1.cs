@@ -64,24 +64,29 @@ namespace encode
         int curentID = 0;
         private void button2_Click(object sender, EventArgs e)
         {
-            DataClasses1DataContext mydd = new DataClasses1DataContext();
-            PICTURE_SOURSE picS = mydd.PICTURE_SOURSEs.Where(em => em.NAME=="cat").FirstOrDefault();
+            /* DataClasses1DataContext mydd = new DataClasses1DataContext();
+             PICTURE_SOURSE picS = mydd.PICTURE_SOURSEs.Where(em => em.NAME=="cat").FirstOrDefault();
 
-            MemoryStream ms = new MemoryStream(picS.ENCODE.ToArray());
-            Image img = Image.FromStream(ms);
-            pictureBox1.Image = img;
+             MemoryStream ms = new MemoryStream(picS.ENCODE.ToArray());
+             Image img = Image.FromStream(ms);
+             pictureBox1.Image = img;
+*/
 
-            /*if (picS == null)
+            cnn.Open();
+            string sql = "select * from PICTURE_SOURSE where NAME = 'cat'";  // lay het du lieu trong bang sinh vien
+            SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
+            com.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
+            DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
+            da.Fill(dt);
+            foreach (DataRow row in dt.Rows)
             {
-                curentID = 0;
-                picS = mydd.PICTURE_SOURSEs.Where(em => em.ID == curentID).FirstOrDefault();
-            }
-            else
-            {
-                MemoryStream ms = new MemoryStream(picS.ENCODE.ToArray());
+                /*MemoryStream ms = new MemoryStream((row["ENCODE"].));
                 Image img = Image.FromStream(ms);
-                pictureBox1.Image = img;
-            }*/
+                pictureBox1.Image = img; */
+                //textBox1.Text = row[3].ToString();
+            }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -136,8 +141,19 @@ namespace encode
             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
             DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
             da.Fill(dt);  // đổ dữ liệu vào kho
-            cnn.Close();  // đóng kết nối
-            dataGridView1.DataSource = dt; //đổ dữ liệu vào datagridview
+            /*cnn.Close();  // đóng kết nối
+            dataGridView1.DataSource = dt; //đổ dữ liệu vào datagridview*/
+            Image a = byteArrayToImage((byte[])dt.Rows[0]["ENCODE"]);
+            pictureBox1.Image = a;
+
+          
+           
+        }
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
         }
     }
 }
