@@ -91,8 +91,9 @@ namespace WindowsFormsApp4
 
         private void Picture_Dictionary_Load(object sender, EventArgs e)
         {
-
+            load_Button();
         }
+        private int currentButton = 0;
         private void load_Button()
         {
             cnn.Open();
@@ -103,14 +104,24 @@ namespace WindowsFormsApp4
             DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
             da.Fill(dt);
 
-            MemoryStream ms = new MemoryStream((byte[])dt.Rows[0]["ENCODE"]);
-            //Image a = Image.FromStream(ms);
-            Bitmap a = new Bitmap(Image.FromStream(ms));
-            a.MakeTransparent();
-            //Image a = byteArrayToImage((byte[])dt.Rows[0]["ENCODE"]);
-            pictureBox1.BackgroundImage = a;
+            for(int i=0; i<dt.Rows.Count; i++)
+            {
+                MemoryStream ms = new MemoryStream((byte[])dt.Rows[i]["ENCODE"]);
+                Bitmap a = new Bitmap(Image.FromStream(ms));
+                a.MakeTransparent();
+                string name = dt.Rows[i]["NAME"].ToString();
 
-            cnn.Dispose();
+                Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
+                buttonImage b = new buttonImage();
+                
+                but = b.createButton(name, a) ;
+                but.Click += new EventHandler(TabChose_Click);
+                flowLayoutPanel1.Controls.Add(but);
+            }
+           
+          
+
+            cnn.Close();
         }
         private void guna2CircleButton1_Click_1(object sender, EventArgs e)
         {
@@ -120,10 +131,7 @@ namespace WindowsFormsApp4
 
         private void creatButton_Click(object sender, EventArgs e)
         {
-            /*Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
-            buttonImage b = new buttonImage();
-            but = b.createButton();
-            flowLayoutPanel1.Controls.Add(but);*/
+            
 
 
             panel5.Visible = true;
@@ -159,13 +167,13 @@ namespace WindowsFormsApp4
             cnn.Open();
             using (SqlCommand command = new SqlCommand(sql, cnn))
             {
-                command.Parameters.Add("@id", SqlDbType.Int).Value = 1;
+                command.Parameters.Add("@id", SqlDbType.Int).Value = 3;
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = nameGroup.Text;
                 command.Parameters.Add("@encode", SqlDbType.Image).Value = stream.ToArray();
 
                 command.ExecuteNonQuery();
             }
-            cnn.Dispose();
+            cnn.Close();
         }
 
         
