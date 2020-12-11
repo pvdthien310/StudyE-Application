@@ -10,17 +10,18 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using System.Speech.Synthesis;
-
+using System.Drawing.Imaging;
 
 namespace WindowsFormsApp4
 {
     public partial class Picture_Dictionary : Form
     {
         private mainForm Parent;
+        private string group = "";
         private int currentPicture = 0;
         private FileInfo[] nameImage;
-        private string group;
-        SqlConnection mycnt = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True");
+        private int numberOfGroup = 0;
+        SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True");
         public Picture_Dictionary()
         {
             InitializeComponent();
@@ -92,7 +93,25 @@ namespace WindowsFormsApp4
         {
 
         }
+        private void load_Button()
+        {
+            cnn.Open();
+            string sql = "select * from PICTURE_BUTTON  ";
+            SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
+            com.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
+            DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
+            da.Fill(dt);
 
+            MemoryStream ms = new MemoryStream((byte[])dt.Rows[0]["ENCODE"]);
+            //Image a = Image.FromStream(ms);
+            Bitmap a = new Bitmap(Image.FromStream(ms));
+            a.MakeTransparent();
+            //Image a = byteArrayToImage((byte[])dt.Rows[0]["ENCODE"]);
+            pictureBox1.BackgroundImage = a;
+
+            cnn.Dispose();
+        }
         private void guna2CircleButton1_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -106,5 +125,42 @@ namespace WindowsFormsApp4
             but = b.createButton();
             flowLayoutPanel1.Controls.Add(but);
         }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                int i = 0;
+                dlg.Title = "Open Image";
+                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                //dlg.Multiselect = true;
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+
+            }
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            /*string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE) VALUES (@id, @name, @encode)";
+            i++;
+            MemoryStream stream = new MemoryStream();
+            Image a = Image.FromFile(dlg.FileName);
+            a.Save(stream, ImageFormat.Jpeg);
+
+            string tem = Path.GetFileName(dlg.FileName);
+            using (SqlCommand command = new SqlCommand(sql, cnn))
+            {
+                command.Parameters.Add("@id", SqlDbType.Int).Value = 0;
+                command.Parameters.Add("@name", SqlDbType.VarChar).Value = nameGroup.Text;
+                command.Parameters.Add("@encode", SqlDbType.Image).Value = stream.ToArray();
+
+                command.ExecuteNonQuery();
+            }*/
+        }
     }
 }
+
