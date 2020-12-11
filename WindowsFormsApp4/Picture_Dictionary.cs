@@ -128,7 +128,6 @@ namespace WindowsFormsApp4
 
             panel5.Visible = true;
         }
-
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog dlg = new OpenFileDialog())
@@ -144,6 +143,7 @@ namespace WindowsFormsApp4
                     a.MakeTransparent();
                     
                     guna2PictureBox1.BackgroundImage = a;
+                    
                 }
 
             }
@@ -151,21 +151,21 @@ namespace WindowsFormsApp4
 
         private void Add_Click(object sender, EventArgs e)
         {
-            /*string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE) VALUES (@id, @name, @encode)";
-            i++;
+            string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE) VALUES (@id, @name, @encode)";
+            //i++;
             MemoryStream stream = new MemoryStream();
-            Image a = Image.FromFile(dlg.FileName);
+            Image a = guna2PictureBox1.BackgroundImage;
             a.Save(stream, ImageFormat.Jpeg);
-
-            string tem = Path.GetFileName(dlg.FileName);
+            cnn.Open();
             using (SqlCommand command = new SqlCommand(sql, cnn))
             {
-                command.Parameters.Add("@id", SqlDbType.Int).Value = 0;
+                command.Parameters.Add("@id", SqlDbType.Int).Value = 1;
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = nameGroup.Text;
                 command.Parameters.Add("@encode", SqlDbType.Image).Value = stream.ToArray();
 
                 command.ExecuteNonQuery();
-            }*/
+            }
+            cnn.Dispose();
         }
 
         
