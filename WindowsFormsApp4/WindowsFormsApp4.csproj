@@ -328,5 +328,8 @@
   <ItemGroup>
     <None Include="bin\Debug\background.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interface-77-512.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

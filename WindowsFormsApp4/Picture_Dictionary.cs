@@ -120,10 +120,13 @@ namespace WindowsFormsApp4
 
         private void creatButton_Click(object sender, EventArgs e)
         {
-            Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
+            /*Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
             buttonImage b = new buttonImage();
             but = b.createButton();
-            flowLayoutPanel1.Controls.Add(but);
+            flowLayoutPanel1.Controls.Add(but);*/
+
+
+            panel5.Visible = true;
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
@@ -137,7 +140,10 @@ namespace WindowsFormsApp4
 
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
-
+                    Bitmap a = new Bitmap(Image.FromFile(dlg.FileName));
+                    a.MakeTransparent();
+                    
+                    guna2PictureBox1.BackgroundImage = a;
                 }
 
             }
@@ -161,6 +167,8 @@ namespace WindowsFormsApp4
                 command.ExecuteNonQuery();
             }*/
         }
+
+        
     }
 }
 
