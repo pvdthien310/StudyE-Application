@@ -46,7 +46,7 @@ namespace encode
 
 
                         picS.GROUPPICTURE = new DirectoryInfo(temp).Parent.Name;
-                        picS.ID = i;
+                        picS.ID = 0;
                         picS.NAME = tem.Remove(tem.Length - 4, 4);
                         picS.ENCODE = stream.ToArray();
 
@@ -54,21 +54,43 @@ namespace encode
                         mydd.PICTURE_SOURSEs.InsertOnSubmit(picS);
                         mydd.SubmitChanges();*/
 
+                        /* ----------
                         i++;
                         MemoryStream stream = new MemoryStream();
                         Image a = Image.FromFile(temp);
                         a.Save(stream, ImageFormat.Jpeg);
                         string tem = Path.GetFileName(temp);
+                                           
+                        string GROUPPICTURE = new DirectoryInfo(temp).Parent.Name;                      
+                        
+                        
+                        string sql = "INSERT INTO PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES ('" + GROUPPICTURE + "', " + "1" + ", '" + tem.Remove(tem.Length - 4, 4) + "', '" + stream.ToArray() + "')";
+                        SqlCommand cmd = new SqlCommand(sql, cnn);
+                        //cmd.CommandText = sql;
+                        cmd.ExecuteNonQuery();  --------*/
 
 
-                        string GROUPPICTURE = new DirectoryInfo(temp).Parent.Name;
+
+
+                        string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES (@group, @id, @name, @encode)";
+                        i++;
+                        MemoryStream stream = new MemoryStream();
+                        Image a = Image.FromFile(temp);
+                        a.Save(stream, ImageFormat.Jpeg);
                         
-                        
-                        string sql = "INSERT PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES ('" + GROUPPICTURE + "', " + i + ", '" + tem.Remove(tem.Length - 4, 4) + "', '" + stream.ToArray() + "')";
-                        SqlCommand cmd = cnn.CreateCommand();
-                        cmd.CommandText = sql;
-                        cmd.ExecuteNonQuery();
-                        
+                        string tem = Path.GetFileName(temp);
+                        using (SqlCommand command = new SqlCommand(sql, cnn))
+                        {
+                            
+                            command.Parameters.Add("@group", SqlDbType.VarChar).Value = new DirectoryInfo(temp).Parent.Name; 
+                            command.Parameters.Add("@id", SqlDbType.Int).Value = i;
+                            command.Parameters.Add("@name", SqlDbType.VarChar).Value = tem.Remove(tem.Length - 4, 4); ;
+                            command.Parameters.Add("@encode", SqlDbType.Image).Value = stream.ToArray();       
+                            
+                            command.ExecuteNonQuery();
+                        }
+                      
+
                     }
                     MessageBox.Show("Nhin tieu de", "Nhin noi dung");
                     cnn.Close();  // đóng kết nối
@@ -91,7 +113,7 @@ namespace encode
              pictureBox1.Image = img;
 */
 
-            cnn.Open();
+                        cnn.Open();
             string sql = "select * from PICTURE_SOURSE where NAME = 'cat'"; 
             SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
             com.CommandType = CommandType.Text;
@@ -161,23 +183,24 @@ namespace encode
         private void button4_Click(object sender, EventArgs e)
         {
             cnn.Open();
-            string sql = "select * from PICTURE_SOURSE where NAME = 'cat' ";  // lay het du lieu trong bang sinh vien
+            string sql = "select * from PICTURE_SOURSE  ";  // lay het du lieu trong bang sinh vien
             SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
             DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
             da.Fill(dt);  // đổ dữ liệu vào kho
-            cnn.Close();  // đóng kết nối
-            dataGridView1.DataSource = dt; //đổ dữ liệu vào datagridview
+            //cnn.Close();  // đóng kết nối
+            //dataGridView1.DataSource = dt; //đổ dữ liệu vào datagridview
 
-            /*MemoryStream ms = new MemoryStream((byte[])dt.Rows[0]["ENCODE"]);
-            Image a = Image.FromStream(ms);
-
+            MemoryStream ms = new MemoryStream((byte[])dt.Rows[0]["ENCODE"]);
+            //Image a = Image.FromStream(ms);
+            Bitmap a = new Bitmap(Image.FromStream(ms));
+            a.MakeTransparent();
             //Image a = byteArrayToImage((byte[])dt.Rows[0]["ENCODE"]);
             pictureBox1.BackgroundImage = a;
 
             cnn.Close();
-            cnn.Dispose();*/
+            cnn.Dispose();
         }
         
         
