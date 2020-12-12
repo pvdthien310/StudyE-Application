@@ -18,9 +18,10 @@ namespace WindowsFormsApp4
         {
            
             Guna.UI2.WinForms.Guna2Button temp = new Guna.UI2.WinForms.Guna2Button();
-            temp.BackColor = Color.Transparent;
+            temp.BackColor = Color.White;
             temp.BackgroundImage = b;
             temp.BackgroundImageLayout = ImageLayout.Stretch;
+            
             temp.BorderRadius = 7;
             temp.CheckedState.Parent = temp;
             temp.CustomImages.Parent = temp;

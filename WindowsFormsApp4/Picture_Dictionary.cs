@@ -113,15 +113,45 @@ namespace WindowsFormsApp4
 
                 Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
                 buttonImage b = new buttonImage();
-                
+                but.BackColor = Color.Transparent;
                 but = b.createButton(name, a) ;
                 but.Click += new EventHandler(TabChose_Click);
                 flowLayoutPanel1.Controls.Add(but);
+                currentButton++;
             }
            
           
 
             cnn.Close();
+        }
+
+        private void load_Button(int k)
+        {
+            cnn.Open();
+            string sql = "select * from PICTURE_BUTTON  ";
+            SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
+            com.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
+            DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
+            da.Fill(dt);
+
+
+            MemoryStream ms = new MemoryStream((byte[])dt.Rows[currentButton]["ENCODE"]);
+            Bitmap a = new Bitmap(Image.FromStream(ms));
+            a.MakeTransparent();
+            string name = dt.Rows[currentButton]["NAME"].ToString();
+
+            Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
+            buttonImage b = new buttonImage();
+            but.BackColor = Color.Transparent;
+            but = b.createButton(name, a);
+            but.Click += new EventHandler(TabChose_Click);
+            flowLayoutPanel1.Controls.Add(but);
+            currentButton++;
+
+
+            cnn.Close();
+            
         }
         private void guna2CircleButton1_Click_1(object sender, EventArgs e)
         {
@@ -130,10 +160,7 @@ namespace WindowsFormsApp4
         }
 
         private void creatButton_Click(object sender, EventArgs e)
-        {
-            
-
-
+        {          
             panel5.Visible = true;
         }
         private void guna2PictureBox1_Click(object sender, EventArgs e)
@@ -152,6 +179,7 @@ namespace WindowsFormsApp4
                     
                     guna2PictureBox1.BackgroundImage = a;
                     
+                    
                 }
 
             }
@@ -167,13 +195,16 @@ namespace WindowsFormsApp4
             cnn.Open();
             using (SqlCommand command = new SqlCommand(sql, cnn))
             {
-                command.Parameters.Add("@id", SqlDbType.Int).Value = 3;
+                command.Parameters.Add("@id", SqlDbType.Int).Value = currentButton+1;
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = nameGroup.Text;
                 command.Parameters.Add("@encode", SqlDbType.Image).Value = stream.ToArray();
 
                 command.ExecuteNonQuery();
             }
             cnn.Close();
+
+            load_Button(0);
+            panel5.Visible = false;
         }
 
         

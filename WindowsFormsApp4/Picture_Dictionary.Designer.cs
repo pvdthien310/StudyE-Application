@@ -38,13 +38,13 @@
             this.Left = new Guna.UI2.WinForms.Guna2CircleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.creatButton = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Add = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.nameGroup = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -202,14 +202,6 @@
             this.guna2CircleButton1.TabIndex = 3;
             this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click_1);
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(109, 169);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(849, 463);
-            this.flowLayoutPanel1.TabIndex = 4;
-            // 
             // creatButton
             // 
             this.creatButton.BackColor = System.Drawing.Color.Transparent;
@@ -300,6 +292,14 @@
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Name";
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(109, 169);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(849, 463);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
             // Picture_Dictionary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -357,12 +357,12 @@
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2CircleButton Left;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2CircleButton creatButton;
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox nameGroup;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button Add;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
