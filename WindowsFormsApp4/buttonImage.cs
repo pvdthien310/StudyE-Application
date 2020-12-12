@@ -18,14 +18,14 @@ namespace WindowsFormsApp4
         {
            
             Guna.UI2.WinForms.Guna2Button temp = new Guna.UI2.WinForms.Guna2Button();
-            temp.BackColor = Color.Transparent;
+           // temp.BackColor = Color.Transparent;
             temp.BackgroundImage = b;
             temp.BackgroundImageLayout = ImageLayout.Stretch;
             
             temp.BorderRadius = 7;
             temp.CheckedState.Parent = temp;
-            temp.CustomImages.Parent = temp;
-            temp.FillColor = Color.Transparent;
+            //temp.CustomImages.Parent = temp;
+           temp.FillColor = Color.Transparent;
             //temp.Font = new Font("Segoe UI", 9F);
             //temp.ForeColor = Color.White;
             temp.HoverState.Parent = temp;
