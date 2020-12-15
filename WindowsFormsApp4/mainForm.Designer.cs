@@ -881,33 +881,33 @@
             this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.AllowUserToResizeColumns = false;
             this.dataGridView3.AllowUserToResizeRows = false;
-            dataGridViewCellStyle61.BackColor = System.Drawing.Color.White;
-            this.dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle61;
+            /*dataGridViewCellStyle61.BackColor = System.Drawing.Color.White;
+            this.dataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle61;*/
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            /*dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle62.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle62.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle62.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle62.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle62.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle62.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle62;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle62;*/
             this.dataGridView3.ColumnHeadersHeight = 4;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameWord,
             this.MeaningWord});
-            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            /*dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle63.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle63.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle63.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle63.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle63.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle63;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle63;*/
             this.dataGridView3.EnableHeadersVisualStyles = false;
             this.dataGridView3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridView3.Location = new System.Drawing.Point(334, 84);
@@ -1126,35 +1126,35 @@
             // 
             // dataGridView5
             // 
-            dataGridViewCellStyle64.BackColor = System.Drawing.Color.White;
-            this.dataGridView5.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle64;
+            /*dataGridViewCellStyle64.BackColor = System.Drawing.Color.White;
+            this.dataGridView5.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle64;*/
             this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView5.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView5.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView5.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            /*dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle65.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle65.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle65.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle65.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle65.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle65;
+            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle65;*/
             this.dataGridView5.ColumnHeadersHeight = 4;
             this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NGUYENMAU,
             this.QUAKHUDON,
             this.QUAKHUPHANTU,
             this.NGHIA});
-            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            /*dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle66.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle66.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle66.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle66.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle66.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView5.DefaultCellStyle = dataGridViewCellStyle66;
+            this.dataGridView5.DefaultCellStyle = dataGridViewCellStyle66;*/
             this.dataGridView5.EnableHeadersVisualStyles = false;
             this.dataGridView5.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridView5.Location = new System.Drawing.Point(86, 94);
@@ -1287,34 +1287,34 @@
             // 
             // dataGridView4
             // 
-            dataGridViewCellStyle67.BackColor = System.Drawing.Color.White;
-            this.dataGridView4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle67;
+           /* dataGridViewCellStyle67.BackColor = System.Drawing.Color.White;
+            this.dataGridView4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle67;*/
             this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            /*dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle68.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle68.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle68.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle68;
+            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle68;*/
             this.dataGridView4.ColumnHeadersHeight = 4;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.NameofWord,
             this.Meaning});
-            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            /*dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle69.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle69.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle69.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle69.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle69.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView4.DefaultCellStyle = dataGridViewCellStyle69;
+            this.dataGridView4.DefaultCellStyle = dataGridViewCellStyle69;*/
             this.dataGridView4.EnableHeadersVisualStyles = false;
             this.dataGridView4.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridView4.Location = new System.Drawing.Point(86, 94);
@@ -1360,33 +1360,33 @@
             // 
             this.TuKhoTabledatagridview.AllowUserToAddRows = false;
             this.TuKhoTabledatagridview.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle70.BackColor = System.Drawing.Color.White;
-            this.TuKhoTabledatagridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle70;
+            /*dataGridViewCellStyle70.BackColor = System.Drawing.Color.White;
+            this.TuKhoTabledatagridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle70;*/
             this.TuKhoTabledatagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.TuKhoTabledatagridview.BackgroundColor = System.Drawing.Color.White;
             this.TuKhoTabledatagridview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TuKhoTabledatagridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.TuKhoTabledatagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            /*dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle71.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle71.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle71.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TuKhoTabledatagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle71;
+            this.TuKhoTabledatagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle71;*/
             this.TuKhoTabledatagridview.ColumnHeadersHeight = 4;
             this.TuKhoTabledatagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameOfHardWord,
             this.MeanOfHardWord});
-            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            /*dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle72.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle72.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             dataGridViewCellStyle72.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle72.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle72.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TuKhoTabledatagridview.DefaultCellStyle = dataGridViewCellStyle72;
+            this.TuKhoTabledatagridview.DefaultCellStyle = dataGridViewCellStyle72;*/
             this.TuKhoTabledatagridview.EnableHeadersVisualStyles = false;
             this.TuKhoTabledatagridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.TuKhoTabledatagridview.Location = new System.Drawing.Point(86, 94);
