@@ -43,7 +43,7 @@ namespace WindowsFormsApp4
                 SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
                 com.CommandType = CommandType.Text;
                 SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
-                                                             //tạo một kho ảo để lưu trữ dữ liệu
+                                                             
                 da.Fill(datatable);
                 panel1.Visible = true;
 
@@ -97,34 +97,34 @@ namespace WindowsFormsApp4
 
         private void Right_Click(object sender, EventArgs e)
         {
-            if (currentPicture < nameImage.Count() - 1)
+            currentSourse++;
+            if (currentSourse >= datatable.Rows.Count)
             {
-                currentPicture++;
+                currentSourse = 0;
             }
-            else
-            {
-                currentPicture = 0;
-            }
-            pictureBox1.Image = Image.FromFile(nameImage[currentPicture].FullName);
+            MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
+            Bitmap a = new Bitmap(Image.FromStream(ms));
+            a.MakeTransparent();
+            pictureBox1.Image = a;
+
         }
 
         private void Left_Click(object sender, EventArgs e)
         {
-            if (currentPicture > 0)
+            currentSourse--;
+            if (currentSourse <0 )
             {
-                currentPicture--;
+                currentSourse = datatable.Rows.Count-1;
             }
-            else
-            {
-                currentPicture = nameImage.Count() - 1;
-            }
-            pictureBox1.Image = Image.FromFile(nameImage[currentPicture].FullName);
+            MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
+            Bitmap a = new Bitmap(Image.FromStream(ms));
+            a.MakeTransparent();
+            pictureBox1.Image = a;
         }
 
         private void Speak_Click(object sender, EventArgs e)
         {
-            string text = nameImage[currentPicture].Name;
-            text = text.Remove(text.Length - 3, 3);
+            string text = datatable.Rows[currentSourse]["NAME"].ToString();
             SpeechSynthesizer synth = new SpeechSynthesizer();
             synth.SetOutputToDefaultAudioDevice();
             synth.Speak(text);
