@@ -155,7 +155,7 @@ namespace WindowsFormsApp4
             {
                 MemoryStream ms = new MemoryStream((byte[])dt.Rows[i]["ENCODE"]);
                 Bitmap a = new Bitmap(Image.FromStream(ms));
-                //a.MakeTransparent();
+                a.MakeTransparent();
                 string name = dt.Rows[i]["NAME"].ToString();
 
                 Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
@@ -186,14 +186,13 @@ namespace WindowsFormsApp4
 
             MemoryStream ms = new MemoryStream((byte[])dt.Rows[currentButton]["ENCODE"]);
             Bitmap a = new Bitmap(Image.FromStream(ms));
-            //a.MakeTransparent();
+            a.MakeTransparent();
             string name = dt.Rows[currentButton]["NAME"].ToString();
 
             Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
             buttonImage b = new buttonImage();
             but.BackColor = Color.Transparent;
             but = b.createButton(name, a);
-            //but.Click += new EventHandler(TabChose_Click);
             but.MouseClick += new MouseEventHandler(TabChose_Click);
             
             flowLayoutPanel1.Controls.Add(but);
