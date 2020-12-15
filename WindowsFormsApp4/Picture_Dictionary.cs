@@ -228,8 +228,8 @@ namespace WindowsFormsApp4
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     Bitmap a = new Bitmap(Image.FromFile(dlg.FileName));
-                    //a.MakeTransparent();
-                    
+                    a.MakeTransparent();
+                    tem = dlg.FileName;
                     guna2PictureBox1.BackgroundImage = a;
                     string t = new FileInfo(dlg.FileName).Name;
                     nameGroup.Text = t.Remove(t.Length - 4, 4);
@@ -238,20 +238,23 @@ namespace WindowsFormsApp4
 
             }
         }
-
+        private string tem = "";
         private void Add_Click(object sender, EventArgs e)
         {
+
             string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE) VALUES (@id, @name, @encode)";
-            //i++;
-            MemoryStream stream = new MemoryStream();
-            Image a = guna2PictureBox1.BackgroundImage;
-            a.Save(stream, ImageFormat.Jpeg);
+            byte[] img = null;
+            Image temp = guna2PictureBox1.BackgroundImage;
+            FileStream fs = new FileStream(tem, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            img = br.ReadBytes((int)fs.Length);
+
             cnn.Open();
             using (SqlCommand command = new SqlCommand(sql, cnn))
             {
                 command.Parameters.Add("@id", SqlDbType.Int).Value = currentButton+1;
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = nameGroup.Text;
-                command.Parameters.Add("@encode", SqlDbType.Image).Value = stream.ToArray();
+                command.Parameters.Add("@encode", SqlDbType.Image).Value = img;
 
                 command.ExecuteNonQuery();
             }
