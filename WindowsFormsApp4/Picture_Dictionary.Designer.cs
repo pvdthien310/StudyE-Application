@@ -61,9 +61,9 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(984, 0);
+            this.panel1.Location = new System.Drawing.Point(2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(74, 666);
+            this.panel1.Size = new System.Drawing.Size(1056, 666);
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
             // 
@@ -247,7 +247,7 @@
             // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.White;
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.interface_77_512;
             this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2PictureBox1.Location = new System.Drawing.Point(173, 51);
@@ -308,11 +308,11 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1058, 665);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.creatButton);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.guna2CircleButton1);
-            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "Picture_Dictionary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -20,8 +20,9 @@ namespace WindowsFormsApp4
         private string group = "";
         private int currentPicture = 0;
         private FileInfo[] nameImage;
-        private int numberOfGroup = 0;
+        private int currentSourse = 0;
         SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True");
+        DataTable datatable = new DataTable();
         public Picture_Dictionary()
         {
             InitializeComponent();
@@ -31,15 +32,61 @@ namespace WindowsFormsApp4
             this.Parent = parent;
             InitializeComponent();
         }
-        private void TabChose_Click(object sender, EventArgs e)
+        private void TabChose_Click(object sender, MouseEventArgs e)
         {
-            group = "";
+            if (e.Button == MouseButtons.Left)
+            {
+                panel1.Visible = true;
+                group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
+                cnn.Open();
+                string sql = "select * from PICTURE_SOURSE WHERE GROUPPICTURE = '" + group + " ' ";
+                SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
+                com.CommandType = CommandType.Text;
+                SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
+                                                             //tạo một kho ảo để lưu trữ dữ liệu
+                da.Fill(datatable);
+                panel1.Visible = true;
 
+                MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
+                Bitmap a = new Bitmap(Image.FromStream(ms));
+                a.MakeTransparent();
+                pictureBox1.Image = a;
+
+                cnn.Close();
+            }
+            else if(e.Button == MouseButtons.Right)
+            {
+               // addMenuStrip();
+            }
+           
+            
 
             /*DirectoryInfo dGroup = new DirectoryInfo("./PictureImage/" + group);
             nameImage = dGroup.GetFiles();
             panel1.Visible = true;
             pictureBox1.Image = Image.FromFile(nameImage[0].FullName);*/
+        }
+        void addMenuStrip(object sender, EventArgs ee )
+        {
+            
+           // button.ContextMenuStrip = new ContextMenuStrip();
+            ToolStripItem del = new ToolStripButton("Xóa");
+            //button.ContextMenuStrip.Items.Add(del);
+
+            del.Click += (s, e) =>
+            {
+                /*string isSelect = TuKhoTabledatagridview.CurrentRow.Cells["Name"].Value.ToString();
+                TuKhoTabledatagridview.Rows.RemoveAt(TuKhoTabledatagridview.CurrentRow.Index);
+                mycnt.Open();
+                string update = "update EV_SOURCE set IsTuKho = 0 where Name ='" + isSelect + "'";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = mycnt;
+                cmd.CommandText = update;
+                cmd.ExecuteNonQuery();
+                mycnt.Close();
+                button1_Click(sender, ee);*/
+            };
+
         }
 
         private void Pause_Click(object sender, EventArgs e)
@@ -116,7 +163,7 @@ namespace WindowsFormsApp4
                 but.BackColor = Color.Blue;
                
                 but = b.createButton(name, a) ;
-                but.Click += new EventHandler(TabChose_Click);
+                but.MouseClick += new MouseEventHandler(TabChose_Click);
                 flowLayoutPanel1.Controls.Add(but);
                 currentButton++;
             }
@@ -146,7 +193,9 @@ namespace WindowsFormsApp4
             buttonImage b = new buttonImage();
             but.BackColor = Color.Transparent;
             but = b.createButton(name, a);
-            but.Click += new EventHandler(TabChose_Click);
+            //but.Click += new EventHandler(TabChose_Click);
+            but.MouseClick += new MouseEventHandler(TabChose_Click);
+            
             flowLayoutPanel1.Controls.Add(but);
             currentButton++;
 
@@ -163,6 +212,8 @@ namespace WindowsFormsApp4
         private void creatButton_Click(object sender, EventArgs e)
         {          
             panel5.Visible = true;
+            nameGroup.Text = "";
+            guna2PictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.interface_77_512;
         }
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
@@ -179,7 +230,8 @@ namespace WindowsFormsApp4
                     //a.MakeTransparent();
                     
                     guna2PictureBox1.BackgroundImage = a;
-                    
+                    string t = new FileInfo(dlg.FileName).Name;
+                    nameGroup.Text = t.Remove(t.Length - 4, 4);
                     
                 }
 
