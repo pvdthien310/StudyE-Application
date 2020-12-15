@@ -34,33 +34,44 @@ namespace encode
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     cnn.Open();
-                    foreach (string temp in dlg.FileNames)
+                    using (StreamWriter sw = new StreamWriter("D:/sourt.txt", true))
                     {
-                        
-                        byte[] img = null;
-                        FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
-                        BinaryReader br = new BinaryReader(fs);
-                        img = br.ReadBytes((int)fs.Length);
 
-                        string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES (@group, @id, @name, @encode)";
-                        i++;
-                        /*MemoryStream stream = new MemoryStream();
-                        Image a = Image.FromFile(temp);
-                        a.Save(stream, ImageFormat.Jpeg);
-                        */
-                        string tem = Path.GetFileName(temp);
-                        using (SqlCommand command = new SqlCommand(sql, cnn))
+
+                        foreach (string temp in dlg.FileNames)
                         {
-                            
-                            command.Parameters.Add("@group", SqlDbType.VarChar).Value = new DirectoryInfo(temp).Parent.Name; 
-                            command.Parameters.Add("@id", SqlDbType.Int).Value = i;
-                            command.Parameters.Add("@name", SqlDbType.VarChar).Value = tem.Remove(tem.Length - 4, 4); ;
-                            command.Parameters.Add("@encode", SqlDbType.Image).Value = img;     
-                            
-                            command.ExecuteNonQuery();
-                        }
-                      
 
+                            byte[] img = null;
+                            FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
+                            BinaryReader br = new BinaryReader(fs);
+                            img = br.ReadBytes((int)fs.Length);
+
+                            string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES (@group, @id, @name, @encode)";
+                            i++;
+                            string tem = Path.GetFileName(temp);
+                            using (SqlCommand command = new SqlCommand(sql, cnn))
+                            {
+
+                                command.Parameters.Add("@group", SqlDbType.VarChar).Value = new DirectoryInfo(temp).Parent.Name; 
+                                command.Parameters.Add("@id", SqlDbType.Int).Value = i;
+                                command.Parameters.Add("@name", SqlDbType.VarChar).Value = tem.Remove(tem.Length - 4, 4); ;
+                                command.Parameters.Add("@encode", SqlDbType.Image).Value = img;     
+
+                                command.ExecuteNonQuery();
+                            }
+
+                           /* i++;
+                            string tem = Path.GetFileName(temp);
+                            byte[] img = null;
+                            FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
+                            BinaryReader br = new BinaryReader(fs);
+                            img = br.ReadBytes((int)fs.Length);
+                            string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES ('" + new DirectoryInfo(temp).Parent.Name + "',' " + i + "',' " + tem.Remove(tem.Length - 4, 4) + "','" + img + "')";
+
+                            sw.WriteLine(sql);*/
+
+
+                        }
                     }
                     MessageBox.Show("Nhin tieu de", "Nhin noi dung");
                     cnn.Close();  // đóng kết nối
