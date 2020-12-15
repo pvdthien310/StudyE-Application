@@ -61,9 +61,9 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(3, 0);
+            this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1055, 666);
+            this.panel1.Size = new System.Drawing.Size(1060, 666);
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
             // 
@@ -193,33 +193,37 @@
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(30, 612);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(13, 576);
             this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(38, 34);
+            this.guna2CircleButton1.Size = new System.Drawing.Size(60, 60);
             this.guna2CircleButton1.TabIndex = 3;
             this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click_1);
             // 
             // creatButton
             // 
             this.creatButton.BackColor = System.Drawing.Color.Transparent;
+            this.creatButton.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.iconfinder_icons_add_1564491;
+            this.creatButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.creatButton.CheckedState.Parent = this.creatButton;
             this.creatButton.CustomImages.Parent = this.creatButton;
+            this.creatButton.FillColor = System.Drawing.Color.Transparent;
             this.creatButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.creatButton.ForeColor = System.Drawing.Color.White;
+            this.creatButton.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.creatButton.HoverState.Parent = this.creatButton;
-            this.creatButton.Location = new System.Drawing.Point(12, 538);
+            this.creatButton.Location = new System.Drawing.Point(12, 508);
             this.creatButton.Name = "creatButton";
             this.creatButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.creatButton.ShadowDecoration.Parent = this.creatButton;
-            this.creatButton.Size = new System.Drawing.Size(61, 58);
+            this.creatButton.Size = new System.Drawing.Size(60, 60);
             this.creatButton.TabIndex = 5;
             this.creatButton.Click += new System.EventHandler(this.creatButton_Click);
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.Controls.Add(this.Add);
             this.panel5.Controls.Add(this.guna2PictureBox1);
             this.panel5.Controls.Add(this.nameGroup);
@@ -234,6 +238,7 @@
             // 
             this.Add.CheckedState.Parent = this.Add;
             this.Add.CustomImages.Parent = this.Add;
+            this.Add.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Add.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Add.ForeColor = System.Drawing.Color.White;
             this.Add.HoverState.Parent = this.Add;
@@ -309,8 +314,8 @@
             this.ClientSize = new System.Drawing.Size(1058, 665);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.creatButton);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.guna2CircleButton1);
             this.DoubleBuffered = true;

@@ -36,6 +36,7 @@ namespace WindowsFormsApp4
         {
             if (e.Button == MouseButtons.Left)
             {
+                
                 panel1.Visible = true;
                 group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
                 cnn.Open();
@@ -43,7 +44,8 @@ namespace WindowsFormsApp4
                 SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
                 com.CommandType = CommandType.Text;
                 SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
-                                                             
+
+                datatable.Clear();
                 da.Fill(datatable);
                 panel1.Visible = true;
 
