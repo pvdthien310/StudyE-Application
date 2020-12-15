@@ -55,7 +55,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.Giao_dien11;
+            //this.panel1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.Giao_dien11;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -98,7 +98,7 @@
             // Pause
             // 
             this.Pause.BackColor = System.Drawing.Color.Transparent;
-            this.Pause.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.pause1;
+            //this.Pause.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.pause1;
             this.Pause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Pause.BorderRadius = 12;
             this.Pause.CheckedState.Parent = this.Pause;
@@ -117,7 +117,7 @@
             // Speak
             // 
             this.Speak.BackColor = System.Drawing.Color.Transparent;
-            this.Speak.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.speak;
+            //this.Speak.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.speak;
             this.Speak.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Speak.BorderRadius = 12;
             this.Speak.CheckedState.Parent = this.Speak;
@@ -136,7 +136,7 @@
             // Right
             // 
             this.Right.BackColor = System.Drawing.Color.Transparent;
-            this.Right.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.left1;
+            //this.Right.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.left1;
             this.Right.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Right.CheckedState.Parent = this.Right;
             this.Right.CustomImages.Parent = this.Right;
@@ -155,7 +155,7 @@
             // Left
             // 
             this.Left.BackColor = System.Drawing.Color.Transparent;
-            this.Left.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.a;
+            //this.Left.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.a;
             this.Left.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Left.CheckedState.Parent = this.Left;
             this.Left.CustomImages.Parent = this.Left;
@@ -185,7 +185,7 @@
             // guna2CircleButton1
             // 
             this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.a1;
+            //this.guna2CircleButton1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.a1;
             this.guna2CircleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
             this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
@@ -205,7 +205,7 @@
             // creatButton
             // 
             this.creatButton.BackColor = System.Drawing.Color.Transparent;
-            this.creatButton.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.iconfinder_icons_add_1564491;
+            //this.creatButton.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.iconfinder_icons_add_1564491;
             this.creatButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.creatButton.CheckedState.Parent = this.creatButton;
             this.creatButton.CustomImages.Parent = this.creatButton;
@@ -253,7 +253,7 @@
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.interface_77_512;
+            //this.guna2PictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.interface_77_512;
             this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2PictureBox1.Location = new System.Drawing.Point(173, 51);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
@@ -309,7 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.Giao_dien1;
+           // this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.Giao_dien1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1058, 665);
             this.ControlBox = false;
