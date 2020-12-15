@@ -61,26 +61,26 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(2, 0);
+            this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1056, 666);
+            this.panel1.Size = new System.Drawing.Size(1055, 666);
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.Location = new System.Drawing.Point(862, 517);
+            this.panel4.Location = new System.Drawing.Point(827, 496);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(100, 82);
+            this.panel4.Size = new System.Drawing.Size(139, 105);
             this.panel4.TabIndex = 7;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Location = new System.Drawing.Point(98, 517);
+            this.panel3.Location = new System.Drawing.Point(93, 508);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(100, 82);
+            this.panel3.Size = new System.Drawing.Size(128, 93);
             this.panel3.TabIndex = 6;
             // 
             // panel2
