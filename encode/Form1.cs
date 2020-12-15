@@ -36,48 +36,18 @@ namespace encode
                     cnn.Open();
                     foreach (string temp in dlg.FileNames)
                     {
-                        /*i++;
-                        MemoryStream stream = new MemoryStream();
-                        Image a = Image.FromFile(temp);
-                        a.Save(stream, ImageFormat.Jpeg);
-                        DataClasses1DataContext mydd = new DataClasses1DataContext();
-                        PICTURE_SOURSE picS = new PICTURE_SOURSE();
-                        string tem = Path.GetFileName(temp);
-
-
-                        picS.GROUPPICTURE = new DirectoryInfo(temp).Parent.Name;
-                        picS.ID = 0;
-                        picS.NAME = tem.Remove(tem.Length - 4, 4);
-                        picS.ENCODE = stream.ToArray();
-
-
-                        mydd.PICTURE_SOURSEs.InsertOnSubmit(picS);
-                        mydd.SubmitChanges();*/
-
-                        /* ----------
-                        i++;
-                        MemoryStream stream = new MemoryStream();
-                        Image a = Image.FromFile(temp);
-                        a.Save(stream, ImageFormat.Jpeg);
-                        string tem = Path.GetFileName(temp);
-                                           
-                        string GROUPPICTURE = new DirectoryInfo(temp).Parent.Name;                      
                         
-                        
-                        string sql = "INSERT INTO PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES ('" + GROUPPICTURE + "', " + "1" + ", '" + tem.Remove(tem.Length - 4, 4) + "', '" + stream.ToArray() + "')";
-                        SqlCommand cmd = new SqlCommand(sql, cnn);
-                        //cmd.CommandText = sql;
-                        cmd.ExecuteNonQuery();  --------*/
-
-
-
+                        byte[] img = null;
+                        FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
+                        BinaryReader br = new BinaryReader(fs);
+                        img = br.ReadBytes((int)fs.Length);
 
                         string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES (@group, @id, @name, @encode)";
                         i++;
-                        MemoryStream stream = new MemoryStream();
+                        /*MemoryStream stream = new MemoryStream();
                         Image a = Image.FromFile(temp);
                         a.Save(stream, ImageFormat.Jpeg);
-                        
+                        */
                         string tem = Path.GetFileName(temp);
                         using (SqlCommand command = new SqlCommand(sql, cnn))
                         {
@@ -85,7 +55,7 @@ namespace encode
                             command.Parameters.Add("@group", SqlDbType.VarChar).Value = new DirectoryInfo(temp).Parent.Name; 
                             command.Parameters.Add("@id", SqlDbType.Int).Value = i;
                             command.Parameters.Add("@name", SqlDbType.VarChar).Value = tem.Remove(tem.Length - 4, 4); ;
-                            command.Parameters.Add("@encode", SqlDbType.Image).Value = stream.ToArray();       
+                            command.Parameters.Add("@encode", SqlDbType.Image).Value = img;     
                             
                             command.ExecuteNonQuery();
                         }
