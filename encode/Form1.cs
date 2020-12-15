@@ -64,7 +64,7 @@ namespace encode
                     }
                     MessageBox.Show("Nhin tieu de", "Nhin noi dung");
                     cnn.Close();  // đóng kết nối
-                    cnn.Dispose();
+                    //cnn.Dispose();
                 }
 
                 
