@@ -21,7 +21,8 @@ namespace WindowsFormsApp4
         private int currentPicture = 0;
         private FileInfo[] nameImage;
         private int currentSourse = 0;
-        SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True");
+        //SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True"); //của thức
+        SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True"); // của thắng
         DataTable datatable = new DataTable();
         public Picture_Dictionary()
         {
