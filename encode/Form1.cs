@@ -137,7 +137,7 @@ namespace encode
                         string tem = Path.GetFileName(temp);
                         using (SqlCommand command = new SqlCommand(sql, cnn))
                         {
-                            command.Parameters.Add("@id", SqlDbType.Int).Value = 25;
+                            command.Parameters.Add("@id", SqlDbType.Int).Value = i;
                             command.Parameters.Add("@name", SqlDbType.VarChar).Value = tem.Remove(tem.Length - 4, 4); ;
                             command.Parameters.Add("@encode", SqlDbType.Image).Value = img;
 
