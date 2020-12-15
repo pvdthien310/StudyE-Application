@@ -703,16 +703,6 @@ namespace WindowsFormsApp4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconfinder_icons_add_1564491 {
-            get {
-                object obj = ResourceManager.GetObject("iconfinder_icons_add_1564491", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icons8_sound_speaker_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-sound-speaker-100", resourceCulture);
@@ -756,16 +746,6 @@ namespace WindowsFormsApp4.Properties {
         internal static System.Drawing.Bitmap img_466164 {
             get {
                 object obj = ResourceManager.GetObject("img_466164", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap interface_77_512 {
-            get {
-                object obj = ResourceManager.GetObject("interface-77-512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

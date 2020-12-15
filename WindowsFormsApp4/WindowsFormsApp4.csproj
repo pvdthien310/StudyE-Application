@@ -60,7 +60,6 @@
     <Compile Include="ConfirmNewAccount.Designer.cs">
       <DependentUpon>ConfirmNewAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="buttonImage.cs" />
     <Compile Include="Connected Services\Translator\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,9 +94,7 @@
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantheon.cs" />
-    <Compile Include="Picture_Dictionary.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Picture_Dictionary.cs" />
     <Compile Include="Picture_Dictionary.Designer.cs">
       <DependentUpon>Picture_Dictionary.cs</DependentUpon>
     </Compile>
@@ -373,12 +370,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\interface-77-512.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\iconfinder_icons_add_1564491.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
