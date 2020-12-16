@@ -151,7 +151,7 @@ namespace encode
                              FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
                              BinaryReader br = new BinaryReader(fs);
                              img = br.ReadBytes((int)fs.Length);
-                             string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES ('" + new DirectoryInfo(temp).Parent.Name + "',' " + i + "',' " + tem.Remove(tem.Length - 4, 4) + "','" + img + "')";
+                             string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES ('" + new DirectoryInfo(temp).Parent.Name + "',' " + i + "',' " + tem.Remove(tem.Length - 4, 4) + "','" + (byte[])img + "')";
 
                              sw.WriteLine(sql);*/
 
