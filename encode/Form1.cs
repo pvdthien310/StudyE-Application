@@ -30,7 +30,7 @@ namespace encode
                 dlg.Title = "Open Image";
                 dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
                 dlg.Multiselect = true;
-                
+
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     cnn.Open();
@@ -52,23 +52,23 @@ namespace encode
                             using (SqlCommand command = new SqlCommand(sql, cnn))
                             {
 
-                                command.Parameters.Add("@group", SqlDbType.VarChar).Value = new DirectoryInfo(temp).Parent.Name; 
+                                command.Parameters.Add("@group", SqlDbType.VarChar).Value = new DirectoryInfo(temp).Parent.Name;
                                 command.Parameters.Add("@id", SqlDbType.Int).Value = i;
                                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = tem.Remove(tem.Length - 4, 4); ;
-                                command.Parameters.Add("@encode", SqlDbType.Image).Value = img;     
+                                command.Parameters.Add("@encode", SqlDbType.Image).Value = img;
 
                                 command.ExecuteNonQuery();
                             }
 
-                           /* i++;
-                            string tem = Path.GetFileName(temp);
-                            byte[] img = null;
-                            FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
-                            BinaryReader br = new BinaryReader(fs);
-                            img = br.ReadBytes((int)fs.Length);
-                            string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES ('" + new DirectoryInfo(temp).Parent.Name + "',' " + i + "',' " + tem.Remove(tem.Length - 4, 4) + "','" + img + "')";
+                            /* i++;
+                             string tem = Path.GetFileName(temp);
+                             byte[] img = null;
+                             FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
+                             BinaryReader br = new BinaryReader(fs);
+                             img = br.ReadBytes((int)fs.Length);
+                             string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES ('" + new DirectoryInfo(temp).Parent.Name + "',' " + i + "',' " + tem.Remove(tem.Length - 4, 4) + "','" + img + "')";
 
-                            sw.WriteLine(sql);*/
+                             sw.WriteLine(sql);*/
 
 
                         }
@@ -78,10 +78,10 @@ namespace encode
                     //cnn.Dispose();
                 }
 
-                
+
             }
-            
-            
+
+
         }
         int curentID = 0;
         private void button2_Click(object sender, EventArgs e)
@@ -94,8 +94,8 @@ namespace encode
              pictureBox1.Image = img;
 */
 
-                        cnn.Open();
-            string sql = "select * from PICTURE_SOURSE where NAME = 'cat'"; 
+            cnn.Open();
+            string sql = "select * from PICTURE_SOURSE where NAME = 'cat'";
             SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
             com.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
@@ -108,66 +108,62 @@ namespace encode
                 pictureBox1.Image = img; */
                 //textBox1.Text = row[3].ToString();
             }
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            using (OpenFileDialog dlg = new OpenFileDialog())
+            using (StreamWriter sw = new StreamWriter("D:/sourse.txt", true))
             {
-                cnn.Open();
-                int i = 0;
-                dlg.Title = "Open Image";
-                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
-                dlg.Multiselect = true;
-                if (dlg.ShowDialog() == DialogResult.OK)
+                using (OpenFileDialog dlg = new OpenFileDialog())
                 {
-                    foreach (string temp in dlg.FileNames)
+                    cnn.Open();
+                    int i = 0;
+                    dlg.Title = "Open Image";
+                    dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                    dlg.Multiselect = true;
+                    if (dlg.ShowDialog() == DialogResult.OK)
                     {
-
-                        byte[] img = null;
-                        FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
-                        BinaryReader br = new BinaryReader(fs);
-                        img = br.ReadBytes((int)fs.Length);
-
-                        string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE) VALUES (@id, @name, @encode)";
-                        i++;
-
-                        string tem = Path.GetFileName(temp);
-                        using (SqlCommand command = new SqlCommand(sql, cnn))
+                        foreach (string temp in dlg.FileNames)
                         {
-                            command.Parameters.Add("@id", SqlDbType.Int).Value = i;
-                            command.Parameters.Add("@name", SqlDbType.VarChar).Value = tem.Remove(tem.Length - 4, 4); ;
-                            command.Parameters.Add("@encode", SqlDbType.Image).Value = img;
 
-                            command.ExecuteNonQuery();
+                            byte[] img = null;
+                            FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
+                            BinaryReader br = new BinaryReader(fs);
+                            img = br.ReadBytes((int)fs.Length);
+
+                            string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE) VALUES (@id, @name, @encode)";
+                            i++;
+
+                            string tem = Path.GetFileName(temp);
+                            using (SqlCommand command = new SqlCommand(sql, cnn))
+                            {
+                                command.Parameters.Add("@id", SqlDbType.Int).Value = i;
+                                command.Parameters.Add("@name", SqlDbType.VarChar).Value = tem.Remove(tem.Length - 4, 4); ;
+                                command.Parameters.Add("@encode", SqlDbType.Image).Value = img;
+
+                                command.ExecuteNonQuery();
+                            }
+
+                             /*i++;
+                             string tem = Path.GetFileName(temp);
+                             byte[] img = null;
+                             FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
+                             BinaryReader br = new BinaryReader(fs);
+                             img = br.ReadBytes((int)fs.Length);
+                             string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES ('" + new DirectoryInfo(temp).Parent.Name + "',' " + i + "',' " + tem.Remove(tem.Length - 4, 4) + "','" + img + "')";
+
+                             sw.WriteLine(sql);*/
+
+
                         }
-
-                        /* i++;
-                         string tem = Path.GetFileName(temp);
-                         byte[] img = null;
-                         FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
-                         BinaryReader br = new BinaryReader(fs);
-                         img = br.ReadBytes((int)fs.Length);
-                         string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES ('" + new DirectoryInfo(temp).Parent.Name + "',' " + i + "',' " + tem.Remove(tem.Length - 4, 4) + "','" + img + "')";
-
-                         sw.WriteLine(sql);*/
-
-
+                        MessageBox.Show("Nhin tieu de", "Nhin noi dung");
+                        cnn.Close();
                     }
-                    MessageBox.Show("Nhin tieu de", "Nhin noi dung");
-                    cnn.Close();
                 }
-                
-
-
-
-
 
             }
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             cnn.Open();
@@ -190,8 +186,8 @@ namespace encode
             cnn.Close();
             cnn.Dispose();
         }
-        
-        
+
+
         public Image byteArrayToImage(byte[] byteArrayIn)
         {
             MemoryStream ms = new MemoryStream(byteArrayIn);
