@@ -132,7 +132,7 @@ namespace encode
                             BinaryReader br = new BinaryReader(fs);
                             img = br.ReadBytes((int)fs.Length);
 
-                            string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE) VALUES (@id, @name, @encode)";
+                            string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE, IS_SOURSE) VALUES (@id, @name, @encode, @isSourse)";
                             i++;
 
                             string tem = Path.GetFileName(temp);
@@ -141,7 +141,7 @@ namespace encode
                                 command.Parameters.Add("@id", SqlDbType.Int).Value = i;
                                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = tem.Remove(tem.Length - 4, 4); ;
                                 command.Parameters.Add("@encode", SqlDbType.Image).Value = img;
-
+                                command.Parameters.Add("@isSourse", SqlDbType.TinyInt).Value = 1;
                                 command.ExecuteNonQuery();
                             }
 
