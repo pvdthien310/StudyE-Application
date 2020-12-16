@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuestionForm));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button_answerD = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button_answerC = new Guna.UI2.WinForms.Guna2Button();
@@ -39,7 +38,6 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2TextBox_answer2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button_question2 = new Guna.UI2.WinForms.Guna2Button();
-       //     this.gunaButton_Submit = new Guna.UI.WinForms.GunaButton();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
@@ -139,7 +137,6 @@
             // 
             // guna2Panel2
             // 
-        //    this.guna2Panel2.Controls.Add(this.gunaButton_Submit);
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel2.Controls.Add(this.guna2TextBox_answer2);
             this.guna2Panel2.Controls.Add(this.guna2Button_question2);
@@ -198,38 +195,14 @@
             this.guna2Button_question2.TabIndex = 0;
             this.guna2Button_question2.Text = "guna2Button6";
             // 
-            // gunaButton_Submit
-            // 
-            //this.gunaButton_Submit.AnimationHoverSpeed = 0.07F;
-            //this.gunaButton_Submit.AnimationSpeed = 0.03F;
-            //this.gunaButton_Submit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            //this.gunaButton_Submit.BorderColor = System.Drawing.Color.Black;
-            //this.gunaButton_Submit.DialogResult = System.Windows.Forms.DialogResult.None;
-            //this.gunaButton_Submit.FocusedColor = System.Drawing.Color.Empty;
-            //this.gunaButton_Submit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            //this.gunaButton_Submit.ForeColor = System.Drawing.Color.White;
-            //this.gunaButton_Submit.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton_Submit.Image")));
-            //this.gunaButton_Submit.ImageSize = new System.Drawing.Size(20, 20);
-            //this.gunaButton_Submit.Location = new System.Drawing.Point(107, 399);
-            //this.gunaButton_Submit.Name = "gunaButton_Submit";
-            //this.gunaButton_Submit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            //this.gunaButton_Submit.OnHoverBorderColor = System.Drawing.Color.Black;
-            //this.gunaButton_Submit.OnHoverForeColor = System.Drawing.Color.White;
-            //this.gunaButton_Submit.OnHoverImage = null;
-            //this.gunaButton_Submit.OnPressedColor = System.Drawing.Color.Black;
-            //this.gunaButton_Submit.Size = new System.Drawing.Size(109, 55);
-            //this.gunaButton_Submit.TabIndex = 3;
-            //this.gunaButton_Submit.Text = "gunaButton1";
-            //this.gunaButton_Submit.Click += new System.EventHandler(this.Button_Click);
-            // 
-            // Question
+            // QuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 561);
-            this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Name = "Question";
+            this.Controls.Add(this.guna2Panel2);
+            this.Name = "QuestionForm";
             this.Text = "Question";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
@@ -249,6 +222,6 @@
         public Guna.UI2.WinForms.Guna2Button guna2Button_question2;
         public Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         public Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-       // public Guna.UI.WinForms.GunaButton gunaButton_Submit;
+        // public Guna.UI.WinForms.GunaButton gunaButton_Submit;
     }
 }

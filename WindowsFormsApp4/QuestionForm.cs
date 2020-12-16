@@ -16,7 +16,7 @@ namespace WindowsFormsApp4
         public Start parent;
         public List<Question_Creep> list;
         public int isdraw;
-        public QuestionForm(Start parent,ref List<Question_Creep> list,ref int isdraw)
+        public QuestionForm(Start parent, ref List<Question_Creep> list, ref int isdraw)
         {
             InitializeComponent();
             //Result = new int[10,10];
@@ -24,12 +24,12 @@ namespace WindowsFormsApp4
             this.list = list;
             this.isdraw = isdraw;
         }
-        private void Button_Click(object sender , EventArgs e)
+        private void Button_Click(object sender, EventArgs e)
         {
-           
+
             this.parent.isdraw = 1;
             string[] temp = list[this.parent.game_host.current_question].question.GetQuestion();
-           if (sender == guna2Button_answerA)
+            if (sender == guna2Button_answerA)
             {
                 if (list[this.parent.game_host.current_question].type == 1)
                 {
@@ -57,7 +57,7 @@ namespace WindowsFormsApp4
 
                     }
                 }
-                
+
             }
             if (sender == guna2Button_answerC)
             {
@@ -73,7 +73,7 @@ namespace WindowsFormsApp4
 
                     }
                 }
-                
+
             }
             if (sender == guna2Button_answerD)
             {
@@ -89,7 +89,7 @@ namespace WindowsFormsApp4
 
                     }
                 }
-              
+
             }
             //if (sender == gunaButton_Submit)
             //{            

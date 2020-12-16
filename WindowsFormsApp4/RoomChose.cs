@@ -19,6 +19,7 @@ namespace WindowsFormsApp4
         public List<Room> roomList; // danh sach phong hien co
         private Guna.UI2.WinForms.Guna2Button[] listbtn;
         private FlowLayoutPanel[] listpnl;
+        private int number_pnl = 0;
         public RoomChose()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace WindowsFormsApp4
         {
             InitializeComponent();
             this.PlayerName = playerName;
+            DoubleBuffered = true;
         }
 
         private void RoomChose_Load(object sender, EventArgs e)
@@ -63,7 +65,8 @@ namespace WindowsFormsApp4
             for (int j = 0; j < listpnl.Length; j++)
             {
                 listpnl[j] = new FlowLayoutPanel() { Location = new System.Drawing.Point(101, 167), Size = new System.Drawing.Size(785, 324) };
-                this.listpnl[j].BackColor = System.Drawing.Color.Transparent;
+                // this.listpnl[j].BackColor = System.Drawing.Color.Transparent;
+              this.listpnl[j].BackColor = System.Drawing.Color.Orchid;
                 this.Controls.Add(listpnl[j]);
             }
             int number_room_inpanel = 0;
@@ -127,6 +130,35 @@ namespace WindowsFormsApp4
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            foreach (var a in listbtn)
+            {
+                a.Dispose();
+            }
+            foreach (var a in listpnl)
+            {
+                a.Dispose();
+            }
+            this.RoomChose_Load(sender, e);
+            MessageBox.Show("Reset roi ba oi !!");
+
+        }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            number_pnl++;
+            if (number_pnl == listpnl.Length) number_pnl = 0;
+            listpnl[number_pnl].BringToFront();
+        }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+            number_pnl--;
+            if (number_pnl == -1) number_pnl = listpnl.Length-1;
+            listpnl[number_pnl].BringToFront();
         }
     }
 }
