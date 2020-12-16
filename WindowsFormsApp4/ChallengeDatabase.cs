@@ -24,9 +24,9 @@ namespace WindowsFormsApp4
         {
             list.Clear(); // Xóa dữ liệu để tránh bug ngoài ý muốn
 
-            SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True"); // của thắng
+            //SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True"); // của thắng
             //SqlConnection mycntSW = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True"); // Của Thức
-            //SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True"); // Của Thiên
+            SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True"); // Của Thiên
             mycntSW.Open();
             // lay het du lieu trong bang DTBQT 
             SqlCommand com = new SqlCommand("SELECT TOP 500 ID,NAME,MEANING FROM EV_Source ORDER BY NEWID()", mycntSW);
