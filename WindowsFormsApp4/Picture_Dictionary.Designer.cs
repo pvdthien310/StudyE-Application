@@ -61,9 +61,9 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(2, 0);
+            this.panel1.Location = new System.Drawing.Point(-11, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1056, 666);
+            this.panel1.Size = new System.Drawing.Size(1069, 666);
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
             // 
@@ -89,7 +89,8 @@
             this.panel2.Controls.Add(this.Pause);
             this.panel2.Controls.Add(this.Speak);
             this.panel2.Controls.Add(this.Right);
-            this.panel2.Controls.Add(this.Left);            this.panel2.Location = new System.Drawing.Point(312, 488);
+            this.panel2.Controls.Add(this.Left);
+            this.panel2.Location = new System.Drawing.Point(312, 488);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(432, 115);
             this.panel2.TabIndex = 5;

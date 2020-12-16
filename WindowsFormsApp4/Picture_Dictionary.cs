@@ -19,11 +19,12 @@ namespace WindowsFormsApp4
         private mainForm Parent;
         private string group = "";
         private int currentPicture = 0;
-        private FileInfo[] nameImage;
         private int currentSourse = 0;
         SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True"); //của thức
         //SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True"); // của thắng
         DataTable datatable = new DataTable();
+        private bool isInsert = false;
+
         public Picture_Dictionary()
         {
             InitializeComponent();
@@ -176,8 +177,11 @@ namespace WindowsFormsApp4
             cnn.Close();
         }
 
+        
+
         private void load_Button(int k)
         {
+            
             cnn.Open();
             string sql = "select * from PICTURE_BUTTON  ";
             SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
@@ -199,7 +203,7 @@ namespace WindowsFormsApp4
             but.MouseClick += new MouseEventHandler(TabChose_Click);
             
             flowLayoutPanel1.Controls.Add(but);
-            currentButton++;
+            
 
 
             cnn.Close();
@@ -243,9 +247,8 @@ namespace WindowsFormsApp4
         private void Add_Click(object sender, EventArgs e)
         {
 
-            string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE) VALUES (@id, @name, @encode)";
+            string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE, IS_SOURSE) VALUES (@id, @name, @encode, @isSourse)";
             byte[] img = null;
-            Image temp = guna2PictureBox1.BackgroundImage;
             FileStream fs = new FileStream(tem, FileMode.Open, FileAccess.Read);
             BinaryReader br = new BinaryReader(fs);
             img = br.ReadBytes((int)fs.Length);
@@ -256,12 +259,13 @@ namespace WindowsFormsApp4
                 command.Parameters.Add("@id", SqlDbType.Int).Value = currentButton+1;
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = nameGroup.Text;
                 command.Parameters.Add("@encode", SqlDbType.Image).Value = img;
-
+                command.Parameters.Add("@isSourse", SqlDbType.TinyInt).Value = 0;
                 command.ExecuteNonQuery();
             }
             cnn.Close();
-
+            
             load_Button(0);
+            currentButton++;
             panel5.Visible = false;
         }
 
