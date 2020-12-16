@@ -31,7 +31,7 @@ namespace WindowsFormsApp4
             DoubleBuffered = true;
         }
 
-        private void RoomChose_Load(object sender, EventArgs e)
+        public void RoomChose_Load(object sender, EventArgs e)
         {
             Mycnt.Open();
             // lay het du lieu trong bang DTBQT
@@ -126,10 +126,54 @@ namespace WindowsFormsApp4
             }
 
         }
-
+        
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            //// Tao phong
+            Mycnt.Open();
+            Random rd = new Random();
+            int roomid = rd.Next(999);
+            string query = String.Format("INSERT INTO RoomList VALUES ('{0}','{1}','', '0','0')    ",roomid.ToString(),PlayerName);
+          
 
+
+            //// Tao bo cau hoi
+            
+            string s; // string tạm
+            string[] temp;
+            
+
+            GameManager_2 game_host = new GameManager_2();
+            int type = 1;
+            for (int i = 0; i < 10; i++)
+            {
+                temp = game_host.list[i].GetQuestion(); // lay bo cau hoi ra
+                for ( int j = 0;j < temp.Length;j ++)
+                {
+                    temp[j] = temp[j].Replace("'", "`");
+                }
+                if (i < game_host.n)  // Xu ly cau hoi loai 1
+                {                   
+                    s = String.Format("INSERT INTO RoomQuestions VALUES ('{0}','{1}',N'{2}',N'{3}',N'{4}',N'{5}',N'{6}',N'{7}')", roomid, type, temp[0],temp[1],temp[2],temp[3],temp[4],temp[5]);
+
+                }
+                else
+                {
+                    type = 2;
+                    s = String.Format("INSERT INTO RoomQuestions VALUES ('{0}','{1}',N'{2}','{3}','{4}','{5}','{6}',N'{7}')", roomid, type, temp[0], "", "", "", "", temp[1].Trim());
+
+                }
+                query += s + "    ";
+            }
+            
+            SqlCommand com = new SqlCommand(query, Mycnt); //bat dau truy van
+            com.ExecuteNonQuery();
+            Mycnt.Close();
+
+            roomList.Add(new Room(roomid.ToString(), PlayerName, "", 0, 0));
+            RoomForm roomform = new RoomForm(this,roomList[roomList.Count - 1], PlayerName, game_host);
+            roomform.Show();
+            this.Hide();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -159,6 +203,11 @@ namespace WindowsFormsApp4
             number_pnl--;
             if (number_pnl == -1) number_pnl = listpnl.Length-1;
             listpnl[number_pnl].BringToFront();
+        }
+
+        private void RoomChose_Activated(object sender, EventArgs e)
+        {
+            this.RoomChose_Load(sender, e);
         }
     }
 }

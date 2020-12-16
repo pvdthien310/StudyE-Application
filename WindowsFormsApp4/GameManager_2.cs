@@ -16,6 +16,12 @@ namespace WindowsFormsApp4
         public int current_question;
         public int n;
 
+        public GameManager_2()
+        {
+            list = new List<QuestionGame2>();
+            database = new Game2Database();
+            RepairQuestion();
+        }
         public GameManager_2(Start parent)
         {
             this.parent = parent;

@@ -119,6 +119,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RoomChose";
             this.Text = "RoomChose";
+            this.Activated += new System.EventHandler(this.RoomChose_Activated);
             this.Load += new System.EventHandler(this.RoomChose_Load);
             this.ResumeLayout(false);
 

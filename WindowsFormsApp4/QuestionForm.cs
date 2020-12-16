@@ -29,6 +29,7 @@ namespace WindowsFormsApp4
 
             this.parent.isdraw = 1;
             string[] temp = list[this.parent.game_host.current_question].question.GetQuestion();
+            
             if (sender == guna2Button_answerA)
             {
                 if (list[this.parent.game_host.current_question].type == 1)
