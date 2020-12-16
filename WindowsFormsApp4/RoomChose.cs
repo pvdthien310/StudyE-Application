@@ -78,6 +78,7 @@ namespace WindowsFormsApp4
                 a += roomList[i].RoomID;
                 listbtn[i] = new Guna.UI2.WinForms.Guna2Button() { Text = a, Size = new System.Drawing.Size(150, 100) };
                 listbtn[i].BorderRadius = 15;
+                listbtn[i].Name = "Room" + i.ToString(); 
                 listbtn[i].Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 listbtn[i].FillColor = System.Drawing.Color.MediumOrchid;
                 if (number_room_inpanel == 16)
@@ -92,6 +93,7 @@ namespace WindowsFormsApp4
                 listpnl[number_pnl].Controls.Add(listbtn[i]);
                 listbtn[i].Click += (s, k) =>
                 {
+                    
                     int count = -1;
                     foreach (Guna.UI2.WinForms.Guna2Button x in listbtn)
                     {
@@ -104,13 +106,13 @@ namespace WindowsFormsApp4
                             {
                                 MessageBox.Show("Phòng đầy !","Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
                             }
-                            else
+                           else
                             {
                                 roomList[count].GuestID = PlayerName;
                                 roomList[count].IsClosed = 1;
                                 roomList[count].IsReady = 0;
                                 Mycnt.Open();
-                                sql = String.Format("UPDATE ROOMLIST SET ISCLOSED = '1' WHERE ROOMID = '{0}'",temp);                           ;
+                                sql = String.Format("UPDATE ROOMLIST SET ISCLOSED = '1',IsReady = '0',GuestID = '{1}' WHERE ROOMID = '{0}'",temp,PlayerName);                           
                                 com = new SqlCommand(sql, Mycnt); //bat dau truy van
                                 com.ExecuteNonQuery();
                                 Mycnt.Close();

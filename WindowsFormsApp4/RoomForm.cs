@@ -42,7 +42,7 @@ namespace WindowsFormsApp4
             if (ishost == 1)
             {
                 room_info.HostID = "";
-                query = string.Format("Update Roomlist set HostID ='' where RoomID ='{0}'", room_info.RoomID);
+                query = string.Format("Update Roomlist set HostID ='',IsClosed ='0',IsReady ='0' where RoomID ='{0}'", room_info.RoomID);
                 com = new SqlCommand(query, Mycnt);
                 com.ExecuteNonQuery();
 
@@ -50,7 +50,7 @@ namespace WindowsFormsApp4
             else
             {
                 room_info.GuestID = "";
-                query = string.Format("Update Roomlist set GuestID ='' where RoomID ='{0}'", room_info.RoomID);
+                query = string.Format("Update Roomlist set GuestID ='',IsClosed ='0',IsReady ='0' where RoomID ='{0}'", room_info.RoomID);
                 com = new SqlCommand(query, Mycnt);
                 com.ExecuteNonQuery();
             }
