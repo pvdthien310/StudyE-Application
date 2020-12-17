@@ -34,9 +34,18 @@ namespace WindowsFormsApp4
             this.ishost = ishost;
             InitializeComponent();
             Label_RoomID.Text = room_info.RoomID.ToString();
+            testData();
 
         }
-
+        private void testData()
+        {
+            foreach (QuestionGame2 a in game_host.list)
+            {
+               string[] line =  a.GetQuestion();
+                if (line.Length > 2)
+                dataGridView_test.Rows.Add(line);
+            }
+        }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             Mycnt.Open();
