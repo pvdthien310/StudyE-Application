@@ -15,7 +15,7 @@ namespace WindowsFormsApp4
     {
         //property
         public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:study-e.database.windows.net,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=study-e;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"); 
-        public string PlayerName ="97";
+        public string PlayerName ="ThuThien";
         public List<Room> roomList; // danh sach phong hien co
         private Guna.UI2.WinForms.Guna2Button[] listbtn;
         private FlowLayoutPanel[] listpnl;
