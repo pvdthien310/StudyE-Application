@@ -225,15 +225,16 @@ namespace WindowsFormsApp4
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            foreach (var a in listbtn)
+            /*foreach (var a in listbtn)
             {
                 a.Dispose();
             }
             foreach (var a in listpnl)
             {
                 a.Dispose();
-            }
-            this.RoomChose_Load(sender, e);
+            }*/
+            //this.RoomChose_Load(sender, e);
+            listpnl[0].BringToFront();
             MessageBox.Show("Reset roi ba oi !!");
 
         }
