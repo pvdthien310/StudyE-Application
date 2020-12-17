@@ -67,14 +67,16 @@ namespace WindowsFormsApp4
                 com.ExecuteNonQuery();
             }
 
-            query = string.Format("delete from Roomlist where HostID = '' and GuestID = ''" +
-                " update RoomList set HostID = GuestID, GuestID = ''where HostID = '' and GuestID != ''" +
-                " delete from RoomQuestions where RoomID ='{0}'", room_info.RoomID);
+            query = string.Format( "update RoomList set HostID = GuestID, GuestID = ''where HostID = '' and GuestID != ''" +
+                "  delete from RoomQuestions Where RoomID in (select RoomID from RoomList Where HostId = '' and guestID = '')" 
+                + "delete from Roomlist where HostID = '' and GuestID = ''" );
             com = new SqlCommand(query, Mycnt);
             com.ExecuteNonQuery();
             Mycnt.Close();
             this.Close();
-            this.parent.Show();
+            this.parent.Close();
+            RoomChose newroomchose = new RoomChose(Playername);
+            newroomchose.Show();
 
         }
     }

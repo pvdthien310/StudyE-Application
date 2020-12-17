@@ -92,7 +92,7 @@ namespace WindowsFormsApp4
                     number_room_inpanel++;
                 }
                 listpnl[number_pnl].Controls.Add(listbtn[i]);
-
+                listpnl[0].BringToFront();
                 //////////// su kien click
                 listbtn[i].Click += (s, k) =>
                 {
@@ -225,15 +225,28 @@ namespace WindowsFormsApp4
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            foreach (var a in listbtn)
-            {
-                a.Dispose();
-            }
-            foreach (var a in listpnl)
-            {
-                a.Dispose();
-            }
-            this.RoomChose_Load(sender, e);
+           //for ( int i = 0; i < listbtn.Length- 1;i++)
+           // {
+                
+           //     listbtn[i].Dispose();
+
+           // }
+           // for (int i = 0; i < listpnl.Length - 1; i++)
+           // {
+           //     listpnl[i].Controls.Clear();
+           //     listpnl[i].Visible = false;
+           //     listpnl[i].Dispose();
+           // }
+           // //foreach (var a in listbtn)
+           // //{                
+           // //    a.Dispose();
+           // //}
+           // //foreach (var a in listpnl)
+           // //{
+           // //    a.Dispose();
+           // //}
+           // this.Show();
+             this.RoomChose_Load(sender, e);
             MessageBox.Show("Reset roi ba oi !!");
 
         }
