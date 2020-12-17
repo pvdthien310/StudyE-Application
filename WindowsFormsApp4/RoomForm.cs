@@ -26,12 +26,15 @@ namespace WindowsFormsApp4
         }
         public RoomForm(RoomChose parent,Room room, string Playername,GameManager_2 game_host,int ishost) // bien ishost xac dinh la day được gọi từ vào phòng hay tạo phòng 
         {
+            
             this.parent = parent;
             this.room_info = room;
             this.Playername = Playername;
             this.game_host = game_host;
             this.ishost = ishost;
             InitializeComponent();
+            Label_RoomID.Text = room_info.RoomID.ToString();
+
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
