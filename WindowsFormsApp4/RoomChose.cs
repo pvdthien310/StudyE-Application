@@ -15,7 +15,7 @@ namespace WindowsFormsApp4
     {
         //property
         public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:study-e.database.windows.net,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=study-e;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"); 
-        public string PlayerName;
+        public string PlayerName ="ThuThien";
         public List<Room> roomList; // danh sach phong hien co
         private Guna.UI2.WinForms.Guna2Button[] listbtn;
         private FlowLayoutPanel[] listpnl;
@@ -28,7 +28,8 @@ namespace WindowsFormsApp4
         public RoomChose(string playerName)
         {
             InitializeComponent();
-            this.PlayerName = playerName;
+          // this.PlayerName = playerName;
+            this.PlayerName = "99";
             DoubleBuffered = true;
         }
 
@@ -122,12 +123,7 @@ namespace WindowsFormsApp4
                                 Mycnt.Close();
                                 MessageBox.Show("Vào Phòng Thành Công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 GameManager_2 game_host = new GameManager_2(null,this,GetQuestionFromRoom(temp));
-                                int aa;
-                                for ( aa = 0; aa <roomList.Count -1; aa++)
-                                {
-                                    if (roomList[aa].RoomID == temp) break;
-                                }
-                                RoomForm room = new RoomForm(this, roomList[aa], PlayerName, game_host, 0);
+                                RoomForm room = new RoomForm(this, roomList[count + 1], PlayerName, game_host, 0);
                                 room.Show();
                                 this.Hide();
                                 int concat = 10;
