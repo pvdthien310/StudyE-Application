@@ -24,9 +24,9 @@ namespace WindowsFormsApp4
         {
             InitializeComponent();
         }
-        public RoomForm(RoomChose parent,Room room, string Playername,GameManager_2 game_host,int ishost) // bien ishost xac dinh la day được gọi từ vào phòng hay tạo phòng 
+        public RoomForm(RoomChose parent, Room room, string Playername, GameManager_2 game_host, int ishost) // bien ishost xac dinh la day được gọi từ vào phòng hay tạo phòng 
         {
-            
+
             this.parent = parent;
             this.room_info = room;
             this.Playername = Playername;
@@ -41,7 +41,7 @@ namespace WindowsFormsApp4
         {
             foreach (QuestionGame2 a in game_host.list)
             {
-               string[] line =  a.GetQuestion();
+                string[] line = a.GetQuestion();
                 //if (line.Length > 2)
                 dataGridView_test.Rows.Add(line);
             }
@@ -66,12 +66,12 @@ namespace WindowsFormsApp4
                 com = new SqlCommand(query, Mycnt);
                 com.ExecuteNonQuery();
             }
-          
+
             query = string.Format("delete from Roomlist where HostID = '' and GuestID = ''" +
                 " update RoomList set HostID = GuestID, GuestID = ''where HostID = '' and GuestID != ''" +
-                " delete from RoomQuestions where RoomID ='{0}'",room_info.RoomID);
+                " delete from RoomQuestions where RoomID ='{0}'", room_info.RoomID);
             com = new SqlCommand(query, Mycnt);
-            com.ExecuteNonQuery();         
+            com.ExecuteNonQuery();
             Mycnt.Close();
             this.Close();
             this.parent.Show();
