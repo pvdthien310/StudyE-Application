@@ -55,7 +55,9 @@ namespace WindowsFormsApp4
                 com.ExecuteNonQuery();
             }
           
-            query = string.Format("delete from Roomlist where HostID = '' and GuestID = '' update RoomList set HostID = GuestID, GuestID = ''where HostID = '' and GuestID != ''delete from RoomQuestions where RoomID ='{0}'",room_info.RoomID);
+            query = string.Format("delete from Roomlist where HostID = '' and GuestID = ''" +
+                " update RoomList set HostID = GuestID, GuestID = ''where HostID = '' and GuestID != ''" +
+                " delete from RoomQuestions where RoomID ='{0}'",room_info.RoomID);
             com = new SqlCommand(query, Mycnt);
             com.ExecuteNonQuery();         
             Mycnt.Close();

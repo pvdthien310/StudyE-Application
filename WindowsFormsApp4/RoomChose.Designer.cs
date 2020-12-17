@@ -120,6 +120,7 @@
             this.Name = "RoomChose";
             this.Text = "RoomChose";
             this.Activated += new System.EventHandler(this.RoomChose_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RoomChose_FormClosing);
             this.Load += new System.EventHandler(this.RoomChose_Load);
             this.ResumeLayout(false);
 

@@ -15,7 +15,7 @@ namespace WindowsFormsApp4
     {
         //property
         public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:study-e.database.windows.net,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=study-e;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"); 
-        public string PlayerName;
+        public string PlayerName ="99";
         public List<Room> roomList; // danh sach phong hien co
         private Guna.UI2.WinForms.Guna2Button[] listbtn;
         private FlowLayoutPanel[] listpnl;
@@ -27,7 +27,8 @@ namespace WindowsFormsApp4
         public RoomChose(string playerName)
         {
             InitializeComponent();
-            this.PlayerName = playerName;
+          // this.PlayerName = playerName;
+            this.PlayerName = "99";
             DoubleBuffered = true;
         }
 
@@ -91,16 +92,18 @@ namespace WindowsFormsApp4
                     number_room_inpanel++;
                 }
                 listpnl[number_pnl].Controls.Add(listbtn[i]);
+
+                //////////// su kien click
                 listbtn[i].Click += (s, k) =>
                 {
-                    
+                    Guna.UI2.WinForms.Guna2Button raised_controls = s as Guna.UI2.WinForms.Guna2Button;
                     int count = -1;
                     foreach (Guna.UI2.WinForms.Guna2Button x in listbtn)
                     {
                         count++;
                         string temp = x.Text.Substring(6);
 
-                        if (s == x)
+                        if (raised_controls.Text == x.Text)
                         {
                             if (roomList[count].IsClosed == 1)
                             {
@@ -112,11 +115,12 @@ namespace WindowsFormsApp4
                                 roomList[count].IsClosed = 1;
                                 roomList[count].IsReady = 0;
                                 Mycnt.Open();
-                                sql = String.Format("UPDATE ROOMLIST SET ISCLOSED = '1',IsReady = '0',GuestID = '{1}' WHERE ROOMID = '{0}'",temp,PlayerName);                           
+                                sql = String.Format("UPDATE ROOMLIST SET ISCLOSED = '1',IsReady = '0',GuestID = '{0}' WHERE ROOMID = '{1}'",PlayerName,temp);                           
                                 com = new SqlCommand(sql, Mycnt); //bat dau truy van
                                 com.ExecuteNonQuery();
                                 Mycnt.Close();
                                 MessageBox.Show("Vào Phòng Thành Công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                
 
                             }
 
@@ -128,14 +132,26 @@ namespace WindowsFormsApp4
             }
 
         }
-        
+        private void GetQuestionFromRoom(GameManager_2 temp)
+        {
+
+        }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             //// Tao phong
             Mycnt.Open();
+
+            
+            string query = string.Format("update roomlist set HostID = '', Isclosed = '0', IsReady = '0' where hostid = '{0}'"
+                + " update roomlist set GuestID = '', Isclosed = '0', IsReady = '0' where GuestID = '{0}'" +
+                "delete from Roomlist where HostID = '' and GuestID = ''" +
+                "update RoomList set HostID = GuestID, GuestID = '', Isclosed = '0', IsReady = '0' where HostID = '' and GuestID != ''", PlayerName);
+            SqlCommand cmd = new SqlCommand(query, Mycnt);
+            cmd.ExecuteNonQuery();
+            
             Random rd = new Random();
             int roomid = rd.Next(999);
-            string query = String.Format("INSERT INTO RoomList VALUES ('{0}','{1}','', '0','0')    ",roomid.ToString(),PlayerName);
+            query = String.Format("INSERT INTO RoomList VALUES ('{0}','{1}','', '0','0')    ",roomid.ToString(),PlayerName);
           
 
 
@@ -210,6 +226,18 @@ namespace WindowsFormsApp4
         private void RoomChose_Activated(object sender, EventArgs e)
         {
             this.RoomChose_Load(sender, e);
+        }
+
+        private void RoomChose_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Mycnt.Open();
+            string query = string.Format("update roomlist set HostID = '', Isclosed = '0', IsReady = '0' where hostid = '{0}'" 
+                +" update roomlist set GuestID = '', Isclosed = '0', IsReady = '0' where GuestID = '{0}'" +
+                "delete from Roomlist where HostID = '' and GuestID = ''" +
+                "update RoomList set HostID = GuestID, GuestID = '', Isclosed = '0', IsReady = '0' where HostID = '' and GuestID != ''", PlayerName);
+            SqlCommand cmd = new SqlCommand(query, Mycnt);
+            cmd.ExecuteNonQuery();
+            Mycnt.Close();
         }
     }
 }

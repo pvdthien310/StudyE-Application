@@ -15,7 +15,15 @@ namespace WindowsFormsApp4
         public Game2Database database;
         public int current_question;
         public int n;
-
+        // khoi tao bo cau hoi ch0 guest
+        public GameManager_2(Start parent,List<QuestionGame2> temp)
+        {
+            this.parent = parent;
+            this.list = temp;
+        }
+        /// <summary>
+        /// // Khoi tao bo cau hoi la host
+        /// </summary>
         public GameManager_2()
         {
             list = new List<QuestionGame2>();
