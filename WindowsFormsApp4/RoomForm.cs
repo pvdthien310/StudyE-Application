@@ -42,7 +42,7 @@ namespace WindowsFormsApp4
             foreach (QuestionGame2 a in game_host.list)
             {
                string[] line =  a.GetQuestion();
-                if (line.Length > 2)
+                //if (line.Length > 2)
                 dataGridView_test.Rows.Add(line);
             }
         }
