@@ -10,14 +10,16 @@ namespace WindowsFormsApp4
     public class GameManager_2
     {
         public Start parent;
+        public RoomChose roomchose;
 
         public List<QuestionGame2> list;
         public Game2Database database;
         public int current_question;
         public int n;
         // khoi tao bo cau hoi ch0 guest
-        public GameManager_2(Start parent,List<QuestionGame2> temp)
+        public GameManager_2(Start parent,RoomChose roomchose,List<QuestionGame2> temp)
         {
+            this.roomchose = roomchose;
             this.parent = parent;
             this.list = temp;
         }

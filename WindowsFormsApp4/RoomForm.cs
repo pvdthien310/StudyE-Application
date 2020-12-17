@@ -24,13 +24,13 @@ namespace WindowsFormsApp4
         {
             InitializeComponent();
         }
-        public RoomForm(RoomChose parent,Room room, string Playername,GameManager_2 game_host)
+        public RoomForm(RoomChose parent,Room room, string Playername,GameManager_2 game_host,int ishost) // bien ishost xac dinh la day được gọi từ vào phòng hay tạo phòng 
         {
             this.parent = parent;
             this.room_info = room;
             this.Playername = Playername;
             this.game_host = game_host;
-            this.ishost = 1;
+            this.ishost = ishost;
             InitializeComponent();
         }
 
