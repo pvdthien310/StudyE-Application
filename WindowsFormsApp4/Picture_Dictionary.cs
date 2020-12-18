@@ -20,6 +20,7 @@ namespace WindowsFormsApp4
         private string group = "";
         private int currentPicture = 0;
         private int currentSourse = 0;
+        private string isSourse = "1";
         SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True"); //của thức
         //SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True"); // của thắng
         DataTable datatable = new DataTable();
@@ -41,7 +42,7 @@ namespace WindowsFormsApp4
                 
                 panel1.Visible = true;
                 group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
-                string isSourse = ((Guna.UI2.WinForms.Guna2Button)sender).Text;
+                isSourse = ((Guna.UI2.WinForms.Guna2Button)sender).Text;
                 cnn.Open();
                 string sql = "select * from PICTURE_SOURSE WHERE GROUPPICTURE = '" + group + " ' ";
                 SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
@@ -60,10 +61,12 @@ namespace WindowsFormsApp4
                     if (isSourse == "1")
                     {
                         pictureBox1.Image = a;
+                        pictureBox1.Visible = true;
                     }
                     else
                     {
-                        pictureBoxInsert.Image = a;
+                        pictureBoxInsert.Visible = true;
+                        pictureBoxInsert.BackgroundImage = a;
                     }
 
                 }
@@ -78,43 +81,23 @@ namespace WindowsFormsApp4
             }
             else if(e.Button == MouseButtons.Right)
             {
-               // addMenuStrip();
+                menuStrip.Visible = true;
+                menuStrip.Location = new Point(((Guna.UI2.WinForms.Guna2Button)sender).Location.X + 100, ((Guna.UI2.WinForms.Guna2Button)sender).Location.Y + 150);
+                
             }
            
             
 
-            /*DirectoryInfo dGroup = new DirectoryInfo("./PictureImage/" + group);
-            nameImage = dGroup.GetFiles();
-            panel1.Visible = true;
-            pictureBox1.Image = Image.FromFile(nameImage[0].FullName);*/
+           
         }
-        void addMenuStrip(object sender, EventArgs ee )
-        {
-            
-           // button.ContextMenuStrip = new ContextMenuStrip();
-            ToolStripItem del = new ToolStripButton("Xóa");
-            //button.ContextMenuStrip.Items.Add(del);
-
-            del.Click += (s, e) =>
-            {
-                /*string isSelect = TuKhoTabledatagridview.CurrentRow.Cells["Name"].Value.ToString();
-                TuKhoTabledatagridview.Rows.RemoveAt(TuKhoTabledatagridview.CurrentRow.Index);
-                mycnt.Open();
-                string update = "update EV_SOURCE set IsTuKho = 0 where Name ='" + isSelect + "'";
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = mycnt;
-                cmd.CommandText = update;
-                cmd.ExecuteNonQuery();
-                mycnt.Close();
-                button1_Click(sender, ee);*/
-            };
-
-        }
+        
 
         private void Pause_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
             currentPicture = 0;
+            pictureBoxInsert.Visible = false;
+            pictureBox1.Visible = false;
         }
 
         private void Right_Click(object sender, EventArgs e)
@@ -129,7 +112,15 @@ namespace WindowsFormsApp4
                 MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
                 Bitmap a = new Bitmap(Image.FromStream(ms));
                 a.MakeTransparent();
-                pictureBox1.Image = a;
+
+                if (isSourse == "1")
+                {
+                    pictureBox1.Image = a;
+                }
+                else
+                {
+                    pictureBoxInsert.BackgroundImage = a;
+                }
             }
             
 
@@ -147,7 +138,15 @@ namespace WindowsFormsApp4
                 MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
                 Bitmap a = new Bitmap(Image.FromStream(ms));
                 a.MakeTransparent();
-                pictureBox1.Image = a;
+               
+                if(isSourse == "1")
+                {
+                    pictureBox1.Image = a;
+                }
+                else
+                {
+                    pictureBoxInsert.BackgroundImage = a;
+                }
             }
                 
         }
@@ -308,6 +307,55 @@ namespace WindowsFormsApp4
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                int i = datatable.Rows.Count - 1;
+                dlg.Title = "Open Image";
+                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                dlg.Multiselect = true;
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    cnn.Open();
+
+                    foreach (string temp in dlg.FileNames)
+                    {
+
+                        byte[] img = null;
+                        FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
+                        BinaryReader br = new BinaryReader(fs);
+                        img = br.ReadBytes((int)fs.Length);
+
+                        string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES (@group, @id, @name, @encode)";
+                        i++;
+                        string tem = Path.GetFileName(temp);
+                        using (SqlCommand command = new SqlCommand(sql, cnn))
+                        {
+
+                            command.Parameters.Add("@group", SqlDbType.VarChar).Value = group;
+                            command.Parameters.Add("@id", SqlDbType.Int).Value = i;
+                            command.Parameters.Add("@name", SqlDbType.VarChar).Value = tem.Remove(tem.Length - 4, 4); ;
+                            command.Parameters.Add("@encode", SqlDbType.Image).Value = img;
+
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                    MessageBox.Show("Thêm thành công!");
+
+                    
+                    string sql2 = "select * from PICTURE_SOURSE WHERE GROUPPICTURE = '" + group + " ' ";
+                    SqlCommand com = new SqlCommand(sql2, cnn); //bat dau truy van
+                    com.CommandType = CommandType.Text;
+                    SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
+
+                    datatable.Clear();
+                    da.Fill(datatable);
+                    cnn.Close();  
+                    //cnn.Dispose();
+                }
+
+
+            }
 
         }
     }

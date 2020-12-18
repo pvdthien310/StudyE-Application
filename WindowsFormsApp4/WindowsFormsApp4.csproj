@@ -94,6 +94,12 @@
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menustrip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Menustrip.Designer.cs">
+      <DependentUpon>Menustrip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantheon.cs" />
     <Compile Include="Picture_Dictionary.cs">
       <SubType>Form</SubType>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menustrip.resx">
+      <DependentUpon>Menustrip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Picture_Dictionary.resx">
       <DependentUpon>Picture_Dictionary.cs</DependentUpon>
