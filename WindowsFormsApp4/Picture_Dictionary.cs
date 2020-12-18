@@ -366,7 +366,28 @@ namespace WindowsFormsApp4
                     cnn.Close();  
                     //cnn.Dispose();
                 }
+                if (datatable.Rows.Count > 0)
+                {
+                    MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
+                    Bitmap a = new Bitmap(Image.FromStream(ms));
+                    a.MakeTransparent();
 
+                    if (isSourse == "1")
+                    {
+                        pictureBox1.Image = a;
+                        pictureBox1.Visible = true;
+                    }
+                    else
+                    {
+                        pictureBoxInsert.Visible = true;
+                        pictureBoxInsert.BackgroundImage = a;
+                    }
+
+                }
+                else
+                {
+                    pictureBox1.Image = null;
+                }
 
             }
 
@@ -375,15 +396,34 @@ namespace WindowsFormsApp4
         private void Delete_Click(object sender, EventArgs e)
         {
             cnn.Open();
-            string sql1 = "delete from PICTURE_BUTTON where NAME = ' " + group + "'";
-            using (SqlCommand command = new SqlCommand(sql1, cnn))
+
+            string sql = "delete from PICTURE_BUTTON where NAME = @name";
+            
+            using (SqlCommand command = new SqlCommand(sql, cnn))
             {
+
+                command.Parameters.Add("@name", SqlDbType.VarChar).Value = group;                
+
                 command.ExecuteNonQuery();
             }
+
+            sql = "delete from PICTURE_SOURSE where GROUPPICTURE = @name";
+
+            using (SqlCommand command = new SqlCommand(sql, cnn))
+            {
+
+                command.Parameters.Add("@name", SqlDbType.VarChar).Value = group;
+
+                command.ExecuteNonQuery();
+            }
+
             cnn.Close();
             menuStrip.Visible = false;
+
+            flowLayoutPanel1.Visible = false;
             flowLayoutPanel1.Controls.Clear();
             load_Button();
+            flowLayoutPanel1.Visible = true;
         }
     }
 }

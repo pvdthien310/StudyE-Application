@@ -80,8 +80,11 @@
             // guna2CircleButton2
             // 
             this.guna2CircleButton2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton2.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.iconfinder_icons_add_1564491;
+            this.guna2CircleButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2CircleButton2.CheckedState.Parent = this.guna2CircleButton2;
             this.guna2CircleButton2.CustomImages.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.FillColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton2.HoverState.Parent = this.guna2CircleButton2;
@@ -91,14 +94,13 @@
             this.guna2CircleButton2.ShadowDecoration.Parent = this.guna2CircleButton2;
             this.guna2CircleButton2.Size = new System.Drawing.Size(60, 60);
             this.guna2CircleButton2.TabIndex = 9;
-            this.guna2CircleButton2.Text = "Thêm hình";
             this.guna2CircleButton2.Click += new System.EventHandler(this.guna2CircleButton2_Click);
             // 
             // pictureBoxInsert
             // 
             this.pictureBoxInsert.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxInsert.Location = new System.Drawing.Point(270, 80);
+            this.pictureBoxInsert.Location = new System.Drawing.Point(261, 80);
             this.pictureBoxInsert.Name = "pictureBoxInsert";
             this.pictureBoxInsert.ShadowDecoration.Parent = this.pictureBoxInsert;
             this.pictureBoxInsert.Size = new System.Drawing.Size(550, 375);
@@ -369,7 +371,7 @@
             this.menuStrip.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.menuStrip.Controls.Add(this.addSourse);
             this.menuStrip.Controls.Add(this.Delete);
-            this.menuStrip.Location = new System.Drawing.Point(13, 34);
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.ShadowDecoration.Parent = this.menuStrip;
             this.menuStrip.Size = new System.Drawing.Size(151, 114);
