@@ -41,6 +41,7 @@ namespace WindowsFormsApp4
                 
                 panel1.Visible = true;
                 group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
+                string isSourse = ((Guna.UI2.WinForms.Guna2Button)sender).Text;
                 cnn.Open();
                 string sql = "select * from PICTURE_SOURSE WHERE GROUPPICTURE = '" + group + " ' ";
                 SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
@@ -50,11 +51,28 @@ namespace WindowsFormsApp4
                 datatable.Clear();
                 da.Fill(datatable);
                 panel1.Visible = true;
+                if (datatable.Rows.Count > 0)
+                {
+                    MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
+                    Bitmap a = new Bitmap(Image.FromStream(ms));
+                    a.MakeTransparent();
 
-                MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
-                Bitmap a = new Bitmap(Image.FromStream(ms));
-                a.MakeTransparent();
-                pictureBox1.Image = a;
+                    if (isSourse == "1")
+                    {
+                        pictureBox1.Image = a;
+                    }
+                    else
+                    {
+                        pictureBoxInsert.Image = a;
+                    }
+
+                }
+                else 
+                {
+                    pictureBox1.Image = null;
+                }
+                       
+               
 
                 cnn.Close();
             }
@@ -106,10 +124,14 @@ namespace WindowsFormsApp4
             {
                 currentSourse = 0;
             }
-            MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
-            Bitmap a = new Bitmap(Image.FromStream(ms));
-            a.MakeTransparent();
-            pictureBox1.Image = a;
+            if (datatable.Rows.Count > 0)
+            {
+                MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
+                Bitmap a = new Bitmap(Image.FromStream(ms));
+                a.MakeTransparent();
+                pictureBox1.Image = a;
+            }
+            
 
         }
 
@@ -120,18 +142,26 @@ namespace WindowsFormsApp4
             {
                 currentSourse = datatable.Rows.Count-1;
             }
-            MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
-            Bitmap a = new Bitmap(Image.FromStream(ms));
-            a.MakeTransparent();
-            pictureBox1.Image = a;
+            if (datatable.Rows.Count > 0)
+            {
+                MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
+                Bitmap a = new Bitmap(Image.FromStream(ms));
+                a.MakeTransparent();
+                pictureBox1.Image = a;
+            }
+                
         }
 
         private void Speak_Click(object sender, EventArgs e)
         {
-            string text = datatable.Rows[currentSourse]["NAME"].ToString();
-            SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.SetOutputToDefaultAudioDevice();
-            synth.Speak(text);
+            if (datatable.Rows.Count > 0)
+            {
+                string text = datatable.Rows[currentSourse]["NAME"].ToString();
+                SpeechSynthesizer synth = new SpeechSynthesizer();
+                synth.SetOutputToDefaultAudioDevice();
+                synth.Speak(text);
+            }
+            
         }
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
@@ -161,12 +191,13 @@ namespace WindowsFormsApp4
                 Bitmap a = new Bitmap(Image.FromStream(ms));
                 a.MakeTransparent();
                 string name = dt.Rows[i]["NAME"].ToString();
+                string isSourse = dt.Rows[currentButton]["IS_SOURSE"].ToString();
 
                 Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
                 buttonImage b = new buttonImage();
                 but.BackColor = Color.Blue;
                
-                but = b.createButton(name, a) ;
+                but = b.createButton(name, a, isSourse) ;
                 but.MouseClick += new MouseEventHandler(TabChose_Click);
                 flowLayoutPanel1.Controls.Add(but);
                 currentButton++;
@@ -195,11 +226,12 @@ namespace WindowsFormsApp4
             Bitmap a = new Bitmap(Image.FromStream(ms));
             a.MakeTransparent();
             string name = dt.Rows[currentButton]["NAME"].ToString();
+            string isSourse = dt.Rows[currentButton]["IS_SOURSE"].ToString();
 
             Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
             buttonImage b = new buttonImage();
             but.BackColor = Color.Transparent;
-            but = b.createButton(name, a);
+            but = b.createButton(name, a, isSourse);
             but.MouseClick += new MouseEventHandler(TabChose_Click);
             
             flowLayoutPanel1.Controls.Add(but);
@@ -269,7 +301,15 @@ namespace WindowsFormsApp4
             panel5.Visible = false;
         }
 
-        
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = false; 
+        }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxInsert = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,12 +41,15 @@
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.creatButton = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.Exit = new Guna.UI2.WinForms.Guna2Button();
             this.Add = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.nameGroup = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
@@ -57,6 +61,8 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.Giao_dien11;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.guna2CircleButton2);
+            this.panel1.Controls.Add(this.pictureBoxInsert);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
@@ -66,6 +72,18 @@
             this.panel1.Size = new System.Drawing.Size(1069, 666);
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
+            // 
+            // pictureBoxInsert
+            // 
+            this.pictureBoxInsert.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxInsert.Location = new System.Drawing.Point(256, 80);
+            this.pictureBoxInsert.Name = "pictureBoxInsert";
+            this.pictureBoxInsert.ShadowDecoration.Parent = this.pictureBoxInsert;
+            this.pictureBoxInsert.Size = new System.Drawing.Size(550, 375);
+            this.pictureBoxInsert.TabIndex = 8;
+            this.pictureBoxInsert.TabStop = false;
+            this.pictureBoxInsert.Visible = false;
             // 
             // panel4
             // 
@@ -224,6 +242,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.Exit);
             this.panel5.Controls.Add(this.Add);
             this.panel5.Controls.Add(this.guna2PictureBox1);
             this.panel5.Controls.Add(this.nameGroup);
@@ -234,6 +253,22 @@
             this.panel5.TabIndex = 6;
             this.panel5.Visible = false;
             // 
+            // Exit
+            // 
+            this.Exit.CheckedState.Parent = this.Exit;
+            this.Exit.CustomImages.Parent = this.Exit;
+            this.Exit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Exit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Exit.ForeColor = System.Drawing.Color.White;
+            this.Exit.HoverState.Parent = this.Exit;
+            this.Exit.Location = new System.Drawing.Point(82, 253);
+            this.Exit.Name = "Exit";
+            this.Exit.ShadowDecoration.Parent = this.Exit;
+            this.Exit.Size = new System.Drawing.Size(138, 38);
+            this.Exit.TabIndex = 4;
+            this.Exit.Text = "Exit";
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
             // Add
             // 
             this.Add.CheckedState.Parent = this.Add;
@@ -242,7 +277,7 @@
             this.Add.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Add.ForeColor = System.Drawing.Color.White;
             this.Add.HoverState.Parent = this.Add;
-            this.Add.Location = new System.Drawing.Point(183, 253);
+            this.Add.Location = new System.Drawing.Point(246, 253);
             this.Add.Name = "Add";
             this.Add.ShadowDecoration.Parent = this.Add;
             this.Add.Size = new System.Drawing.Size(138, 38);
@@ -291,7 +326,7 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(36, 209);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(48, 209);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(57, 30);
             this.guna2HtmlLabel1.TabIndex = 0;
@@ -304,6 +339,23 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(849, 463);
             this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // guna2CircleButton2
+            // 
+            this.guna2CircleButton2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton2.CheckedState.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.CustomImages.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton2.HoverState.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.Location = new System.Drawing.Point(24, 395);
+            this.guna2CircleButton2.Name = "guna2CircleButton2";
+            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton2.ShadowDecoration.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.Size = new System.Drawing.Size(60, 60);
+            this.guna2CircleButton2.TabIndex = 9;
+            this.guna2CircleButton2.Text = "Thêm hình";
+            this.guna2CircleButton2.Click += new System.EventHandler(this.guna2CircleButton2_Click);
             // 
             // Picture_Dictionary
             // 
@@ -324,6 +376,7 @@
             this.Text = "Picture_Dictionary";
             this.Load += new System.EventHandler(this.Picture_Dictionary_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
@@ -369,5 +422,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button Add;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBoxInsert;
+        private Guna.UI2.WinForms.Guna2Button Exit;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
     }
 }
