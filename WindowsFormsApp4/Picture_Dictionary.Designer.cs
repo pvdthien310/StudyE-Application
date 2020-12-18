@@ -49,7 +49,7 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.addSourse = new Guna.UI2.WinForms.Guna2Button();
             this.Delete = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).BeginInit();
@@ -364,7 +364,10 @@
             // 
             // menuStrip
             // 
-            this.menuStrip.Controls.Add(this.guna2Button1);
+            this.menuStrip.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.menuStrip.BorderRadius = 10;
+            this.menuStrip.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.menuStrip.Controls.Add(this.addSourse);
             this.menuStrip.Controls.Add(this.Delete);
             this.menuStrip.Location = new System.Drawing.Point(13, 34);
             this.menuStrip.Name = "menuStrip";
@@ -373,26 +376,28 @@
             this.menuStrip.TabIndex = 7;
             this.menuStrip.Visible = false;
             // 
-            // guna2Button1
+            // addSourse
             // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(3, 59);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(144, 52);
-            this.guna2Button1.TabIndex = 3;
-            this.guna2Button1.Text = "Thêm hình";
+            this.addSourse.CheckedState.Parent = this.addSourse;
+            this.addSourse.CustomImages.Parent = this.addSourse;
+            this.addSourse.FillColor = System.Drawing.Color.White;
+            this.addSourse.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addSourse.ForeColor = System.Drawing.Color.Black;
+            this.addSourse.HoverState.Parent = this.addSourse;
+            this.addSourse.Location = new System.Drawing.Point(3, 59);
+            this.addSourse.Name = "addSourse";
+            this.addSourse.ShadowDecoration.Parent = this.addSourse;
+            this.addSourse.Size = new System.Drawing.Size(144, 52);
+            this.addSourse.TabIndex = 3;
+            this.addSourse.Text = "Thêm hình";
             // 
             // Delete
             // 
             this.Delete.CheckedState.Parent = this.Delete;
             this.Delete.CustomImages.Parent = this.Delete;
-            this.Delete.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Delete.ForeColor = System.Drawing.Color.White;
+            this.Delete.FillColor = System.Drawing.Color.White;
+            this.Delete.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delete.ForeColor = System.Drawing.Color.Black;
             this.Delete.HoverState.Parent = this.Delete;
             this.Delete.Location = new System.Drawing.Point(3, 3);
             this.Delete.Name = "Delete";
@@ -400,6 +405,7 @@
             this.Delete.Size = new System.Drawing.Size(144, 52);
             this.Delete.TabIndex = 2;
             this.Delete.Text = "Xóa";
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // Picture_Dictionary
             // 
@@ -472,7 +478,7 @@
         private Guna.UI2.WinForms.Guna2Button Exit;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private Guna.UI2.WinForms.Guna2Panel menuStrip;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button addSourse;
         private Guna.UI2.WinForms.Guna2Button Delete;
     }
 }

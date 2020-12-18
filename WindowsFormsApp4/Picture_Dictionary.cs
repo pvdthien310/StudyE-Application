@@ -84,6 +84,19 @@ namespace WindowsFormsApp4
                 menuStrip.Visible = true;
                 menuStrip.Location = new Point(((Guna.UI2.WinForms.Guna2Button)sender).Location.X + 100, ((Guna.UI2.WinForms.Guna2Button)sender).Location.Y + 150);
                 
+                isSourse = ((Guna.UI2.WinForms.Guna2Button)sender).Text;
+                group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
+
+                if (isSourse == "1")
+                {
+                    addSourse.Enabled = false;
+                    Delete.Enabled = false;
+                }
+                else
+                {
+                    addSourse.Enabled = true;
+                    Delete.Enabled = true;
+                }
             }
            
             
@@ -190,7 +203,7 @@ namespace WindowsFormsApp4
                 Bitmap a = new Bitmap(Image.FromStream(ms));
                 a.MakeTransparent();
                 string name = dt.Rows[i]["NAME"].ToString();
-                string isSourse = dt.Rows[currentButton]["IS_SOURSE"].ToString();
+                string isSourse = dt.Rows[i]["IS_SOURSE"].ToString();
 
                 Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
                 buttonImage b = new buttonImage();
@@ -357,6 +370,20 @@ namespace WindowsFormsApp4
 
             }
 
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            cnn.Open();
+            string sql1 = "delete from PICTURE_BUTTON where NAME = ' " + group + "'";
+            using (SqlCommand command = new SqlCommand(sql1, cnn))
+            {
+                command.ExecuteNonQuery();
+            }
+            cnn.Close();
+            menuStrip.Visible = false;
+            flowLayoutPanel1.Controls.Clear();
+            load_Button();
         }
     }
 }
