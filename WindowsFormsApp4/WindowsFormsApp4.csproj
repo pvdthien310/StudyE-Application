@@ -380,5 +380,8 @@
   <ItemGroup>
     <None Include="bin\Debug\iconfinder_icons_add_1564491.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nen.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -51,6 +51,7 @@
             this.menuStrip = new Guna.UI2.WinForms.Guna2Panel();
             this.addSourse = new Guna.UI2.WinForms.Guna2Button();
             this.Delete = new Guna.UI2.WinForms.Guna2Button();
+            this.textName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).BeginInit();
             this.panel2.SuspendLayout();
@@ -65,6 +66,7 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.Giao_dien11;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.textName);
             this.panel1.Controls.Add(this.guna2CircleButton2);
             this.panel1.Controls.Add(this.pictureBoxInsert);
             this.panel1.Controls.Add(this.panel4);
@@ -98,12 +100,12 @@
             // 
             // pictureBoxInsert
             // 
-            this.pictureBoxInsert.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxInsert.BackColor = System.Drawing.Color.White;
             this.pictureBoxInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxInsert.Location = new System.Drawing.Point(261, 80);
+            this.pictureBoxInsert.Location = new System.Drawing.Point(373, 92);
             this.pictureBoxInsert.Name = "pictureBoxInsert";
             this.pictureBoxInsert.ShadowDecoration.Parent = this.pictureBoxInsert;
-            this.pictureBoxInsert.Size = new System.Drawing.Size(550, 375);
+            this.pictureBoxInsert.Size = new System.Drawing.Size(322, 282);
             this.pictureBoxInsert.TabIndex = 8;
             this.pictureBoxInsert.TabStop = false;
             this.pictureBoxInsert.Visible = false;
@@ -215,6 +217,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(94, 42);
             this.pictureBox1.Name = "pictureBox1";
@@ -222,7 +225,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
             // 
             // guna2CircleButton1
             // 
@@ -409,6 +411,18 @@
             this.Delete.Text = "Xóa";
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
+            // textName
+            // 
+            this.textName.BackColor = System.Drawing.Color.White;
+            this.textName.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textName.Location = new System.Drawing.Point(478, 411);
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(102, 44);
+            this.textName.TabIndex = 10;
+            this.textName.Text = "avatar";
+            this.textName.Visible = false;
+            // 
             // Picture_Dictionary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -429,6 +443,7 @@
             this.Text = "Picture_Dictionary";
             this.Load += new System.EventHandler(this.Picture_Dictionary_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -482,5 +497,6 @@
         private Guna.UI2.WinForms.Guna2Panel menuStrip;
         private Guna.UI2.WinForms.Guna2Button addSourse;
         private Guna.UI2.WinForms.Guna2Button Delete;
+        private Guna.UI2.WinForms.Guna2HtmlLabel textName;
     }
 }

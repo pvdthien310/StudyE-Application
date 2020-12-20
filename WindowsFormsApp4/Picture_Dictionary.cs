@@ -40,6 +40,7 @@ namespace WindowsFormsApp4
             if (e.Button == MouseButtons.Left)
             {
                 
+                currentSourse = 0;
                 panel1.Visible = true;
                 group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
                 isSourse = ((Guna.UI2.WinForms.Guna2Button)sender).Text;
@@ -57,16 +58,28 @@ namespace WindowsFormsApp4
                     MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
                     Bitmap a = new Bitmap(Image.FromStream(ms));
                     a.MakeTransparent();
+                    string text = datatable.Rows[currentSourse]["NAME"].ToString();
 
                     if (isSourse == "1")
                     {
                         pictureBox1.Image = a;
                         pictureBox1.Visible = true;
+                        textName.Visible = false;
+                        guna2CircleButton2.Visible = false;
+                        
                     }
                     else
                     {
+                        pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
+                        pictureBox1.Image = null;
+                        pictureBox1.Visible = true;
+                        guna2CircleButton2.Visible = true;
                         pictureBoxInsert.Visible = true;
                         pictureBoxInsert.BackgroundImage = a;
+                        textName.Text = text;
+                        textName.Visible = true;
+
+                       
                     }
 
                 }
@@ -125,6 +138,7 @@ namespace WindowsFormsApp4
                 MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
                 Bitmap a = new Bitmap(Image.FromStream(ms));
                 a.MakeTransparent();
+                string text = datatable.Rows[currentSourse]["NAME"].ToString();
 
                 if (isSourse == "1")
                 {
@@ -133,6 +147,7 @@ namespace WindowsFormsApp4
                 else
                 {
                     pictureBoxInsert.BackgroundImage = a;
+                    textName.Text = text;
                 }
             }
             
@@ -151,14 +166,16 @@ namespace WindowsFormsApp4
                 MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
                 Bitmap a = new Bitmap(Image.FromStream(ms));
                 a.MakeTransparent();
-               
-                if(isSourse == "1")
+                string text = datatable.Rows[currentSourse]["NAME"].ToString();
+
+                if (isSourse == "1")
                 {
                     pictureBox1.Image = a;
                 }
                 else
                 {
                     pictureBoxInsert.BackgroundImage = a;
+                    textName.Text = text;
                 }
             }
                 
@@ -368,19 +385,23 @@ namespace WindowsFormsApp4
                 }
                 if (datatable.Rows.Count > 0)
                 {
-                    MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
+                    MemoryStream ms = new MemoryStream((byte[])datatable.Rows[0]["ENCODE"]);
                     Bitmap a = new Bitmap(Image.FromStream(ms));
                     a.MakeTransparent();
+                    string text = datatable.Rows[0]["NAME"].ToString();
 
                     if (isSourse == "1")
                     {
                         pictureBox1.Image = a;
                         pictureBox1.Visible = true;
+                        textName.Visible = false;
                     }
                     else
                     {
                         pictureBoxInsert.Visible = true;
                         pictureBoxInsert.BackgroundImage = a;
+                        textName.Text = text;
+                        textName.Visible = true;
                     }
 
                 }
@@ -411,9 +432,7 @@ namespace WindowsFormsApp4
 
             using (SqlCommand command = new SqlCommand(sql, cnn))
             {
-
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = group;
-
                 command.ExecuteNonQuery();
             }
 
