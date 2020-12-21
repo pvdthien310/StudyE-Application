@@ -15,8 +15,9 @@ namespace WindowsFormsApp4
     class SupportUtility
     {
         // DESKTOP-E6SJOH8
-        public static SqlConnection MyCnt = new SqlConnection(@"Server=tcp:study-e.database.windows.net,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=study-e;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-        //public  static SqlConnection MyCnt = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=test;Integrated Security=True");
+        
+        //public static SqlConnection MyCnt = new SqlConnection(@"Server=tcp:study-e.database.windows.net,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=study-e;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        public  static SqlConnection MyCnt = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True");
         
         static string HostEmail = "19522216@gm.uit.edu.vn";
         static string HostPass = "15062001minhthang";
