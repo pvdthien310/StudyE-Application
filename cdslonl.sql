@@ -1,3 +1,13 @@
+create table UserAccount
+(
+ID int not null primary key,
+UserName varchar(255) not null,
+PassWord varchar(255) not null,
+Email varchar(255),
+IsSave int not null
+)
+
+
 create table RoomList
 (
 RoomID nchar(20) not null,
@@ -20,10 +30,10 @@ ALTER TABLE RoomList
  AnswerD nvarchar(1000),
  Correctindex nvarchar(100)
  )
- ALTER TABLE RoomQuestions
- ADD CONSTRAINT fk_Roomquestion
-  FOREIGN KEY (RoomID)
-  REFERENCES RoomList (RoomID);
+ --ALTER TABLE RoomQuestions
+ --ADD CONSTRAINT fk_Roomquestion
+  --FOREIGN KEY (RoomID)
+  --REFERENCES RoomList (RoomID);
 
   SELECT * FROM ROOMLIST
   INSERT INTO RoomList VALUES ('123','1','2','1','1')
@@ -45,7 +55,8 @@ ALTER TABLE RoomList
 		INSERT INTO RoomList VALUES ('9991','7','8','0','0')
 		INSERT INTO RoomList VALUES ('9861','7','8','0','2')
 		INSERT INTO RoomList VALUES ('8651','7','8','0','2')
-		delete from roomlist
+		--delete from roomlist
+		delete from RoomList where roomid = '999'
 UPDATE ROOMLIST SET ISCLOSED = '1' WHERE ROOMID = '123'
 
 	INSERT INTO RoomQuestions VALUES ('123','1','cau hoi ne ba?',' cau a ne','cau b ne','cau c ne','cau d ne','1')
