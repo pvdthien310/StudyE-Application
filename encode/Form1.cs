@@ -60,7 +60,7 @@ namespace encode
                                 command.ExecuteNonQuery();
                             }
 
-                            /* i++;
+                             /*i++;
                              string tem = Path.GetFileName(temp);
                              byte[] img = null;
                              FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
@@ -68,8 +68,8 @@ namespace encode
                              img = br.ReadBytes((int)fs.Length);
                              string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES ('" + new DirectoryInfo(temp).Parent.Name + "',' " + i + "',' " + tem.Remove(tem.Length - 4, 4) + "','" + img + "')";
 
-                             sw.WriteLine(sql);*/
-
+                             sw.WriteLine(sql);
+                            */
 
                         }
                     }
