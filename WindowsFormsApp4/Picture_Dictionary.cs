@@ -457,6 +457,24 @@ namespace WindowsFormsApp4
         {
             menuStrip.Visible = false;
         }
+
+        private void deleteOneSourse_Click(object sender, EventArgs e)
+        {
+            cnn.Open();
+
+            string sql = "delete from PICTURE_SOURSE where NAME = @name";
+
+            using (SqlCommand command = new SqlCommand(sql, cnn))
+            {
+
+                command.Parameters.Add("@name", SqlDbType.VarChar).Value = textName.Text;
+
+                command.ExecuteNonQuery();
+            }
+            
+            cnn.Close();
+            //datatable.Rows.Remove()
+        }
     }
 }
 
