@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.pictureBoxInsert = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -49,9 +50,7 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip = new Guna.UI2.WinForms.Guna2Panel();
-            this.addSourse = new Guna.UI2.WinForms.Guna2Button();
             this.Delete = new Guna.UI2.WinForms.Guna2Button();
-            this.textName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).BeginInit();
             this.panel2.SuspendLayout();
@@ -73,11 +72,23 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1057, 666);
+            this.panel1.Size = new System.Drawing.Size(1055, 666);
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
+            // 
+            // textName
+            // 
+            this.textName.BackColor = System.Drawing.Color.White;
+            this.textName.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textName.Location = new System.Drawing.Point(478, 411);
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(102, 44);
+            this.textName.TabIndex = 10;
+            this.textName.Text = "avatar";
+            this.textName.Visible = false;
             // 
             // guna2CircleButton2
             // 
@@ -365,35 +376,20 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(849, 463);
             this.flowLayoutPanel1.TabIndex = 4;
+            this.flowLayoutPanel1.Click += new System.EventHandler(this.flowLayoutPanel1_Click);
             // 
             // menuStrip
             // 
             this.menuStrip.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.menuStrip.BorderRadius = 10;
             this.menuStrip.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.menuStrip.Controls.Add(this.addSourse);
             this.menuStrip.Controls.Add(this.Delete);
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.ShadowDecoration.Parent = this.menuStrip;
-            this.menuStrip.Size = new System.Drawing.Size(151, 114);
+            this.menuStrip.Size = new System.Drawing.Size(151, 59);
             this.menuStrip.TabIndex = 7;
             this.menuStrip.Visible = false;
-            // 
-            // addSourse
-            // 
-            this.addSourse.CheckedState.Parent = this.addSourse;
-            this.addSourse.CustomImages.Parent = this.addSourse;
-            this.addSourse.FillColor = System.Drawing.Color.White;
-            this.addSourse.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addSourse.ForeColor = System.Drawing.Color.Black;
-            this.addSourse.HoverState.Parent = this.addSourse;
-            this.addSourse.Location = new System.Drawing.Point(3, 59);
-            this.addSourse.Name = "addSourse";
-            this.addSourse.ShadowDecoration.Parent = this.addSourse;
-            this.addSourse.Size = new System.Drawing.Size(144, 52);
-            this.addSourse.TabIndex = 3;
-            this.addSourse.Text = "Thêm hình";
             // 
             // Delete
             // 
@@ -410,18 +406,6 @@
             this.Delete.TabIndex = 2;
             this.Delete.Text = "Xóa";
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
-            // 
-            // textName
-            // 
-            this.textName.BackColor = System.Drawing.Color.White;
-            this.textName.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textName.Location = new System.Drawing.Point(478, 411);
-            this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(102, 44);
-            this.textName.TabIndex = 10;
-            this.textName.Text = "avatar";
-            this.textName.Visible = false;
             // 
             // Picture_Dictionary
             // 
@@ -442,6 +426,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Picture_Dictionary";
             this.Load += new System.EventHandler(this.Picture_Dictionary_Load);
+            this.Click += new System.EventHandler(this.Picture_Dictionary_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).EndInit();
@@ -495,7 +480,6 @@
         private Guna.UI2.WinForms.Guna2Button Exit;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private Guna.UI2.WinForms.Guna2Panel menuStrip;
-        private Guna.UI2.WinForms.Guna2Button addSourse;
         private Guna.UI2.WinForms.Guna2Button Delete;
         private Guna.UI2.WinForms.Guna2HtmlLabel textName;
     }

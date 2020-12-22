@@ -18,9 +18,10 @@ namespace WindowsFormsApp4
     {
         private mainForm Parent;
         private string group = "";
-        private int currentPicture = 0;
+        //private int currentPicture = 0;
         private int currentSourse = 0;
         private string isSourse = "1";
+        private int numberOfButton = 0;
         SqlConnection cnn = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True"); //của thức
         //SqlConnection cnn = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True"); // của thắng
         DataTable datatable = new DataTable();
@@ -39,7 +40,7 @@ namespace WindowsFormsApp4
         {
             if (e.Button == MouseButtons.Left)
             {
-                
+                menuStrip.Visible = false;
                 currentSourse = 0;
                 panel1.Visible = true;
                 group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
@@ -85,7 +86,9 @@ namespace WindowsFormsApp4
                 }
                 else 
                 {
-                    pictureBox1.Image = null;
+                    textName.Text = "";
+                    pictureBox1.Visible = true;
+                    pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
                 }
                        
                
@@ -102,12 +105,12 @@ namespace WindowsFormsApp4
 
                 if (isSourse == "1")
                 {
-                    addSourse.Enabled = false;
+                    
                     Delete.Enabled = false;
                 }
                 else
                 {
-                    addSourse.Enabled = true;
+                   
                     Delete.Enabled = true;
                 }
             }
@@ -121,7 +124,7 @@ namespace WindowsFormsApp4
         private void Pause_Click(object sender, EventArgs e)
         {
             panel1.Visible = false;
-            currentPicture = 0;
+            currentSourse = 0;
             pictureBoxInsert.Visible = false;
             pictureBox1.Visible = false;
         }
@@ -203,7 +206,6 @@ namespace WindowsFormsApp4
         {
             load_Button();
         }
-        private int currentButton = 0;
         private void load_Button()
         {
             cnn.Open();
@@ -213,7 +215,7 @@ namespace WindowsFormsApp4
             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
             DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
             da.Fill(dt);
-
+            numberOfButton = 0;
             for(int i=0; i<dt.Rows.Count; i++)
             {
                 MemoryStream ms = new MemoryStream((byte[])dt.Rows[i]["ENCODE"]);
@@ -229,7 +231,7 @@ namespace WindowsFormsApp4
                 but = b.createButton(name, a, isSourse) ;
                 but.MouseClick += new MouseEventHandler(TabChose_Click);
                 flowLayoutPanel1.Controls.Add(but);
-                currentButton++;
+                numberOfButton++;
             }
            
           
@@ -251,16 +253,16 @@ namespace WindowsFormsApp4
             da.Fill(dt);
 
 
-            MemoryStream ms = new MemoryStream((byte[])dt.Rows[currentButton]["ENCODE"]);
+            MemoryStream ms = new MemoryStream((byte[])dt.Rows[numberOfButton-1]["ENCODE"]);
             Bitmap a = new Bitmap(Image.FromStream(ms));
             a.MakeTransparent();
-            string name = dt.Rows[currentButton]["NAME"].ToString();
-            string isSourse = dt.Rows[currentButton]["IS_SOURSE"].ToString();
+            string name = dt.Rows[numberOfButton-1]["NAME"].ToString();
+            string isSourse = dt.Rows[numberOfButton-1]["IS_SOURSE"].ToString();
 
             Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
             buttonImage b = new buttonImage();
             but.BackColor = Color.Transparent;
-            but = b.createButton(name, a, isSourse);
+            but = b.createButton(name, a, "0");
             but.MouseClick += new MouseEventHandler(TabChose_Click);
             
             flowLayoutPanel1.Controls.Add(but);
@@ -317,16 +319,16 @@ namespace WindowsFormsApp4
             cnn.Open();
             using (SqlCommand command = new SqlCommand(sql, cnn))
             {
-                command.Parameters.Add("@id", SqlDbType.Int).Value = currentButton+1;
+                command.Parameters.Add("@id", SqlDbType.Int).Value = numberOfButton+1;
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = nameGroup.Text;
                 command.Parameters.Add("@encode", SqlDbType.Image).Value = img;
                 command.Parameters.Add("@isSourse", SqlDbType.TinyInt).Value = 0;
                 command.ExecuteNonQuery();
             }
             cnn.Close();
-            
+            numberOfButton++;
             load_Button(0);
-            currentButton++;
+            
             panel5.Visible = false;
         }
 
@@ -438,11 +440,22 @@ namespace WindowsFormsApp4
 
             cnn.Close();
             menuStrip.Visible = false;
-
+            numberOfButton--;
             flowLayoutPanel1.Visible = false;
             flowLayoutPanel1.Controls.Clear();
+
             load_Button();
             flowLayoutPanel1.Visible = true;
+        }
+
+        private void Picture_Dictionary_Click(object sender, EventArgs e)
+        {
+            menuStrip.Visible = false;
+        }
+
+        private void flowLayoutPanel1_Click(object sender, EventArgs e)
+        {
+            menuStrip.Visible = false;
         }
     }
 }
