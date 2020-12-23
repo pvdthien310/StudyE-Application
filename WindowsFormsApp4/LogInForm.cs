@@ -46,6 +46,7 @@ namespace WindowsFormsApp4
                             inRoom = new RoomChose(this.Name_textbox.Text);
                             this.Hide();
                             inRoom.Show();
+                            SupportUtility.SetSignIn(Name_textbox.Text);
                         }
                         else
                         {
