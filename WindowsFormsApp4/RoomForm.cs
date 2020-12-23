@@ -96,7 +96,7 @@ namespace WindowsFormsApp4
             {
                 if (room_info.IsReady == 1 && room_info.IsStart == 1)
                 {
-                    MessageBox.Show("Tro choi bat dau !! Khach");
+                    
                     check_timer.Enabled = false;
                     Start game = new Start(this, game_host);
                     this.Hide();
