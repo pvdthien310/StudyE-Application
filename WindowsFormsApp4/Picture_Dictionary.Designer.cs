@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.paneloneSourse = new Guna.UI2.WinForms.Guna2Panel();
+            this.deleteOneSourse = new Guna.UI2.WinForms.Guna2Button();
+            this.textName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.pictureBoxInsert = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,16 +45,22 @@
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.creatButton = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.Exit = new Guna.UI2.WinForms.Guna2Button();
             this.Add = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.nameGroup = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.menuStrip = new Guna.UI2.WinForms.Guna2Panel();
+            this.Delete = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
+            this.paneloneSourse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -57,15 +68,92 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.Giao_dien11;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.paneloneSourse);
+            this.panel1.Controls.Add(this.textName);
+            this.panel1.Controls.Add(this.guna2CircleButton2);
+            this.panel1.Controls.Add(this.pictureBoxInsert);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(2, 0);
+            this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1056, 666);
+            this.panel1.Size = new System.Drawing.Size(1055, 666);
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
+            // 
+            // paneloneSourse
+            // 
+            this.paneloneSourse.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.paneloneSourse.BorderRadius = 10;
+            this.paneloneSourse.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.paneloneSourse.Controls.Add(this.deleteOneSourse);
+            this.paneloneSourse.Location = new System.Drawing.Point(0, 66);
+            this.paneloneSourse.Name = "paneloneSourse";
+            this.paneloneSourse.ShadowDecoration.Parent = this.paneloneSourse;
+            this.paneloneSourse.Size = new System.Drawing.Size(151, 60);
+            this.paneloneSourse.TabIndex = 8;
+            this.paneloneSourse.Visible = false;
+            // 
+            // deleteOneSourse
+            // 
+            this.deleteOneSourse.CheckedState.Parent = this.deleteOneSourse;
+            this.deleteOneSourse.CustomImages.Parent = this.deleteOneSourse;
+            this.deleteOneSourse.FillColor = System.Drawing.Color.White;
+            this.deleteOneSourse.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteOneSourse.ForeColor = System.Drawing.Color.Black;
+            this.deleteOneSourse.HoverState.Parent = this.deleteOneSourse;
+            this.deleteOneSourse.Location = new System.Drawing.Point(3, 3);
+            this.deleteOneSourse.Name = "deleteOneSourse";
+            this.deleteOneSourse.ShadowDecoration.Parent = this.deleteOneSourse;
+            this.deleteOneSourse.Size = new System.Drawing.Size(144, 52);
+            this.deleteOneSourse.TabIndex = 2;
+            this.deleteOneSourse.Text = "Xóa";
+            this.deleteOneSourse.Click += new System.EventHandler(this.deleteOneSourse_Click);
+            // 
+            // textName
+            // 
+            this.textName.BackColor = System.Drawing.Color.White;
+            this.textName.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.textName.Location = new System.Drawing.Point(478, 411);
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(102, 44);
+            this.textName.TabIndex = 10;
+            this.textName.Text = "avatar";
+            this.textName.Visible = false;
+            // 
+            // guna2CircleButton2
+            // 
+            this.guna2CircleButton2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton2.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.iconfinder_icons_add_1564491;
+            this.guna2CircleButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2CircleButton2.CheckedState.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.CustomImages.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton2.HoverState.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.Location = new System.Drawing.Point(24, 395);
+            this.guna2CircleButton2.Name = "guna2CircleButton2";
+            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton2.ShadowDecoration.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.Size = new System.Drawing.Size(60, 60);
+            this.guna2CircleButton2.TabIndex = 9;
+            this.guna2CircleButton2.Click += new System.EventHandler(this.guna2CircleButton2_Click);
+            // 
+            // pictureBoxInsert
+            // 
+            this.pictureBoxInsert.BackColor = System.Drawing.Color.White;
+            this.pictureBoxInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxInsert.Location = new System.Drawing.Point(373, 92);
+            this.pictureBoxInsert.Name = "pictureBoxInsert";
+            this.pictureBoxInsert.ShadowDecoration.Parent = this.pictureBoxInsert;
+            this.pictureBoxInsert.Size = new System.Drawing.Size(322, 282);
+            this.pictureBoxInsert.TabIndex = 8;
+            this.pictureBoxInsert.TabStop = false;
+            this.pictureBoxInsert.Visible = false;
+            this.pictureBoxInsert.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxInsert_MouseClick);
             // 
             // panel4
             // 
@@ -173,6 +261,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(94, 42);
             this.pictureBox1.Name = "pictureBox1";
@@ -223,6 +312,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.Exit);
             this.panel5.Controls.Add(this.Add);
             this.panel5.Controls.Add(this.guna2PictureBox1);
             this.panel5.Controls.Add(this.nameGroup);
@@ -233,6 +323,22 @@
             this.panel5.TabIndex = 6;
             this.panel5.Visible = false;
             // 
+            // Exit
+            // 
+            this.Exit.CheckedState.Parent = this.Exit;
+            this.Exit.CustomImages.Parent = this.Exit;
+            this.Exit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Exit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Exit.ForeColor = System.Drawing.Color.White;
+            this.Exit.HoverState.Parent = this.Exit;
+            this.Exit.Location = new System.Drawing.Point(82, 253);
+            this.Exit.Name = "Exit";
+            this.Exit.ShadowDecoration.Parent = this.Exit;
+            this.Exit.Size = new System.Drawing.Size(138, 38);
+            this.Exit.TabIndex = 4;
+            this.Exit.Text = "Exit";
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
             // Add
             // 
             this.Add.CheckedState.Parent = this.Add;
@@ -241,7 +347,7 @@
             this.Add.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Add.ForeColor = System.Drawing.Color.White;
             this.Add.HoverState.Parent = this.Add;
-            this.Add.Location = new System.Drawing.Point(183, 253);
+            this.Add.Location = new System.Drawing.Point(246, 253);
             this.Add.Name = "Add";
             this.Add.ShadowDecoration.Parent = this.Add;
             this.Add.Size = new System.Drawing.Size(138, 38);
@@ -285,12 +391,13 @@
             this.nameGroup.ShadowDecoration.Parent = this.nameGroup;
             this.nameGroup.Size = new System.Drawing.Size(254, 36);
             this.nameGroup.TabIndex = 1;
+            this.nameGroup.TextChanged += new System.EventHandler(this.nameGroup_TextChanged);
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(36, 209);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(48, 209);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(57, 30);
             this.guna2HtmlLabel1.TabIndex = 0;
@@ -303,6 +410,36 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(849, 463);
             this.flowLayoutPanel1.TabIndex = 4;
+            this.flowLayoutPanel1.Click += new System.EventHandler(this.flowLayoutPanel1_Click);
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.menuStrip.BorderRadius = 10;
+            this.menuStrip.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.menuStrip.Controls.Add(this.Delete);
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.ShadowDecoration.Parent = this.menuStrip;
+            this.menuStrip.Size = new System.Drawing.Size(151, 60);
+            this.menuStrip.TabIndex = 7;
+            this.menuStrip.Visible = false;
+            // 
+            // Delete
+            // 
+            this.Delete.CheckedState.Parent = this.Delete;
+            this.Delete.CustomImages.Parent = this.Delete;
+            this.Delete.FillColor = System.Drawing.Color.White;
+            this.Delete.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delete.ForeColor = System.Drawing.Color.Black;
+            this.Delete.HoverState.Parent = this.Delete;
+            this.Delete.Location = new System.Drawing.Point(3, 3);
+            this.Delete.Name = "Delete";
+            this.Delete.ShadowDecoration.Parent = this.Delete;
+            this.Delete.Size = new System.Drawing.Size(144, 52);
+            this.Delete.TabIndex = 2;
+            this.Delete.Text = "Xóa";
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // Picture_Dictionary
             // 
@@ -313,6 +450,7 @@
             this.ClientSize = new System.Drawing.Size(1058, 665);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.creatButton);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -322,12 +460,17 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Picture_Dictionary";
             this.Load += new System.EventHandler(this.Picture_Dictionary_Load);
+            this.Click += new System.EventHandler(this.Picture_Dictionary_Click);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.paneloneSourse.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.menuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -368,5 +511,13 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button Add;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBoxInsert;
+        private Guna.UI2.WinForms.Guna2Button Exit;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
+        private Guna.UI2.WinForms.Guna2Panel menuStrip;
+        private Guna.UI2.WinForms.Guna2Button Delete;
+        private Guna.UI2.WinForms.Guna2HtmlLabel textName;
+        private Guna.UI2.WinForms.Guna2Panel paneloneSourse;
+        private Guna.UI2.WinForms.Guna2Button deleteOneSourse;
     }
 }
