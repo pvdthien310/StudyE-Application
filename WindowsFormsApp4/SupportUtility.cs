@@ -16,8 +16,8 @@ namespace WindowsFormsApp4
     {
         // DESKTOP-E6SJOH8
         
-        //public static SqlConnection MyCnt = new SqlConnection(@"Server=tcp:study-e.database.windows.net,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=study-e;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-        public  static SqlConnection MyCnt = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True");
+        public static SqlConnection MyCnt = new SqlConnection(@"Server=tcp:13.70.2.204,1433,1433;Initial Catalog=test;Persist Security Info=False;User ID=sa;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
+        //public  static SqlConnection MyCnt = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True");
         
         static string HostEmail = "19522216@gm.uit.edu.vn";
         static string HostPass = "15062001minhthang";
@@ -190,7 +190,7 @@ namespace WindowsFormsApp4
         public static void SaveAccount(string Name, string Pass)
         {
             MyCnt.Open();
-            string replaceString = "Update UserAccount set IsSave = '" + "1" + "' where Email = '" + Name + "' or UserName = '" + Name + "'";
+            string replaceString = "Update UserAccount set IsSave = '" + "1" + "' where convert(varbinary,Email) = convert(varbinary,'" + Name + "') or convert(varbinary,UserName) = convert(varbinary, '" + Name + "')";
             SqlCommand com2 = new SqlCommand(replaceString, MyCnt);
             com2.ExecuteNonQuery();
             MyCnt.Close();
