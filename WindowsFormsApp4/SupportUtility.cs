@@ -252,7 +252,7 @@ namespace WindowsFormsApp4
         public static void SetSignIn(string Name)
         {
             MyCnt.Open();
-            string setSignIn = "Update UserAccount set IsSignIn = '" + "1" + "' where convert(varbinary,Email) = convert(varbinary,'" + Name + "') or convert(varbinary,Email) = convert(varbinary,'" + Name + "')";
+            string setSignIn = "Update UserAccount set IsSignIn = '" + "1" + "' where convert(varbinary,UserName) = convert(varbinary,'" + Name + "') or convert(varbinary,Email) = convert(varbinary,'" + Name + "')";
             SqlCommand com = new SqlCommand(setSignIn, MyCnt);
             com.ExecuteNonQuery();
             MyCnt.Close();
@@ -260,7 +260,7 @@ namespace WindowsFormsApp4
         public static void UnSignIn(string Name)
         {
             MyCnt.Open();
-            string setUnSignIn = "Update UserAccount set IsSignIn = '" + "" + "' where convert(varbinary,Email) = convert(varbinary,'" + Name + "') or convert(varbinary,Email) = convert(varbinary,'" + Name + "')";
+            string setUnSignIn = "Update UserAccount set IsSignIn = '" + "0" + "' where convert(varbinary,UserName) = convert(varbinary,'" + Name + "') or convert(varbinary,Email) = convert(varbinary,'" + Name + "')";
             SqlCommand com = new SqlCommand(setUnSignIn, MyCnt);
             com.ExecuteNonQuery();
             MyCnt.Close();
