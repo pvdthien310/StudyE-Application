@@ -13,6 +13,8 @@ namespace WindowsFormsApp4
 {
     public partial class RoomChose : Form
     {
+        //parent
+        LogInForm loginForm;
         //property
         public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:40.83.97.14,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=sa;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
         //public static SqlConnection Mycnt = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True");
@@ -32,6 +34,13 @@ namespace WindowsFormsApp4
             InitializeComponent();
             this.PlayerName = playerName;
             DoubleBuffered = true;
+        }
+        public RoomChose(string playerName,LogInForm loginForm)
+        {
+            InitializeComponent();
+            this.PlayerName = playerName;
+            DoubleBuffered = true;
+            this.loginForm = loginForm;
         }
 
         public void RoomChose_Load(object sender, EventArgs e)
@@ -283,6 +292,13 @@ namespace WindowsFormsApp4
             SqlCommand cmd = new SqlCommand(query, Mycnt);
             cmd.ExecuteNonQuery();
             Mycnt.Close();
+        }
+
+        private void Logout_button_Click(object sender, EventArgs e)
+        {
+            loginForm.Show();
+            SupportUtility.UnSignIn(PlayerName);
+            this.Dispose();
         }
     }
 }

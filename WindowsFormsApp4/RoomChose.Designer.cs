@@ -33,6 +33,7 @@
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.Logout_button = new Guna.UI2.WinForms.Guna2CircleButton();
             this.SuspendLayout();
             // 
             // guna2CircleButton1
@@ -105,6 +106,23 @@
             this.guna2Button2.Text = "Reset";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
+            // Logout_button
+            // 
+            this.Logout_button.BackColor = System.Drawing.Color.Transparent;
+            this.Logout_button.CheckedState.Parent = this.Logout_button;
+            this.Logout_button.CustomImages.Parent = this.Logout_button;
+            this.Logout_button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Logout_button.ForeColor = System.Drawing.Color.White;
+            this.Logout_button.HoverState.Parent = this.Logout_button;
+            this.Logout_button.Location = new System.Drawing.Point(12, 12);
+            this.Logout_button.Name = "Logout_button";
+            this.Logout_button.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Logout_button.ShadowDecoration.Parent = this.Logout_button;
+            this.Logout_button.Size = new System.Drawing.Size(69, 57);
+            this.Logout_button.TabIndex = 5;
+            this.Logout_button.Text = "Log Out";
+            this.Logout_button.Click += new System.EventHandler(this.Logout_button_Click);
+            // 
             // RoomChose
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,6 +130,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.Logout_button);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2CircleButton2);
@@ -131,5 +150,6 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2CircleButton Logout_button;
     }
 }

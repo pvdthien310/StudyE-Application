@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApp4
 {
     public partial class LogInForm : Form
@@ -40,9 +41,18 @@ namespace WindowsFormsApp4
                 {
                     if (SupportUtility.IsCorrectAccount(this.Name_textbox.Text, this.Pass_textbox.Text))
                     {
-                        inRoom = new RoomChose(this.Name_textbox.Text);
-                        this.Hide();
-                        inRoom.Show();
+                        if (!SupportUtility.IsSignIn(Name_textbox.Text))
+                        {
+                            //inRoom = new RoomChose(this.Name_textbox.Text);
+                            inRoom = new RoomChose(this.Name_textbox.Text, this);
+                            this.Hide();
+                            inRoom.Show();
+                            SupportUtility.SetSignIn(Name_textbox.Text);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tài khoản đang được sử dụng");
+                        }    
                     }
                     else
                     {
@@ -119,18 +129,27 @@ namespace WindowsFormsApp4
         private void LogInForm_Activated(object sender, EventArgs e)
         {
             this.Name_textbox.Focus();
-            DataTable SavedAccount = new DataTable();
-            SavedAccount = SupportUtility.FindSavedAccount();
-            if(SavedAccount.Rows.Count>0)
+            //DataTable SavedAccount = new DataTable();
+            //SavedAccount = SupportUtility.FindSavedAccount();
+            //if(SavedAccount.Rows.Count>0)
+            //{
+            //    Name_textbox.Text = SavedAccount.Rows[0]["UserName"].ToString();
+            //    Pass_textbox.Text = SavedAccount.Rows[0]["PassWord"].ToString();
+            //    Save_checkbox.Checked = true;
+            //}    
+            //else
+            //{
+            //    Save_checkbox.Checked = false;
+            //}    
+            string UserNameSaved = "";
+            string PassSave = "";
+            SupportUtility.FindSavedAccount(ref UserNameSaved, ref PassSave);
+            if(UserNameSaved != null)
             {
-                Name_textbox.Text = SavedAccount.Rows[0]["UserName"].ToString();
-                Pass_textbox.Text = SavedAccount.Rows[0]["PassWord"].ToString();
+                Name_textbox.Text = UserNameSaved;
+                Pass_textbox.Text = PassSave;
                 Save_checkbox.Checked = true;
-            }    
-            else
-            {
-                Save_checkbox.Checked = false;
-            }    
+            }
 
         }
 
@@ -150,11 +169,13 @@ namespace WindowsFormsApp4
             }
             else
             {
-                DataTable savedAccount = SupportUtility.FindSavedAccount();
-                if(savedAccount.Rows.Count>0)
-                {
-                    SupportUtility.UnSaveAccount(savedAccount.Rows[0]["UserName"].ToString());
-                }                 
+                //string dataSava = "";
+                //DataTable savedAccount = SupportUtility.FindSavedAccount();
+                //if(savedAccount.Rows.Count>0)
+                //{
+                //    SupportUtility.UnSaveAccount(savedAccount.Rows[0]["UserName"].ToString());
+                //}                 
+                SupportUtility.UnSaveAccount();
             }
             
         }
