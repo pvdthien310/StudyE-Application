@@ -41,6 +41,7 @@
             this.guna2Button_Ready = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button_Start = new Guna.UI2.WinForms.Guna2Button();
             this.label_readycheck = new System.Windows.Forms.Label();
+            this.checklabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_test)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,6 +167,15 @@
             this.label_readycheck.TabIndex = 5;
             this.label_readycheck.Text = "label1";
             // 
+            // checklabel
+            // 
+            this.checklabel.BackColor = System.Drawing.Color.Transparent;
+            this.checklabel.Location = new System.Drawing.Point(176, 167);
+            this.checklabel.Name = "checklabel";
+            this.checklabel.Size = new System.Drawing.Size(86, 15);
+            this.checklabel.TabIndex = 6;
+            this.checklabel.Text = "guna2HtmlLabel1";
+            // 
             // RoomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +183,7 @@
             this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._111;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.checklabel);
             this.Controls.Add(this.label_readycheck);
             this.Controls.Add(this.guna2Button_Start);
             this.Controls.Add(this.guna2Button_Ready);
@@ -202,5 +213,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button_Ready;
         private Guna.UI2.WinForms.Guna2Button guna2Button_Start;
         private System.Windows.Forms.Label label_readycheck;
+        private Guna.UI2.WinForms.Guna2HtmlLabel checklabel;
     }
 }

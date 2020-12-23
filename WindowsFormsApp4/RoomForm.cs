@@ -57,34 +57,119 @@ namespace WindowsFormsApp4
         }
         private void timer_tick(object sender, EventArgs e)
         {
-            if (ishost == 1)
+            string query, result;
+            SqlCommand com;
+            if (Mycnt.State != ConnectionState.Open)
             {
-                string query = string.Format("Select Count(*) from RoomList Where RoomID ='{0}' and IsReady ='1' and IsStart = '0'", room_info.RoomID);
                 Mycnt.Open();
-                SqlCommand com = new SqlCommand(query, Mycnt);
-                string result = com.ExecuteScalar().ToString();
-                if ( result == "1")
-                label_readycheck.Text = "Vao thoi con di lon";
-                else label_readycheck.Text = "Doi thu chua san sang ong noi oi ";
-                Mycnt.Close();
-
             }
+            query = string.Format("Select * from Roomlist Where RoomID = '{0}' ", room_info.RoomID);
+            com = new SqlCommand(query, Mycnt);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            Mycnt.Close();
+            da.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                room_info.RoomID = dt.Rows[0]["RoomID"].ToString();
+                room_info.HostID = dt.Rows[0]["HostID"].ToString();
+                room_info.GuestID = dt.Rows[0]["GuestID"].ToString();
+                room_info.IsClosed = Convert.ToInt32(dt.Rows[0]["IsClosed"]);
+                room_info.IsReady = Convert.ToInt32(dt.Rows[0]["IsReady"]);
+                room_info.IsStart = Convert.ToInt32(dt.Rows[0]["IsStart"]);
+            }
+
+
+            if ( ishost == 1)
+            {
+                if (room_info.IsReady == 1 && room_info.IsStart == 0)
+                {
+                    label_readycheck.Text = "Vao thoi con di lon";
+                  
+                }
+                else label_readycheck.Text = "Doi thu chua san sang ong noi oi ";
+            }
+
             else if (ishost == 0)
             {
-                string query = string.Format("Select Count(*) from RoomList Where RoomID ='{0}' and IsReady ='1' and IsStart = '1'", room_info.RoomID);
-                Mycnt.Open();
-                SqlCommand com = new SqlCommand(query, Mycnt);
-                string result = com.ExecuteScalar().ToString();
-                Mycnt.Close();
-                if (result =="1")
+                if (room_info.IsReady == 1 && room_info.IsStart == 1)
                 {
-                    MessageBox.Show("Tro choi bat dau");
+                    MessageBox.Show("Tro choi bat dau !! Khach");
+                    check_timer.Enabled = false;
                 }
-              
-                
             }
-            
-            
+
+            if (room_info.HostID == Playername && room_info.GuestID == "")
+            {
+                if (ishost == 0)
+                {
+                    ishost = 1;
+                    guna2Button_Ready.Enabled = false;
+                    guna2Button_Start.Enabled = true;
+                    room_info.GuestID = "";
+                    room_info.HostID = Playername;
+                    room_info.IsClosed = room_info.IsReady = room_info.IsStart = 0;
+                }
+            }
+            string check ="";
+            check += room_info.RoomID.ToString() + " " + room_info.HostID.ToString() + " " +room_info.GuestID.ToString() + " " +room_info.IsClosed.ToString() + " " + room_info.IsReady.ToString() + " " + room_info.IsStart.ToString() + " ";
+
+            checklabel.Text = check;
+
+
+
+            //if (ishost == 1)
+            //{
+            //     query = string.Format("Select Count(*) from RoomList Where RoomID ='{0}' and IsReady ='1' and IsStart = '0'", room_info.RoomID);
+            //    if (Mycnt.State != ConnectionState.Open)
+            //    {
+            //        Mycnt.Open();
+            //    }
+            //    com = new SqlCommand(query, Mycnt);
+            //     result = com.ExecuteScalar().ToString();
+            //    if ( result == "1")
+            //    label_readycheck.Text = "Vao thoi con di lon";
+            //    else label_readycheck.Text = "Doi thu chua san sang ong noi oi ";
+            //    Mycnt.Close();
+
+            //}
+            //else if (ishost == 0)
+            //{
+            //     query = string.Format("Select Count(*) from RoomList Where RoomID ='{0}' and IsReady ='1' and IsStart = '1'", room_info.RoomID);
+            //    if (Mycnt.State != ConnectionState.Open)
+            //    {
+            //        Mycnt.Open();
+            //    }
+            //    com = new SqlCommand(query, Mycnt);
+            //     result = com.ExecuteScalar().ToString();
+            //    Mycnt.Close();
+            //    if (result =="1")
+            //    {
+            //        MessageBox.Show("Tro choi bat dau");
+            //    }
+
+
+            //}
+
+            //query = string.Format("Select Count(*) from RoomList Where RoomID ='{0}' and HostID = '{1}' and GuestID =''",room_info.RoomID,Playername);
+            //if (Mycnt.State != ConnectionState.Open)
+            //{
+            //    Mycnt.Open();
+            //}
+            //com = new SqlCommand(query, Mycnt);
+            // result = com.ExecuteScalar().ToString();
+            //Mycnt.Close();
+            //if (result == "1" && ishost == 0)
+            //{
+            //    ishost = 1;
+            //    guna2Button_Ready.Enabled = false;
+            //    guna2Button_Start.Enabled = true;
+            //    room_info.GuestID = "";
+            //    room_info.HostID = Playername;
+            //    room_info.IsClosed = room_info.IsReady = room_info.IsStart = 0;
+            //}
+
+
 
         }
         private void testData()
@@ -98,7 +183,11 @@ namespace WindowsFormsApp4
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Mycnt.Open();
+            if (Mycnt.State != ConnectionState.Open)
+            {
+                Mycnt.Open();
+            }
+           
             SqlCommand com;
             string query;
             if (ishost == 1)
@@ -132,38 +221,54 @@ namespace WindowsFormsApp4
 
         private void guna2Button_Ready_Click(object sender, EventArgs e)
         {
+           
             if (guna2Button_Ready.FillColor == Color.Red)
             {
                string query = string.Format("update RoomList set IsReady ='0' Where RoomID = '{0}'", room_info.RoomID);
-                Mycnt.Open();
+                if (Mycnt.State != ConnectionState.Open)
+                {
+                    Mycnt.Open();
+                }
                 SqlCommand com = new SqlCommand(query, Mycnt);
                 com.ExecuteNonQuery();
                 Mycnt.Close();
                 this.guna2Button_Ready.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+                label_readycheck.Text = "Chua san sang";
+            
             }
             else
             {
                 string query = string.Format("update RoomList set IsReady ='1' Where RoomID = '{0}'", room_info.RoomID);
-                Mycnt.Open();
+                if (Mycnt.State != ConnectionState.Open)
+                {
+                    Mycnt.Open();
+                }
                 SqlCommand com = new SqlCommand(query, Mycnt);
                 com.ExecuteNonQuery();
                 Mycnt.Close();
                 guna2Button_Ready.FillColor = Color.Red;
+                label_readycheck.Text = "Da san sang";
             }
 
         }
 
         private void guna2Button_Start_Click(object sender, EventArgs e)
-        {
+        {        
             string query = string.Format("Select Count(*) from RoomList Where RoomID ='{0}' and  IsClosed ='1' and IsReady ='1' and IsStart = '0'", room_info.RoomID);
-            Mycnt.Open();
+            if (Mycnt.State != ConnectionState.Open)
+            {
+                Mycnt.Open();
+            }
+            
             SqlCommand com = new SqlCommand(query, Mycnt);
             string result = com.ExecuteScalar().ToString();
             if (result == "1")
             {
                 query = string.Format("update RoomList set isStart ='1' Where RoomID = '{0}'", room_info.RoomID);
+                 com = new SqlCommand(query, Mycnt);
                 com.ExecuteNonQuery();
                 MessageBox.Show("Tro choi bat dau");
+                check_timer.Enabled = true;
             }
             else if(result == "0")
             {
