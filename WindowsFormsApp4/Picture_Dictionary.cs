@@ -31,6 +31,10 @@ namespace WindowsFormsApp4
         private bool isInsert = false;
         private int lastId = 0;
 
+
+        private string[] listButton = new string[30];
+
+
         public Picture_Dictionary()
         {
             InitializeComponent();
@@ -212,7 +216,7 @@ namespace WindowsFormsApp4
         }
         private void load_Button()
         {
-            cnn.Open();
+            /*cnn.Open();
             string sql = "select * from PICTURE_BUTTON  ";
             SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
             com.CommandType = CommandType.Text;
@@ -242,7 +246,28 @@ namespace WindowsFormsApp4
             lastId = (int)dt.Rows[i-1]["ID"];
           
 
-            cnn.Close();
+            cnn.Close();*/
+
+            string path = "./Group";
+            string name = "";
+            listButton = Directory.GetFiles(path);
+            foreach(string f in listButton)
+            {
+                name = Path.GetFileName(f);
+                name = name.Remove(name.Length - 4, 4);
+
+
+                Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
+                buttonImage b = new buttonImage();
+                but.BackColor = Color.Blue;
+                Bitmap a = new Bitmap(f);
+
+                but = b.createButton(name, a);
+                but.MouseClick += new MouseEventHandler(TabChose_Click);
+                flowLayoutPanel1.Controls.Add(but);
+            }
+
+
         }
 
         
@@ -250,7 +275,7 @@ namespace WindowsFormsApp4
         private void load_Button(int k)
         {
             
-            cnn.Open();
+           /* cnn.Open();
             string sql = "select * from PICTURE_BUTTON ";
             SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
             com.CommandType = CommandType.Text;
@@ -275,7 +300,7 @@ namespace WindowsFormsApp4
             
 
 
-            cnn.Close();
+            cnn.Close();*/
             
         }
         private void guna2CircleButton1_Click_1(object sender, EventArgs e)
