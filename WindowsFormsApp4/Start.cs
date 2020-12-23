@@ -14,6 +14,7 @@ namespace WindowsFormsApp4
     {
         public GameForm2 gameForm;
         public QuestionForm  questionForm;
+        public RoomForm roomform;
         //
         public Bitmap background;
         public Bitmap yasuo_sprite;
@@ -28,7 +29,23 @@ namespace WindowsFormsApp4
         public GameManager_2 game_host;
         public List<Question_Creep> game_creep;
         
-        public Start()
+        //public Start()
+        //{
+        //    InitializeComponent();
+        //    this.IsMdiContainer = true;
+        //    yasuo_sprite = new Bitmap("yasuosprite.png");
+        //    background = new Bitmap("background_1.jpg");
+        //    creep = new Bitmap("creep.png");
+        //    X_yasuo = Y_yasuo = 20;
+        //    whatframes = direction = 0; // 0 phai 1 trai 2 tren 3 duoi 4 dung yen 
+        //    DoubleBuffered = true;
+        //    isdraw = 1;
+
+
+
+
+        //}
+        public Start(RoomForm roomform, GameManager_2 game_host)
         {
             InitializeComponent();
             this.IsMdiContainer = true;
@@ -39,6 +56,7 @@ namespace WindowsFormsApp4
             whatframes = direction = 0; // 0 phai 1 trai 2 tren 3 duoi 4 dung yen 
             DoubleBuffered = true;
             isdraw = 1;
+            this.game_host = game_host;
 
 
 
@@ -114,8 +132,8 @@ namespace WindowsFormsApp4
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            //
-            game_host = new GameManager_2(this);
+            
+            
             //
             gameForm = new GameForm2(this);
             gameForm.FormBorderStyle = FormBorderStyle.None;

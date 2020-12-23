@@ -35,10 +35,10 @@
             this.guna2Button_answerA = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button_question1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button1_submit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2TextBox_answer2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button_question2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1_submit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
@@ -149,6 +149,22 @@
             this.guna2Panel2.TabIndex = 1;
             this.guna2Panel2.Visible = false;
             // 
+            // guna2Button1_submit
+            // 
+            this.guna2Button1_submit.BorderRadius = 15;
+            this.guna2Button1_submit.CheckedState.Parent = this.guna2Button1_submit;
+            this.guna2Button1_submit.CustomImages.Parent = this.guna2Button1_submit;
+            this.guna2Button1_submit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1_submit.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1_submit.HoverState.Parent = this.guna2Button1_submit;
+            this.guna2Button1_submit.Location = new System.Drawing.Point(86, 395);
+            this.guna2Button1_submit.Name = "guna2Button1_submit";
+            this.guna2Button1_submit.ShadowDecoration.Parent = this.guna2Button1_submit;
+            this.guna2Button1_submit.Size = new System.Drawing.Size(133, 42);
+            this.guna2Button1_submit.TabIndex = 3;
+            this.guna2Button1_submit.Text = "Xác Nhận";
+            this.guna2Button1_submit.Click += new System.EventHandler(this.Button_Click);
+            // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
@@ -196,21 +212,6 @@
             this.guna2Button_question2.Size = new System.Drawing.Size(293, 233);
             this.guna2Button_question2.TabIndex = 0;
             this.guna2Button_question2.Text = "guna2Button6";
-            // 
-            // guna2Button1_submit
-            // 
-            this.guna2Button1_submit.BorderRadius = 15;
-            this.guna2Button1_submit.CheckedState.Parent = this.guna2Button1_submit;
-            this.guna2Button1_submit.CustomImages.Parent = this.guna2Button1_submit;
-            this.guna2Button1_submit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1_submit.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1_submit.HoverState.Parent = this.guna2Button1_submit;
-            this.guna2Button1_submit.Location = new System.Drawing.Point(86, 395);
-            this.guna2Button1_submit.Name = "guna2Button1_submit";
-            this.guna2Button1_submit.ShadowDecoration.Parent = this.guna2Button1_submit;
-            this.guna2Button1_submit.Size = new System.Drawing.Size(133, 42);
-            this.guna2Button1_submit.TabIndex = 3;
-            this.guna2Button1_submit.Text = "Xác Nhận";
             // 
             // QuestionForm
             // 

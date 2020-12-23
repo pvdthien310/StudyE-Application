@@ -94,6 +94,7 @@ namespace WindowsFormsApp4
                 listbtn[i].Name = "Room" + i.ToString();
                 listbtn[i].Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 listbtn[i].FillColor = System.Drawing.Color.MediumOrchid;
+                if (roomList[i].IsStart == 1) listbtn[i].FillColor = Color.Red;
                 if (number_room_inpanel == 16)
                 {
                     number_room_inpanel = 0;
