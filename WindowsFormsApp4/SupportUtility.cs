@@ -9,6 +9,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Security.Cryptography;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApp4
 {
@@ -21,6 +22,7 @@ namespace WindowsFormsApp4
         
         static string HostEmail = "19522216@gm.uit.edu.vn";
         static string HostPass = "15062001minhthang";
+        static string sourceAddress = @"IsSave.txt";
         public static bool IsCorrectAccount(string Name_Email, string Pass)
         {
             string name = "";
@@ -189,38 +191,97 @@ namespace WindowsFormsApp4
         }
         public static void SaveAccount(string Name, string Pass)
         {
-            MyCnt.Open();
-            string replaceString = "Update UserAccount set IsSave = '" + "1" + "' where convert(varbinary,Email) = convert(varbinary,'" + Name + "') or convert(varbinary,UserName) = convert(varbinary, '" + Name + "')";
-            SqlCommand com2 = new SqlCommand(replaceString, MyCnt);
-            com2.ExecuteNonQuery();
-            MyCnt.Close();
+            //MyCnt.Open();
+            //string replaceString = "Update UserAccount set IsSave = '" + "1" + "' where convert(varbinary,Email) = convert(varbinary,'" + Name + "') or convert(varbinary,UserName) = convert(varbinary, '" + Name + "')";
+            //SqlCommand com2 = new SqlCommand(replaceString, MyCnt);
+            //com2.ExecuteNonQuery();
+            //MyCnt.Close();
+            //if(File.Exists(sourceAddress))
+            using (StreamWriter sw = File.CreateText(sourceAddress))
+            {
+                sw.WriteLine(Name);
+                sw.WriteLine(Pass);
+            }
         }
         public static void UnSaveAccount(string Name)
         {
-            MyCnt.Open();
-            string replaceString = "Update UserAccount set IsSave = '" + "0" + "' where Email = '" + Name + "' or UserName = '" + Name + "'";
-            SqlCommand com2 = new SqlCommand(replaceString, MyCnt);
-            com2.ExecuteNonQuery();
-            MyCnt.Close();
+            //string sourceAddress = @"IsSave.txt";
+            //MyCnt.Open();
+            //string replaceString = "Update UserAccount set IsSave = '" + "0" + "' where Email = '" + Name + "' or UserName = '" + Name + "'";
+            //SqlCommand com2 = new SqlCommand(replaceString, MyCnt);
+            //com2.ExecuteNonQuery();
+            //MyCnt.Close();
+                using (StreamWriter sw = File.CreateText(sourceAddress))
+                {
+
+            }
         }
         public static void UnSaveAccount()
         {
+            //MyCnt.Open();
+            //string replaceString = "Update UserAccount set IsSave = '" + "0" + "'";
+            //SqlCommand com2 = new SqlCommand(replaceString, MyCnt);
+            //com2.ExecuteNonQuery();
+            //MyCnt.Close();
+            //string sourceAddress = @"IsSave.txt";
+            using (StreamWriter sw = File.CreateText(sourceAddress))
+            {
+
+            }    
+        }
+        public static void FindSavedAccount(ref string Name, ref string Pass)
+        {
+            //DataTable Result = new DataTable();
+            //MyCnt.Open();
+            //string query = "select * from UserAccount where IsSave = 1";
+            //SqlCommand com = new SqlCommand(query, MyCnt);
+            //SqlDataAdapter ada = new SqlDataAdapter(com);
+            //ada.Fill(Result);
+            //MyCnt.Close();
+            //return Result;
+            //string sourceAddress = 
+            using (StreamReader sr = File.OpenText(sourceAddress))
+            {
+                while((Name = sr.ReadLine()) != null)
+                {
+                    Pass = sr.ReadLine();
+                    break;
+                }    
+            }    
+        }
+        public static void SetSignIn(string Name)
+        {
             MyCnt.Open();
-            string replaceString = "Update UserAccount set IsSave = '" + "0" + "'";
-            SqlCommand com2 = new SqlCommand(replaceString, MyCnt);
-            com2.ExecuteNonQuery();
+            string setSignIn = "Update UserAccount set IsSignIn = '" + "1" + "' where convert(varbinary,Email) = convert(varbinary,'" + Name + "') or convert(varbinary,Email) = convert(varbinary,'" + Name + "')";
+            SqlCommand com = new SqlCommand(setSignIn, MyCnt);
+            com.ExecuteNonQuery();
             MyCnt.Close();
         }
-        public static DataTable FindSavedAccount()
+        public static void UnSignIn(string Name)
         {
-            DataTable Result = new DataTable();
             MyCnt.Open();
-            string query = "select * from UserAccount where IsSave = 1";
+            string setUnSignIn = "Update UserAccount set IsSignIn = '" + "" + "' where convert(varbinary,Email) = convert(varbinary,'" + Name + "') or convert(varbinary,Email) = convert(varbinary,'" + Name + "')";
+            SqlCommand com = new SqlCommand(setUnSignIn, MyCnt);
+            com.ExecuteNonQuery();
+            MyCnt.Close();
+        }
+        public static bool IsSignIn(string Name)
+        {
+            MyCnt.Open();
+            string query = "select IsSignIn from UserAccount where convert(varbinary, UserName) = convert(varbinary, '" + Name + "') or convert(varbinary, Email) = convert(varbinary, '" + Name + "')";
             SqlCommand com = new SqlCommand(query, MyCnt);
             SqlDataAdapter ada = new SqlDataAdapter(com);
-            ada.Fill(Result);
+            DataTable da = new DataTable();
+            ada.Fill(da);
             MyCnt.Close();
-            return Result;
+            if (da.Rows[0][0].ToString() == "1")
+            {
+                return true;
+            }    
+            else
+            {
+                return false;
+            }    
         }
     }
 }
