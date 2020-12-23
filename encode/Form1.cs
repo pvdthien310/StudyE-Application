@@ -25,7 +25,7 @@ namespace encode
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog dlg = new OpenFileDialog())
+           /* using (OpenFileDialog dlg = new OpenFileDialog())
             {
                 int i = 0;
                 dlg.Title = "Open Image";
@@ -61,7 +61,7 @@ namespace encode
                                 command.ExecuteNonQuery();
                             }
 
-                             /*i++;
+                             *//*i++;
                              string tem = Path.GetFileName(temp);
                              byte[] img = null;
                              FileStream fs = new FileStream(temp, FileMode.Open, FileAccess.Read);
@@ -70,7 +70,7 @@ namespace encode
                              string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES ('" + new DirectoryInfo(temp).Parent.Name + "',' " + i + "',' " + tem.Remove(tem.Length - 4, 4) + "','" + img + "')";
 
                              sw.WriteLine(sql);
-                            */
+                            *//*
 
                         }
                     }
@@ -80,8 +80,27 @@ namespace encode
                 }
 
 
+            }*/
+            //////////////////////////////////////////////////////
+            
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                dlg.Title = "Open Image";
+                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                dlg.Multiselect = true;
+                BinaryWriter bw;
+                
+                if(dlg.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    bw = new BinaryWriter(new FileStream("D:/mydata", FileMode.Create));
+                   
+                    FileStream fs = new FileStream(dlg.FileName, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    bw.Write(br.ReadBytes((int)fs.Length));
+                }
+                
             }
-
 
         }
         int curentID = 0;
