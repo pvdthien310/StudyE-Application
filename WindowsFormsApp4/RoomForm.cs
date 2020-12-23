@@ -18,6 +18,7 @@ namespace WindowsFormsApp4
         public string Playername;
         public GameManager_2 game_host;
         public int ishost;
+        
         //public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:study-e.database.windows.net,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=study-e;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:40.83.97.14,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=sa;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
         //
@@ -57,6 +58,7 @@ namespace WindowsFormsApp4
         }
         private void timer_tick(object sender, EventArgs e)
         {
+            if (check_timer.Enabled == false) return;
             string query, result;
             SqlCommand com;
             if (Mycnt.State != ConnectionState.Open)
@@ -96,6 +98,9 @@ namespace WindowsFormsApp4
                 {
                     MessageBox.Show("Tro choi bat dau !! Khach");
                     check_timer.Enabled = false;
+                    Start game = new Start(this, game_host);
+                    this.Hide();
+                    game.Show();
                 }
             }
 
@@ -269,6 +274,9 @@ namespace WindowsFormsApp4
                 com.ExecuteNonQuery();
                 MessageBox.Show("Tro choi bat dau");
                 check_timer.Enabled = true;
+                Start game = new Start(this, game_host);
+                this.Hide();
+                game.Show();
             }
             else if(result == "0")
             {
