@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.paneloneSourse = new Guna.UI2.WinForms.Guna2Panel();
+            this.deleteOneSourse = new Guna.UI2.WinForms.Guna2Button();
             this.textName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.pictureBoxInsert = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -51,16 +53,14 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip = new Guna.UI2.WinForms.Guna2Panel();
             this.Delete = new Guna.UI2.WinForms.Guna2Button();
-            this.paneloneSourse = new Guna.UI2.WinForms.Guna2Panel();
-            this.deleteOneSourse = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
+            this.paneloneSourse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.menuStrip.SuspendLayout();
-            this.paneloneSourse.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,6 +81,35 @@
             this.panel1.Size = new System.Drawing.Size(1055, 666);
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
+            // 
+            // paneloneSourse
+            // 
+            this.paneloneSourse.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.paneloneSourse.BorderRadius = 10;
+            this.paneloneSourse.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.paneloneSourse.Controls.Add(this.deleteOneSourse);
+            this.paneloneSourse.Location = new System.Drawing.Point(0, 66);
+            this.paneloneSourse.Name = "paneloneSourse";
+            this.paneloneSourse.ShadowDecoration.Parent = this.paneloneSourse;
+            this.paneloneSourse.Size = new System.Drawing.Size(151, 60);
+            this.paneloneSourse.TabIndex = 8;
+            this.paneloneSourse.Visible = false;
+            // 
+            // deleteOneSourse
+            // 
+            this.deleteOneSourse.CheckedState.Parent = this.deleteOneSourse;
+            this.deleteOneSourse.CustomImages.Parent = this.deleteOneSourse;
+            this.deleteOneSourse.FillColor = System.Drawing.Color.White;
+            this.deleteOneSourse.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteOneSourse.ForeColor = System.Drawing.Color.Black;
+            this.deleteOneSourse.HoverState.Parent = this.deleteOneSourse;
+            this.deleteOneSourse.Location = new System.Drawing.Point(3, 3);
+            this.deleteOneSourse.Name = "deleteOneSourse";
+            this.deleteOneSourse.ShadowDecoration.Parent = this.deleteOneSourse;
+            this.deleteOneSourse.Size = new System.Drawing.Size(144, 52);
+            this.deleteOneSourse.TabIndex = 2;
+            this.deleteOneSourse.Text = "Xóa";
+            this.deleteOneSourse.Click += new System.EventHandler(this.deleteOneSourse_Click);
             // 
             // textName
             // 
@@ -124,6 +153,7 @@
             this.pictureBoxInsert.TabIndex = 8;
             this.pictureBoxInsert.TabStop = false;
             this.pictureBoxInsert.Visible = false;
+            this.pictureBoxInsert.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxInsert_MouseClick);
             // 
             // panel4
             // 
@@ -362,6 +392,7 @@
             this.nameGroup.ShadowDecoration.Parent = this.nameGroup;
             this.nameGroup.Size = new System.Drawing.Size(254, 36);
             this.nameGroup.TabIndex = 1;
+            this.nameGroup.TextChanged += new System.EventHandler(this.nameGroup_TextChanged);
             // 
             // guna2HtmlLabel1
             // 
@@ -411,35 +442,6 @@
             this.Delete.Text = "Xóa";
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // paneloneSourse
-            // 
-            this.paneloneSourse.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.paneloneSourse.BorderRadius = 10;
-            this.paneloneSourse.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.paneloneSourse.Controls.Add(this.deleteOneSourse);
-            this.paneloneSourse.Location = new System.Drawing.Point(0, 66);
-            this.paneloneSourse.Name = "paneloneSourse";
-            this.paneloneSourse.ShadowDecoration.Parent = this.paneloneSourse;
-            this.paneloneSourse.Size = new System.Drawing.Size(151, 60);
-            this.paneloneSourse.TabIndex = 8;
-            this.paneloneSourse.Visible = false;
-            // 
-            // deleteOneSourse
-            // 
-            this.deleteOneSourse.CheckedState.Parent = this.deleteOneSourse;
-            this.deleteOneSourse.CustomImages.Parent = this.deleteOneSourse;
-            this.deleteOneSourse.FillColor = System.Drawing.Color.White;
-            this.deleteOneSourse.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteOneSourse.ForeColor = System.Drawing.Color.Black;
-            this.deleteOneSourse.HoverState.Parent = this.deleteOneSourse;
-            this.deleteOneSourse.Location = new System.Drawing.Point(3, 3);
-            this.deleteOneSourse.Name = "deleteOneSourse";
-            this.deleteOneSourse.ShadowDecoration.Parent = this.deleteOneSourse;
-            this.deleteOneSourse.Size = new System.Drawing.Size(144, 52);
-            this.deleteOneSourse.TabIndex = 2;
-            this.deleteOneSourse.Text = "Xóa";
-            this.deleteOneSourse.Click += new System.EventHandler(this.deleteOneSourse_Click);
-            // 
             // Picture_Dictionary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -448,8 +450,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1058, 665);
             this.ControlBox = false;
-            this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.creatButton);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -462,6 +464,7 @@
             this.Click += new System.EventHandler(this.Picture_Dictionary_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.paneloneSourse.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -469,7 +472,6 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.menuStrip.ResumeLayout(false);
-            this.paneloneSourse.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

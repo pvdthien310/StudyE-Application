@@ -19,6 +19,7 @@ namespace WindowsFormsApp4
         private mainForm Parent;
         private string group = "";
         //private int currentPicture = 0;
+        private int lastIdSourse = 0;
         private int currentSourse = 0;
         private string isSourse = "1";
         //private int numberOfButton = 0;
@@ -57,10 +58,10 @@ namespace WindowsFormsApp4
                 panel1.Visible = true;
                 if (datatable.Rows.Count > 0)
                 {
-                    MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
+                    MemoryStream ms = new MemoryStream((byte[])datatable.Rows[0]["ENCODE"]);
                     Bitmap a = new Bitmap(Image.FromStream(ms));
                     a.MakeTransparent();
-                    string text = datatable.Rows[currentSourse]["NAME"].ToString();
+                    string text = datatable.Rows[0]["NAME"].ToString();
 
                     if (isSourse == "1")
                     {
@@ -303,6 +304,8 @@ namespace WindowsFormsApp4
                     tem = dlg.FileName;
                     guna2PictureBox1.BackgroundImage = a;
                     string t = new FileInfo(dlg.FileName).Name;
+                    t = RemoveUnicode(t);
+                    t = RemoveSpecialCharacters(t);
                     nameGroup.Text = t.Remove(t.Length - 4, 4);
                     
                 }
@@ -345,7 +348,13 @@ namespace WindowsFormsApp4
         {
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                int i = datatable.Rows.Count - 1;
+                int i = 0;
+                if (datatable.Rows.Count > 0)
+                {
+                    int n = datatable.Rows.Count - 1;
+                     i = (int)datatable.Rows[n]["ID"];
+                }
+                
                 dlg.Title = "Open Image";
                 dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
                 dlg.Multiselect = true;
@@ -475,9 +484,116 @@ namespace WindowsFormsApp4
 
                 command.ExecuteNonQuery();
             }
+            for(int i=0; i<datatable.Rows.Count; i++)
+            {
+                if( (string)datatable.Rows[i]["NAME"]== textName.Text)
+                {
+                    datatable.Rows.RemoveAt(i);
+                }
+            }
+            int n = datatable.Rows.Count - 1;
+            if (n > -1)
+            {
+                lastIdSourse = (int)datatable.Rows[n]["ID"];
+
+
+                //right lick
+                currentSourse++;
+                if (currentSourse >= datatable.Rows.Count)
+                {
+                    currentSourse = 0;
+                }
+                if (datatable.Rows.Count > 0)
+                {
+                    MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
+                    Bitmap a = new Bitmap(Image.FromStream(ms));
+                    a.MakeTransparent();
+                    string text = datatable.Rows[currentSourse]["NAME"].ToString();
+
+                    if (isSourse == "1")
+                    {
+                        pictureBox1.Image = a;
+                    }
+                    else
+                    {
+                        pictureBoxInsert.BackgroundImage = a;
+                        textName.Text = text;
+                    }
+                }
+                //right click
+            }
+            else
+            {
+                pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
+                pictureBoxInsert.Visible = false;
+                textName.Text = "";
+            }
+
+
             
+
             cnn.Close();
             //datatable.Rows.Remove()
+            paneloneSourse.Visible = false;
+        }
+
+        private void pictureBoxInsert_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                paneloneSourse.Visible = true;
+                paneloneSourse.Location = new Point(e.X + 250, e.Y+ 60);
+            }
+        }
+
+        private void checkVN()
+        {
+            //if (textName.Text == "") dataGridView3.Rows.Clear();
+            string[] arr1 = new string[] { "á", "à", "ả", "ã", "ạ", "â", "ấ", "ầ", "ẩ", "ẫ", "ậ", "ă", "ắ", "ằ", "ẳ", "ẵ", "ặ",
+             "đ", "é","è","ẻ","ẽ","ẹ","ê","ế","ề","ể","ễ","ệ","í","ì","ỉ","ĩ","ị","ó","ò","ỏ","õ","ọ","ô","ố","ồ","ổ","ỗ","ộ","ơ","ớ","ờ","ở","ỡ","ợ","ú","ù","ủ","ũ","ụ","ư","ứ","ừ","ử","ữ","ự","ý","ỳ","ỷ","ỹ","ỵ","0","1","2","3","4","5","6","7","8","9",};
+            int n = nameGroup.Text.Length ;
+            for (int i = 0; i < arr1.Length-1; i++)
+            {
+                if (nameGroup.Text.IndexOf(arr1[i]) != -1)
+                {
+                    /*label3_1.Text = "Bạn vừa nhập chuỗi có dấu hoặc có số. Vui lòng kiểm tra hoặc chúng tôi sẽ thực hiện chuyển kiểu tự động khi bạn thực hiện dịch đoạn !";
+                    label3_1.ForeColor = Color.Red;*/
+                    Add.Enabled = false;
+                    return;
+                }
+            }
+
+            Add.Enabled = true;
+        }
+
+        private void nameGroup_TextChanged(object sender, EventArgs e)
+        {
+            checkVN();
+        }
+
+        public string RemoveUnicode(string text)
+        {
+            string[] arr1 = new string[] { "á", "à", "ả", "ã", "ạ", "â", "ấ", "ầ", "ẩ", "ẫ", "ậ", "ă", "ắ", "ằ", "ẳ", "ẵ", "ặ",
+             "đ", "é","è","ẻ","ẽ","ẹ","ê","ế","ề","ể","ễ","ệ","í","ì","ỉ","ĩ","ị","ó","ò","ỏ","õ","ọ","ô","ố","ồ","ổ","ỗ","ộ","ơ","ớ","ờ","ở","ỡ","ợ","ú","ù","ủ","ũ","ụ","ư","ứ","ừ","ử","ữ","ự","ý","ỳ","ỷ","ỹ","ỵ",};
+            string[] arr2 = new string[] { "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "d", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "i", "i", "i", "i", "i", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "u", "u", "u", "u", "u", "u", "u", "u", "u", "u", "u", "y", "y", "y", "y", "y", };
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                text = text.Replace(arr1[i], arr2[i]);
+                //text = text.Replace(arr1[i].ToUpper(), arr2[i].ToUpper());
+            }
+            return text;
+        }
+        public string RemoveSpecialCharacters( string str)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (char c in str)
+            {
+                if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == ' ')
+                {
+                    sb.Append(c);
+                }
+            }
+            return sb.ToString();
         }
     }
 }
