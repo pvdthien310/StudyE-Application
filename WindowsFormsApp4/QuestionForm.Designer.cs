@@ -38,6 +38,7 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2TextBox_answer2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button_question2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1_submit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
@@ -137,6 +138,7 @@
             // 
             // guna2Panel2
             // 
+            this.guna2Panel2.Controls.Add(this.guna2Button1_submit);
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel2.Controls.Add(this.guna2TextBox_answer2);
             this.guna2Panel2.Controls.Add(this.guna2Button_question2);
@@ -195,13 +197,28 @@
             this.guna2Button_question2.TabIndex = 0;
             this.guna2Button_question2.Text = "guna2Button6";
             // 
+            // guna2Button1_submit
+            // 
+            this.guna2Button1_submit.BorderRadius = 15;
+            this.guna2Button1_submit.CheckedState.Parent = this.guna2Button1_submit;
+            this.guna2Button1_submit.CustomImages.Parent = this.guna2Button1_submit;
+            this.guna2Button1_submit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1_submit.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1_submit.HoverState.Parent = this.guna2Button1_submit;
+            this.guna2Button1_submit.Location = new System.Drawing.Point(86, 395);
+            this.guna2Button1_submit.Name = "guna2Button1_submit";
+            this.guna2Button1_submit.ShadowDecoration.Parent = this.guna2Button1_submit;
+            this.guna2Button1_submit.Size = new System.Drawing.Size(133, 42);
+            this.guna2Button1_submit.TabIndex = 3;
+            this.guna2Button1_submit.Text = "Xác Nhận";
+            // 
             // QuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 561);
-            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.guna2Panel1);
             this.Name = "QuestionForm";
             this.Text = "Question";
             this.guna2Panel1.ResumeLayout(false);
@@ -222,6 +239,7 @@
         public Guna.UI2.WinForms.Guna2Button guna2Button_question2;
         public Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         public Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1_submit;
         // public Guna.UI.WinForms.GunaButton gunaButton_Submit;
     }
 }

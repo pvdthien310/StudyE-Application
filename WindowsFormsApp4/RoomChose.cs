@@ -45,6 +45,7 @@ namespace WindowsFormsApp4
             DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
             da.Fill(dt);  // đổ dữ liệu vào kho
             Mycnt.Close();  // đóng kết nối
+            roomList = new List<Room>();
             if (dt.Rows.Count < 1) return;
             else
             {
@@ -56,7 +57,7 @@ namespace WindowsFormsApp4
                 {
                     listpnl = new FlowLayoutPanel[dt.Rows.Count / 16 + 1];
                 }
-                roomList = new List<Room>();
+                
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -117,8 +118,8 @@ namespace WindowsFormsApp4
                                 roomList[count].IsClosed = 1;
                                 roomList[count].IsReady = 0;
                                 Mycnt.Open();
-                                sql = String.Format("UPDATE ROOMLIST SET ISCLOSED = '0',IsReady = '0',GuestID = '' WHERE GuestID = '{0}'" +
-                                    "UPDATE ROOMLIST SET ISCLOSED = '1',IsReady = '0',GuestID = '{0}' WHERE ROOMID = '{1}'", PlayerName, temp);
+                                sql = String.Format("UPDATE ROOMLIST SET ISCLOSED = '0',IsReady = '0',IsStart ='0',GuestID = '' WHERE GuestID = '{0}'" +
+                                    "UPDATE ROOMLIST SET ISCLOSED = '1',IsReady = '0',GuestID = '{0}',IsStart ='0' WHERE ROOMID = '{1}'", PlayerName, temp);
                                 com = new SqlCommand(sql, Mycnt); //bat dau truy van
                                 com.ExecuteNonQuery();
                                 Mycnt.Close();

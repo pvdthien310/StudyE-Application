@@ -92,20 +92,20 @@ namespace WindowsFormsApp4
                 }
 
             }
-            //if (sender == gunaButton_Submit)
-            //{            
-            //        if (list[this.parent.game_host.current_question].type == 2)
-            //    {
-            //        if (temp[1].ToLower() != guna2TextBox_answer2.Text.ToLower())
-            //        {
-            //            list[this.parent.game_host.current_question].isCorrect = 1;
-            //        }
-            //        else
-            //        {
-            //            list[this.parent.game_host.current_question].isCorrect = 0;
-            //        }
-            //    }
-            //}
+            if (sender == guna2Button1_submit)
+            {
+                if (list[this.parent.game_host.current_question].type == 2)
+                {
+                    if (temp[1].ToLower() != guna2TextBox_answer2.Text.ToLower())
+                    {
+                        list[this.parent.game_host.current_question].isCorrect = 1;
+                    }
+                    else
+                    {
+                        list[this.parent.game_host.current_question].isCorrect = 0;
+                    }
+                }
+            }
             guna2Panel1.Visible = false;
             guna2Panel2.Visible = false;
             this.parent.gameForm.Invalidate();
