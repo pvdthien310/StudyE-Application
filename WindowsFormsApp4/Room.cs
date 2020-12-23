@@ -13,13 +13,15 @@ namespace WindowsFormsApp4
         public string GuestID;
         public int IsClosed;
         public int IsReady;
-        public Room(string RoomID,string HostID, string GuestID, int IsClosed, int IsReady)
+        public int IsStart;
+        public Room(string RoomID,string HostID, string GuestID, int IsClosed, int IsReady,int IsStart)
         {
             this.RoomID = RoomID;
             this.HostID = HostID;
             this.GuestID = GuestID;
             this.IsClosed = IsClosed;
             this.IsReady = IsReady;
+            this.IsStart = IsStart;
         }
     }
     

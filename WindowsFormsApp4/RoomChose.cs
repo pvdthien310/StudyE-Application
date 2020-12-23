@@ -60,7 +60,7 @@ namespace WindowsFormsApp4
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    roomList.Add(new Room(dt.Rows[i]["RoomID"].ToString().Trim(), dt.Rows[i]["HostID"].ToString().Trim(), dt.Rows[i]["GuestID"].ToString().Trim(), Convert.ToInt32(dt.Rows[i]["IsClosed"].ToString().Trim()), Convert.ToInt32(dt.Rows[i]["IsReady"].ToString().Trim())));
+                    roomList.Add(new Room(dt.Rows[i]["RoomID"].ToString().Trim(), dt.Rows[i]["HostID"].ToString().Trim(), dt.Rows[i]["GuestID"].ToString().Trim(), Convert.ToInt32(dt.Rows[i]["IsClosed"].ToString().Trim()), Convert.ToInt32(dt.Rows[i]["IsReady"].ToString().Trim()), Convert.ToInt32(dt.Rows[i]["IsStart"].ToString().Trim())));
                 }
             }
             listbtn = new Guna.UI2.WinForms.Guna2Button[roomList.Count];
@@ -173,16 +173,16 @@ namespace WindowsFormsApp4
             Mycnt.Open();
 
 
-            string query = string.Format("update roomlist set HostID = '', Isclosed = '0', IsReady = '0' where hostid = '{0}'"
-                + " update roomlist set GuestID = '', Isclosed = '0', IsReady = '0' where GuestID = '{0}'" +
+            string query = string.Format("update roomlist set HostID = '', Isclosed = '0', IsReady = '0',IsStart = '0' where hostid = '{0}'"
+                + " update roomlist set GuestID = '', Isclosed = '0', IsReady = '0',IsStart ='0' where GuestID = '{0}'" +
                 "delete from Roomlist where HostID = '' and GuestID = ''"
-               + "update RoomList set HostID = GuestID, GuestID = '', Isclosed = '0', IsReady = '0' where HostID = '' and GuestID != ''", PlayerName);
+               + "update RoomList set HostID = GuestID, GuestID = '', Isclosed = '0', IsReady = '0',IsStart ='0' where HostID = '' and GuestID != ''", PlayerName);
             SqlCommand cmd = new SqlCommand(query, Mycnt);
             cmd.ExecuteNonQuery();
 
             Random rd = new Random();
             int roomid = rd.Next(999);
-            query = String.Format("INSERT INTO RoomList VALUES ('{0}','{1}','', '0','0')    ", roomid.ToString(), PlayerName);
+            query = String.Format("INSERT INTO RoomList VALUES ('{0}','{1}','', '0','0','0')    ", roomid.ToString(), PlayerName);
 
 
 
@@ -219,7 +219,7 @@ namespace WindowsFormsApp4
             com.ExecuteNonQuery();
             Mycnt.Close();
 
-            roomList.Add(new Room(roomid.ToString(), PlayerName, "", 0, 0));
+            roomList.Add(new Room(roomid.ToString(), PlayerName, "", 0, 0,0));
             RoomForm roomform = new RoomForm(this, roomList[roomList.Count - 1], PlayerName, game_host, 1);
             roomform.Show();
             this.Hide();
@@ -275,10 +275,10 @@ namespace WindowsFormsApp4
         private void RoomChose_FormClosing(object sender, FormClosingEventArgs e)
         {
             Mycnt.Open();
-            string query = string.Format("update roomlist set HostID = '', Isclosed = '0', IsReady = '0' where hostid = '{0}'"
-                + " update roomlist set GuestID = '', Isclosed = '0', IsReady = '0' where GuestID = '{0}'" +
+            string query = string.Format("update roomlist set HostID = '', Isclosed = '0', IsReady = '0',IsStart ='0' where hostid = '{0}'"
+                + " update roomlist set GuestID = '', Isclosed = '0', IsReady = '0',IsStart ='0' where GuestID = '{0}'" +
                 "delete from Roomlist where HostID = '' and GuestID = ''" +
-                "update RoomList set HostID = GuestID, GuestID = '', Isclosed = '0', IsReady = '0' where HostID = '' and GuestID != ''", PlayerName);
+                "update RoomList set HostID = GuestID, GuestID = '', Isclosed = '0', IsReady = '0',,IsStart ='0' where HostID = '' and GuestID != ''", PlayerName);
             SqlCommand cmd = new SqlCommand(query, Mycnt);
             cmd.ExecuteNonQuery();
             Mycnt.Close();
