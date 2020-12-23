@@ -43,7 +43,8 @@ namespace WindowsFormsApp4
                     {
                         if (!SupportUtility.IsSignIn(Name_textbox.Text))
                         {
-                            inRoom = new RoomChose(this.Name_textbox.Text);
+                            //inRoom = new RoomChose(this.Name_textbox.Text);
+                            inRoom = new RoomChose(this.Name_textbox.Text, this);
                             this.Hide();
                             inRoom.Show();
                             SupportUtility.SetSignIn(Name_textbox.Text);
