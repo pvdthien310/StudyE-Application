@@ -278,7 +278,7 @@ namespace WindowsFormsApp4
             string query = string.Format("update roomlist set HostID = '', Isclosed = '0', IsReady = '0',IsStart ='0' where hostid = '{0}'"
                 + " update roomlist set GuestID = '', Isclosed = '0', IsReady = '0',IsStart ='0' where GuestID = '{0}'" +
                 "delete from Roomlist where HostID = '' and GuestID = ''" +
-                "update RoomList set HostID = GuestID, GuestID = '', Isclosed = '0', IsReady = '0',,IsStart ='0' where HostID = '' and GuestID != ''", PlayerName);
+                "update RoomList set HostID = GuestID, GuestID = '', Isclosed = '0', IsReady = '0',IsStart ='0' where HostID = '' and GuestID != ''", PlayerName);
             SqlCommand cmd = new SqlCommand(query, Mycnt);
             cmd.ExecuteNonQuery();
             Mycnt.Close();
