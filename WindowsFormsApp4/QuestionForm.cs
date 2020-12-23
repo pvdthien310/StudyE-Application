@@ -98,11 +98,11 @@ namespace WindowsFormsApp4
                 {
                     if (temp[1].ToLower() != guna2TextBox_answer2.Text.ToLower())
                     {
-                        list[this.parent.game_host.current_question].isCorrect = 1;
+                        list[this.parent.game_host.current_question].isCorrect = 0;
                     }
                     else
                     {
-                        list[this.parent.game_host.current_question].isCorrect = 0;
+                        list[this.parent.game_host.current_question].isCorrect = 1;
                     }
                 }
             }
