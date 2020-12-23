@@ -113,14 +113,16 @@
             // 
             // textName
             // 
+            this.textName.AutoSize = false;
             this.textName.BackColor = System.Drawing.Color.White;
             this.textName.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textName.Location = new System.Drawing.Point(478, 411);
+            this.textName.Location = new System.Drawing.Point(373, 419);
             this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(102, 44);
+            this.textName.Size = new System.Drawing.Size(314, 39);
             this.textName.TabIndex = 10;
             this.textName.Text = "avatar";
+            this.textName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.textName.Visible = false;
             // 
             // guna2CircleButton2
@@ -177,7 +179,8 @@
             this.panel2.Controls.Add(this.Pause);
             this.panel2.Controls.Add(this.Speak);
             this.panel2.Controls.Add(this.Right);
-            this.panel2.Controls.Add(this.Left);            this.panel2.Location = new System.Drawing.Point(312, 488);
+            this.panel2.Controls.Add(this.Left);
+            this.panel2.Location = new System.Drawing.Point(312, 488);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(432, 115);
             this.panel2.TabIndex = 5;
@@ -269,6 +272,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // guna2CircleButton1
             // 
@@ -462,7 +466,6 @@
             this.Load += new System.EventHandler(this.Picture_Dictionary_Load);
             this.Click += new System.EventHandler(this.Picture_Dictionary_Click);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.paneloneSourse.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).EndInit();
             this.panel2.ResumeLayout(false);
