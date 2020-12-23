@@ -25,6 +25,7 @@ namespace WindowsFormsApp4
         public int whatframes; // khung hinh thu bao nhieu 
         public Timer timer;
         public int isdraw;
+        public float time;
         //
         public GameManager_2 game_host;
         public List<Question_Creep> game_creep;
@@ -57,10 +58,17 @@ namespace WindowsFormsApp4
             DoubleBuffered = true;
             isdraw = 1;
             this.game_host = game_host;
+            timer.Tick += new EventHandler(timer_tick);
+            timer.Interval = 100;
+            timer.Enabled = true;
+            time = 0;
 
 
 
-
+        }
+        private void timer_tick(object sender, EventArgs e)
+        {
+            time += 1 / 10;
         }
         private void check()
         {
@@ -109,6 +117,7 @@ namespace WindowsFormsApp4
             else whatframes++;
             e.Graphics.DrawImage(background, new Rectangle(0, 0, 1000, 590), new Rectangle(0, 0, 500, 400), GraphicsUnit.Pixel);
             e.Graphics.DrawImage(yasuo_sprite, new Rectangle(X_yasuo,Y_yasuo,60,80), new Rectangle(whatframes * 95, direction * 120, 95, 110), GraphicsUnit.Pixel);
+            e.Graphics.DrawString(time.ToString(), new Font("Times New Roman", 12.0f), Brushes.Black, new Point(10, 10));
             for ( int i = 0; i< 10;i++)
             {
                 if (game_creep[i].isCorrect == 2)
