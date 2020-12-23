@@ -16,7 +16,7 @@ namespace WindowsFormsApp4
     {
         // DESKTOP-E6SJOH8
         
-        public static SqlConnection MyCnt = new SqlConnection(@"Server=tcp:13.70.2.204,1433,1433;Initial Catalog=test;Persist Security Info=False;User ID=sa;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
+        public static SqlConnection MyCnt = new SqlConnection(@"Server=tcp:40.83.97.14,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=sa;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
         //public  static SqlConnection MyCnt = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True");
         
         static string HostEmail = "19522216@gm.uit.edu.vn";
