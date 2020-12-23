@@ -38,6 +38,9 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2Button_Ready = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button_Start = new Guna.UI2.WinForms.Guna2Button();
+            this.label_readycheck = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_test)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +84,7 @@
             this.Column7});
             this.dataGridView_test.Location = new System.Drawing.Point(87, 217);
             this.dataGridView_test.Name = "dataGridView_test";
-            this.dataGridView_test.Size = new System.Drawing.Size(690, 216);
+            this.dataGridView_test.Size = new System.Drawing.Size(743, 216);
             this.dataGridView_test.TabIndex = 2;
             // 
             // Column1
@@ -119,6 +122,50 @@
             this.Column7.HeaderText = "Column7";
             this.Column7.Name = "Column7";
             // 
+            // guna2Button_Ready
+            // 
+            this.guna2Button_Ready.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button_Ready.BorderRadius = 15;
+            this.guna2Button_Ready.CheckedState.Parent = this.guna2Button_Ready;
+            this.guna2Button_Ready.CustomImages.Parent = this.guna2Button_Ready;
+            this.guna2Button_Ready.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.guna2Button_Ready.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button_Ready.ForeColor = System.Drawing.Color.White;
+            this.guna2Button_Ready.HoverState.Parent = this.guna2Button_Ready;
+            this.guna2Button_Ready.Location = new System.Drawing.Point(508, 54);
+            this.guna2Button_Ready.Name = "guna2Button_Ready";
+            this.guna2Button_Ready.ShadowDecoration.Parent = this.guna2Button_Ready;
+            this.guna2Button_Ready.Size = new System.Drawing.Size(167, 55);
+            this.guna2Button_Ready.TabIndex = 3;
+            this.guna2Button_Ready.Text = "Sẵn Sàng";
+            this.guna2Button_Ready.Click += new System.EventHandler(this.guna2Button_Ready_Click);
+            // 
+            // guna2Button_Start
+            // 
+            this.guna2Button_Start.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button_Start.BorderRadius = 15;
+            this.guna2Button_Start.CheckedState.Parent = this.guna2Button_Start;
+            this.guna2Button_Start.CustomImages.Parent = this.guna2Button_Start;
+            this.guna2Button_Start.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button_Start.ForeColor = System.Drawing.Color.White;
+            this.guna2Button_Start.HoverState.Parent = this.guna2Button_Start;
+            this.guna2Button_Start.Location = new System.Drawing.Point(744, 55);
+            this.guna2Button_Start.Name = "guna2Button_Start";
+            this.guna2Button_Start.ShadowDecoration.Parent = this.guna2Button_Start;
+            this.guna2Button_Start.Size = new System.Drawing.Size(167, 55);
+            this.guna2Button_Start.TabIndex = 4;
+            this.guna2Button_Start.Text = "Bắt Đầu";
+            this.guna2Button_Start.Click += new System.EventHandler(this.guna2Button_Start_Click);
+            // 
+            // label_readycheck
+            // 
+            this.label_readycheck.AutoSize = true;
+            this.label_readycheck.Location = new System.Drawing.Point(742, 155);
+            this.label_readycheck.Name = "label_readycheck";
+            this.label_readycheck.Size = new System.Drawing.Size(35, 13);
+            this.label_readycheck.TabIndex = 5;
+            this.label_readycheck.Text = "label1";
+            // 
             // RoomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +173,9 @@
             this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._111;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.label_readycheck);
+            this.Controls.Add(this.guna2Button_Start);
+            this.Controls.Add(this.guna2Button_Ready);
             this.Controls.Add(this.dataGridView_test);
             this.Controls.Add(this.Label_RoomID);
             this.Controls.Add(this.guna2Button1);
@@ -149,5 +199,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private Guna.UI2.WinForms.Guna2Button guna2Button_Ready;
+        private Guna.UI2.WinForms.Guna2Button guna2Button_Start;
+        private System.Windows.Forms.Label label_readycheck;
     }
 }
