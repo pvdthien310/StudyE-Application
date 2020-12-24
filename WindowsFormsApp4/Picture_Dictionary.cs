@@ -33,7 +33,7 @@ namespace WindowsFormsApp4
 
 
         private string[] listButton = new string[30];
-
+        private string[] listSourst = new string[150];
 
         public Picture_Dictionary()
         {
@@ -48,7 +48,7 @@ namespace WindowsFormsApp4
         {
             if (e.Button == MouseButtons.Left)
             {
-                menuStrip.Visible = false;
+                /*menuStrip.Visible = false;
                 currentSourse = 0;
                 panel1.Visible = true;
                 group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
@@ -101,7 +101,57 @@ namespace WindowsFormsApp4
                        
                
 
-                cnn.Close();
+                cnn.Close();*/
+                menuStrip.Visible = false;
+                panel1.Visible = true;
+
+                currentSourse = 0;
+                isSourse = ((Guna.UI2.WinForms.Guna2Button)sender).Text;
+                panel1.Visible = true;
+                group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
+                string path = "./PictureImage/" + group;
+                listSourst = Directory.GetFiles(path);
+
+
+                if (listSourst.Length > 0)
+                {
+                   
+                    Bitmap a = new Bitmap(Image.FromFile(listSourst[0]));
+                    a.MakeTransparent();
+                    string text = Path.GetFileName(listSourst[0]);
+                    text = text.Remove(text.Length - 4, 4);
+                   
+
+                    if (isSourse == "1")
+                    {
+                        pictureBox1.Image = a;
+                        pictureBox1.Visible = true;
+                        textName.Visible = false;
+                        guna2CircleButton2.Visible = false;
+
+                    }
+                    else
+                    {
+                        pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
+                        pictureBox1.Image = null;
+                        pictureBox1.Visible = true;
+                        guna2CircleButton2.Visible = true;
+                        pictureBoxInsert.Visible = true;
+                        pictureBoxInsert.BackgroundImage = a;
+                        textName.Text = text;
+                        textName.Visible = true;
+
+
+                    }
+
+                }
+                else
+                {
+                    textName.Text = "";
+                    pictureBox1.Visible = true;
+                    pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
+                }
+
             }
             else if(e.Button == MouseButtons.Right)
             {
@@ -140,16 +190,17 @@ namespace WindowsFormsApp4
         private void Right_Click(object sender, EventArgs e)
         {
             currentSourse++;
-            if (currentSourse >= datatable.Rows.Count)
+            if (currentSourse >= listSourst.Length)
             {
                 currentSourse = 0;
             }
-            if (datatable.Rows.Count > 0)
+            if (listSourst.Length > 0)
             {
-                MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
-                Bitmap a = new Bitmap(Image.FromStream(ms));
+                
+                Bitmap a = new Bitmap(Image.FromFile(listSourst[currentSourse]));
                 a.MakeTransparent();
-                string text = datatable.Rows[currentSourse]["NAME"].ToString();
+                string text = Path.GetFileName(listSourst[currentSourse]);
+                text = text.Remove(text.Length - 4, 4);
 
                 if (isSourse == "1")
                 {
@@ -170,14 +221,15 @@ namespace WindowsFormsApp4
             currentSourse--;
             if (currentSourse <0 )
             {
-                currentSourse = datatable.Rows.Count-1;
+
+                currentSourse =listSourst.Length - 1;
             }
-            if (datatable.Rows.Count > 0)
+            if (listSourst.Length > 0)
             {
-                MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
-                Bitmap a = new Bitmap(Image.FromStream(ms));
+                Bitmap a = new Bitmap(Image.FromFile(listSourst[currentSourse]));
                 a.MakeTransparent();
-                string text = datatable.Rows[currentSourse]["NAME"].ToString();
+                string text = Path.GetFileName(listSourst[currentSourse]);
+                text = text.Remove(text.Length - 4, 4);
 
                 if (isSourse == "1")
                 {
@@ -194,9 +246,10 @@ namespace WindowsFormsApp4
 
         private void Speak_Click(object sender, EventArgs e)
         {
-            if (datatable.Rows.Count > 0)
+            if (listSourst.Length > 0)
             {
-                string text = datatable.Rows[currentSourse]["NAME"].ToString();
+                string text = Path.GetFileName(listSourst[currentSourse]);
+                text = text.Remove(text.Length - 4, 4);
                 SpeechSynthesizer synth = new SpeechSynthesizer();
                 synth.SetOutputToDefaultAudioDevice();
                 synth.Speak(text);
@@ -213,6 +266,7 @@ namespace WindowsFormsApp4
         private void Picture_Dictionary_Load(object sender, EventArgs e)
         {
             load_Button();
+            panel1.BringToFront();
         }
         private void load_Button()
         {
@@ -259,10 +313,10 @@ namespace WindowsFormsApp4
 
                 Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
                 buttonImage b = new buttonImage();
-                but.BackColor = Color.Blue;
+                but.BackColor = Color.Transparent;
                 Bitmap a = new Bitmap(f);
 
-                but = b.createButton(name, a);
+                but = b.createButton(name, a, "1");
                 but.MouseClick += new MouseEventHandler(TabChose_Click);
                 flowLayoutPanel1.Controls.Add(but);
             }
@@ -323,16 +377,17 @@ namespace WindowsFormsApp4
                 dlg.Title = "Open Image";
                 dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
                 //dlg.Multiselect = true;
-
+                
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                     Bitmap a = new Bitmap(Image.FromFile(dlg.FileName));
                     a.MakeTransparent();
                     tem = dlg.FileName;
                     guna2PictureBox1.BackgroundImage = a;
-                    string t = new FileInfo(dlg.FileName).Name;
-                    t = RemoveUnicode(t);
-                    t = RemoveSpecialCharacters(t);
+                    //string t = new FileInfo(dlg.FileName).Name;
+                    string t = Path.GetFileName(dlg.FileName);
+                    //t = RemoveUnicode(t);
+                    //t = RemoveSpecialCharacters(t);
                     nameGroup.Text = t.Remove(t.Length - 4, 4);
                     
                 }

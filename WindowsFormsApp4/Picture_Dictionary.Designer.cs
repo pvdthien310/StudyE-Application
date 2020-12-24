@@ -401,7 +401,7 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(48, 209);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(44, 209);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(57, 30);
             this.guna2HtmlLabel1.TabIndex = 0;
@@ -453,12 +453,12 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1058, 665);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.creatButton);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.guna2CircleButton1);
+            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "Picture_Dictionary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

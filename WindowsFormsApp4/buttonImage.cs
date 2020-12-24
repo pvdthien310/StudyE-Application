@@ -14,7 +14,7 @@ namespace WindowsFormsApp4
 {
     public class buttonImage
     {
-        public Guna.UI2.WinForms.Guna2Button createButton(string name, Bitmap b)
+        public Guna.UI2.WinForms.Guna2Button createButton(string name, Bitmap b, string isSourse)
         {
            
             Guna.UI2.WinForms.Guna2Button temp = new Guna.UI2.WinForms.Guna2Button();
@@ -34,6 +34,7 @@ namespace WindowsFormsApp4
             temp.ShadowDecoration.Parent = temp;
             temp.Size = new Size(60,60);
             temp.TabIndex = 0;
+            temp.Text = isSourse;
             return temp;
         }
     }
