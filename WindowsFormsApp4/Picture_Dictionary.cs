@@ -266,6 +266,7 @@ namespace WindowsFormsApp4
         private void Picture_Dictionary_Load(object sender, EventArgs e)
         {
             load_Button();
+            load_Button(0);
             panel1.BringToFront();
         }
         private void load_Button()
@@ -328,34 +329,55 @@ namespace WindowsFormsApp4
 
         private void load_Button(int k)
         {
-            
-           /* cnn.Open();
-            string sql = "select * from PICTURE_BUTTON ";
-            SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
-            com.CommandType = CommandType.Text;
-            SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
-            DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
-            da.Fill(dt);
 
-            int n = dt.Rows.Count - 1;
-            MemoryStream ms = new MemoryStream((byte[])dt.Rows[n]["ENCODE"]);
-            Bitmap a = new Bitmap(Image.FromStream(ms));
-            a.MakeTransparent();
-            string name = dt.Rows[n]["NAME"].ToString();
-            string isSourse = dt.Rows[n]["IS_SOURSE"].ToString();
+            /* cnn.Open();
+             string sql = "select * from PICTURE_BUTTON ";
+             SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
+             com.CommandType = CommandType.Text;
+             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
+             DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
+             da.Fill(dt);
 
-            Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
-            buttonImage b = new buttonImage();
-            but.BackColor = Color.Transparent;
-            but = b.createButton(name, a, "0");
-            but.MouseClick += new MouseEventHandler(TabChose_Click);
-            
-            flowLayoutPanel1.Controls.Add(but);
-            
+             int n = dt.Rows.Count - 1;
+             MemoryStream ms = new MemoryStream((byte[])dt.Rows[n]["ENCODE"]);
+             Bitmap a = new Bitmap(Image.FromStream(ms));
+             a.MakeTransparent();
+             string name = dt.Rows[n]["NAME"].ToString();
+             string isSourse = dt.Rows[n]["IS_SOURSE"].ToString();
+
+             Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
+             buttonImage b = new buttonImage();
+             but.BackColor = Color.Transparent;
+             but = b.createButton(name, a, "0");
+             but.MouseClick += new MouseEventHandler(TabChose_Click);
+
+             flowLayoutPanel1.Controls.Add(but);
 
 
-            cnn.Close();*/
-            
+
+             cnn.Close();*/
+
+
+            string path = "./GroupInsert";
+            string name = "";
+            listButton = Directory.GetFiles(path);
+            foreach (string f in listButton)
+            {
+                name = Path.GetFileName(f);
+                name = name.Remove(name.Length - 4, 4);
+
+
+                Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
+                buttonImage b = new buttonImage();
+                but.BackColor = Color.Transparent;
+                Bitmap a = new Bitmap(f);
+
+                but = b.createButton(name, a, "1");
+                but.MouseClick += new MouseEventHandler(TabChose_Click);
+                flowLayoutPanel1.Controls.Add(but);
+            }
+
+
         }
         private void guna2CircleButton1_Click_1(object sender, EventArgs e)
         {
@@ -386,7 +408,7 @@ namespace WindowsFormsApp4
                     guna2PictureBox1.BackgroundImage = a;
                     //string t = new FileInfo(dlg.FileName).Name;
                     string t = Path.GetFileName(dlg.FileName);
-                    //t = RemoveUnicode(t);
+                    t = RemoveUnicode(t);
                     //t = RemoveSpecialCharacters(t);
                     nameGroup.Text = t.Remove(t.Length - 4, 4);
                     
@@ -398,7 +420,7 @@ namespace WindowsFormsApp4
         private void Add_Click(object sender, EventArgs e)
         {
 
-            string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE, IS_SOURSE) VALUES (@id, @name, @encode, @isSourse)";
+            /*string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE, IS_SOURSE) VALUES (@id, @name, @encode, @isSourse)";
             byte[] img = null;
             FileStream fs = new FileStream(tem, FileMode.Open, FileAccess.Read);
             BinaryReader br = new BinaryReader(fs);
@@ -413,12 +435,27 @@ namespace WindowsFormsApp4
                 command.Parameters.Add("@isSourse", SqlDbType.TinyInt).Value = 0;
                 command.ExecuteNonQuery();
             }
-            cnn.Close();
+            cnn.Close();*/
             //numberOfButton++;
-            lastId++;
-            load_Button(0);
+            //lastId++;
+            //load_Button(0);
             
-            panel5.Visible = false;
+            string path = "./GroupInsert/" +nameGroup.Text + ".png";
+            if (File.Exists(path))
+            {
+                MessageBox.Show("File exist", "File exist");
+            }
+            else
+            {
+                File.Copy(tem, path);
+                panel5.Visible = false;
+                flowLayoutPanel1.Visible = false;
+                flowLayoutPanel1.Controls.Clear();
+                load_Button();
+                load_Button(0);
+                flowLayoutPanel1.Visible = true;
+            }
+            
         }
 
         private void Exit_Click(object sender, EventArgs e)
