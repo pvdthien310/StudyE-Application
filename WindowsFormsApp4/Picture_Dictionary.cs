@@ -31,9 +31,11 @@ namespace WindowsFormsApp4
         private bool isInsert = false;
         private int lastId = 0;
 
-
+        private int numberOfButton = 0;
         private string[] listButton = new string[30];
         private string[] listSourst = new string[150];
+        private List<FlowLayoutPanel> listFlowPanel = new List<FlowLayoutPanel>(5);
+        private int numberOfPanel = 0;
 
         public Picture_Dictionary()
         {
@@ -265,9 +267,9 @@ namespace WindowsFormsApp4
 
         private void Picture_Dictionary_Load(object sender, EventArgs e)
         {
-            load_Button();
+            /*load_Button();
             load_Button(0);
-            panel1.BringToFront();
+            panel1.BringToFront();*/
         }
         private void load_Button()
         {
@@ -319,7 +321,21 @@ namespace WindowsFormsApp4
 
                 but = b.createButton(name, a, "1");
                 but.MouseClick += new MouseEventHandler(TabChose_Click);
-                flowLayoutPanel1.Controls.Add(but);
+                numberOfButton++;
+
+                if (numberOfButton%32==0)
+                {
+                    listFlowPanel = new List<FlowLayoutPanel>(numberOfButton / 32);
+                }
+                else if(numberOfButton % 32 == 0)
+                {
+                    listFlowPanel = new List<FlowLayoutPanel>(numberOfButton / 32 + 1);
+                }
+
+                for(int i=0; i<listFlowPanel.Count; i++)
+                {
+                    //listFlowPanel[i] = new FlowLayoutPanel { Location = new Point()}
+                }
             }
 
 
@@ -374,7 +390,17 @@ namespace WindowsFormsApp4
 
                 but = b.createButton(name, a, "1");
                 but.MouseClick += new MouseEventHandler(TabChose_Click);
-                flowLayoutPanel1.Controls.Add(but);
+                numberOfButton++;
+                int i = numberOfButton / 32;
+                if (numberOfButton % 32 != 0)
+                {
+                    listFlowPanel[i].Controls.Add(but);
+                }
+                else if (numberOfButton % 32 == 0)
+                {
+                    listFlowPanel[i - 1].Controls.Add(but);
+                }
+               
             }
 
 
@@ -449,11 +475,17 @@ namespace WindowsFormsApp4
             {
                 File.Copy(tem, path);
                 panel5.Visible = false;
-                flowLayoutPanel1.Visible = false;
-                flowLayoutPanel1.Controls.Clear();
+
+                for(int i=0; i<5; i++)
+                {
+
+                }
+
+                /////////////////flowLayoutPanel1.Visible = false;
+               // flowLayoutPanel1.Controls.Clear();
                 load_Button();
                 load_Button(0);
-                flowLayoutPanel1.Visible = true;
+                //flowLayoutPanel1.Visible = true;
             }
             
         }
@@ -573,11 +605,11 @@ namespace WindowsFormsApp4
             cnn.Close();
             menuStrip.Visible = false;
             
-            flowLayoutPanel1.Visible = false;
-            flowLayoutPanel1.Controls.Clear();
+           /////////// flowLayoutPanel1.Visible = false;
+           // flowLayoutPanel1.Controls.Clear();
 
             load_Button();
-            flowLayoutPanel1.Visible = true;
+           // flowLayoutPanel1.Visible = true;
         }
 
         private void Picture_Dictionary_Click(object sender, EventArgs e)

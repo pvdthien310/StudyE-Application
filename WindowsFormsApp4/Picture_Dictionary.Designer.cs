@@ -50,9 +50,10 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.nameGroup = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip = new Guna.UI2.WinForms.Guna2Panel();
             this.Delete = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel1.SuspendLayout();
             this.paneloneSourse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).BeginInit();
@@ -76,9 +77,9 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(3, 0);
+            this.panel1.Location = new System.Drawing.Point(901, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1055, 666);
+            this.panel1.Size = new System.Drawing.Size(47, 666);
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
             // 
@@ -407,15 +408,6 @@
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Name";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(109, 169);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(849, 463);
-            this.flowLayoutPanel1.TabIndex = 4;
-            this.flowLayoutPanel1.Click += new System.EventHandler(this.flowLayoutPanel1_Click);
-            // 
             // menuStrip
             // 
             this.menuStrip.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -445,6 +437,38 @@
             this.Delete.Text = "Xóa";
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
+            // guna2CircleButton3
+            // 
+            this.guna2CircleButton3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton3.CheckedState.Parent = this.guna2CircleButton3;
+            this.guna2CircleButton3.CustomImages.Parent = this.guna2CircleButton3;
+            this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton3.HoverState.Parent = this.guna2CircleButton3;
+            this.guna2CircleButton3.Location = new System.Drawing.Point(35, 241);
+            this.guna2CircleButton3.Name = "guna2CircleButton3";
+            this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton3.ShadowDecoration.Parent = this.guna2CircleButton3;
+            this.guna2CircleButton3.Size = new System.Drawing.Size(59, 61);
+            this.guna2CircleButton3.TabIndex = 8;
+            this.guna2CircleButton3.Text = "left";
+            // 
+            // guna2CircleButton4
+            // 
+            this.guna2CircleButton4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton4.CheckedState.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.CustomImages.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton4.HoverState.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.Location = new System.Drawing.Point(972, 253);
+            this.guna2CircleButton4.Name = "guna2CircleButton4";
+            this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton4.ShadowDecoration.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.Size = new System.Drawing.Size(53, 49);
+            this.guna2CircleButton4.TabIndex = 9;
+            this.guna2CircleButton4.Text = "right";
+            // 
             // Picture_Dictionary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -453,10 +477,11 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1058, 665);
             this.ControlBox = false;
+            this.Controls.Add(this.guna2CircleButton4);
+            this.Controls.Add(this.guna2CircleButton3);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.creatButton);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
@@ -513,7 +538,6 @@
         private Guna.UI2.WinForms.Guna2TextBox nameGroup;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button Add;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2PictureBox pictureBoxInsert;
         private Guna.UI2.WinForms.Guna2Button Exit;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
@@ -522,5 +546,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel textName;
         private Guna.UI2.WinForms.Guna2Panel paneloneSourse;
         private Guna.UI2.WinForms.Guna2Button deleteOneSourse;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
     }
 }
