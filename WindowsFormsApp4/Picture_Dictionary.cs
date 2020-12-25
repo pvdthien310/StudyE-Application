@@ -31,11 +31,13 @@ namespace WindowsFormsApp4
         private bool isInsert = false;
         private int lastId = 0;
 
-        private int numberOfButton = 0;
-        private string[] listButton = new string[30];
+
+        private string[] listNameButton = new string[100];
         private string[] listSourst = new string[150];
-        private List<FlowLayoutPanel> listFlowPanel = new List<FlowLayoutPanel>(5);
+        private List<FlowLayoutPanel> listFlowPanel;
+        private List<Guna.UI2.WinForms.Guna2Button> listButon = new List<Guna.UI2.WinForms.Guna2Button>(100);
         private int numberOfPanel = 0;
+        private int numberOfButton = 0;
 
         public Picture_Dictionary()
         {
@@ -267,83 +269,14 @@ namespace WindowsFormsApp4
 
         private void Picture_Dictionary_Load(object sender, EventArgs e)
         {
-            /*load_Button();
-            load_Button(0);
-            panel1.BringToFront();*/
+            load_Button();
+            panel1.BringToFront();
         }
-        private void load_Button()
-        {
-            /*cnn.Open();
-            string sql = "select * from PICTURE_BUTTON  ";
-            SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
-            com.CommandType = CommandType.Text;
-            SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
-            DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
-            da.Fill(dt);
-            //numberOfButton = 0;
-            int i=0;
-            while(i<dt.Rows.Count)
-            {
-                MemoryStream ms = new MemoryStream((byte[])dt.Rows[i]["ENCODE"]);
-                Bitmap a = new Bitmap(Image.FromStream(ms));
-                a.MakeTransparent();
-                string name = dt.Rows[i]["NAME"].ToString();
-                string isSourse = dt.Rows[i]["IS_SOURSE"].ToString();
-
-                Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
-                buttonImage b = new buttonImage();
-                but.BackColor = Color.Blue;
-               
-                but = b.createButton(name, a, isSourse) ;
-                but.MouseClick += new MouseEventHandler(TabChose_Click);
-                flowLayoutPanel1.Controls.Add(but);
-                //numberOfButton++;
-                i++;
-            }
-            lastId = (int)dt.Rows[i-1]["ID"];
-          
-
-            cnn.Close();*/
-
-            string path = "./Group";
-            string name = "";
-            listButton = Directory.GetFiles(path);
-            foreach(string f in listButton)
-            {
-                name = Path.GetFileName(f);
-                name = name.Remove(name.Length - 4, 4);
-
-
-                Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
-                buttonImage b = new buttonImage();
-                but.BackColor = Color.Transparent;
-                Bitmap a = new Bitmap(f);
-
-                but = b.createButton(name, a, "1");
-                but.MouseClick += new MouseEventHandler(TabChose_Click);
-                numberOfButton++;
-
-                if (numberOfButton%32==0)
-                {
-                    listFlowPanel = new List<FlowLayoutPanel>(numberOfButton / 32);
-                }
-                else if(numberOfButton % 32 == 0)
-                {
-                    listFlowPanel = new List<FlowLayoutPanel>(numberOfButton / 32 + 1);
-                }
-
-                for(int i=0; i<listFlowPanel.Count; i++)
-                {
-                    //listFlowPanel[i] = new FlowLayoutPanel { Location = new Point()}
-                }
-            }
-
-
-        }
+       
 
         
 
-        private void load_Button(int k)
+        private void load_Button()
         {
 
             /* cnn.Open();
@@ -374,10 +307,10 @@ namespace WindowsFormsApp4
              cnn.Close();*/
 
 
-            string path = "./GroupInsert";
+            string path = "./Group";
             string name = "";
-            listButton = Directory.GetFiles(path);
-            foreach (string f in listButton)
+            listNameButton = Directory.GetFiles(path);
+            foreach (string f in listNameButton)
             {
                 name = Path.GetFileName(f);
                 name = name.Remove(name.Length - 4, 4);
@@ -391,18 +324,65 @@ namespace WindowsFormsApp4
                 but = b.createButton(name, a, "1");
                 but.MouseClick += new MouseEventHandler(TabChose_Click);
                 numberOfButton++;
-                int i = numberOfButton / 32;
-                if (numberOfButton % 32 != 0)
-                {
-                    listFlowPanel[i].Controls.Add(but);
-                }
-                else if (numberOfButton % 32 == 0)
-                {
-                    listFlowPanel[i - 1].Controls.Add(but);
-                }
+                listButon.Add(but);
+                
                
             }
+             path = "./GroupInsert";
+            listNameButton = Directory.GetFiles(path);
+            foreach (string f in listNameButton)
+            {
+                name = Path.GetFileName(f);
+                name = name.Remove(name.Length - 4, 4);
 
+
+                Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
+                buttonImage b = new buttonImage();
+                but.BackColor = Color.Transparent;
+                Bitmap a = new Bitmap(f);
+
+                but = b.createButton(name, a, "0");
+                but.MouseClick += new MouseEventHandler(TabChose_Click);
+                numberOfButton++;
+                listButon.Add(but);
+
+
+            }
+
+
+
+
+
+            if (numberOfButton % 32 != 0)
+            {
+                numberOfPanel = numberOfButton / 32;
+            }
+            else if (numberOfButton % 32 == 0)
+            {
+                numberOfPanel = numberOfButton / 32;
+            }
+            for (int i = 0; i < numberOfPanel; i++)
+            {
+                listFlowPanel[i] = new FlowLayoutPanel();
+                listFlowPanel[i].BackColor = Color.Red;
+                listFlowPanel[i].Location = new Point(109, 169);
+                listFlowPanel[i].Size = new Size(849, 463);
+                listFlowPanel[i].Click += new System.EventHandler(this.flowLayoutPanel1_Click);
+                listFlowPanel[i].BringToFront();
+                listFlowPanel[i].Visible = true;
+                this.Controls.Add(listFlowPanel[i]);
+            }
+
+            for (int i=0; i<numberOfPanel-1; i++)
+            {
+                for(int j=32*i; j<32*(i+1); j++)
+                listFlowPanel[i].Controls.Add(listButon[j]);
+            }
+           
+            for(int i=numberOfButton - 32*(numberOfPanel - 1); i<numberOfButton; i++)
+            {
+                listFlowPanel[numberOfPanel - 1].Controls.Add(listButon[i]);
+            }
 
         }
         private void guna2CircleButton1_Click_1(object sender, EventArgs e)
@@ -484,7 +464,6 @@ namespace WindowsFormsApp4
                 /////////////////flowLayoutPanel1.Visible = false;
                // flowLayoutPanel1.Controls.Clear();
                 load_Button();
-                load_Button(0);
                 //flowLayoutPanel1.Visible = true;
             }
             
