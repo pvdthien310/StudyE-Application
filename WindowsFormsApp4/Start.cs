@@ -110,9 +110,7 @@ namespace WindowsFormsApp4
         }
         private void check()
         {
-            int s = 0; // dem xem 2 nguoi choi d a choi xong chua
-            if
-            {
+            int s = 0; // dem xem 2 nguoi choi d a choi xong chua          
                 foreach (string a in result)
                 {
                     if (a != "0") s++;
@@ -121,8 +119,7 @@ namespace WindowsFormsApp4
                 if (s == 9)
                 {
                     push_result_to_data();
-                }
-            }
+                }         
             for (int i = 0; i < 10 ;i++)
             {
                 if (Math.Abs(X_yasuo - game_creep[i].X_creep) <= 50 && Math.Abs(Y_yasuo - game_creep[i].Y_creep)<= 50 && game_creep[i].isCorrect == 2)
@@ -194,16 +191,16 @@ namespace WindowsFormsApp4
 
                     push_result_to_data();
 
-                    DialogResult dialogResult = MessageBox.Show("Hay qua dkmm !! {0}", (count - 10).ToString(),MessageBoxButtons.OK);
-                    if (dialogResult == DialogResult.OK)
-                    {
-                        Application.Exit();
-                    }
+                    //DialogResult dialogResult = MessageBox.Show("Hay qua dkmm !! {0}", (count - 10).ToString(),MessageBoxButtons.OK);
+                    //if (dialogResult == DialogResult.OK)
+                    //{
+                       
+                    //}
                 }
                 if (time > 100)
                 {
                     push_result_to_data();
-                    Application.Exit();
+                    
 
                 }
             }
@@ -229,6 +226,11 @@ namespace WindowsFormsApp4
             SqlCommand com = new SqlCommand(query,Mycnt);
             com.ExecuteNonQuery();
             Mycnt.Close();
+
+            // mo form result
+            ResultForm2 resultform = new ResultForm2(roomform.parent, result);
+            this.Close();
+            resultform.Show();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
