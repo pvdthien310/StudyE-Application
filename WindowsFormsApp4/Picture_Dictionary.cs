@@ -332,6 +332,7 @@ namespace WindowsFormsApp4
                 buttonImage b = new buttonImage();
                 but.BackColor = Color.Transparent;
                 Bitmap a = new Bitmap(f);
+                
 
                 but = b.createButton(name, a, "1");
                 but.MouseClick += new MouseEventHandler(TabChose_Click);
@@ -535,6 +536,7 @@ namespace WindowsFormsApp4
                         string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES (@group, @id, @name, @encode)";
                         i++;
                         string tem = Path.GetFileName(temp);
+                        
                         using (SqlCommand command = new SqlCommand(sql, cnn))
                         {
 
@@ -615,8 +617,19 @@ namespace WindowsFormsApp4
              cnn.Close();*/
 
             string path = "./GroupInsert/" + group +".png";
+
             if (File.Exists(path))
             {
+                int i = 0;
+                for( i=0; i<numberOfButton; i++)
+                {
+                    if(listButon[i].Name == group)
+                    {
+                        break;
+                    }
+                }
+
+                listButon[i].Dispose();
                 File.Delete(path);
             }
 
