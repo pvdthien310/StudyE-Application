@@ -617,8 +617,9 @@ namespace WindowsFormsApp4
              cnn.Close();*/
 
             string path = "./GroupInsert/" + group +".png";
-
-            if (File.Exists(path))
+            listButon.Clear();
+            
+           /* if (File.Exists(path))
             {
                 int i = 0;
                 for( i=0; i<numberOfButton; i++)
@@ -628,10 +629,10 @@ namespace WindowsFormsApp4
                         break;
                     }
                 }
+                listButon[i].Image = null;
 
-                listButon[i].Dispose();
-                File.Delete(path);
-            }
+                
+            }*/
 
 
             menuStrip.Visible = false;
@@ -641,8 +642,8 @@ namespace WindowsFormsApp4
                 listFlowPanel[i].Visible = false;
                 listFlowPanel[i].Controls.Clear();
             }
-
-            load_Button();
+            //File.Delete(path);
+            //load_Button();
             for (int i = 0; i < numberOfPanel; i++)
             {
                 listFlowPanel[i].Visible = true;
