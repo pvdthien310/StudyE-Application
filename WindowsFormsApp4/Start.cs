@@ -79,7 +79,7 @@ namespace WindowsFormsApp4
             {
                 Mycnt.Open();
             }
-            string query = string.Format("Insert into RoomResult values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}''{8}')",roomform.room_info.RoomID, roomform.room_info.HostID, roomform.room_info.GuestID,0,0,0,0,0,0);
+            string query = string.Format("Insert into RoomResult values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')",roomform.room_info.RoomID, roomform.room_info.HostID, roomform.room_info.GuestID,0,0,0,0,0,0);
             SqlCommand com = new SqlCommand(query, Mycnt);
             com.ExecuteNonQuery();
             Mycnt.Close();
@@ -95,7 +95,7 @@ namespace WindowsFormsApp4
             {
                 Mycnt.Open();
             }
-            string query = string.Format("SELECT * FROM ROOMQUESTION WHERE ROOMID = '{0}'",roomform.room_info.RoomID);
+            string query = string.Format("SELECT * FROM ROOMRESULT WHERE ROOMID = '{0}'",roomform.room_info.RoomID);
             SqlCommand com = new SqlCommand(query, Mycnt);
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataTable dt = new DataTable();
@@ -258,7 +258,8 @@ namespace WindowsFormsApp4
             questionForm.Show();
 
             //
-            push_room_data();
+            if (roomform.ishost == 1)
+                push_room_data();   
             gameForm.Invalidate();
 
 
