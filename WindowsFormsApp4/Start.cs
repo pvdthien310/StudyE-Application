@@ -61,7 +61,8 @@ namespace WindowsFormsApp4
             isdraw = 1;
             this.game_host = game_host;
             result = new List<string>();
-            push_room_data();
+            this.roomform = roomform;
+            
 
             timer = new Timer();
             timer.Tick += new EventHandler(timer_tick);
@@ -257,7 +258,7 @@ namespace WindowsFormsApp4
             questionForm.Show();
 
             //
-
+            push_room_data();
             gameForm.Invalidate();
 
 
