@@ -272,7 +272,7 @@ namespace WindowsFormsApp4
                 query = string.Format("update RoomList set isStart ='1' Where RoomID = '{0}'", room_info.RoomID);
                  com = new SqlCommand(query, Mycnt);
                 com.ExecuteNonQuery();
-                MessageBox.Show("Tro choi bat dau");
+                
                 check_timer.Enabled = true;
                 Start game = new Start(this, game_host);
                 this.Hide();

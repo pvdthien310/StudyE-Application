@@ -100,12 +100,12 @@ namespace WindowsFormsApp4
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            if (dt.Rows.Count < 0) return;
+            if (dt.Rows.Count < 1) return;
             else
             {
                 result.Clear();
                 for (int i = 0;i < 9;i++)
-                result.Add(dt.Rows[0][0].ToString());
+                result.Add(dt.Rows[0][i].ToString());
             }
             Mycnt.Close();
         }
@@ -117,9 +117,12 @@ namespace WindowsFormsApp4
                     if (a != "0") s++;
                     
                 }
-                if (s == 9)
+                if (s >= 8)
                 {
-                    push_result_to_data();
+                push_result_to_data();
+                ResultForm2 resultform = new ResultForm2(roomform.parent, result);
+                this.Close();
+                resultform.Show();
                 }         
             for (int i = 0; i < 10 ;i++)
             {
@@ -165,7 +168,7 @@ namespace WindowsFormsApp4
         static int count_question = 0;  // dem so cau da tra loi
         public void gameForm_paint(object sender, PaintEventArgs e)
         {
-            
+            count_question = 0;
             check();
             if (whatframes == 3) whatframes = 0;
             else whatframes++;
@@ -178,12 +181,11 @@ namespace WindowsFormsApp4
                 if (game_creep[i].isCorrect == 2)
                     e.Graphics.DrawImage(creep, new Rectangle(game_creep[i].X_creep, game_creep[i].Y_creep, 60, 45), new Rectangle(0, 0, 90, 70), GraphicsUnit.Pixel);
                 else
-                {
-                    count++;
+                {                    
                     count_question++;
                 }
 
-                if (count == 10)
+                if (count_question == 10)
                 {
                     for ( int j = 0;j < 10; j++)
                     {
@@ -198,7 +200,7 @@ namespace WindowsFormsApp4
                        
                     //}
                 }
-                if (time > 100)
+                if (time > 1000)
                 {
                     push_result_to_data();
                     
@@ -206,7 +208,7 @@ namespace WindowsFormsApp4
                 }
             }
         }
-
+        Timer timer2;
         private void push_result_to_data()
         {
             string query;
@@ -217,21 +219,25 @@ namespace WindowsFormsApp4
             if (roomform.ishost == 1)
             {
                 query = string.Format("UPDATE ROOMRESULT" +
-                    "SET Host_Ques = '{0}', HostGoal = '{1}', HostTime = '{2}'",count_question,count,time);
+                    " SET Host_Ques = '{0}', HostGoal = '{1}', HostTime = '{2}'",count_question,count*30,Convert.ToInt32(time));
             }
             else
             {
                 query = string.Format("UPDATE ROOMRESULT" +
-                   "SET GUEST_Ques = '{0}', GUESTGoal = '{1}', GUESTTime = '{2}'", count_question, count, time);
+                   " SET GUEST_Ques = '{0}', GUESTGoal = '{1}', GUESTTime = '{2}'", count_question, count*30, Convert.ToInt32(time));
             }
             SqlCommand com = new SqlCommand(query,Mycnt);
             com.ExecuteNonQuery();
             Mycnt.Close();
 
             // mo form result
-            ResultForm2 resultform = new ResultForm2(roomform.parent, result);
-            this.Close();
-            resultform.Show();
+            //timer2 = new Timer();
+            //timer2.Interval = 200;
+            //timer2.Tick += new HandledEventArgs(timer2_tick);
+        }
+        private void timer2_tick(object sender, EventArgs e)
+        {
+            
         }
         private void Form1_Load(object sender, EventArgs e)
         {
