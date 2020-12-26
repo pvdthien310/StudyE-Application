@@ -353,7 +353,15 @@ namespace WindowsFormsApp4
                 Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
                 buttonImage b = new buttonImage();
                 but.BackColor = Color.Transparent;
-                Bitmap a = new Bitmap(f);
+                Bitmap a;
+                using (var stream = File.Open(f, FileMode.Open))
+                {
+                    a = new Bitmap(Image.FromStream(stream));
+                    stream.Close();
+                }
+
+               
+                
 
                 but = b.createButton(name, a, "0");
                 but.MouseClick += new MouseEventHandler(TabChose_Click);
@@ -512,7 +520,7 @@ namespace WindowsFormsApp4
         {
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                int i = 0;
+                /*int i = 0;
                 if (datatable.Rows.Count > 0)
                 {
                     int n = datatable.Rows.Count - 1;
@@ -588,10 +596,35 @@ namespace WindowsFormsApp4
                 else
                 {
                     pictureBox1.Image = null;
+                }*/
+                dlg.Multiselect = true;
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    int flag = 0;
+                    foreach (string temp in dlg.FileNames)
+                    {
+                        string name = Path.GetFileName(temp);
+                        name = name.Remove(name.Length - 4, 4);
+                        string path = "./PictureImageInsert/" + group + "/" + name +".png";
+                        if (!File.Exists(path))
+                        {
+                            File.Move(temp, path);
+                        }
+                        else
+                        {
+                            flag++;
+                        }
+                    }
+                    if (flag != 0)
+                    {
+                        MessageBox.Show("Several image names already exist!", "Some image were not inserted!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Inserted successfully");
+                    }
                 }
-
             }
-
         }
 
         private void Delete_Click(object sender, EventArgs e)
@@ -619,23 +652,7 @@ namespace WindowsFormsApp4
              cnn.Close();*/
 
             string path = "./GroupInsert/" + group +".png";
-            //listButon.Clear();
-            
-           /* if (File.Exists(path))
-            {
-                int i = 0;
-                for( i=0; i<numberOfButton; i++)
-                {
-                    if(listButon[i].Name == group)
-                    {
-                        break;
-                    }
-                }
-                listButon[i].Image = null;
-
-                
-            }*/
-
+            listButon.Clear();                   
 
             menuStrip.Visible = false;
 
@@ -645,7 +662,7 @@ namespace WindowsFormsApp4
                 listFlowPanel[i].Controls.Clear();
             }
             File.Delete(path);
-            //load_Button();
+            load_Button();
             for (int i = 0; i < numberOfPanel; i++)
             {
                 listFlowPanel[i].Visible = true;

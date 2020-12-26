@@ -479,13 +479,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1058, 665);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.rightPannel);
             this.Controls.Add(this.leftPanel);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.creatButton);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.guna2CircleButton1);
-            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "Picture_Dictionary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
