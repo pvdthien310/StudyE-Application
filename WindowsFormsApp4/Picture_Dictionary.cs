@@ -34,10 +34,11 @@ namespace WindowsFormsApp4
 
         private string[] listNameButton = new string[100];
         private string[] listSourst = new string[150];
-        private List<FlowLayoutPanel> listFlowPanel;
+        private FlowLayoutPanel[] listFlowPanel;
         private List<Guna.UI2.WinForms.Guna2Button> listButon = new List<Guna.UI2.WinForms.Guna2Button>(100);
         private int numberOfPanel = 0;
         private int numberOfButton = 0;
+        private int currentPanel = 0;
 
         public Picture_Dictionary()
         {
@@ -355,34 +356,44 @@ namespace WindowsFormsApp4
 
             if (numberOfButton % 32 != 0)
             {
-                numberOfPanel = numberOfButton / 32;
+                numberOfPanel = numberOfButton / 32 + 1;
             }
             else if (numberOfButton % 32 == 0)
             {
-                numberOfPanel = numberOfButton / 32;
+                numberOfPanel = numberOfButton / 32 ;
             }
+            listFlowPanel = new FlowLayoutPanel[numberOfPanel];
             for (int i = 0; i < numberOfPanel; i++)
             {
                 listFlowPanel[i] = new FlowLayoutPanel();
-                listFlowPanel[i].BackColor = Color.Red;
-                listFlowPanel[i].Location = new Point(109, 169);
-                listFlowPanel[i].Size = new Size(849, 463);
+                listFlowPanel[i].BackColor = Color.Transparent;
+                listFlowPanel[i].Location = new Point(110, 120);
+                listFlowPanel[i].Size = new Size(480, 250);
                 listFlowPanel[i].Click += new System.EventHandler(this.flowLayoutPanel1_Click);
                 listFlowPanel[i].BringToFront();
                 listFlowPanel[i].Visible = true;
                 this.Controls.Add(listFlowPanel[i]);
-            }
 
-            for (int i=0; i<numberOfPanel-1; i++)
+
+            }
+            int numberInPanel = 0;
+             currentPanel = 0;
+            for (int i=0; i<numberOfButton; i++)
             {
-                for(int j=32*i; j<32*(i+1); j++)
-                listFlowPanel[i].Controls.Add(listButon[j]);
+                if (numberInPanel == 32)
+                {
+                    numberInPanel = 0;
+                    currentPanel++;
+                }
+                else
+                {
+                    numberInPanel++;
+                }
+                listFlowPanel[currentPanel].Controls.Add(listButon[i]);
             }
            
-            for(int i=numberOfButton - 32*(numberOfPanel - 1); i<numberOfButton; i++)
-            {
-                listFlowPanel[numberOfPanel - 1].Controls.Add(listButon[i]);
-            }
+            
+            
 
         }
         private void guna2CircleButton1_Click_1(object sender, EventArgs e)
@@ -729,6 +740,26 @@ namespace WindowsFormsApp4
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void leftPanel_Click(object sender, EventArgs e)
+        {
+            currentPanel--;
+            if (currentPanel == -1)
+            {
+                currentPanel = numberOfPanel - 1;
+            }
+            listFlowPanel[currentPanel].BringToFront();
+        }
+
+        private void rightPannel_Click(object sender, EventArgs e)
+        {
+            currentPanel++;
+            if(currentPanel == numberOfPanel)
+            {
+                currentPanel = 0;
+            }
+            listFlowPanel[currentPanel].BringToFront();
         }
     }
 }
