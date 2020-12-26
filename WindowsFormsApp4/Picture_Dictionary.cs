@@ -214,8 +214,13 @@ namespace WindowsFormsApp4
             }
             if (listSourst.Length > 0)
             {
+                Bitmap a;
+                using (var stream = File.Open(listSourst[currentSourse], FileMode.Open))
+                {
+                    a = new Bitmap(Image.FromStream(stream));
+                    stream.Close();
+                }
                 
-                Bitmap a = new Bitmap(Image.FromFile(listSourst[currentSourse]));
                 a.MakeTransparent();
                 string text = Path.GetFileName(listSourst[currentSourse]);
                 text = text.Remove(text.Length - 4, 4);
@@ -244,7 +249,12 @@ namespace WindowsFormsApp4
             }
             if (listSourst.Length > 0)
             {
-                Bitmap a = new Bitmap(Image.FromFile(listSourst[currentSourse]));
+                Bitmap a;
+                using (var stream = File.Open(listSourst[currentSourse], FileMode.Open))
+                {
+                    a = new Bitmap(Image.FromStream(stream));
+                    stream.Close();
+                }
                 a.MakeTransparent();
                 string text = Path.GetFileName(listSourst[currentSourse]);
                 text = text.Remove(text.Length - 4, 4);
@@ -437,33 +447,11 @@ namespace WindowsFormsApp4
         {          
             panel5.Visible = true;
             nameGroup.Text = "";
-            guna2PictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.interface_77_512;
+            //guna2PictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.interface_77_512;
+            guna2PictureBox1.Visible = false;
+            addImage.Visible = true;
         }
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog dlg = new OpenFileDialog())
-            {
-                int i = 0;
-                dlg.Title = "Open Image";
-                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
-                //dlg.Multiselect = true;
-                
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    Bitmap a = new Bitmap(Image.FromFile(dlg.FileName));
-                    a.MakeTransparent();
-                    tem = dlg.FileName;
-                    guna2PictureBox1.BackgroundImage = a;
-                    //string t = new FileInfo(dlg.FileName).Name;
-                    string t = Path.GetFileName(dlg.FileName);
-                    t = RemoveUnicode(t);
-                    //t = RemoveSpecialCharacters(t);
-                    nameGroup.Text = t.Remove(t.Length - 4, 4);
-                    
-                }
-
-            }
-        }
+        
         private string tem = "";
         private void Add_Click(object sender, EventArgs e)
         {
@@ -487,40 +475,43 @@ namespace WindowsFormsApp4
             //numberOfButton++;
             //lastId++;
             //load_Button(0);
-            
-            string path = "./GroupInsert/" +nameGroup.Text + ".png";
-            if (File.Exists(path))
+            if(guna2PictureBox1.BackgroundImage != global::WindowsFormsApp4.Properties.Resources.interface_77_512 && nameGroup.Text!="")
             {
-                MessageBox.Show("File exist", "File exist");
+                string path = "./GroupInsert/" + nameGroup.Text + ".png";
+                if (File.Exists(path))
+                {
+                    MessageBox.Show("File exist", "File exist");
+                }
+                else
+                {
+                    File.Copy(tem, path);
+                    panel5.Visible = false;
+
+                    for (int i = 0; i < numberOfPanel; i++)
+                    {
+                        listFlowPanel[i].Visible = false;
+                        listFlowPanel[i].Controls.Clear();
+                    }
+
+                    load_Button();
+                    for (int i = 0; i < numberOfPanel; i++)
+                    {
+                        listFlowPanel[i].Visible = true;
+                    }
+
+                    Bitmap a;
+                    using (var stream = File.Open(path, FileMode.Open))
+                    {
+                        a = new Bitmap(Image.FromStream(stream));
+                        stream.Close();
+                    }
+                    pictureBoxInsert.Image = a;
+                    path = path = "./PictureImageInsert/" + nameGroup.Text;
+                    Directory.CreateDirectory(path);
+                }
+
             }
-            else
-            {
-                File.Copy(tem, path);
-                panel5.Visible = false;
-               
-                for(int i=0; i<numberOfPanel; i++)
-                {
-                    listFlowPanel[i].Visible = false;
-                    listFlowPanel[i].Controls.Clear();
-                }
-                
-                load_Button();
-                for (int i = 0; i < numberOfPanel; i++)
-                {
-                    listFlowPanel[i].Visible = true;
-                }
-                
-                Bitmap a;
-                using (var stream = File.Open(path, FileMode.Open))
-                {
-                    a = new Bitmap(Image.FromStream(stream));
-                    stream.Close();
-                }
-                pictureBoxInsert.Image = a;
-                path = path = "./PictureImageInsert/" + nameGroup.Text;
-                Directory.CreateDirectory(path);
-            }
-            
+
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -674,6 +665,8 @@ namespace WindowsFormsApp4
                 listFlowPanel[i].Controls.Clear();
             }
             File.Delete(path);
+            path = "./PictureImageInsert/" + group;
+            Directory.Delete(path);
             load_Button();
             for (int i = 0; i < numberOfPanel; i++)
             {
@@ -693,7 +686,7 @@ namespace WindowsFormsApp4
 
         private void deleteOneSourse_Click(object sender, EventArgs e)
         {
-            cnn.Open();
+            /*cnn.Open();
 
             string sql = "delete from PICTURE_SOURSE where NAME = @name";
 
@@ -740,12 +733,61 @@ namespace WindowsFormsApp4
                     }
                 }
                 //right click
+            }*/
+
+            if (listSourst.Length ==1)
+            {
+                File.Delete(listSourst[currentSourse]);
+
+                string path = "./PictureImageInsert/" + group;
+                listSourst = Directory.GetFiles(path);
+                pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
+                pictureBoxInsert.Visible = false;
+                textName.Text = "";
             }
-            else
+            else if(listSourst.Length==0)
             {
                 pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
                 pictureBoxInsert.Visible = false;
                 textName.Text = "";
+            }
+            else
+            {
+                File.Delete(listSourst[currentSourse]);
+                //right lick
+                string path = "./PictureImageInsert/" + group;
+                listSourst = Directory.GetFiles(path);
+               // currentSourse++;
+                if (currentSourse >= listSourst.Length)
+                {
+                    currentSourse = 0;
+                }
+                if (listSourst.Length > 0)
+                {
+                    Bitmap a;
+                    using (var stream = File.Open(listSourst[currentSourse], FileMode.Open))
+                    {
+                        a = new Bitmap(Image.FromStream(stream));
+                        stream.Close();
+                    }
+
+                    a.MakeTransparent();
+                    string text = Path.GetFileName(listSourst[currentSourse]);
+                    text = text.Remove(text.Length - 4, 4);
+
+                    if (isSourse == "1")
+                    {
+                        pictureBox1.Image = a;
+                    }
+                    else
+                    {
+                        pictureBoxInsert.BackgroundImage = a;
+                        textName.Text = text;
+                    }
+                }
+                //right click
+                
+                
             }
 
 
@@ -838,6 +880,60 @@ namespace WindowsFormsApp4
                 currentPanel = 0;
             }
             listFlowPanel[currentPanel].BringToFront();
+        }
+
+        private void addImage_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                int i = 0;
+                dlg.Title = "Open Image";
+                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                //dlg.Multiselect = true;
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    Bitmap a = new Bitmap(Image.FromFile(dlg.FileName));
+                    a.MakeTransparent();
+                    tem = dlg.FileName;
+                    guna2PictureBox1.BackgroundImage = a;
+                    //string t = new FileInfo(dlg.FileName).Name;
+                    string t = Path.GetFileName(dlg.FileName);
+                    t = RemoveUnicode(t);
+                    //t = RemoveSpecialCharacters(t);
+                    nameGroup.Text = t.Remove(t.Length - 4, 4);
+
+                }
+
+            }
+            addImage.Visible = false;
+            guna2PictureBox1.Visible = true;
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                int i = 0;
+                dlg.Title = "Open Image";
+                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                //dlg.Multiselect = true;
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    Bitmap a = new Bitmap(Image.FromFile(dlg.FileName));
+                    a.MakeTransparent();
+                    tem = dlg.FileName;
+                    guna2PictureBox1.BackgroundImage = a;
+                    //string t = new FileInfo(dlg.FileName).Name;
+                    string t = Path.GetFileName(dlg.FileName);
+                    t = RemoveUnicode(t);
+                    //t = RemoveSpecialCharacters(t);
+                    nameGroup.Text = t.Remove(t.Length - 4, 4);
+
+                }
+
+            }
         }
     }
 }
