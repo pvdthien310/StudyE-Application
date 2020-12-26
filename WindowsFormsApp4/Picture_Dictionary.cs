@@ -174,7 +174,7 @@ namespace WindowsFormsApp4
             else if(e.Button == MouseButtons.Right)
             {
                 menuStrip.Visible = true;
-                menuStrip.Location = new Point(((Guna.UI2.WinForms.Guna2Button)sender).Location.X + 100, ((Guna.UI2.WinForms.Guna2Button)sender).Location.Y + 150);
+                menuStrip.Location = new Point(((Guna.UI2.WinForms.Guna2Button)sender).Location.X + 135, ((Guna.UI2.WinForms.Guna2Button)sender).Location.Y + 150);
                 
                 isSourse = ((Guna.UI2.WinForms.Guna2Button)sender).Text;
                 group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
