@@ -71,8 +71,9 @@ namespace WindowsFormsApp4
         }
         private void timer_tick(object sender, EventArgs e)
         {
-            time += 0.1;
-            gameForm.time_label.Text = time.ToString();
+            //time += 0.1;
+            //gameForm.time_label.Text = time.ToString();
+            //gameForm.Invalidate();
 
         }
         private void check()
@@ -112,14 +113,18 @@ namespace WindowsFormsApp4
                 }
             }
         }
-     
-        
+
+        //public void questionForm_paint(object sender, PaintEventArgs e)
+        //{
+        //    e.Graphics.DrawString(time.ToString(), new Font("Serif", 24, FontStyle.Bold),Brushes.Black,new Point(10,590));
+        //}
         public void gameForm_paint(object sender, PaintEventArgs e)
         {
             int count = 0;
             check();
             if (whatframes == 3) whatframes = 0;
             else whatframes++;
+        //    e.Graphics.DrawString(time.ToString(), new Font("Serif", 24, FontStyle.Bold), Brushes.Black, new Point(10, 10));
             e.Graphics.DrawImage(background, new Rectangle(0, 0, 1000, 590), new Rectangle(0, 0, 500, 400), GraphicsUnit.Pixel);
             e.Graphics.DrawImage(yasuo_sprite, new Rectangle(X_yasuo,Y_yasuo,60,80), new Rectangle(whatframes * 95, direction * 120, 95, 110), GraphicsUnit.Pixel);
          
@@ -165,6 +170,7 @@ namespace WindowsFormsApp4
             questionForm.FormBorderStyle = FormBorderStyle.None;
             questionForm.MdiParent = this;
             questionForm.Dock = DockStyle.Right;
+            //questionForm.Paint += questionForm_paint;
             questionForm.Show();
 
             //
