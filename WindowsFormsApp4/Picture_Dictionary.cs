@@ -114,7 +114,16 @@ namespace WindowsFormsApp4
                 isSourse = ((Guna.UI2.WinForms.Guna2Button)sender).Text;
                 panel1.Visible = true;
                 group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
-                string path = "./PictureImage/" + group;
+                string path = "";
+                if (isSourse == "1")
+                {
+                    path = "./PictureImage/" + group;
+                }
+                else
+                {
+                    path = "./PictureImageInsert/" + group;
+                }
+
                 listSourst = Directory.GetFiles(path);
 
 
@@ -306,7 +315,9 @@ namespace WindowsFormsApp4
 
 
              cnn.Close();*/
-
+            listButon.Clear();
+            numberOfButton = 0;
+            numberOfPanel = 0;
 
             string path = "./Group";
             string name = "";
@@ -362,6 +373,7 @@ namespace WindowsFormsApp4
             {
                 numberOfPanel = numberOfButton / 32 ;
             }
+
             listFlowPanel = new FlowLayoutPanel[numberOfPanel];
             for (int i = 0; i < numberOfPanel; i++)
             {
@@ -467,15 +479,23 @@ namespace WindowsFormsApp4
                 File.Copy(tem, path);
                 panel5.Visible = false;
 
-                for(int i=0; i<5; i++)
+                path = "./PictureImageInsert/" + nameGroup.Text;
+                Directory.CreateDirectory(path);
+
+
+
+
+                for(int i=0; i<numberOfPanel; i++)
                 {
-
+                    listFlowPanel[i].Visible = false;
+                    listFlowPanel[i].Controls.Clear();
                 }
-
-                /////////////////flowLayoutPanel1.Visible = false;
-               // flowLayoutPanel1.Controls.Clear();
+                
                 load_Button();
-                //flowLayoutPanel1.Visible = true;
+                for (int i = 0; i < numberOfPanel; i++)
+                {
+                    listFlowPanel[i].Visible = true;
+                }
             }
             
         }
@@ -572,34 +592,48 @@ namespace WindowsFormsApp4
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            cnn.Open();
+            /* cnn.Open();
 
-            string sql = "delete from PICTURE_BUTTON where NAME = @name";
-            
-            using (SqlCommand command = new SqlCommand(sql, cnn))
+             string sql = "delete from PICTURE_BUTTON where NAME = @name";
+
+             using (SqlCommand command = new SqlCommand(sql, cnn))
+             {
+
+                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = group;                
+
+                 command.ExecuteNonQuery();
+             }
+
+             sql = "delete from PICTURE_SOURSE where GROUPPICTURE = @name";
+
+             using (SqlCommand command = new SqlCommand(sql, cnn))
+             {
+                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = group;
+                 command.ExecuteNonQuery();
+             }
+
+             cnn.Close();*/
+
+            string path = "./GroupInsert/" + group +".png";
+            if (File.Exists(path))
             {
-
-                command.Parameters.Add("@name", SqlDbType.VarChar).Value = group;                
-
-                command.ExecuteNonQuery();
+                File.Delete(path);
             }
 
-            sql = "delete from PICTURE_SOURSE where GROUPPICTURE = @name";
 
-            using (SqlCommand command = new SqlCommand(sql, cnn))
-            {
-                command.Parameters.Add("@name", SqlDbType.VarChar).Value = group;
-                command.ExecuteNonQuery();
-            }
-
-            cnn.Close();
             menuStrip.Visible = false;
-            
-           /////////// flowLayoutPanel1.Visible = false;
-           // flowLayoutPanel1.Controls.Clear();
+
+            for (int i = 0; i < numberOfPanel; i++)
+            {
+                listFlowPanel[i].Visible = false;
+                listFlowPanel[i].Controls.Clear();
+            }
 
             load_Button();
-           // flowLayoutPanel1.Visible = true;
+            for (int i = 0; i < numberOfPanel; i++)
+            {
+                listFlowPanel[i].Visible = true;
+            }
         }
 
         private void Picture_Dictionary_Click(object sender, EventArgs e)
@@ -622,7 +656,6 @@ namespace WindowsFormsApp4
             {
 
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = textName.Text;
-
                 command.ExecuteNonQuery();
             }
             for(int i=0; i<datatable.Rows.Count; i++)
