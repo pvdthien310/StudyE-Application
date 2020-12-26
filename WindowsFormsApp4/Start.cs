@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,9 +28,10 @@ namespace WindowsFormsApp4
         public int isdraw;
         public double time;
         //
+        public List<string> result;
         public GameManager_2 game_host;
         public List<Question_Creep> game_creep;
-        
+        public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:40.83.97.14,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=sa;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
         //public Start()
         //{
         //    InitializeComponent();
@@ -58,7 +60,8 @@ namespace WindowsFormsApp4
             DoubleBuffered = true;
             isdraw = 1;
             this.game_host = game_host;
-
+            result = new List<string>();
+            push_room_data();
 
             timer = new Timer();
             timer.Tick += new EventHandler(timer_tick);
@@ -69,15 +72,57 @@ namespace WindowsFormsApp4
 
 
         }
+        private void push_room_data()
+        {
+            if (Mycnt.State != ConnectionState.Open)
+            {
+                Mycnt.Open();
+            }
+            string query = string.Format("Insert into RoomResult values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}''{8}')",roomform.room_info.RoomID, roomform.room_info.HostID, roomform.room_info.GuestID,0,0,0,0,0,0);
+            SqlCommand com = new SqlCommand(query, Mycnt);
+            com.ExecuteNonQuery();
+            Mycnt.Close();
+
+        }
         private void timer_tick(object sender, EventArgs e)
         {
-            //time += 0.1;
+            time += 0.1;
+
             //gameForm.time_label.Text = time.ToString();
             //gameForm.Invalidate();
-
+            if (Mycnt.State != ConnectionState.Open)
+            {
+                Mycnt.Open();
+            }
+            string query = string.Format("SELECT * FROM ROOMQUESTION WHERE ROOMID = '{0}'",roomform.room_info.RoomID);
+            SqlCommand com = new SqlCommand(query, Mycnt);
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count < 0) return;
+            else
+            {
+                result.Clear();
+                for (int i = 0;i < 9;i++)
+                result.Add(dt.Rows[0][0].ToString());
+            }
+            Mycnt.Close();
         }
         private void check()
         {
+            int s = 0; // dem xem 2 nguoi choi d a choi xong chua
+            if
+            {
+                foreach (string a in result)
+                {
+                    if (a != "0") s++;
+                    
+                }
+                if (s == 9)
+                {
+                    push_result_to_data();
+                }
+            }
             for (int i = 0; i < 10 ;i++)
             {
                 if (Math.Abs(X_yasuo - game_creep[i].X_creep) <= 50 && Math.Abs(Y_yasuo - game_creep[i].Y_creep)<= 50 && game_creep[i].isCorrect == 2)
@@ -118,9 +163,11 @@ namespace WindowsFormsApp4
         //{
         //    e.Graphics.DrawString(time.ToString(), new Font("Serif", 24, FontStyle.Bold),Brushes.Black,new Point(10,590));
         //}
+        static int count = 0; // dem so cau dung
+        static int count_question = 0;  // dem so cau da tra loi
         public void gameForm_paint(object sender, PaintEventArgs e)
         {
-            int count = 0;
+            
             check();
             if (whatframes == 3) whatframes = 0;
             else whatframes++;
@@ -132,7 +179,11 @@ namespace WindowsFormsApp4
             {
                 if (game_creep[i].isCorrect == 2)
                     e.Graphics.DrawImage(creep, new Rectangle(game_creep[i].X_creep, game_creep[i].Y_creep, 60, 45), new Rectangle(0, 0, 90, 70), GraphicsUnit.Pixel);
-                else count++;
+                else
+                {
+                    count++;
+                    count_question++;
+                }
 
                 if (count == 10)
                 {
@@ -140,14 +191,44 @@ namespace WindowsFormsApp4
                     {
                         if (game_creep[j].isCorrect == 1) count++;
                     }
-                    
+
+                    push_result_to_data();
+
                     DialogResult dialogResult = MessageBox.Show("Hay qua dkmm !! {0}", (count - 10).ToString(),MessageBoxButtons.OK);
                     if (dialogResult == DialogResult.OK)
                     {
                         Application.Exit();
                     }
                 }
+                if (time > 100)
+                {
+                    push_result_to_data();
+                    Application.Exit();
+
+                }
             }
+        }
+
+        private void push_result_to_data()
+        {
+            string query;
+            if (Mycnt.State != ConnectionState.Open)
+            {
+                Mycnt.Open();
+            }
+            if (roomform.ishost == 1)
+            {
+                query = string.Format("UPDATE ROOMRESULT" +
+                    "SET Host_Ques = '{0}', HostGoal = '{1}', HostTime = '{2}'",count_question,count,time);
+            }
+            else
+            {
+                query = string.Format("UPDATE ROOMRESULT" +
+                   "SET GUEST_Ques = '{0}', GUESTGoal = '{1}', GUESTTime = '{2}'", count_question, count, time);
+            }
+            SqlCommand com = new SqlCommand(query,Mycnt);
+            com.ExecuteNonQuery();
+            Mycnt.Close();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
