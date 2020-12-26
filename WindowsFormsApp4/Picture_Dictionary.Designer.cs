@@ -33,7 +33,6 @@
             this.deleteOneSourse = new Guna.UI2.WinForms.Guna2Button();
             this.textName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.pictureBoxInsert = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -45,7 +44,7 @@
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.creatButton = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.addImage = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.addImage = new Guna.UI2.WinForms.Guna2Button();
             this.Exit = new Guna.UI2.WinForms.Guna2Button();
             this.Add = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -55,14 +54,15 @@
             this.Delete = new Guna.UI2.WinForms.Guna2Button();
             this.leftPanel = new Guna.UI2.WinForms.Guna2CircleButton();
             this.rightPannel = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.pictureBoxInsert = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel1.SuspendLayout();
             this.paneloneSourse.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -119,9 +119,9 @@
             this.textName.BackColor = System.Drawing.Color.White;
             this.textName.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textName.Location = new System.Drawing.Point(373, 419);
+            this.textName.Location = new System.Drawing.Point(370, 417);
             this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(314, 39);
+            this.textName.Size = new System.Drawing.Size(491, 62);
             this.textName.TabIndex = 10;
             this.textName.Text = "avatar";
             this.textName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -145,19 +145,6 @@
             this.guna2CircleButton2.Size = new System.Drawing.Size(60, 60);
             this.guna2CircleButton2.TabIndex = 9;
             this.guna2CircleButton2.Click += new System.EventHandler(this.guna2CircleButton2_Click);
-            // 
-            // pictureBoxInsert
-            // 
-            this.pictureBoxInsert.BackColor = System.Drawing.Color.White;
-            this.pictureBoxInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxInsert.Location = new System.Drawing.Point(373, 92);
-            this.pictureBoxInsert.Name = "pictureBoxInsert";
-            this.pictureBoxInsert.ShadowDecoration.Parent = this.pictureBoxInsert;
-            this.pictureBoxInsert.Size = new System.Drawing.Size(322, 282);
-            this.pictureBoxInsert.TabIndex = 8;
-            this.pictureBoxInsert.TabStop = false;
-            this.pictureBoxInsert.Visible = false;
-            this.pictureBoxInsert.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxInsert_MouseClick);
             // 
             // panel4
             // 
@@ -332,16 +319,19 @@
             // 
             // addImage
             // 
+            this.addImage.BackColor = System.Drawing.Color.Transparent;
+            this.addImage.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.photo_photography_image_picture_add_5121;
+            this.addImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.addImage.CheckedState.Parent = this.addImage;
             this.addImage.CustomImages.Parent = this.addImage;
+            this.addImage.FillColor = System.Drawing.Color.Transparent;
             this.addImage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.addImage.ForeColor = System.Drawing.Color.White;
             this.addImage.HoverState.Parent = this.addImage;
             this.addImage.Location = new System.Drawing.Point(192, 51);
             this.addImage.Name = "addImage";
-            this.addImage.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.addImage.ShadowDecoration.Parent = this.addImage;
-            this.addImage.Size = new System.Drawing.Size(148, 148);
+            this.addImage.Size = new System.Drawing.Size(140, 140);
             this.addImage.TabIndex = 5;
             this.addImage.Click += new System.EventHandler(this.addImage_Click);
             // 
@@ -459,8 +449,11 @@
             // leftPanel
             // 
             this.leftPanel.BackColor = System.Drawing.Color.Transparent;
+            this.leftPanel.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._01_arrow_left_512;
+            this.leftPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.leftPanel.CheckedState.Parent = this.leftPanel;
             this.leftPanel.CustomImages.Parent = this.leftPanel;
+            this.leftPanel.FillColor = System.Drawing.Color.Transparent;
             this.leftPanel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.leftPanel.ForeColor = System.Drawing.Color.White;
             this.leftPanel.HoverState.Parent = this.leftPanel;
@@ -470,7 +463,6 @@
             this.leftPanel.ShadowDecoration.Parent = this.leftPanel;
             this.leftPanel.Size = new System.Drawing.Size(59, 61);
             this.leftPanel.TabIndex = 8;
-            this.leftPanel.Text = "left";
             this.leftPanel.Click += new System.EventHandler(this.leftPanel_Click);
             // 
             // rightPannel
@@ -490,6 +482,19 @@
             this.rightPannel.Text = "right";
             this.rightPannel.Click += new System.EventHandler(this.rightPannel_Click);
             // 
+            // pictureBoxInsert
+            // 
+            this.pictureBoxInsert.BackColor = System.Drawing.Color.White;
+            this.pictureBoxInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxInsert.Location = new System.Drawing.Point(373, 92);
+            this.pictureBoxInsert.Name = "pictureBoxInsert";
+            this.pictureBoxInsert.ShadowDecoration.Parent = this.pictureBoxInsert;
+            this.pictureBoxInsert.Size = new System.Drawing.Size(322, 282);
+            this.pictureBoxInsert.TabIndex = 8;
+            this.pictureBoxInsert.TabStop = false;
+            this.pictureBoxInsert.Visible = false;
+            this.pictureBoxInsert.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxInsert_MouseClick);
+            // 
             // Picture_Dictionary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -498,13 +503,13 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1058, 665);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.rightPannel);
             this.Controls.Add(this.leftPanel);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.creatButton);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.guna2CircleButton1);
-            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "Picture_Dictionary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -513,12 +518,12 @@
             this.Click += new System.EventHandler(this.Picture_Dictionary_Click);
             this.panel1.ResumeLayout(false);
             this.paneloneSourse.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.menuStrip.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -558,7 +563,6 @@
         private Guna.UI2.WinForms.Guna2TextBox nameGroup;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button Add;
-        private Guna.UI2.WinForms.Guna2PictureBox pictureBoxInsert;
         private Guna.UI2.WinForms.Guna2Button Exit;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private Guna.UI2.WinForms.Guna2Panel menuStrip;
@@ -568,6 +572,7 @@
         private Guna.UI2.WinForms.Guna2Button deleteOneSourse;
         private Guna.UI2.WinForms.Guna2CircleButton leftPanel;
         private Guna.UI2.WinForms.Guna2CircleButton rightPannel;
-        private Guna.UI2.WinForms.Guna2CircleButton addImage;
+        private Guna.UI2.WinForms.Guna2Button addImage;
+        private Guna.UI2.WinForms.Guna2PictureBox pictureBoxInsert;
     }
 }

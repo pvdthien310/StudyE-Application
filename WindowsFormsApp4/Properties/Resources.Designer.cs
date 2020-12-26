@@ -63,6 +63,16 @@ namespace WindowsFormsApp4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _01_arrow_left_512 {
+            get {
+                object obj = ResourceManager.GetObject("01_arrow_left-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _0c3b3adb1a7530892e55ef36d3be6cb8 {
             get {
                 object obj = ResourceManager.GetObject("0c3b3adb1a7530892e55ef36d3be6cb8", resourceCulture);
@@ -543,6 +553,16 @@ namespace WindowsFormsApp4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chevron_left_circle_512 {
+            get {
+                object obj = ResourceManager.GetObject("chevron-left-circle-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap document_text_512 {
             get {
                 object obj = ResourceManager.GetObject("document_text-512", resourceCulture);
@@ -876,6 +896,26 @@ namespace WindowsFormsApp4.Properties {
         internal static System.Drawing.Bitmap pause1 {
             get {
                 object obj = ResourceManager.GetObject("pause1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_photography_image_picture_add_512 {
+            get {
+                object obj = ResourceManager.GetObject("photo_photography_image_picture_add-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_photography_image_picture_add_5121 {
+            get {
+                object obj = ResourceManager.GetObject("photo_photography_image_picture_add-5121", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

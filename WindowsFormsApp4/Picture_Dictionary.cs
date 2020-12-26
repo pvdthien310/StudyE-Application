@@ -611,7 +611,7 @@ namespace WindowsFormsApp4
                         string path = "./PictureImageInsert/" + group + "/" + name +".png";
                         if (!File.Exists(path))
                         {
-                            File.Move(temp, path);
+                            File.Copy(temp, path);
                         }
                         else
                         {
@@ -624,7 +624,20 @@ namespace WindowsFormsApp4
                     }
                     else
                     {
+                        string path = "./PictureImageInsert/" + group;
+                        listSourst = Directory.GetFiles(path);
+                        
+                        Bitmap a;
+                        using (var stream = File.Open(listSourst[0], FileMode.Open))
+                        {
+                            a = new Bitmap(Image.FromStream(stream));
+                            stream.Close();
+                        }
+                        a.MakeTransparent();
+                        pictureBoxInsert.Image = a;
+                        pictureBoxInsert.Visible = true;
                         MessageBox.Show("Inserted successfully");
+                        
                     }
                 }
             }
@@ -882,6 +895,34 @@ namespace WindowsFormsApp4
             listFlowPanel[currentPanel].BringToFront();
         }
 
+      
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                int i = 0;
+                dlg.Title = "Open Image";
+                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                //dlg.Multiselect = true;
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    Bitmap a = new Bitmap(Image.FromFile(dlg.FileName));
+                    a.MakeTransparent();
+                    tem = dlg.FileName;
+                    guna2PictureBox1.BackgroundImage = a;
+                    //string t = new FileInfo(dlg.FileName).Name;
+                    string t = Path.GetFileName(dlg.FileName);
+                    t = RemoveUnicode(t);
+                    //t = RemoveSpecialCharacters(t);
+                    nameGroup.Text = t.Remove(t.Length - 4, 4);
+
+                }
+
+            }
+        }
+
         private void addImage_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog dlg = new OpenFileDialog())
@@ -908,32 +949,6 @@ namespace WindowsFormsApp4
             }
             addImage.Visible = false;
             guna2PictureBox1.Visible = true;
-        }
-
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog dlg = new OpenFileDialog())
-            {
-                int i = 0;
-                dlg.Title = "Open Image";
-                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
-                //dlg.Multiselect = true;
-
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    Bitmap a = new Bitmap(Image.FromFile(dlg.FileName));
-                    a.MakeTransparent();
-                    tem = dlg.FileName;
-                    guna2PictureBox1.BackgroundImage = a;
-                    //string t = new FileInfo(dlg.FileName).Name;
-                    string t = Path.GetFileName(dlg.FileName);
-                    t = RemoveUnicode(t);
-                    //t = RemoveSpecialCharacters(t);
-                    nameGroup.Text = t.Remove(t.Length - 4, 4);
-
-                }
-
-            }
         }
     }
 }

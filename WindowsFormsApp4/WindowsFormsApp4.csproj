@@ -454,5 +454,17 @@
   <ItemGroup>
     <None Include="Resources\11.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_photography_image_picture_add-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_photography_image_picture_add-5121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-left-circle-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01_arrow_left-512.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
