@@ -279,6 +279,7 @@ namespace WindowsFormsApp4
 
         private void Picture_Dictionary_Load(object sender, EventArgs e)
         {
+            
             load_Button();
             panel1.BringToFront();
         }
@@ -361,7 +362,7 @@ namespace WindowsFormsApp4
 
 
             }
-
+            
 
 
 
@@ -497,6 +498,7 @@ namespace WindowsFormsApp4
                 {
                     listFlowPanel[i].Visible = true;
                 }
+
             }
             
         }
@@ -617,7 +619,7 @@ namespace WindowsFormsApp4
              cnn.Close();*/
 
             string path = "./GroupInsert/" + group +".png";
-            listButon.Clear();
+            //listButon.Clear();
             
            /* if (File.Exists(path))
             {
@@ -642,7 +644,7 @@ namespace WindowsFormsApp4
                 listFlowPanel[i].Visible = false;
                 listFlowPanel[i].Controls.Clear();
             }
-            //File.Delete(path);
+            File.Delete(path);
             //load_Button();
             for (int i = 0; i < numberOfPanel; i++)
             {
