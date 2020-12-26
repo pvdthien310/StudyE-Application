@@ -155,7 +155,21 @@ namespace WindowsFormsApp4
                 ResultForm2 resultform = new ResultForm2(roomform.parent, result);
                 switch (check_result())
                 {
-
+                    case 1:
+                        {
+                            resultform.BackColor = Color.Red;
+                            break;
+                        }
+                    case 2:
+                        {
+                            resultform.BackColor = Color.Yellow;
+                            break;
+                        }
+                    case 3:
+                        {
+                            resultform.BackColor = Color.White;
+                            break;
+                        }
                 }
                 this.Close();
                 resultform.Show();
@@ -220,13 +234,13 @@ namespace WindowsFormsApp4
                 {                    
                     count_question++;
                 }
-
+                for (int j = 0; j < 10; j++)
+                {
+                    if (game_creep[j].isCorrect == 1) count++;
+                }
                 if (count_question == 10)
                 {
-                    for ( int j = 0;j < 10; j++)
-                    {
-                        if (game_creep[j].isCorrect == 1) count++;
-                    }
+                   
 
                     push_result_to_data();
 
