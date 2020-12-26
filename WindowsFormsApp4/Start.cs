@@ -109,6 +109,38 @@ namespace WindowsFormsApp4
             }
             Mycnt.Close();
         }
+        private int check_result()
+        {
+           
+                if (Convert.ToInt32(result[3]) > Convert.ToInt32(result[4]))
+                {
+                     if (roomform.ishost == 1)  return 1;
+                      else return 0;
+                }
+                else if (Convert.ToInt32(result[3]) == Convert.ToInt32(result[4]))
+                 {
+                if (Convert.ToInt32(result[5]) > Convert.ToInt32(result[6]))
+                {
+                    if (roomform.ishost == 1) return 1;
+                    else return 0;
+                }
+                else if (Convert.ToInt32(result[5]) < Convert.ToInt32(result[6]))
+                {
+                    if (roomform.ishost == 1) return 0;
+                    else return 1;
+                }
+                else if (Convert.ToInt32(result[5]) == Convert.ToInt32(result[6])) return 2;
+                 }
+                else if (Convert.ToInt32(result[3]) < Convert.ToInt32(result[4]))
+            {
+                if (roomform.ishost == 1) return 0;
+                else return 1;
+            }
+
+                ////
+            return 0;
+           
+        }
         private void check()
         {
             int s = 0; // dem xem 2 nguoi choi d a choi xong chua          
@@ -121,6 +153,10 @@ namespace WindowsFormsApp4
                 {
                 push_result_to_data();
                 ResultForm2 resultform = new ResultForm2(roomform.parent, result);
+                switch (check_result())
+                {
+
+                }
                 this.Close();
                 resultform.Show();
                 }         

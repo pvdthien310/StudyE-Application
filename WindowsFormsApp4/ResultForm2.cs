@@ -23,8 +23,12 @@ namespace WindowsFormsApp4
             InitializeComponent();
             this.parent = parent;
             this.result = result;
-            var listViewItem = new ListViewItem(result.ToArray());
-            listView1.Items.Add(listViewItem);
+            foreach (string pl in result)
+            {
+                listView1.Items.Add(pl);
+
+            }
+            
         }
     }
 }
