@@ -73,6 +73,7 @@ namespace WindowsFormsApp4
         {
             time += 0.1;
             gameForm.time_label.Text = time.ToString();
+
         }
         private void check()
         {
