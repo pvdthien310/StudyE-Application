@@ -126,11 +126,15 @@ namespace WindowsFormsApp4
 
                 listSourst = Directory.GetFiles(path);
 
-
                 if (listSourst.Length > 0)
                 {
-                   
-                    Bitmap a = new Bitmap(Image.FromFile(listSourst[0]));
+
+                    Bitmap a;
+                    using (var stream = File.Open(listSourst[0], FileMode.Open))
+                    {
+                        a = new Bitmap(Image.FromStream(stream));
+                        stream.Close();
+                    }
                     a.MakeTransparent();
                     string text = Path.GetFileName(listSourst[0]);
                     text = text.Remove(text.Length - 4, 4);
@@ -332,8 +336,13 @@ namespace WindowsFormsApp4
                 Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
                 buttonImage b = new buttonImage();
                 but.BackColor = Color.Transparent;
-                Bitmap a = new Bitmap(f);
-                
+                Bitmap a;
+                using (var stream = File.Open(f, FileMode.Open))
+                {
+                    a = new Bitmap(Image.FromStream(stream));
+                    stream.Close();
+                }
+
 
                 but = b.createButton(name, a, "1");
                 but.MouseClick += new MouseEventHandler(TabChose_Click);
@@ -488,13 +497,7 @@ namespace WindowsFormsApp4
             {
                 File.Copy(tem, path);
                 panel5.Visible = false;
-
-                path = "./PictureImageInsert/" + nameGroup.Text;
-                Directory.CreateDirectory(path);
-
-
-
-
+               
                 for(int i=0; i<numberOfPanel; i++)
                 {
                     listFlowPanel[i].Visible = false;
@@ -506,7 +509,16 @@ namespace WindowsFormsApp4
                 {
                     listFlowPanel[i].Visible = true;
                 }
-
+                
+                Bitmap a;
+                using (var stream = File.Open(path, FileMode.Open))
+                {
+                    a = new Bitmap(Image.FromStream(stream));
+                    stream.Close();
+                }
+                pictureBoxInsert.Image = a;
+                path = path = "./PictureImageInsert/" + nameGroup.Text;
+                Directory.CreateDirectory(path);
             }
             
         }
@@ -652,8 +664,8 @@ namespace WindowsFormsApp4
              cnn.Close();*/
 
             string path = "./GroupInsert/" + group +".png";
-            listButon.Clear();                   
-
+            listButon.Clear();
+           
             menuStrip.Visible = false;
 
             for (int i = 0; i < numberOfPanel; i++)
