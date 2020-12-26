@@ -33,6 +33,7 @@
             this.deleteOneSourse = new Guna.UI2.WinForms.Guna2Button();
             this.textName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.pictureBoxInsert = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -54,15 +55,14 @@
             this.Delete = new Guna.UI2.WinForms.Guna2Button();
             this.leftPanel = new Guna.UI2.WinForms.Guna2CircleButton();
             this.rightPannel = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.pictureBoxInsert = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel1.SuspendLayout();
             this.paneloneSourse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.menuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -119,9 +119,9 @@
             this.textName.BackColor = System.Drawing.Color.White;
             this.textName.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textName.Location = new System.Drawing.Point(370, 417);
+            this.textName.Location = new System.Drawing.Point(310, 417);
             this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(491, 62);
+            this.textName.Size = new System.Drawing.Size(640, 62);
             this.textName.TabIndex = 10;
             this.textName.Text = "avatar";
             this.textName.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -130,7 +130,7 @@
             // guna2CircleButton2
             // 
             this.guna2CircleButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton2.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.iconfinder_icons_add_1564491;
+            this.guna2CircleButton2.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.plus_add_512;
             this.guna2CircleButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2CircleButton2.CheckedState.Parent = this.guna2CircleButton2;
             this.guna2CircleButton2.CustomImages.Parent = this.guna2CircleButton2;
@@ -145,6 +145,19 @@
             this.guna2CircleButton2.Size = new System.Drawing.Size(60, 60);
             this.guna2CircleButton2.TabIndex = 9;
             this.guna2CircleButton2.Click += new System.EventHandler(this.guna2CircleButton2_Click);
+            // 
+            // pictureBoxInsert
+            // 
+            this.pictureBoxInsert.BackColor = System.Drawing.Color.White;
+            this.pictureBoxInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxInsert.Location = new System.Drawing.Point(373, 92);
+            this.pictureBoxInsert.Name = "pictureBoxInsert";
+            this.pictureBoxInsert.ShadowDecoration.Parent = this.pictureBoxInsert;
+            this.pictureBoxInsert.Size = new System.Drawing.Size(322, 282);
+            this.pictureBoxInsert.TabIndex = 8;
+            this.pictureBoxInsert.TabStop = false;
+            this.pictureBoxInsert.Visible = false;
+            this.pictureBoxInsert.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxInsert_MouseClick);
             // 
             // panel4
             // 
@@ -266,7 +279,7 @@
             // guna2CircleButton1
             // 
             this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.a1;
+            this.guna2CircleButton1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.return_turnaround_5121;
             this.guna2CircleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
             this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
@@ -461,15 +474,18 @@
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.leftPanel.ShadowDecoration.Parent = this.leftPanel;
-            this.leftPanel.Size = new System.Drawing.Size(59, 61);
+            this.leftPanel.Size = new System.Drawing.Size(60, 60);
             this.leftPanel.TabIndex = 8;
             this.leftPanel.Click += new System.EventHandler(this.leftPanel_Click);
             // 
             // rightPannel
             // 
             this.rightPannel.BackColor = System.Drawing.Color.Transparent;
+            this.rightPannel.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._01_arrow_left_5121;
+            this.rightPannel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.rightPannel.CheckedState.Parent = this.rightPannel;
             this.rightPannel.CustomImages.Parent = this.rightPannel;
+            this.rightPannel.FillColor = System.Drawing.Color.Transparent;
             this.rightPannel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.rightPannel.ForeColor = System.Drawing.Color.White;
             this.rightPannel.HoverState.Parent = this.rightPannel;
@@ -477,23 +493,9 @@
             this.rightPannel.Name = "rightPannel";
             this.rightPannel.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.rightPannel.ShadowDecoration.Parent = this.rightPannel;
-            this.rightPannel.Size = new System.Drawing.Size(53, 49);
+            this.rightPannel.Size = new System.Drawing.Size(60, 60);
             this.rightPannel.TabIndex = 9;
-            this.rightPannel.Text = "right";
             this.rightPannel.Click += new System.EventHandler(this.rightPannel_Click);
-            // 
-            // pictureBoxInsert
-            // 
-            this.pictureBoxInsert.BackColor = System.Drawing.Color.White;
-            this.pictureBoxInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxInsert.Location = new System.Drawing.Point(373, 92);
-            this.pictureBoxInsert.Name = "pictureBoxInsert";
-            this.pictureBoxInsert.ShadowDecoration.Parent = this.pictureBoxInsert;
-            this.pictureBoxInsert.Size = new System.Drawing.Size(322, 282);
-            this.pictureBoxInsert.TabIndex = 8;
-            this.pictureBoxInsert.TabStop = false;
-            this.pictureBoxInsert.Visible = false;
-            this.pictureBoxInsert.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxInsert_MouseClick);
             // 
             // Picture_Dictionary
             // 
@@ -518,12 +520,12 @@
             this.Click += new System.EventHandler(this.Picture_Dictionary_Click);
             this.panel1.ResumeLayout(false);
             this.paneloneSourse.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.menuStrip.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInsert)).EndInit();
             this.ResumeLayout(false);
 
         }

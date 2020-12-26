@@ -73,6 +73,16 @@ namespace WindowsFormsApp4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _01_arrow_left_5121 {
+            get {
+                object obj = ResourceManager.GetObject("01_arrow_left-5121", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _0c3b3adb1a7530892e55ef36d3be6cb8 {
             get {
                 object obj = ResourceManager.GetObject("0c3b3adb1a7530892e55ef36d3be6cb8", resourceCulture);
@@ -923,6 +933,16 @@ namespace WindowsFormsApp4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plus_add_512 {
+            get {
+                object obj = ResourceManager.GetObject("plus_add-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_geometric_low_polygon_green_minimalistic_romantic_gradient_background_material_polygongreensimpleromanticgradientbackgroundmaterial_image_66647 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-geometric-low-polygon-green-minimalistic-romantic-gradient-background-mat" +
@@ -937,6 +957,26 @@ namespace WindowsFormsApp4.Properties {
         internal static System.Drawing.Bitmap quit_icon_1 {
             get {
                 object obj = ResourceManager.GetObject("quit-icon-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap return_turnaround_512 {
+            get {
+                object obj = ResourceManager.GetObject("return_turnaround-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap return_turnaround_5121 {
+            get {
+                object obj = ResourceManager.GetObject("return_turnaround-5121", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

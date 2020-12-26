@@ -475,7 +475,7 @@ namespace WindowsFormsApp4
             //numberOfButton++;
             //lastId++;
             //load_Button(0);
-            if(guna2PictureBox1.BackgroundImage != global::WindowsFormsApp4.Properties.Resources.interface_77_512 && nameGroup.Text!="")
+            if(addImage.Visible==false && nameGroup.Text!="")
             {
                 string path = "./GroupInsert/" + nameGroup.Text + ".png";
                 if (File.Exists(path))
@@ -499,13 +499,7 @@ namespace WindowsFormsApp4
                         listFlowPanel[i].Visible = true;
                     }
 
-                    Bitmap a;
-                    using (var stream = File.Open(path, FileMode.Open))
-                    {
-                        a = new Bitmap(Image.FromStream(stream));
-                        stream.Close();
-                    }
-                    pictureBoxInsert.Image = a;
+                    
                     path = path = "./PictureImageInsert/" + nameGroup.Text;
                     Directory.CreateDirectory(path);
                 }
@@ -521,6 +515,7 @@ namespace WindowsFormsApp4
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
+            
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
                 /*int i = 0;
@@ -601,14 +596,18 @@ namespace WindowsFormsApp4
                     pictureBox1.Image = null;
                 }*/
                 dlg.Multiselect = true;
+                dlg.Title = "Open Image";
+                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
+                    string path;
                     int flag = 0;
+
                     foreach (string temp in dlg.FileNames)
                     {
                         string name = Path.GetFileName(temp);
                         name = name.Remove(name.Length - 4, 4);
-                        string path = "./PictureImageInsert/" + group + "/" + name +".png";
+                        path = "./PictureImageInsert/" + group + "/" + name + ".png";
                         if (!File.Exists(path))
                         {
                             File.Copy(temp, path);
@@ -622,23 +621,27 @@ namespace WindowsFormsApp4
                     {
                         MessageBox.Show("Several image names already exist!", "Some image were not inserted!");
                     }
-                    else
+
+
+                    path = "./PictureImageInsert/" + group;
+                    listSourst = Directory.GetFiles(path);
+
+                    Bitmap a;
+                    using (var stream = File.Open(listSourst[0], FileMode.Open))
                     {
-                        string path = "./PictureImageInsert/" + group;
-                        listSourst = Directory.GetFiles(path);
-                        
-                        Bitmap a;
-                        using (var stream = File.Open(listSourst[0], FileMode.Open))
-                        {
-                            a = new Bitmap(Image.FromStream(stream));
-                            stream.Close();
-                        }
-                        a.MakeTransparent();
-                        pictureBoxInsert.Image = a;
-                        pictureBoxInsert.Visible = true;
-                        MessageBox.Show("Inserted successfully");
-                        
+                        a = new Bitmap(Image.FromStream(stream));
+                        stream.Close();
                     }
+                    a.MakeTransparent();
+                    pictureBoxInsert.BackgroundImage = a;
+                    pictureBoxInsert.Visible = true;
+                    string nam = Path.GetFileName(listSourst[0]);
+                    nam = nam.Remove(nam.Length - 4, 4);
+                    textName.Text = nam;
+
+                    MessageBox.Show("Inserted successfully");
+
+
                 }
             }
         }

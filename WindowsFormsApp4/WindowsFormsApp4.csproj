@@ -466,5 +466,17 @@
   <ItemGroup>
     <None Include="Resources\01_arrow_left-512.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01_arrow_left-5121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return_turnaround-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return_turnaround-5121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_add-512.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
