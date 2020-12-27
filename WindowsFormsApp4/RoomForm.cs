@@ -95,6 +95,13 @@ namespace WindowsFormsApp4
 
             else if (ishost == 0)
             {
+                if (room_info.IsReady == 1 && room_info.IsStart == 0)
+                {
+                    guna2HtmlLabel1.Text = "Let's Start !!";
+                    guna2HtmlLabel1.Visible = true;
+
+                }
+                else guna2HtmlLabel1.Text = "Your competitor is not ready !!";
                 if (room_info.IsReady == 1 && room_info.IsStart == 1)
                 {
                     
@@ -119,7 +126,7 @@ namespace WindowsFormsApp4
             }
             guna2HtmlLabel_name1.Text = room_info.HostID;
             guna2HtmlLabel_status1.Text = "Host";
-           if (room_info.GuestID != "0")
+           if (room_info.GuestID != "")
             {
                 pictureBox2.Visible = true;
                 guna2HtmlLabel_name2.Text = room_info.GuestID;
