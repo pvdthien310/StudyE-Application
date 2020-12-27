@@ -25,6 +25,7 @@ namespace WindowsFormsApp4
         public int Y_yasuo;
         public int whatframes; // khung hinh thu bao nhieu 
         public Timer timer;
+        public Timer timer3;  // dem thoi gian tranh truong hop nguoi choi treo may
         public int isdraw;
         public double time;
         //
@@ -71,10 +72,27 @@ namespace WindowsFormsApp4
             timer.Enabled = true;
             time = 0;
 
+            timer3 = new Timer();
+            timer3.Tick += new EventHandler(timer3_tick);
+            timer3.Interval = 100;
+            timer3.Enabled = true;
+            
+
+
 
 
         }
-        private void push_room_data()
+        private void timer3_tick(object sender, EventArgs e)
+        {
+            time += 0.1;
+            if (time > 100)
+            {
+                push_result_to_data();
+                gameForm.Invalidate();
+                isdraw = 0;
+            }
+        }
+            private void push_room_data()
         {
             if (Mycnt.State != ConnectionState.Open)
             {
@@ -88,7 +106,7 @@ namespace WindowsFormsApp4
         }
         private void timer_tick(object sender, EventArgs e)
         {
-            time += 0.1;
+            
 
             //gameForm.time_label.Text = time.ToString();
             //gameForm.Invalidate();
@@ -109,12 +127,7 @@ namespace WindowsFormsApp4
                 result.Add(dt.Rows[0][i].ToString());
             }
             Mycnt.Close();
-            if (time > 100)
-            {
-                push_result_to_data();
-                gameForm.Invalidate();
-                isdraw = 0;
-            }
+        
         }
         private int check_result()
         {
@@ -314,6 +327,7 @@ namespace WindowsFormsApp4
             isupdate = 0;
           
             timer.Enabled = false;
+            timer3.Enabled = false;
             // mo form result
             timer2 = new Timer();
             timer2.Interval = 100;
