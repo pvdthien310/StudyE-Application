@@ -217,6 +217,7 @@
             this.Controls.Add(this.guna2Button_Start);
             this.Controls.Add(this.guna2Button_Ready);
             this.Controls.Add(this.Label_RoomID);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RoomForm";
             this.Text = "RoomForm";

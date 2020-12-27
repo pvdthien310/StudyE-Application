@@ -129,12 +129,14 @@ namespace WindowsFormsApp4
                 else
                     guna2HtmlLabel_status2.Text = "Not Ready";
                 guna2HtmlLabel_status2.Visible = true;
+                guna2HtmlLabel1.Visible = true;
             }
             else
             {
                 pictureBox2.Visible = false;
                 guna2HtmlLabel_name2.Visible = false;      
                 guna2HtmlLabel_status2.Visible = false;
+                guna2HtmlLabel1.Visible = false;
             }
 
 
