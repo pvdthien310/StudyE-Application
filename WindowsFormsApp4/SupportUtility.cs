@@ -178,15 +178,12 @@ namespace WindowsFormsApp4
             }    
             return Result;
         }
-        public static void ResetPassword(string Email,string Name, string Pass)
+        public static void ResetPassword(string Email, string Pass)
         {
             MyCnt.Open();
-            string replaceString = "Update UserAccount set PassWord = '" + Pass + "' where Email = '" + Email + "'";
-            string replaceString2 = "Update UserAccount set UserName = '" + Name + "' where Email = '" + Email + "'";
+            string replaceString = "Update UserAccount set PassWord = '" + Pass + "',IsSignIn = '0' where Email = '" + Email + "'";
             SqlCommand com2 = new SqlCommand(replaceString, MyCnt);
-            SqlCommand com3 = new SqlCommand(replaceString2, MyCnt);
             com2.ExecuteNonQuery();
-            com3.ExecuteNonQuery();
             MyCnt.Close();
         }
         public static void SaveAccount(string Name, string Pass)

@@ -44,8 +44,6 @@
             this.ResendCountdown_timer = new System.Windows.Forms.Timer(this.components);
             this.ViewPass_checkbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.ViewPass2_checkbox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.NewName_label = new System.Windows.Forms.Label();
-            this.NewName_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // ConfirmCode_label
@@ -274,44 +272,11 @@
             this.ViewPass2_checkbox.UseVisualStyleBackColor = true;
             this.ViewPass2_checkbox.CheckedChanged += new System.EventHandler(this.ViewPass2_checkbox_CheckedChanged);
             // 
-            // NewName_label
-            // 
-            this.NewName_label.AutoSize = true;
-            this.NewName_label.Location = new System.Drawing.Point(42, 100);
-            this.NewName_label.Name = "NewName_label";
-            this.NewName_label.Size = new System.Drawing.Size(60, 13);
-            this.NewName_label.TabIndex = 15;
-            this.NewName_label.Text = "New Name";
-            // 
-            // NewName_textbox
-            // 
-            this.NewName_textbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.NewName_textbox.DefaultText = "";
-            this.NewName_textbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.NewName_textbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.NewName_textbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.NewName_textbox.DisabledState.Parent = this.NewName_textbox;
-            this.NewName_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.NewName_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.NewName_textbox.FocusedState.Parent = this.NewName_textbox;
-            this.NewName_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.NewName_textbox.HoverState.Parent = this.NewName_textbox;
-            this.NewName_textbox.Location = new System.Drawing.Point(163, 90);
-            this.NewName_textbox.Name = "NewName_textbox";
-            this.NewName_textbox.PasswordChar = '\0';
-            this.NewName_textbox.PlaceholderText = "";
-            this.NewName_textbox.SelectedText = "";
-            this.NewName_textbox.ShadowDecoration.Parent = this.NewName_textbox;
-            this.NewName_textbox.Size = new System.Drawing.Size(200, 36);
-            this.NewName_textbox.TabIndex = 2;
-            // 
             // ResetPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 359);
-            this.Controls.Add(this.NewName_textbox);
-            this.Controls.Add(this.NewName_label);
             this.Controls.Add(this.ViewPass2_checkbox);
             this.Controls.Add(this.ViewPass_checkbox);
             this.Controls.Add(this.CountdownResend_label);
@@ -352,7 +317,5 @@
         private System.Windows.Forms.Timer ResendCountdown_timer;
         private Guna.UI2.WinForms.Guna2CheckBox ViewPass_checkbox;
         private Guna.UI2.WinForms.Guna2CheckBox ViewPass2_checkbox;
-        private System.Windows.Forms.Label NewName_label;
-        private Guna.UI2.WinForms.Guna2TextBox NewName_textbox;
     }
 }

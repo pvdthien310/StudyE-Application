@@ -102,11 +102,32 @@ namespace WindowsFormsApp4
 
         private void ResetPass_button_Click(object sender, EventArgs e)
         {
-            SupportUtility.ResetPassword(Email_textbox.Text,NewName_textbox.Text, NewPass_textbox.Text);
-            logInForm.Show();
-            logInForm.Name_textbox.Text = Email_textbox.Text;
-            logInForm.Pass_textbox.Text = NewPass_textbox.Text;
-            this.Dispose();
+            if (NewPass_textbox.Text == ConfirmPass_textbox.Text)
+            {
+                if (NewPass_textbox.Text != "" && ConfirmCode_textbox.Text != "" && ConfirmPass_textbox.Text != "")
+                {
+                    if (verifyCode == ConfirmCode_textbox.Text)
+                    {
+                        SupportUtility.ResetPassword(Email_textbox.Text, NewPass_textbox.Text);
+                        logInForm.Show();
+                        logInForm.Name_textbox.Text = Email_textbox.Text;
+                        logInForm.Pass_textbox.Text = NewPass_textbox.Text;
+                        this.Dispose();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mã xác nhận không hợp lệ", "Thộng báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Chưa nhập đầy đủ thông tin", "Thộng báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Mật khẩu không trùng khớp","Thộng báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
