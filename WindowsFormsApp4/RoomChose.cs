@@ -262,7 +262,7 @@ namespace WindowsFormsApp4
            // //}
            // this.Show();
              this.RoomChose_Load(sender, e);
-            MessageBox.Show("Reset roi ba oi !!");
+            MessageBox.Show("Đã Reset","Thông Báo");
 
         }
 
