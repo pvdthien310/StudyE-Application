@@ -290,8 +290,9 @@ namespace WindowsFormsApp4
             Mycnt.Open();
             string query = string.Format("update roomlist set HostID = '', Isclosed = '0', IsReady = '0',IsStart ='0' where hostid = '{0}'"
                 + " update roomlist set GuestID = '', Isclosed = '0', IsReady = '0',IsStart ='0' where GuestID = '{0}'" +
-                "delete from Roomlist where HostID = '' and GuestID = ''" +
-                "update RoomList set HostID = GuestID, GuestID = '', Isclosed = '0', IsReady = '0',IsStart ='0' where HostID = '' and GuestID != ''", PlayerName);
+                " delete from Roomlist where HostID = '' and GuestID = ''" + " delete from roomquestions where exists (select * from roomlist where guestid ='' and hostid ='' )" +
+                " delete from roomquestions where roomid not in (select roomid from roomlist) " + " delete from RoomResult where  roomid not in (select roomid from roomlist)" +
+                " update RoomList set HostID = GuestID, GuestID = '', Isclosed = '0', IsReady = '0',IsStart ='0' where HostID = '' and GuestID != ''", PlayerName);
             SqlCommand cmd = new SqlCommand(query, Mycnt);
             cmd.ExecuteNonQuery();
             Mycnt.Close();
@@ -301,7 +302,7 @@ namespace WindowsFormsApp4
         {
             loginForm.Show();
             SupportUtility.UnSignIn(PlayerName);
-            this.Dispose();
+            this.Close();
         }
     }
 }
