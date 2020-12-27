@@ -40,9 +40,9 @@ namespace WindowsFormsApp4
             {
                 Mycnt.Open();
             } 
-            string query = string.Format(" delete * FROM ROOMRESULT WHERE ROOMID = '{0}'" +
-                "DELETE * FROM RoomQuestions WHERE ROOMID = '{0}'" +
-                "DELETE * FROM RoomList WHERE ROOMID = '{0}'",result[0]);
+            string query = string.Format(" delete  FROM ROOMRESULT WHERE ROOMID = '{0}'" +
+                "DELETE  FROM RoomQuestions WHERE ROOMID = '{0}'" +
+                "DELETE  FROM RoomList WHERE ROOMID = '{0}'",result[0]);
             SqlCommand com = new SqlCommand(query, Mycnt);
             com.ExecuteNonQuery();
             Mycnt.Close();
@@ -57,9 +57,9 @@ namespace WindowsFormsApp4
             {
                 Mycnt.Open();
             }
-            string query = string.Format(" delete * FROM ROOMRESULT WHERE ROOMID = '{0}'" +
-                " DELETE * FROM RoomQuestions WHERE ROOMID = '{0}'" +
-                " DELETE * FROM RoomList WHERE ROOMID = '{0}'", result[0]);
+            string query = string.Format(" delete  FROM ROOMRESULT WHERE ROOMID = '{0}'" +
+                " DELETE  FROM RoomQuestions WHERE ROOMID = '{0}'" +
+                " DELETE  FROM RoomList WHERE ROOMID = '{0}'", result[0]);
             SqlCommand com = new SqlCommand(query, Mycnt);
             com.ExecuteNonQuery();
             Mycnt.Close();
