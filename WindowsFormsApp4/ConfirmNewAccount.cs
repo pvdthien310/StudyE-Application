@@ -46,7 +46,7 @@ namespace WindowsFormsApp4
             if (TypeCode_textbox.Text == signUpForm.verifyCode)
             {
                 SupportUtility.CreateAccount(signUpForm.Email_textbox.Text, signUpForm.Name_textbox.Text, signUpForm.Pass_textbox.Text);
-                roomChose = new RoomChose(signUpForm.Name_textbox.Text);
+                roomChose = new RoomChose(signUpForm.Name_textbox.Text,signUpForm.logInForm);
                 roomChose.Show();
                 signUpForm.Dispose();
                 this.Dispose();

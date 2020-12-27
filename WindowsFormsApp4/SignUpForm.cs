@@ -15,7 +15,7 @@ namespace WindowsFormsApp4
     {
         bool isSuccess = true;
         //parent form
-        LogInForm logInForm;
+        public LogInForm logInForm;
         //child form
         ConfirmNewAccount confirmNewAccount;
         //property

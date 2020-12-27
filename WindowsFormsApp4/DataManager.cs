@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace WindowsFormsApp4
 {
     public class DataManager
     {
         private static DataManager instance;
-        SqlConnection mycnt = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True"); // Của Thức
+        //SqlConnection mycnt = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True"); // Của Thức
         //SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True"); // Của Thiên
         //SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True"); // của thắng
-
+        static string path = Environment.CurrentDirectory;
+        static string collabString = @ConfigurationManager.AppSettings["ConnectString_Head"] + path + "\\" + ConfigurationManager.AppSettings["Name"] + ConfigurationManager.AppSettings["ConnectString_Tail"];
+        SqlConnection mycnt = new SqlConnection(collabString);
         public static DataManager Instance
         {
             get { if (instance == null) instance = new DataManager(); return instance; }

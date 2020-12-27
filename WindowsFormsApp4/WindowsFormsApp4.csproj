@@ -52,6 +52,7 @@
       <HintPath>C:\Users\pvdth\OneDrive\Desktop\testguna\[FTUApps.com] - Guna UI Framework Ultimate v2.0.0.1 + Keygen\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -419,9 +420,6 @@
     <None Include="Resources\left.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\speak.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\pause.png" />
   </ItemGroup>
   <ItemGroup>
@@ -513,6 +511,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button_backward_1-5121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\yasuo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c7de824e-b549-4802-90eb-b7e2e5378a77_200x2002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c7de824e-b549-4802-90eb-b7e2e5378a77_200x2001.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

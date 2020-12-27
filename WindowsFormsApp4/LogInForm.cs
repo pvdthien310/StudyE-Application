@@ -24,12 +24,11 @@ namespace WindowsFormsApp4
             InitializeComponent();
         }
 
-        public LogInForm(mainForm parent, SignUpForm signUpForm, ResetPass resetPass )
+        //public LogInForm(mainForm parent, SignUpForm signUpForm, ResetPass resetPass )
+        public LogInForm(mainForm parent)
         {
             InitializeComponent();
             this.parent = parent;
-            this.signUpForm = signUpForm;
-            this.resetPass = resetPass;
         }
 
         //--------------------------

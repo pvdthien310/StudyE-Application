@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Speech.Synthesis;
-
+using System.Configuration;
 namespace WindowsFormsApp4
 {
     public partial class mainForm : Form
@@ -19,7 +19,9 @@ namespace WindowsFormsApp4
         int effect2 = 0;
         //thêm từ master  
         public searchedWordList EV_SWlist = new searchedWordList();
-        SqlConnection mycnt = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True"); // Của Thức
+        static string path = Environment.CurrentDirectory;
+        static string collabString = @ConfigurationManager.AppSettings["ConnectString_Head"] + path + "\\" + ConfigurationManager.AppSettings["Name"] + ConfigurationManager.AppSettings["ConnectString_Tail"];
+        SqlConnection mycnt = new SqlConnection(collabString); // Của Thức
         //SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True"); // Của Thiên
         //SqlConnection mycnt = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True"); // của thắng
         public startForm parent;
@@ -45,14 +47,14 @@ namespace WindowsFormsApp4
             {
                 this.guna2Button_Game.Size = new System.Drawing.Size(5, 74);
                 this.guna2Button_FlashCard.Size = new System.Drawing.Size(5, 74);
-                this.guna2Button_User.Size = new System.Drawing.Size(5, 74);
+                this.FightingGame_button.Size = new System.Drawing.Size(5, 74);
                 this.guna2Button_Location.Size = new System.Drawing.Size(5, 74);
             }
             if (effect1 < 5)
             {
                 this.guna2Button_Game.Size = new System.Drawing.Size(this.guna2Button_Game.Width + 29, 74);
                 this.guna2Button_FlashCard.Size = new System.Drawing.Size(this.guna2Button_FlashCard.Width + 29, 74);
-                this.guna2Button_User.Size = new System.Drawing.Size(this.guna2Button_User.Width + 29, 74);
+                this.FightingGame_button.Size = new System.Drawing.Size(this.FightingGame_button.Width + 29, 74);
                 effect1++;
             }
             if (effect2 < 5)
@@ -1175,6 +1177,13 @@ namespace WindowsFormsApp4
         {
             if (e.KeyChar <= 'z' && e.KeyChar >= 'a' || (e.KeyChar == (char)Keys.Back && textBox5.Text == ""))
                 textBox5.TextChanged += textBox5_TextChanged;
+        }
+
+        private void FightingGame_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LogInForm logInForm = new LogInForm(this);
+            logInForm.Show();
         }
     }
 }

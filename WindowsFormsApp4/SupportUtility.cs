@@ -124,7 +124,7 @@ namespace WindowsFormsApp4
             }
 
             MyCnt.Open();
-            string insertString = "INSERT INTO UserAccount (ID,UserName,PassWord,Email,IsSign) VALUES (" + "'" + (++maxID).ToString() + "','" + Name + "','" + Pass + "','" + Email + "','" + "0')";
+            string insertString = "INSERT INTO UserAccount (ID,UserName,PassWord,Email,IsSignIn) VALUES (" + "'" + (++maxID).ToString() + "','" + Name + "','" + Pass + "','" + Email + "','" + "0')";
             SqlCommand com2 = new SqlCommand(insertString, MyCnt);
             com2.ExecuteNonQuery();
             MyCnt.Close();
