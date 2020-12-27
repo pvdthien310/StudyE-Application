@@ -29,70 +29,111 @@ namespace WindowsFormsApp4
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.guna2Button_Back = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button_BackDictionary = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // listView1
+            // guna2CircleButton1
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(56, 171);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(487, 172);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.Image = global::WindowsFormsApp4.Properties.Resources.home2;
+            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(70, 72);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(37, 12);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(77, 73);
+            this.guna2CircleButton1.TabIndex = 3;
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2Button_BackDictionary_Click);
             // 
-            // guna2Button_Back
+            // guna2CircleButton2
             // 
-            this.guna2Button_Back.CheckedState.Parent = this.guna2Button_Back;
-            this.guna2Button_Back.CustomImages.Parent = this.guna2Button_Back;
-            this.guna2Button_Back.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button_Back.ForeColor = System.Drawing.Color.White;
-            this.guna2Button_Back.HoverState.Parent = this.guna2Button_Back;
-            this.guna2Button_Back.Location = new System.Drawing.Point(514, 31);
-            this.guna2Button_Back.Name = "guna2Button_Back";
-            this.guna2Button_Back.ShadowDecoration.Parent = this.guna2Button_Back;
-            this.guna2Button_Back.Size = new System.Drawing.Size(64, 50);
-            this.guna2Button_Back.TabIndex = 1;
-            this.guna2Button_Back.Text = "Trở Về";
-            this.guna2Button_Back.Click += new System.EventHandler(this.guna2Button_Back_Click);
+            this.guna2CircleButton2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton2.CheckedState.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.CustomImages.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton2.HoverState.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.Image = global::WindowsFormsApp4.Properties.Resources.goback1;
+            this.guna2CircleButton2.ImageSize = new System.Drawing.Size(70, 75);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(746, 12);
+            this.guna2CircleButton2.Name = "guna2CircleButton2";
+            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton2.ShadowDecoration.Parent = this.guna2CircleButton2;
+            this.guna2CircleButton2.Size = new System.Drawing.Size(69, 66);
+            this.guna2CircleButton2.TabIndex = 4;
+            this.guna2CircleButton2.Click += new System.EventHandler(this.guna2Button_Back_Click);
             // 
-            // guna2Button_BackDictionary
+            // pictureBox1
             // 
-            this.guna2Button_BackDictionary.CheckedState.Parent = this.guna2Button_BackDictionary;
-            this.guna2Button_BackDictionary.CustomImages.Parent = this.guna2Button_BackDictionary;
-            this.guna2Button_BackDictionary.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button_BackDictionary.ForeColor = System.Drawing.Color.White;
-            this.guna2Button_BackDictionary.HoverState.Parent = this.guna2Button_BackDictionary;
-            this.guna2Button_BackDictionary.Location = new System.Drawing.Point(34, 31);
-            this.guna2Button_BackDictionary.Name = "guna2Button_BackDictionary";
-            this.guna2Button_BackDictionary.ShadowDecoration.Parent = this.guna2Button_BackDictionary;
-            this.guna2Button_BackDictionary.Size = new System.Drawing.Size(64, 50);
-            this.guna2Button_BackDictionary.TabIndex = 2;
-            this.guna2Button_BackDictionary.Text = "Exit";
-            this.guna2Button_BackDictionary.Click += new System.EventHandler(this.guna2Button_BackDictionary_Click);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.yasuo2;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(403, 274);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(69, 97);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(367, 236);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(142, 20);
+            this.guna2HtmlLabel1.TabIndex = 6;
+            this.guna2HtmlLabel1.Text = "guna2HtmlLabel1";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(302, 119);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(251, 35);
+            this.guna2HtmlLabel2.TabIndex = 7;
+            this.guna2HtmlLabel2.Text = "guna2HtmlLabel2";
             // 
             // ResultForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.guna2Button_BackDictionary);
-            this.Controls.Add(this.guna2Button_Back);
-            this.Controls.Add(this.listView1);
+            this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.background_char1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(861, 445);
+            this.Controls.Add(this.guna2HtmlLabel2);
+            this.Controls.Add(this.guna2HtmlLabel1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.guna2CircleButton2);
+            this.Controls.Add(this.guna2CircleButton1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ResultForm2";
             this.Text = "ResultForm2";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button_Back;
-        private Guna.UI2.WinForms.Guna2Button guna2Button_BackDictionary;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        public Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        public Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
     }
 }
