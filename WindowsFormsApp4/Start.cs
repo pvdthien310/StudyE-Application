@@ -166,16 +166,22 @@ namespace WindowsFormsApp4
                 {
                     case 1:
                         {
+                            resultform.guna2HtmlLabel1.Text = roomform.room_info.RoomID;
+                            resultform.guna2HtmlLabel2.Text = "VICTORY";                                                             
                             resultform.BackColor = Color.Red;
                             break;
                         }
                     case 2:
                         {
+                            resultform.guna2HtmlLabel1.Text = roomform.room_info.RoomID;
+                            resultform.guna2HtmlLabel2.Text = "DRAW";
                             resultform.BackColor = Color.Yellow;
                             break;
                         }
                     case 3:
                         {
+                            resultform.guna2HtmlLabel1.Text = roomform.room_info.RoomID;
+                            resultform.guna2HtmlLabel2.Text = "DEFEAT";
                             resultform.BackColor = Color.White;
                             break;
                         }
