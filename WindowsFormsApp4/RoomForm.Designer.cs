@@ -130,6 +130,7 @@
             // 
             this.guna2HtmlLabel_name1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel_name1.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel_name1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2HtmlLabel_name1.Location = new System.Drawing.Point(242, 324);
             this.guna2HtmlLabel_name1.Name = "guna2HtmlLabel_name1";
             this.guna2HtmlLabel_name1.Size = new System.Drawing.Size(125, 19);
@@ -140,6 +141,7 @@
             // 
             this.guna2HtmlLabel_name2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel_name2.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel_name2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2HtmlLabel_name2.Location = new System.Drawing.Point(584, 324);
             this.guna2HtmlLabel_name2.Name = "guna2HtmlLabel_name2";
             this.guna2HtmlLabel_name2.Size = new System.Drawing.Size(126, 19);
@@ -151,7 +153,8 @@
             // 
             this.guna2HtmlLabel_status1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel_status1.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel_status1.Location = new System.Drawing.Point(241, 263);
+            this.guna2HtmlLabel_status1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.guna2HtmlLabel_status1.Location = new System.Drawing.Point(242, 299);
             this.guna2HtmlLabel_status1.Name = "guna2HtmlLabel_status1";
             this.guna2HtmlLabel_status1.Size = new System.Drawing.Size(126, 19);
             this.guna2HtmlLabel_status1.TabIndex = 12;
@@ -161,7 +164,8 @@
             // 
             this.guna2HtmlLabel_status2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel_status2.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel_status2.Location = new System.Drawing.Point(583, 263);
+            this.guna2HtmlLabel_status2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.guna2HtmlLabel_status2.Location = new System.Drawing.Point(584, 299);
             this.guna2HtmlLabel_status2.Name = "guna2HtmlLabel_status2";
             this.guna2HtmlLabel_status2.Size = new System.Drawing.Size(127, 19);
             this.guna2HtmlLabel_status2.TabIndex = 13;
@@ -171,10 +175,11 @@
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(405, 202);
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(451, 223);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(57, 20);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(81, 25);
             this.guna2HtmlLabel1.TabIndex = 14;
             this.guna2HtmlLabel1.Text = "aaaaaa";
             this.guna2HtmlLabel1.Visible = false;

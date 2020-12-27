@@ -26,11 +26,11 @@ namespace WindowsFormsApp4
             InitializeComponent();
             this.parent = parent;
             this.result = result;
-            foreach (string pl in result)
-            {
-                listView1.Items.Add(pl);
+            //foreach (string pl in result)
+            //{
+            //    listView1.Items.Add(pl);
 
-            }
+            //}
             
         }
 

@@ -234,11 +234,11 @@ namespace WindowsFormsApp4
             com = new SqlCommand(query, Mycnt);
             com.ExecuteNonQuery();
             Mycnt.Close();
+            RoomChose newroomchose = new RoomChose(Playername,this.parent.loginForm);
             this.Close();
             this.parent.Close();
-            RoomChose newroomchose = new RoomChose(Playername);
+
             newroomchose.Show();
-            
 
         }
 
