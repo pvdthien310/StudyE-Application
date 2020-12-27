@@ -90,7 +90,7 @@
             this.Pass_textbox.SelectedText = "";
             this.Pass_textbox.ShadowDecoration.Parent = this.Pass_textbox;
             this.Pass_textbox.Size = new System.Drawing.Size(212, 36);
-            this.Pass_textbox.TabIndex = 13;
+            this.Pass_textbox.TabIndex = 2;
             this.Pass_textbox.UseSystemPasswordChar = true;
             this.Pass_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Pass_textbox_KeyPress);
             // 
@@ -116,7 +116,7 @@
             this.Name_textbox.SelectedText = "";
             this.Name_textbox.ShadowDecoration.Parent = this.Name_textbox;
             this.Name_textbox.Size = new System.Drawing.Size(212, 36);
-            this.Name_textbox.TabIndex = 12;
+            this.Name_textbox.TabIndex = 1;
             this.Name_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Name_textbox_KeyPress);
             // 
             // SignUp_button
@@ -133,6 +133,7 @@
             this.SignUp_button.ShadowDecoration.Parent = this.SignUp_button;
             this.SignUp_button.Size = new System.Drawing.Size(161, 48);
             this.SignUp_button.TabIndex = 9;
+            this.SignUp_button.TabStop = false;
             this.SignUp_button.Text = "Sign Up";
             this.SignUp_button.Click += new System.EventHandler(this.SignUp_button_Click);
             // 
@@ -170,7 +171,7 @@
             this.ConfirmPass_textbox.SelectedText = "";
             this.ConfirmPass_textbox.ShadowDecoration.Parent = this.ConfirmPass_textbox;
             this.ConfirmPass_textbox.Size = new System.Drawing.Size(213, 36);
-            this.ConfirmPass_textbox.TabIndex = 16;
+            this.ConfirmPass_textbox.TabIndex = 3;
             this.ConfirmPass_textbox.UseSystemPasswordChar = true;
             this.ConfirmPass_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ConfirmPass_textbox_KeyPress);
             // 
@@ -207,7 +208,7 @@
             this.Email_textbox.SelectedText = "";
             this.Email_textbox.ShadowDecoration.Parent = this.Email_textbox;
             this.Email_textbox.Size = new System.Drawing.Size(214, 36);
-            this.Email_textbox.TabIndex = 18;
+            this.Email_textbox.TabIndex = 0;
             this.Email_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Email_textbox_KeyPress);
             // 
             // Cancel_button
@@ -225,6 +226,7 @@
             this.Cancel_button.ShadowDecoration.Parent = this.Cancel_button;
             this.Cancel_button.Size = new System.Drawing.Size(86, 33);
             this.Cancel_button.TabIndex = 20;
+            this.Cancel_button.TabStop = false;
             this.Cancel_button.Text = "Cancel";
             this.Cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
             // 
@@ -240,6 +242,7 @@
             this.ViewPass_checkbox.Name = "ViewPass_checkbox";
             this.ViewPass_checkbox.Size = new System.Drawing.Size(118, 18);
             this.ViewPass_checkbox.TabIndex = 21;
+            this.ViewPass_checkbox.TabStop = false;
             this.ViewPass_checkbox.Text = "View Password";
             this.ViewPass_checkbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.ViewPass_checkbox.UncheckedState.BorderRadius = 2;
@@ -260,6 +263,7 @@
             this.ViewPass2_checkbox.Name = "ViewPass2_checkbox";
             this.ViewPass2_checkbox.Size = new System.Drawing.Size(118, 18);
             this.ViewPass2_checkbox.TabIndex = 22;
+            this.ViewPass2_checkbox.TabStop = false;
             this.ViewPass2_checkbox.Text = "View Password";
             this.ViewPass2_checkbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.ViewPass2_checkbox.UncheckedState.BorderRadius = 2;
@@ -277,6 +281,7 @@
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(92, 32);
             this.guna2HtmlLabel1.TabIndex = 23;
+            this.guna2HtmlLabel1.TabStop = false;
             this.guna2HtmlLabel1.Text = "SIGN UP";
             // 
             // panel1
@@ -304,6 +309,7 @@
             // 
             // SignUpForm
             // 
+            this.AcceptButton = this.SignUp_button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;

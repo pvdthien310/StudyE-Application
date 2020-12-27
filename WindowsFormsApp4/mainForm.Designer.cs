@@ -1640,7 +1640,7 @@
             this.Controls.Add(this.guna2Panel_SearchedWord);
             this.Controls.Add(this.guna2Panel_Add);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudyE";

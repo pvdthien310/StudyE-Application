@@ -63,27 +63,27 @@ namespace WindowsFormsApp4
                             }  
                             catch(Exception)
                             {
-                                MessageBox.Show("Không thể gủi mail");
+                                MessageBox.Show("Không thể gửi mail", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Mật khẩu nhập lại không trùng khớp");
+                            MessageBox.Show("Mật khẩu không trùng khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Tên người dùng đã được sử dụng");
+                        MessageBox.Show("Tên người dùng đã được sử dụng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Email đã được sử dụng");
+                    MessageBox.Show("Email đã được sử dụng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập đủ thông tin");
+                MessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }    
         }
 

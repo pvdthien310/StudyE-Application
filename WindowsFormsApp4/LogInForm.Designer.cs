@@ -63,6 +63,7 @@
             this.SignIn_button.ShadowDecoration.Parent = this.SignIn_button;
             this.SignIn_button.Size = new System.Drawing.Size(155, 33);
             this.SignIn_button.TabIndex = 2;
+            this.SignIn_button.TabStop = false;
             this.SignIn_button.Text = "Sign In";
             this.SignIn_button.Click += new System.EventHandler(this.SignIn_button_Click);
             // 
@@ -82,6 +83,7 @@
             this.SignUp_button.ShadowDecoration.Parent = this.SignUp_button;
             this.SignUp_button.Size = new System.Drawing.Size(155, 33);
             this.SignUp_button.TabIndex = 3;
+            this.SignUp_button.TabStop = false;
             this.SignUp_button.Text = "Sign Up";
             this.SignUp_button.Click += new System.EventHandler(this.SignUp_button_Click);
             // 
@@ -196,6 +198,7 @@
             this.ViewPass_checkbox.Name = "ViewPass_checkbox";
             this.ViewPass_checkbox.Size = new System.Drawing.Size(128, 19);
             this.ViewPass_checkbox.TabIndex = 3;
+            this.ViewPass_checkbox.TabStop = false;
             this.ViewPass_checkbox.Text = "View Password";
             this.ViewPass_checkbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.ViewPass_checkbox.UncheckedState.BorderRadius = 2;
@@ -218,6 +221,7 @@
             this.Save_checkbox.Name = "Save_checkbox";
             this.Save_checkbox.Size = new System.Drawing.Size(55, 19);
             this.Save_checkbox.TabIndex = 2;
+            this.Save_checkbox.TabStop = false;
             this.Save_checkbox.Text = "Save";
             this.Save_checkbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.Save_checkbox.UncheckedState.BorderRadius = 2;
@@ -258,6 +262,7 @@
             this.guna2CircleButton4.ShadowDecoration.Parent = this.guna2CircleButton4;
             this.guna2CircleButton4.Size = new System.Drawing.Size(54, 51);
             this.guna2CircleButton4.TabIndex = 9;
+            this.guna2CircleButton4.TabStop = false;
             this.guna2CircleButton4.Click += new System.EventHandler(this.guna2CircleButton4_Click);
             // 
             // guna2HtmlLabel1
@@ -269,6 +274,7 @@
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(145, 32);
             this.guna2HtmlLabel1.TabIndex = 8;
+            this.guna2HtmlLabel1.TabStop = false;
             this.guna2HtmlLabel1.Text = "User Login ";
             // 
             // guna2CircleButton1
@@ -286,6 +292,7 @@
             this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
             this.guna2CircleButton1.Size = new System.Drawing.Size(148, 148);
             this.guna2CircleButton1.TabIndex = 23;
+            this.guna2CircleButton1.TabStop = false;
             // 
             // guna2CircleButton2
             // 
@@ -302,6 +309,7 @@
             this.guna2CircleButton2.ShadowDecoration.Parent = this.guna2CircleButton2;
             this.guna2CircleButton2.Size = new System.Drawing.Size(148, 148);
             this.guna2CircleButton2.TabIndex = 24;
+            this.guna2CircleButton2.TabStop = false;
             // 
             // guna2CircleButton3
             // 
@@ -318,6 +326,7 @@
             this.guna2CircleButton3.ShadowDecoration.Parent = this.guna2CircleButton3;
             this.guna2CircleButton3.Size = new System.Drawing.Size(173, 119);
             this.guna2CircleButton3.TabIndex = 25;
+            this.guna2CircleButton3.TabStop = false;
             // 
             // panel1
             // 
@@ -331,6 +340,7 @@
             // 
             // LogInForm
             // 
+            this.AcceptButton = this.SignIn_button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;

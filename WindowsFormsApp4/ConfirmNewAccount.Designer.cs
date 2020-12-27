@@ -89,6 +89,7 @@
             this.Cancel_button.ShadowDecoration.Parent = this.Cancel_button;
             this.Cancel_button.Size = new System.Drawing.Size(66, 29);
             this.Cancel_button.TabIndex = 2;
+            this.Cancel_button.TabStop = false;
             this.Cancel_button.Text = "Cancel";
             this.Cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
             // 
@@ -106,6 +107,7 @@
             this.Confirm_button.ShadowDecoration.Parent = this.Confirm_button;
             this.Confirm_button.Size = new System.Drawing.Size(70, 29);
             this.Confirm_button.TabIndex = 3;
+            this.Confirm_button.TabStop = false;
             this.Confirm_button.Text = "Confirm";
             this.Confirm_button.Click += new System.EventHandler(this.Confirm_button_Click);
             // 
@@ -123,6 +125,7 @@
             this.Resend_button.ShadowDecoration.Parent = this.Resend_button;
             this.Resend_button.Size = new System.Drawing.Size(113, 31);
             this.Resend_button.TabIndex = 3;
+            this.Resend_button.TabStop = false;
             this.Resend_button.Text = "Resend Code";
             this.Resend_button.Click += new System.EventHandler(this.Resend_button_Click);
             // 
@@ -168,10 +171,12 @@
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(256, 45);
             this.guna2Button1.TabIndex = 6;
+            this.guna2Button1.TabStop = false;
             this.guna2Button1.Text = "CONFIRM NEW ACCOUNT";
             // 
             // ConfirmNewAccount
             // 
+            this.AcceptButton = this.Confirm_button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;

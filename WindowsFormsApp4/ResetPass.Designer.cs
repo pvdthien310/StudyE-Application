@@ -166,6 +166,7 @@
             this.ResetPass_button.ShadowDecoration.Parent = this.ResetPass_button;
             this.ResetPass_button.Size = new System.Drawing.Size(144, 39);
             this.ResetPass_button.TabIndex = 5;
+            this.ResetPass_button.TabStop = false;
             this.ResetPass_button.Text = "Reset Password";
             this.ResetPass_button.Click += new System.EventHandler(this.ResetPass_button_Click);
             // 
@@ -183,6 +184,7 @@
             this.Cancel_button.ShadowDecoration.Parent = this.Cancel_button;
             this.Cancel_button.Size = new System.Drawing.Size(109, 39);
             this.Cancel_button.TabIndex = 6;
+            this.Cancel_button.TabStop = false;
             this.Cancel_button.Text = "Cancel";
             this.Cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
             // 
@@ -234,6 +236,7 @@
             this.SendCode_button.ShadowDecoration.Parent = this.SendCode_button;
             this.SendCode_button.Size = new System.Drawing.Size(126, 44);
             this.SendCode_button.TabIndex = 1;
+            this.SendCode_button.TabStop = false;
             this.SendCode_button.Text = "Give me a code";
             this.SendCode_button.Click += new System.EventHandler(this.SendCode_button_Click);
             // 
@@ -241,6 +244,7 @@
             // 
             this.CountdownResend_label.AutoSize = true;
             this.CountdownResend_label.Font = new System.Drawing.Font("Showcard Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CountdownResend_label.ForeColor = System.Drawing.SystemColors.Control;
             this.CountdownResend_label.Location = new System.Drawing.Point(201, 113);
             this.CountdownResend_label.Name = "CountdownResend_label";
             this.CountdownResend_label.Size = new System.Drawing.Size(35, 26);
@@ -266,6 +270,7 @@
             this.ViewPass_checkbox.Name = "ViewPass_checkbox";
             this.ViewPass_checkbox.Size = new System.Drawing.Size(128, 19);
             this.ViewPass_checkbox.TabIndex = 13;
+            this.ViewPass_checkbox.TabStop = false;
             this.ViewPass_checkbox.Text = "View Password";
             this.ViewPass_checkbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.ViewPass_checkbox.UncheckedState.BorderRadius = 2;
@@ -287,6 +292,7 @@
             this.ViewPass2_checkbox.Name = "ViewPass2_checkbox";
             this.ViewPass2_checkbox.Size = new System.Drawing.Size(128, 19);
             this.ViewPass2_checkbox.TabIndex = 14;
+            this.ViewPass2_checkbox.TabStop = false;
             this.ViewPass2_checkbox.Text = "View Password";
             this.ViewPass2_checkbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.ViewPass2_checkbox.UncheckedState.BorderRadius = 2;
@@ -309,10 +315,12 @@
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(301, 46);
             this.guna2Button1.TabIndex = 15;
+            this.guna2Button1.TabStop = false;
             this.guna2Button1.Text = "RESET PASSWORD";
             // 
             // ResetPass
             // 
+            this.AcceptButton = this.SendCode_button;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
@@ -336,6 +344,7 @@
             this.Name = "ResetPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResetPass";
+            this.Activated += new System.EventHandler(this.ResetPass_Activated);
             this.ResumeLayout(false);
             this.PerformLayout();
 

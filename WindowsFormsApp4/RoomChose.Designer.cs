@@ -146,6 +146,7 @@
             this.Controls.Add(this.guna2CircleButton1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RoomChose";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoomChose";
             this.Activated += new System.EventHandler(this.RoomChose_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RoomChose_FormClosing);

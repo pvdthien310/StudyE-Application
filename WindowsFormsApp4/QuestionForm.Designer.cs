@@ -51,11 +51,10 @@
             this.guna2Panel1.Controls.Add(this.guna2Button_answerB);
             this.guna2Panel1.Controls.Add(this.guna2Button_answerA);
             this.guna2Panel1.Controls.Add(this.guna2Button_question1);
-            this.guna2Panel1.Location = new System.Drawing.Point(18, 18);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2Panel1.Location = new System.Drawing.Point(12, 12);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(486, 755);
+            this.guna2Panel1.Size = new System.Drawing.Size(324, 491);
             this.guna2Panel1.TabIndex = 0;
             this.guna2Panel1.Visible = false;
             // 
@@ -68,11 +67,10 @@
             this.guna2Button_answerD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_answerD.ForeColor = System.Drawing.Color.White;
             this.guna2Button_answerD.HoverState.Parent = this.guna2Button_answerD;
-            this.guna2Button_answerD.Location = new System.Drawing.Point(40, 645);
-            this.guna2Button_answerD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2Button_answerD.Location = new System.Drawing.Point(27, 419);
             this.guna2Button_answerD.Name = "guna2Button_answerD";
             this.guna2Button_answerD.ShadowDecoration.Parent = this.guna2Button_answerD;
-            this.guna2Button_answerD.Size = new System.Drawing.Size(404, 100);
+            this.guna2Button_answerD.Size = new System.Drawing.Size(269, 65);
             this.guna2Button_answerD.TabIndex = 9;
             this.guna2Button_answerD.Text = "guna2Button5";
             this.guna2Button_answerD.Click += new System.EventHandler(this.Button_Click);
@@ -86,11 +84,10 @@
             this.guna2Button_answerC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_answerC.ForeColor = System.Drawing.Color.White;
             this.guna2Button_answerC.HoverState.Parent = this.guna2Button_answerC;
-            this.guna2Button_answerC.Location = new System.Drawing.Point(40, 509);
-            this.guna2Button_answerC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2Button_answerC.Location = new System.Drawing.Point(27, 331);
             this.guna2Button_answerC.Name = "guna2Button_answerC";
             this.guna2Button_answerC.ShadowDecoration.Parent = this.guna2Button_answerC;
-            this.guna2Button_answerC.Size = new System.Drawing.Size(404, 100);
+            this.guna2Button_answerC.Size = new System.Drawing.Size(269, 65);
             this.guna2Button_answerC.TabIndex = 8;
             this.guna2Button_answerC.Text = "guna2Button4";
             this.guna2Button_answerC.Click += new System.EventHandler(this.Button_Click);
@@ -104,11 +101,10 @@
             this.guna2Button_answerB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_answerB.ForeColor = System.Drawing.Color.White;
             this.guna2Button_answerB.HoverState.Parent = this.guna2Button_answerB;
-            this.guna2Button_answerB.Location = new System.Drawing.Point(40, 375);
-            this.guna2Button_answerB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2Button_answerB.Location = new System.Drawing.Point(27, 244);
             this.guna2Button_answerB.Name = "guna2Button_answerB";
             this.guna2Button_answerB.ShadowDecoration.Parent = this.guna2Button_answerB;
-            this.guna2Button_answerB.Size = new System.Drawing.Size(404, 100);
+            this.guna2Button_answerB.Size = new System.Drawing.Size(269, 65);
             this.guna2Button_answerB.TabIndex = 7;
             this.guna2Button_answerB.Text = "guna2Button3";
             this.guna2Button_answerB.Click += new System.EventHandler(this.Button_Click);
@@ -122,11 +118,10 @@
             this.guna2Button_answerA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_answerA.ForeColor = System.Drawing.Color.White;
             this.guna2Button_answerA.HoverState.Parent = this.guna2Button_answerA;
-            this.guna2Button_answerA.Location = new System.Drawing.Point(33, 245);
-            this.guna2Button_answerA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2Button_answerA.Location = new System.Drawing.Point(22, 159);
             this.guna2Button_answerA.Name = "guna2Button_answerA";
             this.guna2Button_answerA.ShadowDecoration.Parent = this.guna2Button_answerA;
-            this.guna2Button_answerA.Size = new System.Drawing.Size(411, 100);
+            this.guna2Button_answerA.Size = new System.Drawing.Size(274, 65);
             this.guna2Button_answerA.TabIndex = 6;
             this.guna2Button_answerA.Text = "guna2Button2";
             this.guna2Button_answerA.Click += new System.EventHandler(this.Button_Click);
@@ -140,11 +135,10 @@
             this.guna2Button_question1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_question1.ForeColor = System.Drawing.Color.White;
             this.guna2Button_question1.HoverState.Parent = this.guna2Button_question1;
-            this.guna2Button_question1.Location = new System.Drawing.Point(21, 40);
-            this.guna2Button_question1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2Button_question1.Location = new System.Drawing.Point(14, 26);
             this.guna2Button_question1.Name = "guna2Button_question1";
             this.guna2Button_question1.ShadowDecoration.Parent = this.guna2Button_question1;
-            this.guna2Button_question1.Size = new System.Drawing.Size(447, 180);
+            this.guna2Button_question1.Size = new System.Drawing.Size(298, 117);
             this.guna2Button_question1.TabIndex = 5;
             this.guna2Button_question1.Text = "guna2Button1";
             // 
@@ -154,11 +148,10 @@
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel2.Controls.Add(this.guna2TextBox_answer2);
             this.guna2Panel2.Controls.Add(this.guna2Button_question2);
-            this.guna2Panel2.Location = new System.Drawing.Point(22, 23);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2Panel2.Location = new System.Drawing.Point(15, 15);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(477, 755);
+            this.guna2Panel2.Size = new System.Drawing.Size(318, 491);
             this.guna2Panel2.TabIndex = 1;
             this.guna2Panel2.Visible = false;
             // 
@@ -171,11 +164,10 @@
             this.guna2Button1_submit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1_submit.ForeColor = System.Drawing.Color.White;
             this.guna2Button1_submit.HoverState.Parent = this.guna2Button1_submit;
-            this.guna2Button1_submit.Location = new System.Drawing.Point(129, 608);
-            this.guna2Button1_submit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2Button1_submit.Location = new System.Drawing.Point(86, 395);
             this.guna2Button1_submit.Name = "guna2Button1_submit";
             this.guna2Button1_submit.ShadowDecoration.Parent = this.guna2Button1_submit;
-            this.guna2Button1_submit.Size = new System.Drawing.Size(200, 65);
+            this.guna2Button1_submit.Size = new System.Drawing.Size(133, 42);
             this.guna2Button1_submit.TabIndex = 3;
             this.guna2Button1_submit.Text = "Submit";
             this.guna2Button1_submit.Click += new System.EventHandler(this.Button_Click);
@@ -184,10 +176,9 @@
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(22, 426);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(15, 273);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(192, 34);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(126, 23);
             this.guna2HtmlLabel1.TabIndex = 2;
             this.guna2HtmlLabel1.Text = "Trả Lời Câu Hỏi :";
             // 
@@ -205,14 +196,14 @@
             this.guna2TextBox_answer2.FocusedState.Parent = this.guna2TextBox_answer2;
             this.guna2TextBox_answer2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox_answer2.HoverState.Parent = this.guna2TextBox_answer2;
-            this.guna2TextBox_answer2.Location = new System.Drawing.Point(22, 485);
-            this.guna2TextBox_answer2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.guna2TextBox_answer2.Location = new System.Drawing.Point(15, 315);
+            this.guna2TextBox_answer2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2TextBox_answer2.Name = "guna2TextBox_answer2";
             this.guna2TextBox_answer2.PasswordChar = '\0';
             this.guna2TextBox_answer2.PlaceholderText = "";
             this.guna2TextBox_answer2.SelectedText = "";
             this.guna2TextBox_answer2.ShadowDecoration.Parent = this.guna2TextBox_answer2;
-            this.guna2TextBox_answer2.Size = new System.Drawing.Size(404, 83);
+            this.guna2TextBox_answer2.Size = new System.Drawing.Size(269, 54);
             this.guna2TextBox_answer2.TabIndex = 1;
             // 
             // guna2Button_question2
@@ -224,11 +215,10 @@
             this.guna2Button_question2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_question2.ForeColor = System.Drawing.Color.White;
             this.guna2Button_question2.HoverState.Parent = this.guna2Button_question2;
-            this.guna2Button_question2.Location = new System.Drawing.Point(16, 35);
-            this.guna2Button_question2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2Button_question2.Location = new System.Drawing.Point(11, 23);
             this.guna2Button_question2.Name = "guna2Button_question2";
             this.guna2Button_question2.ShadowDecoration.Parent = this.guna2Button_question2;
-            this.guna2Button_question2.Size = new System.Drawing.Size(440, 358);
+            this.guna2Button_question2.Size = new System.Drawing.Size(293, 233);
             this.guna2Button_question2.TabIndex = 0;
             this.guna2Button_question2.Text = "guna2Button6";
             // 
@@ -242,25 +232,23 @@
             this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
             this.guna2CircleButton1.Image = global::WindowsFormsApp4.Properties.Resources.Exit3;
             this.guna2CircleButton1.ImageSize = new System.Drawing.Size(50, 50);
-            this.guna2CircleButton1.Location = new System.Drawing.Point(428, 772);
-            this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(285, 502);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(76, 82);
+            this.guna2CircleButton1.Size = new System.Drawing.Size(51, 53);
             this.guna2CircleButton1.TabIndex = 2;
             this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // QuestionForm
             // 
             this.AcceptButton = this.guna2Button1_submit;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 863);
+            this.ClientSize = new System.Drawing.Size(346, 487);
             this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "QuestionForm";
             this.Text = "Question";
             this.guna2Panel1.ResumeLayout(false);

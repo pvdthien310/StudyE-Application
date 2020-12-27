@@ -43,12 +43,15 @@ namespace WindowsFormsApp4
                 newThread.Start();
                 //SupportUtility.SendConfirmEmailToResetPassword(Email_textbox.Text, verifyCode);
                 SendCode_button.Enabled = false;
+                Email_textbox.Enabled = false;
                 ResetPass_button.Enabled = true;
                 ResendCountdown_timer.Enabled = true;
+                CountdownResend_label.Visible = true;
+                AcceptButton = ResetPass_button;
             }
             else
             {
-                MessageBox.Show("Tài khoản không tồn tại");
+                MessageBox.Show("Tài khoản không tồn tại", "Thộng báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -60,7 +63,7 @@ namespace WindowsFormsApp4
                 SendCode_button.Enabled = true;
                 CountdownResend_label.Text = "60";
                 CountdownResend_label.Visible = false;
-
+                Email_textbox.Enabled = true;
             }
             else
             {
@@ -128,6 +131,11 @@ namespace WindowsFormsApp4
             {
                 MessageBox.Show("Mật khẩu không trùng khớp","Thộng báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void ResetPass_Activated(object sender, EventArgs e)
+        {
+            Email_textbox.Focus();
         }
     }
 }
