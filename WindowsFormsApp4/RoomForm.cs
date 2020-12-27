@@ -125,16 +125,16 @@ namespace WindowsFormsApp4
                 guna2HtmlLabel_name2.Text = room_info.GuestID;
                 guna2HtmlLabel_name2.Visible = true;
                 if (room_info.IsReady == 1)
-                    guna2HtmlLabel_status1.Text = "Ready";
+                    guna2HtmlLabel_status2.Text = "Ready";
                 else
-                    guna2HtmlLabel_status1.Text = "Not Ready";
-                guna2HtmlLabel_status1.Visible = true;
+                    guna2HtmlLabel_status2.Text = "Not Ready";
+                guna2HtmlLabel_status2.Visible = true;
             }
             else
             {
                 pictureBox2.Visible = false;
                 guna2HtmlLabel_name2.Visible = false;      
-                guna2HtmlLabel_status1.Visible = false;
+                guna2HtmlLabel_status2.Visible = false;
             }
 
 
