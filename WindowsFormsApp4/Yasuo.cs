@@ -41,7 +41,7 @@ namespace WindowsFormsApp4
         int Q_check = 0;
         int isCorrect = 0;
         int char_action_goback = 0;
-        int incorrect_check = 2;
+        int incorrect_check = 0;
 
         // dead lan 3 effect 
         private int curFrameColumn_deadth_3 = 0;
