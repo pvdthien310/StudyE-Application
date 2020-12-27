@@ -533,5 +533,8 @@
   <ItemGroup>
     <None Include="Resources\c7de824e-b549-4802-90eb-b7e2e5378a77_200x2001.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\add.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

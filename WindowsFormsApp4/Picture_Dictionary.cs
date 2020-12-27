@@ -53,6 +53,15 @@ namespace WindowsFormsApp4
         {
             if (e.Button == MouseButtons.Left)
             {
+               foreach (FlowLayoutPanel a in listFlowPanel)
+                {
+                    a.Visible = false;
+                }
+                panel1.BringToFront();
+                panel1.Visible = true;
+                //creatButton.SendToBack();
+                //guna2CircleButton2.BringToFront();
+
                 /*menuStrip.Visible = false;
                 currentSourse = 0;
                 panel1.Visible = true;
@@ -112,7 +121,7 @@ namespace WindowsFormsApp4
 
                 currentSourse = 0;
                 isSourse = ((Guna.UI2.WinForms.Guna2Button)sender).Text;
-                panel1.Visible = true;
+                
                 group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
                 string path = "";
                 if (isSourse == "1")
@@ -169,6 +178,7 @@ namespace WindowsFormsApp4
                     pictureBox1.Visible = true;
                     pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
                 }
+                guna2CircleButton2.Visible = true;
 
             }
             else if(e.Button == MouseButtons.Right)
@@ -199,6 +209,14 @@ namespace WindowsFormsApp4
 
         private void Pause_Click(object sender, EventArgs e)
         {
+            foreach (FlowLayoutPanel a in listFlowPanel)
+            {
+                a.Visible = true;
+               
+            }
+            //creatButton.BringToFront();
+            //guna2CircleButton2.SendToBack();
+            creatButton.Visible = true;
             panel1.Visible = false;
             currentSourse = 0;
             pictureBoxInsert.Visible = false;
@@ -407,7 +425,7 @@ namespace WindowsFormsApp4
             for (int i = 0; i < numberOfPanel; i++)
             {
                 listFlowPanel[i] = new FlowLayoutPanel();
-                listFlowPanel[i].BackColor = Color.Transparent;
+                listFlowPanel[i].BackColor = Color.Red;
                 listFlowPanel[i].Location = new Point(110, 120);
                 listFlowPanel[i].Size = new Size(480, 250);
                 listFlowPanel[i].Click += new System.EventHandler(this.flowLayoutPanel1_Click);
