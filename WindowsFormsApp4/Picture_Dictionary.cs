@@ -53,15 +53,6 @@ namespace WindowsFormsApp4
         {
             if (e.Button == MouseButtons.Left)
             {
-               foreach (FlowLayoutPanel a in listFlowPanel)
-                {
-                    a.Visible = false;
-                }
-                panel1.BringToFront();
-                panel1.Visible = true;
-                //creatButton.SendToBack();
-                //guna2CircleButton2.BringToFront();
-
                 /*menuStrip.Visible = false;
                 currentSourse = 0;
                 panel1.Visible = true;
@@ -116,12 +107,14 @@ namespace WindowsFormsApp4
                
 
                 cnn.Close();*/
+
+                panel1.BringToFront();
                 menuStrip.Visible = false;
                 panel1.Visible = true;
 
                 currentSourse = 0;
                 isSourse = ((Guna.UI2.WinForms.Guna2Button)sender).Text;
-                
+                panel1.Visible = true;
                 group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
                 string path = "";
                 if (isSourse == "1")
@@ -147,7 +140,7 @@ namespace WindowsFormsApp4
                     a.MakeTransparent();
                     string text = Path.GetFileName(listSourst[0]);
                     text = text.Remove(text.Length - 4, 4);
-                   
+
 
                     if (isSourse == "1")
                     {
@@ -178,45 +171,36 @@ namespace WindowsFormsApp4
                     pictureBox1.Visible = true;
                     pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
                 }
-                guna2CircleButton2.Visible = true;
 
             }
-            else if(e.Button == MouseButtons.Right)
+            else if (e.Button == MouseButtons.Right)
             {
                 menuStrip.Visible = true;
                 menuStrip.Location = new Point(((Guna.UI2.WinForms.Guna2Button)sender).Location.X + 135, ((Guna.UI2.WinForms.Guna2Button)sender).Location.Y + 150);
-                
+
                 isSourse = ((Guna.UI2.WinForms.Guna2Button)sender).Text;
                 group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
 
                 if (isSourse == "1")
                 {
-                    
+
                     Delete.Enabled = false;
                 }
                 else
                 {
-                   
+
                     Delete.Enabled = true;
                 }
             }
-           
-            
 
-           
+
+
+
         }
-        
+
 
         private void Pause_Click(object sender, EventArgs e)
         {
-            foreach (FlowLayoutPanel a in listFlowPanel)
-            {
-                a.Visible = true;
-               
-            }
-            //creatButton.BringToFront();
-            //guna2CircleButton2.SendToBack();
-            creatButton.Visible = true;
             panel1.Visible = false;
             currentSourse = 0;
             pictureBoxInsert.Visible = false;
@@ -238,7 +222,7 @@ namespace WindowsFormsApp4
                     a = new Bitmap(Image.FromStream(stream));
                     stream.Close();
                 }
-                
+
                 a.MakeTransparent();
                 string text = Path.GetFileName(listSourst[currentSourse]);
                 text = text.Remove(text.Length - 4, 4);
@@ -253,17 +237,17 @@ namespace WindowsFormsApp4
                     textName.Text = text;
                 }
             }
-            
+
 
         }
 
         private void Left_Click(object sender, EventArgs e)
         {
             currentSourse--;
-            if (currentSourse <0 )
+            if (currentSourse < 0)
             {
 
-                currentSourse =listSourst.Length - 1;
+                currentSourse = listSourst.Length - 1;
             }
             if (listSourst.Length > 0)
             {
@@ -287,7 +271,7 @@ namespace WindowsFormsApp4
                     textName.Text = text;
                 }
             }
-                
+
         }
 
         private void Speak_Click(object sender, EventArgs e)
@@ -300,7 +284,7 @@ namespace WindowsFormsApp4
                 synth.SetOutputToDefaultAudioDevice();
                 synth.Speak(text);
             }
-            
+
         }
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
@@ -311,13 +295,13 @@ namespace WindowsFormsApp4
 
         private void Picture_Dictionary_Load(object sender, EventArgs e)
         {
-            
+
             load_Button();
             panel1.BringToFront();
         }
-       
 
-        
+
+
 
         private void load_Button()
         {
@@ -376,10 +360,10 @@ namespace WindowsFormsApp4
                 but.MouseClick += new MouseEventHandler(TabChose_Click);
                 numberOfButton++;
                 listButon.Add(but);
-                
-               
+
+
             }
-             path = "./GroupInsert";
+            path = "./GroupInsert";
             listNameButton = Directory.GetFiles(path);
             foreach (string f in listNameButton)
             {
@@ -397,8 +381,8 @@ namespace WindowsFormsApp4
                     stream.Close();
                 }
 
-               
-                
+
+
 
                 but = b.createButton(name, a, "0");
                 but.MouseClick += new MouseEventHandler(TabChose_Click);
@@ -407,7 +391,7 @@ namespace WindowsFormsApp4
 
 
             }
-            
+
 
 
 
@@ -418,14 +402,14 @@ namespace WindowsFormsApp4
             }
             else if (numberOfButton % 32 == 0)
             {
-                numberOfPanel = numberOfButton / 32 ;
+                numberOfPanel = numberOfButton / 32;
             }
 
             listFlowPanel = new FlowLayoutPanel[numberOfPanel];
             for (int i = 0; i < numberOfPanel; i++)
             {
                 listFlowPanel[i] = new FlowLayoutPanel();
-                listFlowPanel[i].BackColor = Color.Red;
+                listFlowPanel[i].BackColor = Color.Transparent;
                 listFlowPanel[i].Location = new Point(110, 120);
                 listFlowPanel[i].Size = new Size(480, 250);
                 listFlowPanel[i].Click += new System.EventHandler(this.flowLayoutPanel1_Click);
@@ -436,8 +420,8 @@ namespace WindowsFormsApp4
 
             }
             int numberInPanel = 0;
-             currentPanel = 0;
-            for (int i=0; i<numberOfButton; i++)
+            currentPanel = 0;
+            for (int i = 0; i < numberOfButton; i++)
             {
                 if (numberInPanel == 32)
                 {
@@ -450,9 +434,9 @@ namespace WindowsFormsApp4
                 }
                 listFlowPanel[currentPanel].Controls.Add(listButon[i]);
             }
-           
-            
-            
+
+
+
 
         }
         private void guna2CircleButton1_Click_1(object sender, EventArgs e)
@@ -462,14 +446,15 @@ namespace WindowsFormsApp4
         }
 
         private void creatButton_Click(object sender, EventArgs e)
-        {          
+        {
             panel5.Visible = true;
+            panel5.BringToFront();
             nameGroup.Text = "";
             //guna2PictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.interface_77_512;
             guna2PictureBox1.Visible = false;
             addImage.Visible = true;
         }
-        
+
         private string tem = "";
         private void Add_Click(object sender, EventArgs e)
         {
@@ -493,7 +478,7 @@ namespace WindowsFormsApp4
             //numberOfButton++;
             //lastId++;
             //load_Button(0);
-            if(addImage.Visible==false && nameGroup.Text!="")
+            if (addImage.Visible == false && nameGroup.Text != "")
             {
                 string path = "./GroupInsert/" + nameGroup.Text + ".png";
                 if (File.Exists(path))
@@ -517,7 +502,7 @@ namespace WindowsFormsApp4
                         listFlowPanel[i].Visible = true;
                     }
 
-                    
+
                     path = path = "./PictureImageInsert/" + nameGroup.Text;
                     Directory.CreateDirectory(path);
                 }
@@ -528,12 +513,12 @@ namespace WindowsFormsApp4
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            panel5.Visible = false; 
+            panel5.Visible = false;
         }
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
-            
+
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
                 /*int i = 0;
@@ -688,9 +673,9 @@ namespace WindowsFormsApp4
 
              cnn.Close();*/
 
-            string path = "./GroupInsert/" + group +".png";
+            string path = "./GroupInsert/" + group + ".png";
             listButon.Clear();
-           
+
             menuStrip.Visible = false;
 
             for (int i = 0; i < numberOfPanel; i++)
@@ -769,7 +754,7 @@ namespace WindowsFormsApp4
                 //right click
             }*/
 
-            if (listSourst.Length ==1)
+            if (listSourst.Length == 1)
             {
                 File.Delete(listSourst[currentSourse]);
 
@@ -779,7 +764,7 @@ namespace WindowsFormsApp4
                 pictureBoxInsert.Visible = false;
                 textName.Text = "";
             }
-            else if(listSourst.Length==0)
+            else if (listSourst.Length == 0)
             {
                 pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
                 pictureBoxInsert.Visible = false;
@@ -791,7 +776,7 @@ namespace WindowsFormsApp4
                 //right lick
                 string path = "./PictureImageInsert/" + group;
                 listSourst = Directory.GetFiles(path);
-               // currentSourse++;
+                // currentSourse++;
                 if (currentSourse >= listSourst.Length)
                 {
                     currentSourse = 0;
@@ -820,12 +805,12 @@ namespace WindowsFormsApp4
                     }
                 }
                 //right click
-                
-                
+
+
             }
 
 
-            
+
 
             cnn.Close();
             //datatable.Rows.Remove()
@@ -834,10 +819,10 @@ namespace WindowsFormsApp4
 
         private void pictureBoxInsert_MouseClick(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right)
             {
                 paneloneSourse.Visible = true;
-                paneloneSourse.Location = new Point(e.X + 250, e.Y+ 60);
+                paneloneSourse.Location = new Point(e.X + 250, e.Y + 60);
             }
         }
 
@@ -846,8 +831,8 @@ namespace WindowsFormsApp4
             //if (textName.Text == "") dataGridView3.Rows.Clear();
             string[] arr1 = new string[] { "á", "à", "ả", "ã", "ạ", "â", "ấ", "ầ", "ẩ", "ẫ", "ậ", "ă", "ắ", "ằ", "ẳ", "ẵ", "ặ",
              "đ", "é","è","ẻ","ẽ","ẹ","ê","ế","ề","ể","ễ","ệ","í","ì","ỉ","ĩ","ị","ó","ò","ỏ","õ","ọ","ô","ố","ồ","ổ","ỗ","ộ","ơ","ớ","ờ","ở","ỡ","ợ","ú","ù","ủ","ũ","ụ","ư","ứ","ừ","ử","ữ","ự","ý","ỳ","ỷ","ỹ","ỵ","0","1","2","3","4","5","6","7","8","9",};
-            int n = nameGroup.Text.Length ;
-            for (int i = 0; i < arr1.Length-1; i++)
+            int n = nameGroup.Text.Length;
+            for (int i = 0; i < arr1.Length - 1; i++)
             {
                 if (nameGroup.Text.IndexOf(arr1[i]) != -1)
                 {
@@ -878,7 +863,7 @@ namespace WindowsFormsApp4
             }
             return text;
         }
-        public string RemoveSpecialCharacters( string str)
+        public string RemoveSpecialCharacters(string str)
         {
             StringBuilder sb = new StringBuilder();
             foreach (char c in str)
@@ -910,7 +895,7 @@ namespace WindowsFormsApp4
         private void rightPannel_Click(object sender, EventArgs e)
         {
             currentPanel++;
-            if(currentPanel == numberOfPanel)
+            if (currentPanel == numberOfPanel)
             {
                 currentPanel = 0;
             }
@@ -918,7 +903,7 @@ namespace WindowsFormsApp4
             creatButton.BringToFront();
         }
 
-      
+
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
         {
@@ -972,7 +957,7 @@ namespace WindowsFormsApp4
                 }
 
             }
-            
+
         }
     }
 }

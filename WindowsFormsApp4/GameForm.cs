@@ -363,6 +363,7 @@ namespace WindowsFormsApp4
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
+            this.parent.music.controls.stop();
             this.Close();
             this.parent.parent.Show();
             this.parent.Close();

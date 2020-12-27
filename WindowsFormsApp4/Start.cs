@@ -207,6 +207,9 @@ namespace WindowsFormsApp4
                             break;
                         }
                 }
+                if (roomform.ishost == 1)
+                resultform.guna2HtmlLabel_Score.Text = result[3];
+                else resultform.guna2HtmlLabel_Score.Text = result[4];
                 this.Close();
                 resultform.Show();
                 timer2.Enabled = false;
@@ -290,10 +293,10 @@ namespace WindowsFormsApp4
                 }
                
             }
-            if (time > 100)
-            {
-                push_result_to_data();
-            }
+            //if (time > 100)
+            //{
+            //    push_result_to_data();
+            //}
         }
         Timer timer2;
          
