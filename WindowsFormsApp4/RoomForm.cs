@@ -36,8 +36,7 @@ namespace WindowsFormsApp4
             this.game_host = game_host;
             this.ishost = ishost;
             InitializeComponent();
-            Label_RoomID.Text = room_info.RoomID.ToString();
-            testData();
+         //   Label_RoomID.Text = room_info.RoomID.ToString();
             check_timer = new Timer();
             check_timer.Tick += new EventHandler(timer_tick);
             check_timer.Interval = 300;
@@ -87,10 +86,11 @@ namespace WindowsFormsApp4
             {
                 if (room_info.IsReady == 1 && room_info.IsStart == 0)
                 {
-                    label_readycheck.Text = "Vao thoi con di lon";
-                  
+                    guna2HtmlLabel1.Text = "Let's Start !!";
+                    guna2HtmlLabel1.Visible = true;
+
                 }
-                else label_readycheck.Text = "Doi thu chua san sang ong noi oi ";
+                else guna2HtmlLabel1.Text = "Your competitor is not ready !!";
             }
 
             else if (ishost == 0)
@@ -193,15 +193,7 @@ namespace WindowsFormsApp4
 
 
         }
-        private void testData()
-        {
-            foreach (QuestionGame2 a in game_host.list)
-            {
-                string[] line = a.GetQuestion();
-                //if (line.Length > 2)
-                dataGridView_test.Rows.Add(line);
-            }
-        }
+    
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             if (Mycnt.State != ConnectionState.Open)
@@ -255,7 +247,7 @@ namespace WindowsFormsApp4
                 com.ExecuteNonQuery();
                 Mycnt.Close();
                 this.guna2Button_Ready.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-                label_readycheck.Text = "Chua san sang";
+              //  label_readycheck.Text = "Chua san sang";
             
             }
             else
@@ -269,7 +261,7 @@ namespace WindowsFormsApp4
                 com.ExecuteNonQuery();
                 Mycnt.Close();
                 guna2Button_Ready.FillColor = Color.Red;
-                label_readycheck.Text = "Da san sang";
+            //    label_readycheck.Text = "Da san sang";
             }
 
         }

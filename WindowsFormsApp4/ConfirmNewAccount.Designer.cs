@@ -146,7 +146,8 @@
             // 
             this.CountDownResend_label.AutoSize = true;
             this.CountDownResend_label.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CountDownResend_label.Location = new System.Drawing.Point(232, 141);
+            this.CountDownResend_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.CountDownResend_label.Location = new System.Drawing.Point(231, 142);
             this.CountDownResend_label.Name = "CountDownResend_label";
             this.CountDownResend_label.Size = new System.Drawing.Size(27, 20);
             this.CountDownResend_label.TabIndex = 5;

@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.Label_RoomID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button_Ready = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button_Start = new Guna.UI2.WinForms.Guna2Button();
-            this.label_readycheck = new System.Windows.Forms.Label();
             this.guna2Button_Sophong = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -40,26 +38,11 @@
             this.guna2HtmlLabel_name2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel_status1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel_status2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2CircleButton_back = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(37, 504);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "Trở Lại";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // Label_RoomID
             // 
@@ -78,7 +61,7 @@
             this.guna2Button_Ready.CheckedState.Parent = this.guna2Button_Ready;
             this.guna2Button_Ready.CustomImages.Parent = this.guna2Button_Ready;
             this.guna2Button_Ready.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.guna2Button_Ready.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_Ready.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_Ready.ForeColor = System.Drawing.Color.White;
             this.guna2Button_Ready.HoverState.Parent = this.guna2Button_Ready;
             this.guna2Button_Ready.Location = new System.Drawing.Point(190, 120);
@@ -95,7 +78,7 @@
             this.guna2Button_Start.BorderRadius = 15;
             this.guna2Button_Start.CheckedState.Parent = this.guna2Button_Start;
             this.guna2Button_Start.CustomImages.Parent = this.guna2Button_Start;
-            this.guna2Button_Start.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_Start.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_Start.ForeColor = System.Drawing.Color.White;
             this.guna2Button_Start.HoverState.Parent = this.guna2Button_Start;
             this.guna2Button_Start.Location = new System.Drawing.Point(639, 120);
@@ -105,15 +88,6 @@
             this.guna2Button_Start.TabIndex = 4;
             this.guna2Button_Start.Text = "Start";
             this.guna2Button_Start.Click += new System.EventHandler(this.guna2Button_Start_Click);
-            // 
-            // label_readycheck
-            // 
-            this.label_readycheck.AutoSize = true;
-            this.label_readycheck.Location = new System.Drawing.Point(781, 438);
-            this.label_readycheck.Name = "label_readycheck";
-            this.label_readycheck.Size = new System.Drawing.Size(35, 13);
-            this.label_readycheck.TabIndex = 5;
-            this.label_readycheck.Text = "label1";
             // 
             // guna2Button_Sophong
             // 
@@ -156,7 +130,7 @@
             // 
             this.guna2HtmlLabel_name1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel_name1.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel_name1.Location = new System.Drawing.Point(221, 284);
+            this.guna2HtmlLabel_name1.Location = new System.Drawing.Point(242, 324);
             this.guna2HtmlLabel_name1.Name = "guna2HtmlLabel_name1";
             this.guna2HtmlLabel_name1.Size = new System.Drawing.Size(125, 19);
             this.guna2HtmlLabel_name1.TabIndex = 10;
@@ -166,7 +140,7 @@
             // 
             this.guna2HtmlLabel_name2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel_name2.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel_name2.Location = new System.Drawing.Point(566, 284);
+            this.guna2HtmlLabel_name2.Location = new System.Drawing.Point(584, 324);
             this.guna2HtmlLabel_name2.Name = "guna2HtmlLabel_name2";
             this.guna2HtmlLabel_name2.Size = new System.Drawing.Size(126, 19);
             this.guna2HtmlLabel_name2.TabIndex = 11;
@@ -177,7 +151,7 @@
             // 
             this.guna2HtmlLabel_status1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel_status1.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel_status1.Location = new System.Drawing.Point(221, 253);
+            this.guna2HtmlLabel_status1.Location = new System.Drawing.Point(241, 263);
             this.guna2HtmlLabel_status1.Name = "guna2HtmlLabel_status1";
             this.guna2HtmlLabel_status1.Size = new System.Drawing.Size(126, 19);
             this.guna2HtmlLabel_status1.TabIndex = 12;
@@ -187,12 +161,42 @@
             // 
             this.guna2HtmlLabel_status2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel_status2.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel_status2.Location = new System.Drawing.Point(566, 253);
+            this.guna2HtmlLabel_status2.Location = new System.Drawing.Point(583, 263);
             this.guna2HtmlLabel_status2.Name = "guna2HtmlLabel_status2";
             this.guna2HtmlLabel_status2.Size = new System.Drawing.Size(127, 19);
             this.guna2HtmlLabel_status2.TabIndex = 13;
             this.guna2HtmlLabel_status2.Text = "guna2HtmlLabel4";
             this.guna2HtmlLabel_status2.Visible = false;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(405, 202);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(142, 20);
+            this.guna2HtmlLabel1.TabIndex = 14;
+            this.guna2HtmlLabel1.Text = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Visible = false;
+            // 
+            // guna2CircleButton_back
+            // 
+            this.guna2CircleButton_back.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton_back.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.Exit2;
+            this.guna2CircleButton_back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2CircleButton_back.CheckedState.Parent = this.guna2CircleButton_back;
+            this.guna2CircleButton_back.CustomImages.Parent = this.guna2CircleButton_back;
+            this.guna2CircleButton_back.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton_back.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton_back.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton_back.HoverState.Parent = this.guna2CircleButton_back;
+            this.guna2CircleButton_back.Location = new System.Drawing.Point(12, 12);
+            this.guna2CircleButton_back.Name = "guna2CircleButton_back";
+            this.guna2CircleButton_back.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton_back.ShadowDecoration.Parent = this.guna2CircleButton_back;
+            this.guna2CircleButton_back.Size = new System.Drawing.Size(80, 60);
+            this.guna2CircleButton_back.TabIndex = 15;
+            this.guna2CircleButton_back.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // RoomForm
             // 
@@ -201,6 +205,8 @@
             this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.background3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.guna2CircleButton_back);
+            this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2HtmlLabel_status2);
             this.Controls.Add(this.guna2HtmlLabel_status1);
             this.Controls.Add(this.guna2HtmlLabel_name2);
@@ -208,11 +214,10 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.guna2Button_Sophong);
-            this.Controls.Add(this.label_readycheck);
             this.Controls.Add(this.guna2Button_Start);
             this.Controls.Add(this.guna2Button_Ready);
             this.Controls.Add(this.Label_RoomID);
-            this.Controls.Add(this.guna2Button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RoomForm";
             this.Text = "RoomForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -223,12 +228,9 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2HtmlLabel Label_RoomID;
         private Guna.UI2.WinForms.Guna2Button guna2Button_Ready;
         private Guna.UI2.WinForms.Guna2Button guna2Button_Start;
-        private System.Windows.Forms.Label label_readycheck;
         private Guna.UI2.WinForms.Guna2Button guna2Button_Sophong;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -236,5 +238,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel_name2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel_status1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel_status2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton_back;
     }
 }

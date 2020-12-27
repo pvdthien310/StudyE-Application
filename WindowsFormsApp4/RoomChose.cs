@@ -45,6 +45,7 @@ namespace WindowsFormsApp4
 
         public void RoomChose_Load(object sender, EventArgs e)
         {
+            
             Mycnt.Open();
             // lay het du lieu trong bang DTBQT
             string sql = "SELECT * FROM ROOMLIST";
@@ -79,7 +80,7 @@ namespace WindowsFormsApp4
             {
                 listpnl[j] = new FlowLayoutPanel() { Location = new System.Drawing.Point(101, 167), Size = new System.Drawing.Size(785, 324) };
                 // this.listpnl[j].BackColor = System.Drawing.Color.Transparent;
-                this.listpnl[j].BackColor = System.Drawing.Color.Orchid;
+                this.listpnl[j].BackColor = System.Drawing.Color.Teal;
                 this.Controls.Add(listpnl[j]);
             }
             int number_room_inpanel = 0;
@@ -92,8 +93,9 @@ namespace WindowsFormsApp4
                 listbtn[i] = new Guna.UI2.WinForms.Guna2Button() { Text = a, Size = new System.Drawing.Size(150, 100) };
                 listbtn[i].BorderRadius = 15;
                 listbtn[i].Name = "Room" + i.ToString();
-                listbtn[i].Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                listbtn[i].FillColor = System.Drawing.Color.MediumOrchid;
+                listbtn[i].Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold,System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                listbtn[i].FillColor = Color.White;
+                listbtn[i].ForeColor = Color.Black;
                 if (roomList[i].IsStart == 1) listbtn[i].FillColor = Color.Red;
                 if (number_room_inpanel == 16)
                 {

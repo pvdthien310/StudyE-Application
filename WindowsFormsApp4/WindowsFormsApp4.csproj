@@ -481,5 +481,23 @@
   <ItemGroup>
     <None Include="Resources\c7de824e-b549-4802-90eb-b7e2e5378a77_200x2002.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\again2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e287d334acb2dec905271fcf08917dec87c963c5.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\yasuo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Exit.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
