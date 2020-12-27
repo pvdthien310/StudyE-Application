@@ -296,6 +296,7 @@ namespace WindowsFormsApp4
             SqlCommand cmd = new SqlCommand(query, Mycnt);
             cmd.ExecuteNonQuery();
             Mycnt.Close();
+            SupportUtility.UnSignIn(PlayerName);
         }
 
         private void Logout_button_Click(object sender, EventArgs e)

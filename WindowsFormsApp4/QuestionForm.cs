@@ -110,5 +110,16 @@ namespace WindowsFormsApp4
             guna2Panel2.Visible = false;
             this.parent.gameForm.Invalidate();
         }
+
+        private void guna2CircleButton1_Click(object sender, EventArgs e)
+        {
+            this.parent.push_result_to_data();
+            this.parent.roomform.parent.loginForm.Show();
+            this.parent.roomform.parent.Close();
+            this.Close();
+            this.parent.Close();
+            this.parent.roomform.Close();
+            
+        }
     }
 }

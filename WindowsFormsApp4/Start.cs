@@ -85,7 +85,7 @@ namespace WindowsFormsApp4
         private void timer3_tick(object sender, EventArgs e)
         {
             time += 0.1;
-            if (time > 100)
+            if (time > 200)
             {
                 push_result_to_data();
                 gameForm.Invalidate();
@@ -163,7 +163,8 @@ namespace WindowsFormsApp4
         }
         private void check()
         {
-            int s = 0; // dem xem 2 nguoi choi d a choi xong chua          
+            int s = 0; // dem xem 2 nguoi choi d a choi xong chua 
+            if(result.Count > 0)
              if (result[1] !="" && result[2] != "" && result[7] !="0" && result[8]!= "0")
             {
                 s = 8;
@@ -303,7 +304,7 @@ namespace WindowsFormsApp4
         }
         Timer timer2;
          
-        private void push_result_to_data()
+        public void push_result_to_data()
         {
             string query =  "";
             if (Mycnt.State != ConnectionState.Open)
