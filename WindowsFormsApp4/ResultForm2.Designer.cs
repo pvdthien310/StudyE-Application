@@ -29,32 +29,12 @@ namespace WindowsFormsApp4
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2CircleButton1
-            // 
-            this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Image = global::WindowsFormsApp4.Properties.Resources.home2;
-            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(60, 60);
-            this.guna2CircleButton1.Location = new System.Drawing.Point(12, 12);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(66, 66);
-            this.guna2CircleButton1.TabIndex = 3;
-            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2Button_BackDictionary_Click);
             // 
             // guna2CircleButton2
             // 
@@ -123,7 +103,6 @@ namespace WindowsFormsApp4
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.guna2CircleButton2);
-            this.Controls.Add(this.guna2CircleButton1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ResultForm2";
@@ -134,8 +113,6 @@ namespace WindowsFormsApp4
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private System.Windows.Forms.PictureBox pictureBox1;
         public Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;

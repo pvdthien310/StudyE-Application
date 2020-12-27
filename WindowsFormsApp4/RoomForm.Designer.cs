@@ -145,7 +145,7 @@
             this.guna2HtmlLabel_name2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel_name2.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel_name2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2HtmlLabel_name2.Location = new System.Drawing.Point(585, 324);
+            this.guna2HtmlLabel_name2.Location = new System.Drawing.Point(595, 324);
             this.guna2HtmlLabel_name2.Name = "guna2HtmlLabel_name2";
             this.guna2HtmlLabel_name2.Size = new System.Drawing.Size(126, 31);
             this.guna2HtmlLabel_name2.TabIndex = 11;

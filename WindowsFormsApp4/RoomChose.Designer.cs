@@ -84,13 +84,13 @@
             this.Logout_button.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Logout_button.ForeColor = System.Drawing.Color.White;
             this.Logout_button.HoverState.Parent = this.Logout_button;
-            this.Logout_button.Image = global::WindowsFormsApp4.Properties.Resources.e287d334acb2dec905271fcf08917dec87c963c5_jpg;
+            this.Logout_button.Image = global::WindowsFormsApp4.Properties.Resources.Exit4;
             this.Logout_button.ImageSize = new System.Drawing.Size(60, 60);
             this.Logout_button.Location = new System.Drawing.Point(12, 5);
             this.Logout_button.Name = "Logout_button";
             this.Logout_button.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Logout_button.ShadowDecoration.Parent = this.Logout_button;
-            this.Logout_button.Size = new System.Drawing.Size(60, 64);
+            this.Logout_button.Size = new System.Drawing.Size(60, 62);
             this.Logout_button.TabIndex = 5;
             this.Logout_button.Click += new System.EventHandler(this.Logout_button_Click);
             // 

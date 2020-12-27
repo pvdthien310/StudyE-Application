@@ -86,11 +86,11 @@ namespace WindowsFormsApp4
 
         private void Name_textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
-                if(Name_textbox.Text != "")
+            if (e.KeyChar == (char)Keys.Enter)
+                if (Name_textbox.Text != "")
                 {
                     Pass_textbox.Focus();
-                }    
+                }
         }
 
         private void Pass_textbox_KeyPress(object sender, KeyPressEventArgs e)
@@ -183,6 +183,11 @@ namespace WindowsFormsApp4
         private void Name_textbox_TextChanged(object sender, EventArgs e)
         {
             Save_checkbox.Checked = false;
+        }
+
+        private void guna2CircleButton4_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -38,11 +38,12 @@
             this.ViewPass_checkbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.Save_checkbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +62,7 @@
             this.SignIn_button.Name = "SignIn_button";
             this.SignIn_button.ShadowDecoration.Parent = this.SignIn_button;
             this.SignIn_button.Size = new System.Drawing.Size(155, 33);
-            this.SignIn_button.TabIndex = 4;
+            this.SignIn_button.TabIndex = 2;
             this.SignIn_button.Text = "Sign In";
             this.SignIn_button.Click += new System.EventHandler(this.SignIn_button_Click);
             // 
@@ -80,7 +81,7 @@
             this.SignUp_button.Name = "SignUp_button";
             this.SignUp_button.ShadowDecoration.Parent = this.SignUp_button;
             this.SignUp_button.Size = new System.Drawing.Size(155, 33);
-            this.SignUp_button.TabIndex = 5;
+            this.SignUp_button.TabIndex = 3;
             this.SignUp_button.Text = "Sign Up";
             this.SignUp_button.Click += new System.EventHandler(this.SignUp_button_Click);
             // 
@@ -112,10 +113,11 @@
             this.Name_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Name_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Name_textbox.FocusedState.Parent = this.Name_textbox;
-            this.Name_textbox.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_textbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Name_textbox.HoverState.Parent = this.Name_textbox;
             this.Name_textbox.Location = new System.Drawing.Point(121, 107);
+            this.Name_textbox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name_textbox.Name = "Name_textbox";
             this.Name_textbox.PasswordChar = '\0';
             this.Name_textbox.PlaceholderText = "";
@@ -139,10 +141,11 @@
             this.Pass_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Pass_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Pass_textbox.FocusedState.Parent = this.Pass_textbox;
-            this.Pass_textbox.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pass_textbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pass_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Pass_textbox.HoverState.Parent = this.Pass_textbox;
             this.Pass_textbox.Location = new System.Drawing.Point(437, 159);
+            this.Pass_textbox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Pass_textbox.Name = "Pass_textbox";
             this.Pass_textbox.PasswordChar = '\0';
             this.Pass_textbox.PlaceholderText = "";
@@ -225,6 +228,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel2.Controls.Add(this.guna2CircleButton4);
             this.panel2.Controls.Add(this.guna2HtmlLabel1);
             this.panel2.Controls.Add(this.ForgerYourPass_label);
             this.panel2.Controls.Add(this.SignIn_button);
@@ -236,6 +240,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(374, 350);
             this.panel2.TabIndex = 22;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Showcard Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(137, 41);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(145, 32);
+            this.guna2HtmlLabel1.TabIndex = 8;
+            this.guna2HtmlLabel1.Text = "User Login ";
             // 
             // guna2CircleButton1
             // 
@@ -285,6 +300,24 @@
             this.guna2CircleButton3.Size = new System.Drawing.Size(173, 119);
             this.guna2CircleButton3.TabIndex = 25;
             // 
+            // guna2CircleButton4
+            // 
+            this.guna2CircleButton4.CheckedState.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.CustomImages.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton4.HoverState.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.Image = global::WindowsFormsApp4.Properties.Resources.home3;
+            this.guna2CircleButton4.ImageSize = new System.Drawing.Size(50, 50);
+            this.guna2CircleButton4.Location = new System.Drawing.Point(12, 14);
+            this.guna2CircleButton4.Name = "guna2CircleButton4";
+            this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton4.ShadowDecoration.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.Size = new System.Drawing.Size(54, 51);
+            this.guna2CircleButton4.TabIndex = 9;
+            this.guna2CircleButton4.Click += new System.EventHandler(this.guna2CircleButton4_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -294,17 +327,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(246, 221);
             this.panel1.TabIndex = 21;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Showcard Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(137, 41);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(145, 32);
-            this.guna2HtmlLabel1.TabIndex = 8;
-            this.guna2HtmlLabel1.Text = "User Login ";
             // 
             // LogInForm
             // 
@@ -351,5 +373,6 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
     }
 }
