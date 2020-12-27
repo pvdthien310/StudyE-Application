@@ -1096,7 +1096,8 @@ namespace WindowsFormsApp4
                 string isSelect = TuKhoTabledatagridview.CurrentRow.Cells["Name"].Value.ToString();
                 TuKhoTabledatagridview.Rows.RemoveAt(TuKhoTabledatagridview.CurrentRow.Index);
                 mycnt.Open();
-                string update = "update EV_SOURCE set IsTuKho = 0 where Name ='" + isSelect + "'";
+                string update = "update EV_SOURCE set IsTuKho = 0 where Name ='" + isSelect + "'" +
+                  " delete from TUKHO where Name = '" + isSelect + "'"; ;
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = mycnt;
                 cmd.CommandText = update;
