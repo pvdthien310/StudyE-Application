@@ -682,7 +682,7 @@ namespace WindowsFormsApp4
             }
             File.Delete(path);
             path = "./PictureImageInsert/" + group;
-            Directory.Delete(path);
+            Directory.Delete(path, true);
             load_Button();
             for (int i = 0; i < numberOfPanel; i++)
             {
@@ -946,12 +946,13 @@ namespace WindowsFormsApp4
                     t = RemoveUnicode(t);
                     //t = RemoveSpecialCharacters(t);
                     nameGroup.Text = t.Remove(t.Length - 4, 4);
+                    addImage.Visible = false;
+                    guna2PictureBox1.Visible = true;
 
                 }
 
             }
-            addImage.Visible = false;
-            guna2PictureBox1.Visible = true;
+            
         }
     }
 }
