@@ -279,7 +279,7 @@
             // guna2CircleButton1
             // 
             this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.return_turnaround_5121;
+            this.guna2CircleButton1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.tải_xuống__2_;
             this.guna2CircleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
             this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
@@ -299,7 +299,7 @@
             // creatButton
             // 
             this.creatButton.BackColor = System.Drawing.Color.Transparent;
-            this.creatButton.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.iconfinder_icons_add_1564491;
+            this.creatButton.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.agregar_png;
             this.creatButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.creatButton.CheckedState.Parent = this.creatButton;
             this.creatButton.CustomImages.Parent = this.creatButton;
@@ -335,6 +335,7 @@
             this.addImage.BackColor = System.Drawing.Color.Transparent;
             this.addImage.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.photo_photography_image_picture_add_5121;
             this.addImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.addImage.BorderRadius = 5;
             this.addImage.CheckedState.Parent = this.addImage;
             this.addImage.CustomImages.Parent = this.addImage;
             this.addImage.FillColor = System.Drawing.Color.Transparent;
@@ -350,9 +351,10 @@
             // 
             // Exit
             // 
+            this.Exit.BorderRadius = 5;
             this.Exit.CheckedState.Parent = this.Exit;
             this.Exit.CustomImages.Parent = this.Exit;
-            this.Exit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Exit.FillColor = System.Drawing.Color.SkyBlue;
             this.Exit.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit.ForeColor = System.Drawing.Color.Black;
             this.Exit.HoverState.Parent = this.Exit;
@@ -366,9 +368,10 @@
             // 
             // Add
             // 
+            this.Add.BorderRadius = 5;
             this.Add.CheckedState.Parent = this.Add;
             this.Add.CustomImages.Parent = this.Add;
-            this.Add.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Add.FillColor = System.Drawing.Color.SkyBlue;
             this.Add.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Add.ForeColor = System.Drawing.Color.Black;
             this.Add.HoverState.Parent = this.Add;
@@ -462,7 +465,7 @@
             // leftPanel
             // 
             this.leftPanel.BackColor = System.Drawing.Color.Transparent;
-            this.leftPanel.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._01_arrow_left_512;
+            this.leftPanel.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.button_backward_1_512;
             this.leftPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.leftPanel.CheckedState.Parent = this.leftPanel;
             this.leftPanel.CustomImages.Parent = this.leftPanel;
@@ -481,7 +484,7 @@
             // rightPannel
             // 
             this.rightPannel.BackColor = System.Drawing.Color.Transparent;
-            this.rightPannel.BackgroundImage = global::WindowsFormsApp4.Properties.Resources._01_arrow_left_5121;
+            this.rightPannel.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.button_backward_1_5121;
             this.rightPannel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.rightPannel.CheckedState.Parent = this.rightPannel;
             this.rightPannel.CustomImages.Parent = this.rightPannel;
@@ -505,14 +508,15 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1058, 665);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.rightPannel);
             this.Controls.Add(this.leftPanel);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.creatButton);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.guna2CircleButton1);
+            this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Picture_Dictionary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Picture_Dictionary";

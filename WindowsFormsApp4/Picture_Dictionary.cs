@@ -886,6 +886,7 @@ namespace WindowsFormsApp4
                 currentPanel = numberOfPanel - 1;
             }
             listFlowPanel[currentPanel].BringToFront();
+            creatButton.BringToFront();
         }
 
         private void rightPannel_Click(object sender, EventArgs e)
@@ -896,6 +897,7 @@ namespace WindowsFormsApp4
                 currentPanel = 0;
             }
             listFlowPanel[currentPanel].BringToFront();
+            creatButton.BringToFront();
         }
 
       
