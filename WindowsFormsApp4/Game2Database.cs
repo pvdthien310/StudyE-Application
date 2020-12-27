@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -12,6 +13,10 @@ namespace WindowsFormsApp4
     {
         public List<Word> list; // chua cau hoi type 1
         public List<Sentences> list2;  // chua cau hoi cua type 2
+        static string path = Environment.CurrentDirectory;
+        static string collabString = @ConfigurationManager.AppSettings["ConnectString_Head"] + path + "\\" + ConfigurationManager.AppSettings["Name"] + ConfigurationManager.AppSettings["ConnectString_Tail"];
+        SqlConnection mycntSW = new SqlConnection(collabString);
+
         public Game2Database()
         {
             list = new List<Word>(100);
@@ -22,7 +27,7 @@ namespace WindowsFormsApp4
         protected void LoadDataFromSQL()
         {
             list.Clear(); // Xóa dữ liệu để tránh bug ngoài ý muốn
-            SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True"); // Của Thiên
+           // Của Thiên
 
             // SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-E6SJOH8;Initial Catalog=StudyE;Integrated Security=True"); // Của Thắng
             //SqlConnection mycntSW = new SqlConnection(@"Data Source=DESKTOP-DEE9DN8;Initial Catalog=StudyE;Integrated Security=True"); // Của Thiên

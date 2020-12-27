@@ -80,7 +80,7 @@
             this.Pass_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Pass_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Pass_textbox.FocusedState.Parent = this.Pass_textbox;
-            this.Pass_textbox.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pass_textbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pass_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Pass_textbox.HoverState.Parent = this.Pass_textbox;
             this.Pass_textbox.Location = new System.Drawing.Point(128, 177);
@@ -106,7 +106,7 @@
             this.Name_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Name_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Name_textbox.FocusedState.Parent = this.Name_textbox;
-            this.Name_textbox.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_textbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Name_textbox.HoverState.Parent = this.Name_textbox;
             this.Name_textbox.Location = new System.Drawing.Point(128, 124);
@@ -128,7 +128,7 @@
             this.SignUp_button.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignUp_button.ForeColor = System.Drawing.Color.White;
             this.SignUp_button.HoverState.Parent = this.SignUp_button;
-            this.SignUp_button.Location = new System.Drawing.Point(154, 323);
+            this.SignUp_button.Location = new System.Drawing.Point(154, 321);
             this.SignUp_button.Name = "SignUp_button";
             this.SignUp_button.ShadowDecoration.Parent = this.SignUp_button;
             this.SignUp_button.Size = new System.Drawing.Size(161, 48);
@@ -160,7 +160,7 @@
             this.ConfirmPass_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.ConfirmPass_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ConfirmPass_textbox.FocusedState.Parent = this.ConfirmPass_textbox;
-            this.ConfirmPass_textbox.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfirmPass_textbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmPass_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ConfirmPass_textbox.HoverState.Parent = this.ConfirmPass_textbox;
             this.ConfirmPass_textbox.Location = new System.Drawing.Point(128, 240);
@@ -197,7 +197,7 @@
             this.Email_textbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Email_textbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Email_textbox.FocusedState.Parent = this.Email_textbox;
-            this.Email_textbox.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email_textbox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email_textbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Email_textbox.HoverState.Parent = this.Email_textbox;
             this.Email_textbox.Location = new System.Drawing.Point(127, 71);
@@ -273,7 +273,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Showcard Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(176, 23);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(191, 21);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(92, 32);
             this.guna2HtmlLabel1.TabIndex = 23;

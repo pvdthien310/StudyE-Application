@@ -51,22 +51,22 @@ namespace WindowsFormsApp4
                         }
                         else
                         {
-                            MessageBox.Show("Tài khoản đang được sử dụng");
+                            MessageBox.Show("Tài khoản đang được sử dụng","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                         }    
                     }
                     else
                     {
-                        MessageBox.Show("Mật khẩu không đúng");
+                        MessageBox.Show("Mật khẩu không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản không tồn tại");
+                    MessageBox.Show("Tài khoản không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập đủ thông tin");
+                MessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }    
         }
 
@@ -118,12 +118,12 @@ namespace WindowsFormsApp4
 
         private void ForgerYourPass_label_MouseEnter(object sender, EventArgs e)
         {
-            ForgerYourPass_label.Font = new System.Drawing.Font("Segoe UI", 9F, FontStyle.Underline);
+            ForgerYourPass_label.Font = new System.Drawing.Font("Segoe UI", 9F, FontStyle.Underline | FontStyle.Bold);
         }
 
         private void ForgerYourPass_label_MouseLeave(object sender, EventArgs e)
         {
-            ForgerYourPass_label.Font = new System.Drawing.Font("Segoe UI", 9F, FontStyle.Regular);
+            ForgerYourPass_label.Font = new System.Drawing.Font("Segoe UI", 9F, FontStyle.Bold);
         }
 
         private void LogInForm_Activated(object sender, EventArgs e)
@@ -164,7 +164,8 @@ namespace WindowsFormsApp4
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản không tồn tại hoặc mật khẩu sai");
+                    MessageBox.Show("Tài khoản không tồn tại hoặc mật khẩu sai","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    Save_checkbox.Checked = false;
                 }
             }
             else
@@ -187,7 +188,8 @@ namespace WindowsFormsApp4
 
         private void guna2CircleButton4_Click(object sender, EventArgs e)
         {
-            
+            this.parent.Show();
+            this.Close();       
         }
     }
 }

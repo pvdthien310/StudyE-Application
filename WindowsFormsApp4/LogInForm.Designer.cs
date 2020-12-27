@@ -38,11 +38,11 @@
             this.ViewPass_checkbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.Save_checkbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton4 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -90,10 +90,11 @@
             this.ForgerYourPass_label.AutoSize = true;
             this.ForgerYourPass_label.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ForgerYourPass_label.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ForgerYourPass_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForgerYourPass_label.Location = new System.Drawing.Point(157, 321);
+            this.ForgerYourPass_label.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForgerYourPass_label.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ForgerYourPass_label.Location = new System.Drawing.Point(145, 321);
             this.ForgerYourPass_label.Name = "ForgerYourPass_label";
-            this.ForgerYourPass_label.Size = new System.Drawing.Size(126, 15);
+            this.ForgerYourPass_label.Size = new System.Drawing.Size(132, 15);
             this.ForgerYourPass_label.TabIndex = 6;
             this.ForgerYourPass_label.Text = "Forget your password?";
             this.ForgerYourPass_label.Click += new System.EventHandler(this.ForgerYourPass_label_Click);
@@ -191,7 +192,7 @@
             this.ViewPass_checkbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ViewPass_checkbox.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewPass_checkbox.ForeColor = System.Drawing.Color.MintCream;
-            this.ViewPass_checkbox.Location = new System.Drawing.Point(535, 209);
+            this.ViewPass_checkbox.Location = new System.Drawing.Point(519, 209);
             this.ViewPass_checkbox.Name = "ViewPass_checkbox";
             this.ViewPass_checkbox.Size = new System.Drawing.Size(128, 19);
             this.ViewPass_checkbox.TabIndex = 3;
@@ -213,7 +214,7 @@
             this.Save_checkbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Save_checkbox.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Save_checkbox.ForeColor = System.Drawing.Color.MintCream;
-            this.Save_checkbox.Location = new System.Drawing.Point(447, 209);
+            this.Save_checkbox.Location = new System.Drawing.Point(441, 209);
             this.Save_checkbox.Name = "Save_checkbox";
             this.Save_checkbox.Size = new System.Drawing.Size(55, 19);
             this.Save_checkbox.TabIndex = 2;
@@ -241,12 +242,30 @@
             this.panel2.Size = new System.Drawing.Size(374, 350);
             this.panel2.TabIndex = 22;
             // 
+            // guna2CircleButton4
+            // 
+            this.guna2CircleButton4.CheckedState.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.CustomImages.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton4.HoverState.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.Image = global::WindowsFormsApp4.Properties.Resources.home3;
+            this.guna2CircleButton4.ImageSize = new System.Drawing.Size(50, 50);
+            this.guna2CircleButton4.Location = new System.Drawing.Point(0, 3);
+            this.guna2CircleButton4.Name = "guna2CircleButton4";
+            this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton4.ShadowDecoration.Parent = this.guna2CircleButton4;
+            this.guna2CircleButton4.Size = new System.Drawing.Size(54, 51);
+            this.guna2CircleButton4.TabIndex = 9;
+            this.guna2CircleButton4.Click += new System.EventHandler(this.guna2CircleButton4_Click);
+            // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Showcard Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(137, 41);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(137, 51);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(145, 32);
             this.guna2HtmlLabel1.TabIndex = 8;
@@ -299,24 +318,6 @@
             this.guna2CircleButton3.ShadowDecoration.Parent = this.guna2CircleButton3;
             this.guna2CircleButton3.Size = new System.Drawing.Size(173, 119);
             this.guna2CircleButton3.TabIndex = 25;
-            // 
-            // guna2CircleButton4
-            // 
-            this.guna2CircleButton4.CheckedState.Parent = this.guna2CircleButton4;
-            this.guna2CircleButton4.CustomImages.Parent = this.guna2CircleButton4;
-            this.guna2CircleButton4.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton4.HoverState.Parent = this.guna2CircleButton4;
-            this.guna2CircleButton4.Image = global::WindowsFormsApp4.Properties.Resources.home3;
-            this.guna2CircleButton4.ImageSize = new System.Drawing.Size(50, 50);
-            this.guna2CircleButton4.Location = new System.Drawing.Point(12, 14);
-            this.guna2CircleButton4.Name = "guna2CircleButton4";
-            this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton4.ShadowDecoration.Parent = this.guna2CircleButton4;
-            this.guna2CircleButton4.Size = new System.Drawing.Size(54, 51);
-            this.guna2CircleButton4.TabIndex = 9;
-            this.guna2CircleButton4.Click += new System.EventHandler(this.guna2CircleButton4_Click);
             // 
             // panel1
             // 
