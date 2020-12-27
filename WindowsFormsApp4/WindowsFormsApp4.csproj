@@ -466,5 +466,20 @@
   <ItemGroup>
     <None Include="Resources\11.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c7de824e-b549-4802-90eb-b7e2e5378a77_200x2001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0c3b3adb1a7530892e55ef36d3be6cb81.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\121501778-white-user-protection-icon-isolated-with-long-shadow-secure-user-login-password-protected-personal-d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-avatar-contact-portfolio-personal-portrait-profile-5093.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c7de824e-b549-4802-90eb-b7e2e5378a77_200x2002.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

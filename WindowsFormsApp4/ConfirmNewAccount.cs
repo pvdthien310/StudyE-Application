@@ -94,5 +94,10 @@ namespace WindowsFormsApp4
                 CountDownResend_label.Text = remain.ToString();
             }    
         }
+
+        private void TypeCode_label_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -54,6 +54,7 @@ namespace WindowsFormsApp4
                 guna2Button_Ready.Enabled = true;
                 guna2Button_Start.Enabled = false;
             }
+            guna2Button_Sophong.Text = "Phòng " + room_info.RoomID.ToString();
 
         }
         private void timer_tick(object sender, EventArgs e)
@@ -116,10 +117,25 @@ namespace WindowsFormsApp4
                     room_info.IsClosed = room_info.IsReady = room_info.IsStart = 0;
                 }
             }
-            string check ="";
-            check += room_info.RoomID.ToString() + " " + room_info.HostID.ToString() + " " +room_info.GuestID.ToString() + " " +room_info.IsClosed.ToString() + " " + room_info.IsReady.ToString() + " " + room_info.IsStart.ToString() + " ";
-
-            checklabel.Text = check;
+            guna2HtmlLabel_name1.Text = room_info.HostID;
+            guna2HtmlLabel_status1.Text = "Host";
+           if (room_info.GuestID != "0")
+            {
+                pictureBox2.Visible = true;
+                guna2HtmlLabel_name2.Text = room_info.GuestID;
+                guna2HtmlLabel_name2.Visible = true;
+                if (room_info.IsReady == 1)
+                    guna2HtmlLabel_status1.Text = "Ready";
+                else
+                    guna2HtmlLabel_status1.Text = "Not Ready";
+                guna2HtmlLabel_status1.Visible = true;
+            }
+            else
+            {
+                pictureBox2.Visible = false;
+                guna2HtmlLabel_name2.Visible = false;      
+                guna2HtmlLabel_status1.Visible = false;
+            }
 
 
 

@@ -112,6 +112,8 @@ namespace WindowsFormsApp4
             if (time > 100)
             {
                 push_result_to_data();
+                gameForm.Invalidate();
+                isdraw = 0;
             }
         }
         private int check_result()
