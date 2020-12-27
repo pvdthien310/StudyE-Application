@@ -39,15 +39,36 @@ namespace WindowsFormsApp4
             if (Mycnt.State != ConnectionState.Open)
             {
                 Mycnt.Open();
-            }
-            string query = string.Format("SELECT * FROM ROOMRESULT WHERE ROOMID = '{0}'" +
-                "SELECT * FROM RoomQuestions WHERE ROOMID = '{0}'" +
-                "SELECT * FROM RoomList WHERE ROOMID = '{0}'",result[0]);
+            } 
+            string query = string.Format(" delete * FROM ROOMRESULT WHERE ROOMID = '{0}'" +
+                "DELETE * FROM RoomQuestions WHERE ROOMID = '{0}'" +
+                "DELETE * FROM RoomList WHERE ROOMID = '{0}'",result[0]);
             SqlCommand com = new SqlCommand(query, Mycnt);
             com.ExecuteNonQuery();
             Mycnt.Close();
             this.Close();
             this.parent.Show();
+            
+        }
+
+        private void guna2Button_BackDictionary_Click(object sender, EventArgs e)
+        {
+            if (Mycnt.State != ConnectionState.Open)
+            {
+                Mycnt.Open();
+            }
+            string query = string.Format(" delete * FROM ROOMRESULT WHERE ROOMID = '{0}'" +
+                " DELETE * FROM RoomQuestions WHERE ROOMID = '{0}'" +
+                " DELETE * FROM RoomList WHERE ROOMID = '{0}'", result[0]);
+            SqlCommand com = new SqlCommand(query, Mycnt);
+            com.ExecuteNonQuery();
+            Mycnt.Close();
+            this.Close();
+            this.parent.loginForm.parent.Show();
+            this.parent.loginForm.Close();
+            this.parent.Close(); 
+
+
         }
     }
 }

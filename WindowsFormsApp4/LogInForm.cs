@@ -13,6 +13,7 @@ namespace WindowsFormsApp4
 {
     public partial class LogInForm : Form
     {
+        public mainForm parent;
         //child form
         RoomChose inRoom;
         SignUpForm signUpForm;
@@ -23,10 +24,10 @@ namespace WindowsFormsApp4
             InitializeComponent();
         }
 
-        public LogInForm(RoomChose inRoom, SignUpForm signUpForm, ResetPass resetPass )
+        public LogInForm(mainForm parent, SignUpForm signUpForm, ResetPass resetPass )
         {
             InitializeComponent();
-            this.inRoom = inRoom;
+            this.parent = parent;
             this.signUpForm = signUpForm;
             this.resetPass = resetPass;
         }

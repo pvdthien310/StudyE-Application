@@ -109,6 +109,10 @@ namespace WindowsFormsApp4
                 result.Add(dt.Rows[0][i].ToString());
             }
             Mycnt.Close();
+            if (time > 100)
+            {
+                push_result_to_data();
+            }
         }
         private int check_result()
         {
@@ -256,7 +260,7 @@ namespace WindowsFormsApp4
                 }
                
             }
-            if (time > 1000)
+            if (time > 100)
             {
                 push_result_to_data();
             }

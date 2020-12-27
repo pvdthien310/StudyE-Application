@@ -31,13 +31,14 @@ namespace WindowsFormsApp4
         {
             this.listView1 = new System.Windows.Forms.ListView();
             this.guna2Button_Back = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button_BackDictionary = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // listView1
             // 
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(56, 171);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(487, 172);
             this.listView1.TabIndex = 0;
@@ -58,14 +59,30 @@ namespace WindowsFormsApp4
             this.guna2Button_Back.Text = "Trở Về";
             this.guna2Button_Back.Click += new System.EventHandler(this.guna2Button_Back_Click);
             // 
+            // guna2Button_BackDictionary
+            // 
+            this.guna2Button_BackDictionary.CheckedState.Parent = this.guna2Button_BackDictionary;
+            this.guna2Button_BackDictionary.CustomImages.Parent = this.guna2Button_BackDictionary;
+            this.guna2Button_BackDictionary.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button_BackDictionary.ForeColor = System.Drawing.Color.White;
+            this.guna2Button_BackDictionary.HoverState.Parent = this.guna2Button_BackDictionary;
+            this.guna2Button_BackDictionary.Location = new System.Drawing.Point(34, 31);
+            this.guna2Button_BackDictionary.Name = "guna2Button_BackDictionary";
+            this.guna2Button_BackDictionary.ShadowDecoration.Parent = this.guna2Button_BackDictionary;
+            this.guna2Button_BackDictionary.Size = new System.Drawing.Size(64, 50);
+            this.guna2Button_BackDictionary.TabIndex = 2;
+            this.guna2Button_BackDictionary.Text = "Exit";
+            this.guna2Button_BackDictionary.Click += new System.EventHandler(this.guna2Button_BackDictionary_Click);
+            // 
             // ResultForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.guna2Button_BackDictionary);
             this.Controls.Add(this.guna2Button_Back);
             this.Controls.Add(this.listView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ResultForm2";
             this.Text = "ResultForm2";
             this.ResumeLayout(false);
@@ -76,5 +93,6 @@ namespace WindowsFormsApp4
 
         private System.Windows.Forms.ListView listView1;
         private Guna.UI2.WinForms.Guna2Button guna2Button_Back;
+        private Guna.UI2.WinForms.Guna2Button guna2Button_BackDictionary;
     }
 }

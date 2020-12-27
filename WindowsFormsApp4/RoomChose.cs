@@ -14,7 +14,7 @@ namespace WindowsFormsApp4
     public partial class RoomChose : Form
     {
         //parent
-        LogInForm loginForm;
+        public LogInForm loginForm;
         //property
         public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:40.83.97.14,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=sa;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
         //public static SqlConnection Mycnt = new SqlConnection(@"Data Source=LAPTOP-U08OQS9D\SQLEXPRESS;Initial Catalog=StudyE;Integrated Security=True");
