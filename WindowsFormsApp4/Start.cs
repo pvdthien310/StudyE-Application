@@ -152,6 +152,7 @@ namespace WindowsFormsApp4
                 if (s >= 8)
                 {
                 push_result_to_data();
+                timer.Enabled = false;
                 ResultForm2 resultform = new ResultForm2(roomform.parent, result);
                 switch (check_result())
                 {
