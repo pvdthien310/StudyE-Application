@@ -32,7 +32,7 @@ namespace WindowsFormsApp4
             //temp.Location = new Point(224, 505);
             temp.Name = name;
             temp.ShadowDecoration.Parent = temp;
-            temp.Size = new Size(60,60);
+            temp.Size = new Size(53,53);
             temp.TabIndex = 0;
             temp.Text = isSourse;
             return temp;

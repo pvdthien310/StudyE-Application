@@ -467,37 +467,52 @@
     <None Include="Resources\11.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\c7de824e-b549-4802-90eb-b7e2e5378a77_200x2001.png" />
+    <None Include="Resources\photo_photography_image_picture_add-512.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\0c3b3adb1a7530892e55ef36d3be6cb81.png" />
+    <None Include="Resources\photo_photography_image_picture_add-5121.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\121501778-white-user-protection-icon-isolated-with-long-shadow-secure-user-login-password-protected-personal-d.jpg" />
+    <None Include="Resources\chevron-left-circle-512.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user-avatar-contact-portfolio-personal-portrait-profile-5093.png" />
+    <None Include="Resources\01_arrow_left-512.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\c7de824e-b549-4802-90eb-b7e2e5378a77_200x2002.png" />
+    <None Include="Resources\01_arrow_left-5121.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\background1.jpg" />
+    <None Include="Resources\return_turnaround-512.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\again2.png" />
+    <None Include="Resources\return_turnaround-5121.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\add.png" />
+    <None Include="Resources\plus_add-512.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\e287d334acb2dec905271fcf08917dec87c963c5.jpg.png" />
+    <None Include="Resources\v-40-512.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\yasuo.png" />
+    <None Include="Resources\2225147.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\Exit.png" />
+    <None Include="Resources\agregar-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sed-23-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_backward_1-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\01_arrow_left-5122.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_backward_1-5121.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

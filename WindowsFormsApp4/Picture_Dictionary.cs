@@ -31,6 +31,15 @@ namespace WindowsFormsApp4
         private bool isInsert = false;
         private int lastId = 0;
 
+
+        private string[] listNameButton = new string[100];
+        private string[] listSourst = new string[150];
+        private FlowLayoutPanel[] listFlowPanel;
+        private List<Guna.UI2.WinForms.Guna2Button> listButon = new List<Guna.UI2.WinForms.Guna2Button>(100);
+        private int numberOfPanel = 0;
+        private int numberOfButton = 0;
+        private int currentPanel = 0;
+
         public Picture_Dictionary()
         {
             InitializeComponent();
@@ -44,7 +53,7 @@ namespace WindowsFormsApp4
         {
             if (e.Button == MouseButtons.Left)
             {
-                menuStrip.Visible = false;
+                /*menuStrip.Visible = false;
                 currentSourse = 0;
                 panel1.Visible = true;
                 group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
@@ -97,12 +106,75 @@ namespace WindowsFormsApp4
                        
                
 
-                cnn.Close();
+                cnn.Close();*/
+                menuStrip.Visible = false;
+                panel1.Visible = true;
+
+                currentSourse = 0;
+                isSourse = ((Guna.UI2.WinForms.Guna2Button)sender).Text;
+                panel1.Visible = true;
+                group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
+                string path = "";
+                if (isSourse == "1")
+                {
+                    path = "./PictureImage/" + group;
+                }
+                else
+                {
+                    path = "./PictureImageInsert/" + group;
+                }
+
+                listSourst = Directory.GetFiles(path);
+
+                if (listSourst.Length > 0)
+                {
+
+                    Bitmap a;
+                    using (var stream = File.Open(listSourst[0], FileMode.Open))
+                    {
+                        a = new Bitmap(Image.FromStream(stream));
+                        stream.Close();
+                    }
+                    a.MakeTransparent();
+                    string text = Path.GetFileName(listSourst[0]);
+                    text = text.Remove(text.Length - 4, 4);
+                   
+
+                    if (isSourse == "1")
+                    {
+                        pictureBox1.Image = a;
+                        pictureBox1.Visible = true;
+                        textName.Visible = false;
+                        guna2CircleButton2.Visible = false;
+
+                    }
+                    else
+                    {
+                        pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
+                        pictureBox1.Image = null;
+                        pictureBox1.Visible = true;
+                        guna2CircleButton2.Visible = true;
+                        pictureBoxInsert.Visible = true;
+                        pictureBoxInsert.BackgroundImage = a;
+                        textName.Text = text;
+                        textName.Visible = true;
+
+
+                    }
+
+                }
+                else
+                {
+                    textName.Text = "";
+                    pictureBox1.Visible = true;
+                    pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
+                }
+
             }
             else if(e.Button == MouseButtons.Right)
             {
                 menuStrip.Visible = true;
-                menuStrip.Location = new Point(((Guna.UI2.WinForms.Guna2Button)sender).Location.X + 100, ((Guna.UI2.WinForms.Guna2Button)sender).Location.Y + 150);
+                menuStrip.Location = new Point(((Guna.UI2.WinForms.Guna2Button)sender).Location.X + 135, ((Guna.UI2.WinForms.Guna2Button)sender).Location.Y + 150);
                 
                 isSourse = ((Guna.UI2.WinForms.Guna2Button)sender).Text;
                 group = ((Guna.UI2.WinForms.Guna2Button)sender).Name;
@@ -136,16 +208,22 @@ namespace WindowsFormsApp4
         private void Right_Click(object sender, EventArgs e)
         {
             currentSourse++;
-            if (currentSourse >= datatable.Rows.Count)
+            if (currentSourse >= listSourst.Length)
             {
                 currentSourse = 0;
             }
-            if (datatable.Rows.Count > 0)
+            if (listSourst.Length > 0)
             {
-                MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
-                Bitmap a = new Bitmap(Image.FromStream(ms));
+                Bitmap a;
+                using (var stream = File.Open(listSourst[currentSourse], FileMode.Open))
+                {
+                    a = new Bitmap(Image.FromStream(stream));
+                    stream.Close();
+                }
+                
                 a.MakeTransparent();
-                string text = datatable.Rows[currentSourse]["NAME"].ToString();
+                string text = Path.GetFileName(listSourst[currentSourse]);
+                text = text.Remove(text.Length - 4, 4);
 
                 if (isSourse == "1")
                 {
@@ -166,14 +244,20 @@ namespace WindowsFormsApp4
             currentSourse--;
             if (currentSourse <0 )
             {
-                currentSourse = datatable.Rows.Count-1;
+
+                currentSourse =listSourst.Length - 1;
             }
-            if (datatable.Rows.Count > 0)
+            if (listSourst.Length > 0)
             {
-                MemoryStream ms = new MemoryStream((byte[])datatable.Rows[currentSourse]["ENCODE"]);
-                Bitmap a = new Bitmap(Image.FromStream(ms));
+                Bitmap a;
+                using (var stream = File.Open(listSourst[currentSourse], FileMode.Open))
+                {
+                    a = new Bitmap(Image.FromStream(stream));
+                    stream.Close();
+                }
                 a.MakeTransparent();
-                string text = datatable.Rows[currentSourse]["NAME"].ToString();
+                string text = Path.GetFileName(listSourst[currentSourse]);
+                text = text.Remove(text.Length - 4, 4);
 
                 if (isSourse == "1")
                 {
@@ -190,9 +274,10 @@ namespace WindowsFormsApp4
 
         private void Speak_Click(object sender, EventArgs e)
         {
-            if (datatable.Rows.Count > 0)
+            if (listSourst.Length > 0)
             {
-                string text = datatable.Rows[currentSourse]["NAME"].ToString();
+                string text = Path.GetFileName(listSourst[currentSourse]);
+                text = text.Remove(text.Length - 4, 4);
                 SpeechSynthesizer synth = new SpeechSynthesizer();
                 synth.SetOutputToDefaultAudioDevice();
                 synth.Speak(text);
@@ -208,75 +293,149 @@ namespace WindowsFormsApp4
 
         private void Picture_Dictionary_Load(object sender, EventArgs e)
         {
+            
             load_Button();
+            panel1.BringToFront();
         }
-        private void load_Button()
-        {
-            cnn.Open();
-            string sql = "select * from PICTURE_BUTTON  ";
-            SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
-            com.CommandType = CommandType.Text;
-            SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
-            DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
-            da.Fill(dt);
-            //numberOfButton = 0;
-            int i=0;
-            while(i<dt.Rows.Count)
-            {
-                MemoryStream ms = new MemoryStream((byte[])dt.Rows[i]["ENCODE"]);
-                Bitmap a = new Bitmap(Image.FromStream(ms));
-                a.MakeTransparent();
-                string name = dt.Rows[i]["NAME"].ToString();
-                string isSourse = dt.Rows[i]["IS_SOURSE"].ToString();
-
-                Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
-                buttonImage b = new buttonImage();
-                but.BackColor = Color.Blue;
-               
-                but = b.createButton(name, a, isSourse) ;
-                but.MouseClick += new MouseEventHandler(TabChose_Click);
-                flowLayoutPanel1.Controls.Add(but);
-                //numberOfButton++;
-                i++;
-            }
-            lastId = (int)dt.Rows[i-1]["ID"];
-          
-
-            cnn.Close();
-        }
+       
 
         
 
-        private void load_Button(int k)
+        private void load_Button()
         {
-            
-            cnn.Open();
-            string sql = "select * from PICTURE_BUTTON ";
-            SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
-            com.CommandType = CommandType.Text;
-            SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
-            DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
-            da.Fill(dt);
 
-            int n = dt.Rows.Count - 1;
-            MemoryStream ms = new MemoryStream((byte[])dt.Rows[n]["ENCODE"]);
-            Bitmap a = new Bitmap(Image.FromStream(ms));
-            a.MakeTransparent();
-            string name = dt.Rows[n]["NAME"].ToString();
-            string isSourse = dt.Rows[n]["IS_SOURSE"].ToString();
+            /* cnn.Open();
+             string sql = "select * from PICTURE_BUTTON ";
+             SqlCommand com = new SqlCommand(sql, cnn); //bat dau truy van
+             com.CommandType = CommandType.Text;
+             SqlDataAdapter da = new SqlDataAdapter(com); //chuyen du lieu ve
+             DataTable dt = new DataTable(); //tạo một kho ảo để lưu trữ dữ liệu
+             da.Fill(dt);
 
-            Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
-            buttonImage b = new buttonImage();
-            but.BackColor = Color.Transparent;
-            but = b.createButton(name, a, "0");
-            but.MouseClick += new MouseEventHandler(TabChose_Click);
-            
-            flowLayoutPanel1.Controls.Add(but);
+             int n = dt.Rows.Count - 1;
+             MemoryStream ms = new MemoryStream((byte[])dt.Rows[n]["ENCODE"]);
+             Bitmap a = new Bitmap(Image.FromStream(ms));
+             a.MakeTransparent();
+             string name = dt.Rows[n]["NAME"].ToString();
+             string isSourse = dt.Rows[n]["IS_SOURSE"].ToString();
+
+             Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
+             buttonImage b = new buttonImage();
+             but.BackColor = Color.Transparent;
+             but = b.createButton(name, a, "0");
+             but.MouseClick += new MouseEventHandler(TabChose_Click);
+
+             flowLayoutPanel1.Controls.Add(but);
+
+
+
+             cnn.Close();*/
+            listButon.Clear();
+            numberOfButton = 0;
+            numberOfPanel = 0;
+
+            string path = "./Group";
+            string name = "";
+            listNameButton = Directory.GetFiles(path);
+            foreach (string f in listNameButton)
+            {
+                name = Path.GetFileName(f);
+                name = name.Remove(name.Length - 4, 4);
+
+
+                Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
+                buttonImage b = new buttonImage();
+                but.BackColor = Color.Transparent;
+                Bitmap a;
+                using (var stream = File.Open(f, FileMode.Open))
+                {
+                    a = new Bitmap(Image.FromStream(stream));
+                    stream.Close();
+                }
+
+
+                but = b.createButton(name, a, "1");
+                but.MouseClick += new MouseEventHandler(TabChose_Click);
+                numberOfButton++;
+                listButon.Add(but);
+                
+               
+            }
+             path = "./GroupInsert";
+            listNameButton = Directory.GetFiles(path);
+            foreach (string f in listNameButton)
+            {
+                name = Path.GetFileName(f);
+                name = name.Remove(name.Length - 4, 4);
+
+
+                Guna.UI2.WinForms.Guna2Button but = new Guna.UI2.WinForms.Guna2Button();
+                buttonImage b = new buttonImage();
+                but.BackColor = Color.Transparent;
+                Bitmap a;
+                using (var stream = File.Open(f, FileMode.Open))
+                {
+                    a = new Bitmap(Image.FromStream(stream));
+                    stream.Close();
+                }
+
+               
+                
+
+                but = b.createButton(name, a, "0");
+                but.MouseClick += new MouseEventHandler(TabChose_Click);
+                numberOfButton++;
+                listButon.Add(but);
+
+
+            }
             
 
 
-            cnn.Close();
+
+
+            if (numberOfButton % 32 != 0)
+            {
+                numberOfPanel = numberOfButton / 32 + 1;
+            }
+            else if (numberOfButton % 32 == 0)
+            {
+                numberOfPanel = numberOfButton / 32 ;
+            }
+
+            listFlowPanel = new FlowLayoutPanel[numberOfPanel];
+            for (int i = 0; i < numberOfPanel; i++)
+            {
+                listFlowPanel[i] = new FlowLayoutPanel();
+                listFlowPanel[i].BackColor = Color.Transparent;
+                listFlowPanel[i].Location = new Point(110, 120);
+                listFlowPanel[i].Size = new Size(480, 250);
+                listFlowPanel[i].Click += new System.EventHandler(this.flowLayoutPanel1_Click);
+                listFlowPanel[i].BringToFront();
+                listFlowPanel[i].Visible = true;
+                this.Controls.Add(listFlowPanel[i]);
+
+
+            }
+            int numberInPanel = 0;
+             currentPanel = 0;
+            for (int i=0; i<numberOfButton; i++)
+            {
+                if (numberInPanel == 32)
+                {
+                    numberInPanel = 0;
+                    currentPanel++;
+                }
+                else
+                {
+                    numberInPanel++;
+                }
+                listFlowPanel[currentPanel].Controls.Add(listButon[i]);
+            }
+           
             
+            
+
         }
         private void guna2CircleButton1_Click_1(object sender, EventArgs e)
         {
@@ -288,37 +447,16 @@ namespace WindowsFormsApp4
         {          
             panel5.Visible = true;
             nameGroup.Text = "";
-            guna2PictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.interface_77_512;
+            //guna2PictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.interface_77_512;
+            guna2PictureBox1.Visible = false;
+            addImage.Visible = true;
         }
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog dlg = new OpenFileDialog())
-            {
-                int i = 0;
-                dlg.Title = "Open Image";
-                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
-                //dlg.Multiselect = true;
-
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    Bitmap a = new Bitmap(Image.FromFile(dlg.FileName));
-                    a.MakeTransparent();
-                    tem = dlg.FileName;
-                    guna2PictureBox1.BackgroundImage = a;
-                    string t = new FileInfo(dlg.FileName).Name;
-                    t = RemoveUnicode(t);
-                    t = RemoveSpecialCharacters(t);
-                    nameGroup.Text = t.Remove(t.Length - 4, 4);
-                    
-                }
-
-            }
-        }
+        
         private string tem = "";
         private void Add_Click(object sender, EventArgs e)
         {
 
-            string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE, IS_SOURSE) VALUES (@id, @name, @encode, @isSourse)";
+            /*string sql = "insert into PICTURE_BUTTON(ID, NAME, ENCODE, IS_SOURSE) VALUES (@id, @name, @encode, @isSourse)";
             byte[] img = null;
             FileStream fs = new FileStream(tem, FileMode.Open, FileAccess.Read);
             BinaryReader br = new BinaryReader(fs);
@@ -333,12 +471,41 @@ namespace WindowsFormsApp4
                 command.Parameters.Add("@isSourse", SqlDbType.TinyInt).Value = 0;
                 command.ExecuteNonQuery();
             }
-            cnn.Close();
+            cnn.Close();*/
             //numberOfButton++;
-            lastId++;
-            load_Button(0);
-            
-            panel5.Visible = false;
+            //lastId++;
+            //load_Button(0);
+            if(addImage.Visible==false && nameGroup.Text!="")
+            {
+                string path = "./GroupInsert/" + nameGroup.Text + ".png";
+                if (File.Exists(path))
+                {
+                    MessageBox.Show("File exist", "File exist");
+                }
+                else
+                {
+                    File.Copy(tem, path);
+                    panel5.Visible = false;
+
+                    for (int i = 0; i < numberOfPanel; i++)
+                    {
+                        listFlowPanel[i].Visible = false;
+                        listFlowPanel[i].Controls.Clear();
+                    }
+
+                    load_Button();
+                    for (int i = 0; i < numberOfPanel; i++)
+                    {
+                        listFlowPanel[i].Visible = true;
+                    }
+
+                    
+                    path = path = "./PictureImageInsert/" + nameGroup.Text;
+                    Directory.CreateDirectory(path);
+                }
+
+            }
+
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -348,9 +515,10 @@ namespace WindowsFormsApp4
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
+            
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                int i = 0;
+                /*int i = 0;
                 if (datatable.Rows.Count > 0)
                 {
                     int n = datatable.Rows.Count - 1;
@@ -376,6 +544,7 @@ namespace WindowsFormsApp4
                         string sql = "insert into PICTURE_SOURSE(GROUPPICTURE, ID, NAME, ENCODE) VALUES (@group, @id, @name, @encode)";
                         i++;
                         string tem = Path.GetFileName(temp);
+                        
                         using (SqlCommand command = new SqlCommand(sql, cnn))
                         {
 
@@ -425,42 +594,100 @@ namespace WindowsFormsApp4
                 else
                 {
                     pictureBox1.Image = null;
+                }*/
+                dlg.Multiselect = true;
+                dlg.Title = "Open Image";
+                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    string path;
+                    int flag = 0;
+
+                    foreach (string temp in dlg.FileNames)
+                    {
+                        string name = Path.GetFileName(temp);
+                        name = name.Remove(name.Length - 4, 4);
+                        path = "./PictureImageInsert/" + group + "/" + name + ".png";
+                        if (!File.Exists(path))
+                        {
+                            File.Copy(temp, path);
+                        }
+                        else
+                        {
+                            flag++;
+                        }
+                    }
+                    if (flag != 0)
+                    {
+                        MessageBox.Show("Several image names already exist!", "Some image were not inserted!");
+                    }
+
+
+                    path = "./PictureImageInsert/" + group;
+                    listSourst = Directory.GetFiles(path);
+
+                    Bitmap a;
+                    using (var stream = File.Open(listSourst[0], FileMode.Open))
+                    {
+                        a = new Bitmap(Image.FromStream(stream));
+                        stream.Close();
+                    }
+                    a.MakeTransparent();
+                    pictureBoxInsert.BackgroundImage = a;
+                    pictureBoxInsert.Visible = true;
+                    string nam = Path.GetFileName(listSourst[0]);
+                    nam = nam.Remove(nam.Length - 4, 4);
+                    textName.Text = nam;
+
+                    MessageBox.Show("Inserted successfully");
+
+
                 }
-
             }
-
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            cnn.Open();
+            /* cnn.Open();
 
-            string sql = "delete from PICTURE_BUTTON where NAME = @name";
-            
-            using (SqlCommand command = new SqlCommand(sql, cnn))
-            {
+             string sql = "delete from PICTURE_BUTTON where NAME = @name";
 
-                command.Parameters.Add("@name", SqlDbType.VarChar).Value = group;                
+             using (SqlCommand command = new SqlCommand(sql, cnn))
+             {
 
-                command.ExecuteNonQuery();
-            }
+                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = group;                
 
-            sql = "delete from PICTURE_SOURSE where GROUPPICTURE = @name";
+                 command.ExecuteNonQuery();
+             }
 
-            using (SqlCommand command = new SqlCommand(sql, cnn))
-            {
-                command.Parameters.Add("@name", SqlDbType.VarChar).Value = group;
-                command.ExecuteNonQuery();
-            }
+             sql = "delete from PICTURE_SOURSE where GROUPPICTURE = @name";
 
-            cnn.Close();
+             using (SqlCommand command = new SqlCommand(sql, cnn))
+             {
+                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = group;
+                 command.ExecuteNonQuery();
+             }
+
+             cnn.Close();*/
+
+            string path = "./GroupInsert/" + group +".png";
+            listButon.Clear();
+           
             menuStrip.Visible = false;
-            
-            flowLayoutPanel1.Visible = false;
-            flowLayoutPanel1.Controls.Clear();
 
+            for (int i = 0; i < numberOfPanel; i++)
+            {
+                listFlowPanel[i].Visible = false;
+                listFlowPanel[i].Controls.Clear();
+            }
+            File.Delete(path);
+            path = "./PictureImageInsert/" + group;
+            Directory.Delete(path, true);
             load_Button();
-            flowLayoutPanel1.Visible = true;
+            for (int i = 0; i < numberOfPanel; i++)
+            {
+                listFlowPanel[i].Visible = true;
+            }
         }
 
         private void Picture_Dictionary_Click(object sender, EventArgs e)
@@ -475,7 +702,7 @@ namespace WindowsFormsApp4
 
         private void deleteOneSourse_Click(object sender, EventArgs e)
         {
-            cnn.Open();
+            /*cnn.Open();
 
             string sql = "delete from PICTURE_SOURSE where NAME = @name";
 
@@ -483,7 +710,6 @@ namespace WindowsFormsApp4
             {
 
                 command.Parameters.Add("@name", SqlDbType.VarChar).Value = textName.Text;
-
                 command.ExecuteNonQuery();
             }
             for(int i=0; i<datatable.Rows.Count; i++)
@@ -523,12 +749,61 @@ namespace WindowsFormsApp4
                     }
                 }
                 //right click
+            }*/
+
+            if (listSourst.Length ==1)
+            {
+                File.Delete(listSourst[currentSourse]);
+
+                string path = "./PictureImageInsert/" + group;
+                listSourst = Directory.GetFiles(path);
+                pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
+                pictureBoxInsert.Visible = false;
+                textName.Text = "";
             }
-            else
+            else if(listSourst.Length==0)
             {
                 pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
                 pictureBoxInsert.Visible = false;
                 textName.Text = "";
+            }
+            else
+            {
+                File.Delete(listSourst[currentSourse]);
+                //right lick
+                string path = "./PictureImageInsert/" + group;
+                listSourst = Directory.GetFiles(path);
+               // currentSourse++;
+                if (currentSourse >= listSourst.Length)
+                {
+                    currentSourse = 0;
+                }
+                if (listSourst.Length > 0)
+                {
+                    Bitmap a;
+                    using (var stream = File.Open(listSourst[currentSourse], FileMode.Open))
+                    {
+                        a = new Bitmap(Image.FromStream(stream));
+                        stream.Close();
+                    }
+
+                    a.MakeTransparent();
+                    string text = Path.GetFileName(listSourst[currentSourse]);
+                    text = text.Remove(text.Length - 4, 4);
+
+                    if (isSourse == "1")
+                    {
+                        pictureBox1.Image = a;
+                    }
+                    else
+                    {
+                        pictureBoxInsert.BackgroundImage = a;
+                        textName.Text = text;
+                    }
+                }
+                //right click
+                
+                
             }
 
 
@@ -601,6 +876,85 @@ namespace WindowsFormsApp4
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void leftPanel_Click(object sender, EventArgs e)
+        {
+            currentPanel--;
+            if (currentPanel == -1)
+            {
+                currentPanel = numberOfPanel - 1;
+            }
+            listFlowPanel[currentPanel].BringToFront();
+            creatButton.BringToFront();
+        }
+
+        private void rightPannel_Click(object sender, EventArgs e)
+        {
+            currentPanel++;
+            if(currentPanel == numberOfPanel)
+            {
+                currentPanel = 0;
+            }
+            listFlowPanel[currentPanel].BringToFront();
+            creatButton.BringToFront();
+        }
+
+      
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                int i = 0;
+                dlg.Title = "Open Image";
+                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                //dlg.Multiselect = true;
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    Bitmap a = new Bitmap(Image.FromFile(dlg.FileName));
+                    a.MakeTransparent();
+                    tem = dlg.FileName;
+                    guna2PictureBox1.BackgroundImage = a;
+                    //string t = new FileInfo(dlg.FileName).Name;
+                    string t = Path.GetFileName(dlg.FileName);
+                    t = RemoveUnicode(t);
+                    //t = RemoveSpecialCharacters(t);
+                    nameGroup.Text = t.Remove(t.Length - 4, 4);
+
+                }
+
+            }
+        }
+
+        private void addImage_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dlg = new OpenFileDialog())
+            {
+                int i = 0;
+                dlg.Title = "Open Image";
+                dlg.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+                //dlg.Multiselect = true;
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    Bitmap a = new Bitmap(Image.FromFile(dlg.FileName));
+                    a.MakeTransparent();
+                    tem = dlg.FileName;
+                    guna2PictureBox1.BackgroundImage = a;
+                    //string t = new FileInfo(dlg.FileName).Name;
+                    string t = Path.GetFileName(dlg.FileName);
+                    t = RemoveUnicode(t);
+                    //t = RemoveSpecialCharacters(t);
+                    nameGroup.Text = t.Remove(t.Length - 4, 4);
+                    addImage.Visible = false;
+                    guna2PictureBox1.Visible = true;
+
+                }
+
+            }
+            
         }
     }
 }
