@@ -166,22 +166,28 @@ namespace WindowsFormsApp4
                 {
                     case 1:
                         {
-                            resultform.guna2HtmlLabel1.Text = roomform.room_info.RoomID;
+                            if (roomform.ishost == 1)
+                            resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
+                            else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
                             resultform.guna2HtmlLabel2.Text = "VICTORY";                           
                             resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.ForestGreen;                               
                             break;
                         }
                     case 2:
                         {
-                            resultform.guna2HtmlLabel1.Text = roomform.room_info.RoomID;
+                            if (roomform.ishost == 1)
+                                resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
+                            else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
                             resultform.guna2HtmlLabel2.Text = "DRAW";
                             resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkOrange;
                             
                             break;
                         }
-                    case 3:
+                    case 0:
                         {
-                            resultform.guna2HtmlLabel1.Text = roomform.room_info.RoomID;
+                            if (roomform.ishost == 1)
+                                resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
+                            else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
                             resultform.guna2HtmlLabel2.Text = "DEFEAT";
                             resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkOliveGreen;
                            

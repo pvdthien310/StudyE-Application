@@ -158,22 +158,24 @@
             this.guna2HtmlLabel_status1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel_status1.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel_status1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.guna2HtmlLabel_status1.Location = new System.Drawing.Point(242, 289);
+            this.guna2HtmlLabel_status1.Location = new System.Drawing.Point(283, 289);
             this.guna2HtmlLabel_status1.Name = "guna2HtmlLabel_status1";
-            this.guna2HtmlLabel_status1.Size = new System.Drawing.Size(126, 19);
+            this.guna2HtmlLabel_status1.Size = new System.Drawing.Size(39, 19);
             this.guna2HtmlLabel_status1.TabIndex = 12;
-            this.guna2HtmlLabel_status1.Text = "guna2HtmlLabel3";
+            this.guna2HtmlLabel_status1.Text = "Host";
             // 
             // guna2HtmlLabel_status2
             // 
+            this.guna2HtmlLabel_status2.AutoSize = false;
             this.guna2HtmlLabel_status2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel_status2.Font = new System.Drawing.Font("Showcard Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel_status2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.guna2HtmlLabel_status2.Location = new System.Drawing.Point(583, 289);
+            this.guna2HtmlLabel_status2.Location = new System.Drawing.Point(595, 289);
             this.guna2HtmlLabel_status2.Name = "guna2HtmlLabel_status2";
-            this.guna2HtmlLabel_status2.Size = new System.Drawing.Size(127, 19);
+            this.guna2HtmlLabel_status2.Size = new System.Drawing.Size(115, 29);
             this.guna2HtmlLabel_status2.TabIndex = 13;
-            this.guna2HtmlLabel_status2.Text = "guna2HtmlLabel4";
+            this.guna2HtmlLabel_status2.Text = "Not ready";
+            this.guna2HtmlLabel_status2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.guna2HtmlLabel_status2.Visible = false;
             // 
             // guna2HtmlLabel1
