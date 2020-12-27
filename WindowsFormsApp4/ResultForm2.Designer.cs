@@ -47,12 +47,12 @@ namespace WindowsFormsApp4
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
             this.guna2CircleButton1.Image = global::WindowsFormsApp4.Properties.Resources.home2;
-            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(70, 72);
-            this.guna2CircleButton1.Location = new System.Drawing.Point(37, 12);
+            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(60, 60);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(12, 12);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(77, 73);
+            this.guna2CircleButton1.Size = new System.Drawing.Size(66, 66);
             this.guna2CircleButton1.TabIndex = 3;
             this.guna2CircleButton1.Click += new System.EventHandler(this.guna2Button_BackDictionary_Click);
             // 
@@ -66,12 +66,12 @@ namespace WindowsFormsApp4
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton2.HoverState.Parent = this.guna2CircleButton2;
             this.guna2CircleButton2.Image = global::WindowsFormsApp4.Properties.Resources.goback1;
-            this.guna2CircleButton2.ImageSize = new System.Drawing.Size(70, 75);
-            this.guna2CircleButton2.Location = new System.Drawing.Point(746, 12);
+            this.guna2CircleButton2.ImageSize = new System.Drawing.Size(60, 60);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(783, 12);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton2.ShadowDecoration.Parent = this.guna2CircleButton2;
-            this.guna2CircleButton2.Size = new System.Drawing.Size(69, 66);
+            this.guna2CircleButton2.Size = new System.Drawing.Size(66, 66);
             this.guna2CircleButton2.TabIndex = 4;
             this.guna2CircleButton2.Click += new System.EventHandler(this.guna2Button_Back_Click);
             // 
@@ -88,23 +88,29 @@ namespace WindowsFormsApp4
             // 
             // guna2HtmlLabel1
             // 
+            this.guna2HtmlLabel1.AutoSize = false;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(367, 236);
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.Teal;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(340, 216);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(142, 20);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(188, 40);
             this.guna2HtmlLabel1.TabIndex = 6;
             this.guna2HtmlLabel1.Text = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2HtmlLabel2
             // 
+            this.guna2HtmlLabel2.AutoSize = false;
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Showcard Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(302, 119);
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Showcard Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.ForestGreen;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(213, 61);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(251, 35);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(456, 118);
             this.guna2HtmlLabel2.TabIndex = 7;
             this.guna2HtmlLabel2.Text = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ResultForm2
             // 
@@ -124,7 +130,6 @@ namespace WindowsFormsApp4
             this.Text = "ResultForm2";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
