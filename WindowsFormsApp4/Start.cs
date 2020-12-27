@@ -234,6 +234,7 @@ namespace WindowsFormsApp4
                         case 2:
                             {
                                 questionForm.guna2Panel2.Visible = true;
+                                questionForm.guna2TextBox_answer2.Focus();
                                 questionForm.guna2TextBox_answer2.Clear();
                                 questionForm.guna2Panel2.BringToFront();
                                 questionForm.guna2Button_question2.Text = value[0];                              
