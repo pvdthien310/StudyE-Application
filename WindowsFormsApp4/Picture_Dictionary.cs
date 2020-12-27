@@ -641,7 +641,7 @@ namespace WindowsFormsApp4
                     string nam = Path.GetFileName(listSourst[0]);
                     nam = nam.Remove(nam.Length - 4, 4);
                     textName.Text = nam;
-
+                    textName.Visible = true;
                     MessageBox.Show("Inserted successfully");
 
 
