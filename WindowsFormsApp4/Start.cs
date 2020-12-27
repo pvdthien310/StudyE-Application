@@ -164,11 +164,14 @@ namespace WindowsFormsApp4
         private void check()
         {
             int s = 0; // dem xem 2 nguoi choi d a choi xong chua          
-                foreach (string a in result)
-                {
-                    if (a != "0") s++;
-                    
-                }
+             if (result[1] !="" && result[2] != "" && result[7] !="0" && result[8]!= "0")
+            {
+                s = 8;
+            }
+            // foreach( string a in result)
+            //{
+            //    if (a != "0") s++;
+            //}
                 
             if (s >= 8)
                 {
