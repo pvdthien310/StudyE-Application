@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,8 @@ namespace WindowsFormsApp4
     {
         public RoomChose parent;
         public List<string> result;
+        public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:40.83.97.14,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=sa;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
+
         public ResultForm2()
         {
             InitializeComponent();
@@ -29,6 +32,22 @@ namespace WindowsFormsApp4
 
             }
             
+        }
+
+        private void guna2Button_Back_Click(object sender, EventArgs e)
+        {
+            if (Mycnt.State != ConnectionState.Open)
+            {
+                Mycnt.Open();
+            }
+            string query = string.Format("SELECT * FROM ROOMRESULT WHERE ROOMID = '{0}'" +
+                "SELECT * FROM RoomQuestions WHERE ROOMID = '{0}'" +
+                "SELECT * FROM RoomList WHERE ROOMID = '{0}'",result[0]);
+            SqlCommand com = new SqlCommand(query, Mycnt);
+            com.ExecuteNonQuery();
+            Mycnt.Close();
+            this.Close();
+            this.parent.Show();
         }
     }
 }

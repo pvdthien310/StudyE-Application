@@ -221,6 +221,7 @@ namespace WindowsFormsApp4
             this.parent.Close();
             RoomChose newroomchose = new RoomChose(Playername);
             newroomchose.Show();
+            
 
         }
 

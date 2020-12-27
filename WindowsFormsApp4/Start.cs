@@ -29,6 +29,7 @@ namespace WindowsFormsApp4
         public double time;
         //
         public List<string> result;
+        public int isupdate = 1;
         public GameManager_2 game_host;
         public List<Question_Creep> game_creep;
         public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:40.83.97.14,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=sa;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
@@ -149,7 +150,8 @@ namespace WindowsFormsApp4
                     if (a != "0") s++;
                     
                 }
-                if (s >= 8)
+                
+            if (s >= 8)
                 {
                 push_result_to_data();
                 timer.Enabled = false;
@@ -174,7 +176,8 @@ namespace WindowsFormsApp4
                 }
                 this.Close();
                 resultform.Show();
-                }         
+                timer2.Enabled = false;
+            }         
             for (int i = 0; i < 10 ;i++)
             {
                 if (Math.Abs(X_yasuo - game_creep[i].X_creep) <= 50 && Math.Abs(Y_yasuo - game_creep[i].Y_creep)<= 50 && game_creep[i].isCorrect == 2)
@@ -223,7 +226,10 @@ namespace WindowsFormsApp4
             check();
             if (whatframes == 3) whatframes = 0;
             else whatframes++;
-        //    e.Graphics.DrawString(time.ToString(), new Font("Serif", 24, FontStyle.Bold), Brushes.Black, new Point(10, 10));
+            if (isupdate == 0)
+            {
+                e.Graphics.DrawString("Xin vui long cho ket qua", new Font("Serif", 60f, FontStyle.Bold), Brushes.Black, new Point(300, 300));
+            }
             e.Graphics.DrawImage(background, new Rectangle(0, 0, 1000, 590), new Rectangle(0, 0, 500, 400), GraphicsUnit.Pixel);
             e.Graphics.DrawImage(yasuo_sprite, new Rectangle(X_yasuo,Y_yasuo,60,80), new Rectangle(whatframes * 95, direction * 120, 95, 110), GraphicsUnit.Pixel);
          
@@ -235,10 +241,7 @@ namespace WindowsFormsApp4
                 {                    
                     count_question++;
                 }
-                for (int j = 0; j < 10; j++)
-                {
-                    if (game_creep[j].isCorrect == 1) count++;
-                }
+               
                 if (count_question == 10)
                 {
                    
@@ -251,43 +254,74 @@ namespace WindowsFormsApp4
                        
                     //}
                 }
-                if (time > 1000)
-                {
-                    push_result_to_data();
-                    
-
-                }
+               
+            }
+            if (time > 1000)
+            {
+                push_result_to_data();
             }
         }
         Timer timer2;
+         
         private void push_result_to_data()
         {
-            string query;
+            string query =  "";
             if (Mycnt.State != ConnectionState.Open)
             {
                 Mycnt.Open();
             }
-            if (roomform.ishost == 1)
-            {
-                query = string.Format("UPDATE ROOMRESULT" +
-                    " SET Host_Ques = '{0}', HostGoal = '{1}', HostTime = '{2}'",count_question,count*30,Convert.ToInt32(time));
-            }
-            else
-            {
-                query = string.Format("UPDATE ROOMRESULT" +
-                   " SET GUEST_Ques = '{0}', GUESTGoal = '{1}', GUESTTime = '{2}'", count_question, count*30, Convert.ToInt32(time));
-            }
-            SqlCommand com = new SqlCommand(query,Mycnt);
-            com.ExecuteNonQuery();
-            Mycnt.Close();
 
+            for (int j = 0; j < 10; j++)
+            {
+                if (game_creep[j].isCorrect == 1) count++;
+            }
+            if (roomform.ishost == 1 && isupdate != 0)
+            {
+                query = string.Format("UPDATE ROOMRESULT" +
+                    " SET Host_Ques = '{0}', HostGoal = '{1}', HostTime = '{2}' WHERE ROOMID ='{3}'",count_question,count*30,Convert.ToInt32(time),result[0]);
+                SqlCommand com = new SqlCommand(query, Mycnt);
+                com.ExecuteNonQuery();
+                Mycnt.Close();
+            }
+            else if (roomform.ishost == 0 && isupdate != 0)
+            {
+                query = string.Format("UPDATE ROOMRESULT" +
+                   " SET GUEST_Ques = '{0}', GUESTGoal = '{1}', GUESTTime = '{2}' WHERE ROOMID ='{3}'", count_question, count*30, Convert.ToInt32(time), result[0]);
+                SqlCommand com = new SqlCommand(query, Mycnt);
+                com.ExecuteNonQuery();
+                Mycnt.Close();
+            }
+            isupdate = 0;
+          
+            timer.Enabled = false;
             // mo form result
-            //timer2 = new Timer();
-            //timer2.Interval = 200;
-            //timer2.Tick += new HandledEventArgs(timer2_tick);
+            timer2 = new Timer();
+            timer2.Interval = 100;
+            timer2.Tick += new EventHandler(timer2_tick);
+            timer2.Enabled = true;
         }
         private void timer2_tick(object sender, EventArgs e)
         {
+            isdraw = 0;
+            if (Mycnt.State != ConnectionState.Open)
+            {
+                Mycnt.Open();
+            }
+            string query = string.Format("SELECT * FROM ROOMRESULT WHERE ROOMID = '{0}'", roomform.room_info.RoomID);
+            SqlCommand com = new SqlCommand(query, Mycnt);
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count < 1) return;
+            else
+            {
+                result.Clear();
+                for (int i = 0; i < 9; i++)
+                    result.Add(dt.Rows[0][i].ToString());
+            }
+            Mycnt.Close();
+            gameForm.Invalidate();
+            
             
         }
         private void Form1_Load(object sender, EventArgs e)
