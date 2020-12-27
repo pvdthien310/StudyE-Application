@@ -20,6 +20,7 @@ namespace WindowsFormsApp4
         public Bitmap background;
         public Bitmap yasuo_sprite;
         public Bitmap creep;
+        public Bitmap carrot;
         public int direction; // xac dinh phuong huong
         public int X_yasuo;
         public int Y_yasuo;
@@ -57,6 +58,8 @@ namespace WindowsFormsApp4
             yasuo_sprite = new Bitmap("yasuosprite.png");
             background = new Bitmap("background_1.jpg");
             creep = new Bitmap("creep.png");
+            carrot = new Bitmap("carrot2.png");
+            carrot.MakeTransparent();
             X_yasuo = Y_yasuo = 20;
             whatframes = direction = 0; // 0 phai 1 trai 2 tren 3 duoi 4 dung yen 
             DoubleBuffered = true;
@@ -277,7 +280,8 @@ namespace WindowsFormsApp4
             for ( int i = 0; i< 10;i++)
             {
                 if (game_creep[i].isCorrect == 2)
-                    e.Graphics.DrawImage(creep, new Rectangle(game_creep[i].X_creep, game_creep[i].Y_creep, 60, 45), new Rectangle(0, 0, 90, 70), GraphicsUnit.Pixel);
+                   // e.Graphics.DrawImage(creep, new Rectangle(game_creep[i].X_creep, game_creep[i].Y_creep, 60, 45), new Rectangle(0, 0, 90, 70), GraphicsUnit.Pixel);
+                    e.Graphics.DrawImage(carrot, new Rectangle(game_creep[i].X_creep, game_creep[i].Y_creep, 60, 45), new Rectangle(0, 0, 900, 512), GraphicsUnit.Pixel);
                 else
                 {                    
                     count_question++;

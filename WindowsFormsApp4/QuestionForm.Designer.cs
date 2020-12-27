@@ -64,7 +64,7 @@
             this.guna2Button_answerD.CheckedState.Parent = this.guna2Button_answerD;
             this.guna2Button_answerD.CustomImages.Parent = this.guna2Button_answerD;
             this.guna2Button_answerD.FillColor = System.Drawing.Color.Teal;
-            this.guna2Button_answerD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_answerD.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_answerD.ForeColor = System.Drawing.Color.White;
             this.guna2Button_answerD.HoverState.Parent = this.guna2Button_answerD;
             this.guna2Button_answerD.Location = new System.Drawing.Point(27, 419);
@@ -81,7 +81,7 @@
             this.guna2Button_answerC.CheckedState.Parent = this.guna2Button_answerC;
             this.guna2Button_answerC.CustomImages.Parent = this.guna2Button_answerC;
             this.guna2Button_answerC.FillColor = System.Drawing.Color.Teal;
-            this.guna2Button_answerC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_answerC.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_answerC.ForeColor = System.Drawing.Color.White;
             this.guna2Button_answerC.HoverState.Parent = this.guna2Button_answerC;
             this.guna2Button_answerC.Location = new System.Drawing.Point(27, 331);
@@ -98,7 +98,7 @@
             this.guna2Button_answerB.CheckedState.Parent = this.guna2Button_answerB;
             this.guna2Button_answerB.CustomImages.Parent = this.guna2Button_answerB;
             this.guna2Button_answerB.FillColor = System.Drawing.Color.Teal;
-            this.guna2Button_answerB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_answerB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_answerB.ForeColor = System.Drawing.Color.White;
             this.guna2Button_answerB.HoverState.Parent = this.guna2Button_answerB;
             this.guna2Button_answerB.Location = new System.Drawing.Point(27, 244);
@@ -115,7 +115,7 @@
             this.guna2Button_answerA.CheckedState.Parent = this.guna2Button_answerA;
             this.guna2Button_answerA.CustomImages.Parent = this.guna2Button_answerA;
             this.guna2Button_answerA.FillColor = System.Drawing.Color.Teal;
-            this.guna2Button_answerA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button_answerA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button_answerA.ForeColor = System.Drawing.Color.White;
             this.guna2Button_answerA.HoverState.Parent = this.guna2Button_answerA;
             this.guna2Button_answerA.Location = new System.Drawing.Point(22, 159);
@@ -247,8 +247,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 487);
             this.Controls.Add(this.guna2CircleButton1);
-            this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.guna2Panel2);
             this.Name = "QuestionForm";
             this.Text = "Question";
             this.guna2Panel1.ResumeLayout(false);
