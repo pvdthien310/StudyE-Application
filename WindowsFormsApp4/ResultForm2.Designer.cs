@@ -35,6 +35,8 @@ namespace WindowsFormsApp4
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel_Score = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel_TIME = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +101,7 @@ namespace WindowsFormsApp4
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Showcard Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(124, 288);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(74, 25);
             this.guna2HtmlLabel3.TabIndex = 8;
@@ -111,11 +113,32 @@ namespace WindowsFormsApp4
             this.guna2HtmlLabel_Score.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel_Score.ForeColor = System.Drawing.Color.DarkRed;
             this.guna2HtmlLabel_Score.Location = new System.Drawing.Point(207, 289);
-            this.guna2HtmlLabel_Score.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2HtmlLabel_Score.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel_Score.Name = "guna2HtmlLabel_Score";
             this.guna2HtmlLabel_Score.Size = new System.Drawing.Size(14, 22);
             this.guna2HtmlLabel_Score.TabIndex = 9;
             this.guna2HtmlLabel_Score.Text = "a";
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(587, 289);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(60, 25);
+            this.guna2HtmlLabel4.TabIndex = 10;
+            this.guna2HtmlLabel4.Text = "TIME:";
+            // 
+            // guna2HtmlLabel_TIME
+            // 
+            this.guna2HtmlLabel_TIME.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel_TIME.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel_TIME.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2HtmlLabel_TIME.Location = new System.Drawing.Point(658, 292);
+            this.guna2HtmlLabel_TIME.Name = "guna2HtmlLabel_TIME";
+            this.guna2HtmlLabel_TIME.Size = new System.Drawing.Size(3, 2);
+            this.guna2HtmlLabel_TIME.TabIndex = 11;
+            this.guna2HtmlLabel_TIME.Text = null;
             // 
             // ResultForm2
             // 
@@ -124,6 +147,8 @@ namespace WindowsFormsApp4
             this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.background_char1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(861, 445);
+            this.Controls.Add(this.guna2HtmlLabel_TIME);
+            this.Controls.Add(this.guna2HtmlLabel4);
             this.Controls.Add(this.guna2HtmlLabel_Score);
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.guna2HtmlLabel2);
@@ -131,7 +156,7 @@ namespace WindowsFormsApp4
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.guna2CircleButton2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ResultForm2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResultForm2";
@@ -148,5 +173,7 @@ namespace WindowsFormsApp4
         public Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         public Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel_Score;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        public Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel_TIME;
     }
 }

@@ -167,59 +167,68 @@ namespace WindowsFormsApp4
         private void check()
         {
             int s = 0; // dem xem 2 nguoi choi d a choi xong chua 
-            if(result.Count > 0)
-             if (result[1] !="" && result[2] != "" && result[7] !="0" && result[8]!= "0")
-            {
-                s = 8;
-            }
+            if (result.Count > 0)
             // foreach( string a in result)
             //{
             //    if (a != "0") s++;
             //}
-                
-            if (s >= 8)
+            {
+                if (result[7] != "0" && result[8] != "0")
                 {
-                push_result_to_data();
-                timer.Enabled = false;
-                ResultForm2 resultform = new ResultForm2(roomform.parent, result);
-                switch (check_result())
-                {
-                    case 1:
-                        {
-                            if (roomform.ishost == 1)
-                            resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
-                            else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
-                            resultform.guna2HtmlLabel2.Text = "VICTORY";                           
-                            resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.ForestGreen;                               
-                            break;
-                        }
-                    case 2:
-                        {
-                            if (roomform.ishost == 1)
-                                resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
-                            else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
-                            resultform.guna2HtmlLabel2.Text = "DRAW";
-                            resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkOrange;
-                            
-                            break;
-                        }
-                    case 0:
-                        {
-                            if (roomform.ishost == 1)
-                                resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
-                            else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
-                            resultform.guna2HtmlLabel2.Text = "DEFEAT";
-                            resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkOliveGreen;
-                           
-                            break;
-                        }
+                    push_result_to_data();
+                    timer.Enabled = false;
+                    ResultForm2 resultform = new ResultForm2(roomform.parent, result);
+                    switch (check_result())
+                    {
+                        case 1:
+                            {
+                                //if (roomform.ishost == 1)
+                                //resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
+                                //else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
+                                resultform.guna2HtmlLabel1.Text = roomform.Playername;
+                                resultform.guna2HtmlLabel2.Text = "VICTORY";
+                                resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.ForestGreen;
+                                break;
+                            }
+                        case 2:
+                            {
+                                //if (roomform.ishost == 1)
+                                //    resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
+                                //else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
+                                resultform.guna2HtmlLabel1.Text = roomform.Playername;
+
+                                resultform.guna2HtmlLabel2.Text = "DRAW";
+                                resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkOrange;
+
+                                break;
+                            }
+                        case 0:
+                            {
+                                //if (roomform.ishost == 1)
+                                //    resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
+                                //else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
+                                resultform.guna2HtmlLabel1.Text = roomform.Playername;
+
+                                resultform.guna2HtmlLabel2.Text = "DEFEAT";
+                                resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkOliveGreen;
+
+                                break;
+                            }
+                    }
+                    if (roomform.ishost == 1)
+                    {
+                        resultform.guna2HtmlLabel_Score.Text = result[3];
+                        resultform.guna2HtmlLabel_TIME.Text = result[7];
+                    }
+                    else
+                    {
+                        resultform.guna2HtmlLabel_Score.Text = result[4];
+                        resultform.guna2HtmlLabel_TIME.Text = result[8];
+                    }
+                    this.Close();
+                    resultform.Show();
+                    timer2.Enabled = false;
                 }
-                if (roomform.ishost == 1)
-                resultform.guna2HtmlLabel_Score.Text = result[3];
-                else resultform.guna2HtmlLabel_Score.Text = result[4];
-                this.Close();
-                resultform.Show();
-                timer2.Enabled = false;
             }         
             for (int i = 0; i < 10 ;i++)
             {
