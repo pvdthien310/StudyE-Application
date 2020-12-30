@@ -280,5 +280,17 @@ namespace WindowsFormsApp4
                 return false;
             }    
         }
+        public static bool IsConnectedToInternet()
+        {
+            try
+            {
+                System.Net.IPHostEntry i = System.Net.Dns.GetHostEntry("www.google.com");
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

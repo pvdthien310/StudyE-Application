@@ -24,6 +24,7 @@ namespace WindowsFormsApp4
         private Guna.UI2.WinForms.Guna2Button[] listbtn;
         private FlowLayoutPanel[] listpnl;
         private int number_pnl = 0;
+        public RoomForm room = null;
         public RoomChose()
         {
             DoubleBuffered = true;
@@ -142,7 +143,7 @@ namespace WindowsFormsApp4
                                 {
                                     if (roomList[aa].RoomID == temp) break;
                                 }
-                                RoomForm room = new RoomForm(this, roomList[aa], PlayerName, game_host, 0);
+                                room = new RoomForm(this, roomList[aa], PlayerName, game_host, 0); // dùng chung biến room
                                 room.Show();
                                 this.Hide();
                                 int concat = 10;
@@ -233,8 +234,8 @@ namespace WindowsFormsApp4
             Mycnt.Close();
 
             roomList.Add(new Room(roomid.ToString(), PlayerName, "", 0, 0,0));
-            RoomForm roomform = new RoomForm(this, roomList[roomList.Count - 1], PlayerName, game_host, 1);
-            roomform.Show();
+            room = new RoomForm(this, roomList[roomList.Count - 1], PlayerName, game_host, 1);// dùng chung biến room
+            room.Show();
             this.Hide();
         }
 

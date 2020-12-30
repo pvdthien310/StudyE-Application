@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 
 namespace WindowsFormsApp4
 {
@@ -15,7 +15,7 @@ namespace WindowsFormsApp4
     {
         public mainForm parent;
         //child form
-        RoomChose inRoom;
+        RoomChose inRoom = null;
         SignUpForm signUpForm;
         ResetPass resetPass;
         //property
@@ -128,6 +128,10 @@ namespace WindowsFormsApp4
 
         private void LogInForm_Activated(object sender, EventArgs e)
         {
+            //bat timer check internet
+            CheckInternet_timer.Interval = 50;
+            CheckInternet_timer.Enabled = true;
+
             this.Name_textbox.Focus();
             //DataTable SavedAccount = new DataTable();
             //SavedAccount = SupportUtility.FindSavedAccount();
@@ -190,6 +194,44 @@ namespace WindowsFormsApp4
         {
             this.parent.Show();
             this.Close();       
+        }
+
+        private void CheckInternet_timer_Tick(object sender, EventArgs e)
+        {
+            if (SupportUtility.IsConnectedToInternet())
+            {
+                parent.canRunTimer = true;
+            }
+            else
+            {
+                parent.canRunTimer = false;
+                CheckInternet_timer.Enabled = false;
+                DialogResult result = MessageBox.Show("Mất kết nói, vui lòng chờ hoặc nhấn \"OK \" để quay lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (result == DialogResult.OK)
+                {
+                    if(inRoom != null)
+                    {
+                        parent.IsSignIn = inRoom.PlayerName;
+                        using (StreamWriter sw = File.CreateText("SignInName.txt"))
+                        {
+                            sw.WriteLine(parent.IsSignIn);
+                        }    
+                        if(inRoom.room != null)
+                        {
+
+                            inRoom.room.check_timer.Enabled = false;
+                            inRoom.room.Dispose();
+                            inRoom.Dispose();
+                        }
+                        else
+                        {
+                            inRoom.Dispose();
+                        }    
+                    }       
+                    parent.Show();
+                    this.Dispose();
+                }
+            }
         }
     }
 }

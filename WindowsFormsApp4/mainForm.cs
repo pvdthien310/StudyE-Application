@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Speech.Synthesis;
 using System.Configuration;
+using System.IO;
 namespace WindowsFormsApp4
 {
     public partial class mainForm : Form
@@ -27,7 +28,8 @@ namespace WindowsFormsApp4
         public startForm parent;
         static int EVSource_Length;
         static int VESource_Length;
-        bool IsQuery = false;
+        public string IsSignIn;
+        public bool canRunTimer = false;
         //
         public mainForm()
         {
@@ -1182,9 +1184,29 @@ namespace WindowsFormsApp4
 
         private void FightingGame_button_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            LogInForm logInForm = new LogInForm(this);
-            logInForm.Show();
+            if (SupportUtility.IsConnectedToInternet())
+            {
+                using (StreamReader sr = File.OpenText("SignInName.txt"))
+                {
+                    IsSignIn = sr.ReadLine();
+                }    
+                if (IsSignIn != null)
+                {
+                    SupportUtility.UnSignIn(IsSignIn);
+                    IsSignIn = null;
+                    using (StreamWriter sw = File.CreateText("SignInName.txt"))
+                    {
+                    }    
+                }
+                this.Hide();
+                LogInForm logInForm = new LogInForm(this);
+                logInForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Không có kết nối, \"OK\" để quay lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
         }
+
     }
 }

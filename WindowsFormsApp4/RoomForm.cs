@@ -22,7 +22,7 @@ namespace WindowsFormsApp4
         //public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:study-e.database.windows.net,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=study-e;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:40.83.97.14,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=sa;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
         //
-        Timer check_timer;
+        public Timer check_timer;
         public RoomForm()
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace WindowsFormsApp4
          //   Label_RoomID.Text = room_info.RoomID.ToString();
             check_timer = new Timer();
             check_timer.Tick += new EventHandler(timer_tick);
-            check_timer.Interval = 300;
+            check_timer.Interval = 1000;
             check_timer.Enabled = true;
             if (ishost == 1)
             {
@@ -56,151 +56,164 @@ namespace WindowsFormsApp4
             guna2Button_Sophong.Text = "Phòng " + room_info.RoomID.ToString();
 
         }
-        private void timer_tick(object sender, EventArgs e)
+        public void timer_tick(object sender, EventArgs e)
         {
-            if (check_timer.Enabled == false) return;
-            string query, result;
-            SqlCommand com;
-            if (Mycnt.State != ConnectionState.Open)
+            if (this.parent.loginForm.parent.canRunTimer)
             {
-                Mycnt.Open();
-            }
-            query = string.Format("Select * from Roomlist Where RoomID = '{0}' ", room_info.RoomID);
-            com = new SqlCommand(query, Mycnt);
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(com);
-            Mycnt.Close();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
-            {
-                room_info.RoomID = dt.Rows[0]["RoomID"].ToString();
-                room_info.HostID = dt.Rows[0]["HostID"].ToString();
-                room_info.GuestID = dt.Rows[0]["GuestID"].ToString();
-                room_info.IsClosed = Convert.ToInt32(dt.Rows[0]["IsClosed"]);
-                room_info.IsReady = Convert.ToInt32(dt.Rows[0]["IsReady"]);
-                room_info.IsStart = Convert.ToInt32(dt.Rows[0]["IsStart"]);
-            }
-
-
-            if ( ishost == 1)
-            {
-                if (room_info.IsReady == 1 && room_info.IsStart == 0)
+                try
                 {
-                    guna2HtmlLabel1.Text = "Let's Start !!";
-                    guna2HtmlLabel1.Visible = true;
+                    if (check_timer.Enabled == false) return;
+                    string query, result;
+                    SqlCommand com;
+                    if (Mycnt.State != ConnectionState.Open)
+                    {
+                        Mycnt.Open();
+                    }
+                    query = string.Format("Select * from Roomlist Where RoomID = '{0}' ", room_info.RoomID);
+                    com = new SqlCommand(query, Mycnt);
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(com);
+                    Mycnt.Close();
+                    da.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        room_info.RoomID = dt.Rows[0]["RoomID"].ToString();
+                        room_info.HostID = dt.Rows[0]["HostID"].ToString();
+                        room_info.GuestID = dt.Rows[0]["GuestID"].ToString();
+                        room_info.IsClosed = Convert.ToInt32(dt.Rows[0]["IsClosed"]);
+                        room_info.IsReady = Convert.ToInt32(dt.Rows[0]["IsReady"]);
+                        room_info.IsStart = Convert.ToInt32(dt.Rows[0]["IsStart"]);
+                    }
+
+
+                    if (ishost == 1)
+                    {
+                        if (room_info.IsReady == 1 && room_info.IsStart == 0)
+                        {
+                            guna2HtmlLabel1.Text = "Let's Start !!";
+                            guna2HtmlLabel1.Visible = true;
+
+                        }
+                        else guna2HtmlLabel1.Text = "Your competitor is not ready !!";
+                    }
+
+                    else if (ishost == 0)
+                    {
+                        if (room_info.IsReady == 1 && room_info.IsStart == 0)
+                        {
+                            guna2HtmlLabel1.Text = "Let's Start !!";
+                            guna2HtmlLabel1.Visible = true;
+
+                        }
+                        else guna2HtmlLabel1.Text = "Your competitor is not ready !!";
+                        if (room_info.IsReady == 1 && room_info.IsStart == 1)
+                        {
+
+                            check_timer.Enabled = false;
+                            Start game = new Start(this, game_host);
+                            this.Hide();
+                            game.Show();
+                        }
+                    }
+
+                    if (room_info.HostID == Playername && room_info.GuestID == "")
+                    {
+                        if (ishost == 0)
+                        {
+                            ishost = 1;
+                            guna2Button_Ready.Enabled = false;
+                            guna2Button_Start.Enabled = true;
+                            room_info.GuestID = "";
+                            room_info.HostID = Playername;
+                            room_info.IsClosed = room_info.IsReady = room_info.IsStart = 0;
+                        }
+                    }
+                    guna2HtmlLabel_name1.Text = room_info.HostID;
+                    guna2HtmlLabel_status1.Text = "Host";
+                    if (room_info.GuestID != "")
+                    {
+                        pictureBox2.Visible = true;
+                        guna2HtmlLabel_name2.Text = room_info.GuestID;
+                        guna2HtmlLabel_name2.Visible = true;
+                        if (room_info.IsReady == 1)
+                            guna2HtmlLabel_status2.Text = "Ready";
+                        else
+                            guna2HtmlLabel_status2.Text = "Not Ready";
+                        guna2HtmlLabel_status2.Visible = true;
+                        guna2HtmlLabel1.Visible = true;
+                    }
+                    else
+                    {
+                        pictureBox2.Visible = false;
+                        guna2HtmlLabel_name2.Visible = false;
+                        guna2HtmlLabel_status2.Visible = false;
+                        guna2HtmlLabel1.Visible = false;
+                    }
+
+
+
+                    //if (ishost == 1)
+                    //{
+                    //     query = string.Format("Select Count(*) from RoomList Where RoomID ='{0}' and IsReady ='1' and IsStart = '0'", room_info.RoomID);
+                    //    if (Mycnt.State != ConnectionState.Open)
+                    //    {
+                    //        Mycnt.Open();
+                    //    }
+                    //    com = new SqlCommand(query, Mycnt);
+                    //     result = com.ExecuteScalar().ToString();
+                    //    if ( result == "1")
+                    //    label_readycheck.Text = "Vao thoi con di lon";
+                    //    else label_readycheck.Text = "Doi thu chua san sang ong noi oi ";
+                    //    Mycnt.Close();
+
+                    //}
+                    //else if (ishost == 0)
+                    //{
+                    //     query = string.Format("Select Count(*) from RoomList Where RoomID ='{0}' and IsReady ='1' and IsStart = '1'", room_info.RoomID);
+                    //    if (Mycnt.State != ConnectionState.Open)
+                    //    {
+                    //        Mycnt.Open();
+                    //    }
+                    //    com = new SqlCommand(query, Mycnt);
+                    //     result = com.ExecuteScalar().ToString();
+                    //    Mycnt.Close();
+                    //    if (result =="1")
+                    //    {
+                    //        MessageBox.Show("Tro choi bat dau");
+                    //    }
+
+
+                    //}
+
+                    //query = string.Format("Select Count(*) from RoomList Where RoomID ='{0}' and HostID = '{1}' and GuestID =''",room_info.RoomID,Playername);
+                    //if (Mycnt.State != ConnectionState.Open)
+                    //{
+                    //    Mycnt.Open();
+                    //}
+                    //com = new SqlCommand(query, Mycnt);
+                    // result = com.ExecuteScalar().ToString();
+                    //Mycnt.Close();
+                    //if (result == "1" && ishost == 0)
+                    //{
+                    //    ishost = 1;
+                    //    guna2Button_Ready.Enabled = false;
+                    //    guna2Button_Start.Enabled = true;
+                    //    room_info.GuestID = "";
+                    //    room_info.HostID = Playername;
+                    //    room_info.IsClosed = room_info.IsReady = room_info.IsStart = 0;
+                    //}
+
 
                 }
-                else guna2HtmlLabel1.Text = "Your competitor is not ready !!";
-            }
-
-            else if (ishost == 0)
-            {
-                if (room_info.IsReady == 1 && room_info.IsStart == 0)
+                catch (Exception)
                 {
-                    guna2HtmlLabel1.Text = "Let's Start !!";
-                    guna2HtmlLabel1.Visible = true;
-
-                }
-                else guna2HtmlLabel1.Text = "Your competitor is not ready !!";
-                if (room_info.IsReady == 1 && room_info.IsStart == 1)
-                {
-                    
                     check_timer.Enabled = false;
-                    Start game = new Start(this, game_host);
-                    this.Hide();
-                    game.Show();
                 }
-            }
-
-            if (room_info.HostID == Playername && room_info.GuestID == "")
-            {
-                if (ishost == 0)
-                {
-                    ishost = 1;
-                    guna2Button_Ready.Enabled = false;
-                    guna2Button_Start.Enabled = true;
-                    room_info.GuestID = "";
-                    room_info.HostID = Playername;
-                    room_info.IsClosed = room_info.IsReady = room_info.IsStart = 0;
-                }
-            }
-            guna2HtmlLabel_name1.Text = room_info.HostID;
-            guna2HtmlLabel_status1.Text = "Host";
-           if (room_info.GuestID != "")
-            {
-                pictureBox2.Visible = true;
-                guna2HtmlLabel_name2.Text = room_info.GuestID;
-                guna2HtmlLabel_name2.Visible = true;
-                if (room_info.IsReady == 1)
-                    guna2HtmlLabel_status2.Text = "Ready";
-                else
-                    guna2HtmlLabel_status2.Text = "Not Ready";
-                guna2HtmlLabel_status2.Visible = true;
-                guna2HtmlLabel1.Visible = true;
             }
             else
             {
-                pictureBox2.Visible = false;
-                guna2HtmlLabel_name2.Visible = false;      
-                guna2HtmlLabel_status2.Visible = false;
-                guna2HtmlLabel1.Visible = false;
-            }
 
-
-
-            //if (ishost == 1)
-            //{
-            //     query = string.Format("Select Count(*) from RoomList Where RoomID ='{0}' and IsReady ='1' and IsStart = '0'", room_info.RoomID);
-            //    if (Mycnt.State != ConnectionState.Open)
-            //    {
-            //        Mycnt.Open();
-            //    }
-            //    com = new SqlCommand(query, Mycnt);
-            //     result = com.ExecuteScalar().ToString();
-            //    if ( result == "1")
-            //    label_readycheck.Text = "Vao thoi con di lon";
-            //    else label_readycheck.Text = "Doi thu chua san sang ong noi oi ";
-            //    Mycnt.Close();
-
-            //}
-            //else if (ishost == 0)
-            //{
-            //     query = string.Format("Select Count(*) from RoomList Where RoomID ='{0}' and IsReady ='1' and IsStart = '1'", room_info.RoomID);
-            //    if (Mycnt.State != ConnectionState.Open)
-            //    {
-            //        Mycnt.Open();
-            //    }
-            //    com = new SqlCommand(query, Mycnt);
-            //     result = com.ExecuteScalar().ToString();
-            //    Mycnt.Close();
-            //    if (result =="1")
-            //    {
-            //        MessageBox.Show("Tro choi bat dau");
-            //    }
-
-
-            //}
-
-            //query = string.Format("Select Count(*) from RoomList Where RoomID ='{0}' and HostID = '{1}' and GuestID =''",room_info.RoomID,Playername);
-            //if (Mycnt.State != ConnectionState.Open)
-            //{
-            //    Mycnt.Open();
-            //}
-            //com = new SqlCommand(query, Mycnt);
-            // result = com.ExecuteScalar().ToString();
-            //Mycnt.Close();
-            //if (result == "1" && ishost == 0)
-            //{
-            //    ishost = 1;
-            //    guna2Button_Ready.Enabled = false;
-            //    guna2Button_Start.Enabled = true;
-            //    room_info.GuestID = "";
-            //    room_info.HostID = Playername;
-            //    room_info.IsClosed = room_info.IsReady = room_info.IsStart = 0;
-            //}
-
-
-
+            }    
         }
     
         private void guna2Button1_Click(object sender, EventArgs e)

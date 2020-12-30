@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SignIn_button = new Guna.UI2.WinForms.Guna2Button();
             this.SignUp_button = new Guna.UI2.WinForms.Guna2Button();
             this.ForgerYourPass_label = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CheckInternet_timer = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -338,6 +340,10 @@
             this.panel1.Size = new System.Drawing.Size(246, 221);
             this.panel1.TabIndex = 21;
             // 
+            // CheckInternet_timer
+            // 
+            this.CheckInternet_timer.Tick += new System.EventHandler(this.CheckInternet_timer_Tick);
+            // 
             // LogInForm
             // 
             this.AcceptButton = this.SignIn_button;
@@ -385,5 +391,6 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton4;
+        private System.Windows.Forms.Timer CheckInternet_timer;
     }
 }
