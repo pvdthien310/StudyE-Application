@@ -18,7 +18,7 @@ namespace WindowsFormsApp4
         public string Playername;
         public GameManager_2 game_host;
         public int ishost;
-        
+        public Start game;
         //public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:study-e.database.windows.net,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=study-e;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:40.83.97.14,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=sa;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
         //
@@ -110,7 +110,7 @@ namespace WindowsFormsApp4
                         {
 
                             check_timer.Enabled = false;
-                            Start game = new Start(this, game_host);
+                            game = new Start(this, game_host);
                             this.Hide();
                             game.Show();
                         }
@@ -247,11 +247,12 @@ namespace WindowsFormsApp4
             com = new SqlCommand(query, Mycnt);
             com.ExecuteNonQuery();
             Mycnt.Close();
-            RoomChose newroomchose = new RoomChose(Playername,this.parent.loginForm);
+            //RoomChose newroomchose = new RoomChose(Playername,this.parent.loginForm);
+            parent = new RoomChose(Playername, this.parent.loginForm);// sua ở đây
             this.Close();
-            this.parent.Close();
+            this.parent.Show();
 
-            newroomchose.Show();
+            //newroomchose.Show();
 
         }
 
@@ -305,7 +306,7 @@ namespace WindowsFormsApp4
                 com.ExecuteNonQuery();
                 
                 check_timer.Enabled = true;
-                Start game = new Start(this, game_host);
+                game = new Start(this, game_host);// sửa chỗ này
                 this.Hide();
                 game.Show();
             }

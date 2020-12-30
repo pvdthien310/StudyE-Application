@@ -25,8 +25,9 @@ namespace WindowsFormsApp4
         public int X_yasuo;
         public int Y_yasuo;
         public int whatframes; // khung hinh thu bao nhieu 
-        public Timer timer;
-        public Timer timer3;  // dem thoi gian tranh truong hop nguoi choi treo may
+        public Timer timer = null;
+        public Timer timer3 = null;  // dem thoi gian tranh truong hop nguoi choi treo may
+        public Timer timer2 = null;
         public int isdraw;
         public double time;
         //
@@ -87,12 +88,22 @@ namespace WindowsFormsApp4
         }
         private void timer3_tick(object sender, EventArgs e)
         {
-            time += 0.1;
-            if (time > 200)
+            if (roomform.parent.loginForm.parent.canRunTimer)
             {
-                push_result_to_data();
-                gameForm.Invalidate();
-                isdraw = 0;
+                try
+                {
+                    time += 0.1;
+                    if (time > 200)
+                    {
+                        push_result_to_data();
+                        gameForm.Invalidate();
+                        isdraw = 0;
+                    }
+                }
+                catch(Exception)
+                {
+                    timer3.Enabled = false;
+                }
             }
         }
             private void push_room_data()
@@ -109,28 +120,35 @@ namespace WindowsFormsApp4
         }
         private void timer_tick(object sender, EventArgs e)
         {
-            
-
-            //gameForm.time_label.Text = time.ToString();
-            //gameForm.Invalidate();
-            if (Mycnt.State != ConnectionState.Open)
+            if (roomform.parent.loginForm.parent.canRunTimer)
             {
-                Mycnt.Open();
+                try
+                {
+                    //gameForm.time_label.Text = time.ToString();
+                    //gameForm.Invalidate();
+                    if (Mycnt.State != ConnectionState.Open)
+                    {
+                        Mycnt.Open();
+                    }
+                    string query = string.Format("SELECT * FROM ROOMRESULT WHERE ROOMID = '{0}'", roomform.room_info.RoomID);
+                    SqlCommand com = new SqlCommand(query, Mycnt);
+                    SqlDataAdapter da = new SqlDataAdapter(com);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    if (dt.Rows.Count < 1) return;
+                    else
+                    {
+                        result.Clear();
+                        for (int i = 0; i < 9; i++)
+                            result.Add(dt.Rows[0][i].ToString());
+                    }
+                    Mycnt.Close();
+                }
+                catch(Exception)
+                {
+                    timer.Enabled = false;
+                }
             }
-            string query = string.Format("SELECT * FROM ROOMRESULT WHERE ROOMID = '{0}'",roomform.room_info.RoomID);
-            SqlCommand com = new SqlCommand(query, Mycnt);
-            SqlDataAdapter da = new SqlDataAdapter(com);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count < 1) return;
-            else
-            {
-                result.Clear();
-                for (int i = 0;i < 9;i++)
-                result.Add(dt.Rows[0][i].ToString());
-            }
-            Mycnt.Close();
-        
         }
         private int check_result()
         {
@@ -315,7 +333,6 @@ namespace WindowsFormsApp4
             //    push_result_to_data();
             //}
         }
-        Timer timer2;
          
         public void push_result_to_data()
         {
@@ -357,26 +374,35 @@ namespace WindowsFormsApp4
         }
         private void timer2_tick(object sender, EventArgs e)
         {
-            isdraw = 0;
-            if (Mycnt.State != ConnectionState.Open)
+            if (roomform.parent.loginForm.parent.canRunTimer)
             {
-                Mycnt.Open();
+                try
+                {
+                    isdraw = 0;
+                    if (Mycnt.State != ConnectionState.Open)
+                    {
+                        Mycnt.Open();
+                    }
+                    string query = string.Format("SELECT * FROM ROOMRESULT WHERE ROOMID = '{0}'", roomform.room_info.RoomID);
+                    SqlCommand com = new SqlCommand(query, Mycnt);
+                    SqlDataAdapter da = new SqlDataAdapter(com);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    if (dt.Rows.Count < 1) return;
+                    else
+                    {
+                        result.Clear();
+                        for (int i = 0; i < 9; i++)
+                            result.Add(dt.Rows[0][i].ToString());
+                    }
+                    Mycnt.Close();
+                    gameForm.Invalidate();
+                }
+                catch(Exception)
+                {
+                    timer2.Enabled = false;
+                }
             }
-            string query = string.Format("SELECT * FROM ROOMRESULT WHERE ROOMID = '{0}'", roomform.room_info.RoomID);
-            SqlCommand com = new SqlCommand(query, Mycnt);
-            SqlDataAdapter da = new SqlDataAdapter(com);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count < 1) return;
-            else
-            {
-                result.Clear();
-                for (int i = 0; i < 9; i++)
-                    result.Add(dt.Rows[0][i].ToString());
-            }
-            Mycnt.Close();
-            gameForm.Invalidate();
-            
             
         }
         private void Form1_Load(object sender, EventArgs e)

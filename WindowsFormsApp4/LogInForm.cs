@@ -219,14 +219,21 @@ namespace WindowsFormsApp4
                         if(inRoom.room != null)
                         {
 
-                            inRoom.room.check_timer.Enabled = false;
+                            if(inRoom.room.check_timer != null)
+                                inRoom.room.check_timer.Enabled = false;
+                            if(inRoom.room.game != null)
+                            {
+                                if(inRoom.room.game.timer != null)
+                                    inRoom.room.game.timer.Enabled = false;
+                                if (inRoom.room.game.timer3 != null)
+                                    inRoom.room.game.timer3.Enabled = false;
+                                if (inRoom.room.game.timer2 != null)
+                                    inRoom.room.game.timer2.Enabled = false;
+                                inRoom.room.game.Dispose();
+                            }
                             inRoom.room.Dispose();
-                            inRoom.Dispose();
                         }
-                        else
-                        {
-                            inRoom.Dispose();
-                        }    
+                        inRoom.Dispose();
                     }       
                     parent.Show();
                     this.Dispose();
