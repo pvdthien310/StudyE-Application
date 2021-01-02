@@ -314,7 +314,7 @@ namespace WindowsFormsApp4
             {
                 Mycnt.Open();
             }
-
+            count = 0;
             for (int j = 0; j < 10; j++)
             {
                 if (game_creep[j].isCorrect == 1) count++;
