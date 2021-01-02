@@ -196,6 +196,14 @@ namespace WindowsFormsApp4
 
             Random rd = new Random();
             int roomid = rd.Next(999);
+            for ( int i = 0; i< roomList.Count; i++)
+            {
+                if (roomList[i].RoomID == roomid.ToString())
+                {
+                    roomid++;
+                    i = -1;
+                }
+            }
             query = String.Format("INSERT INTO RoomList VALUES ('{0}','{1}','', '0','0','0')    ", roomid.ToString(), PlayerName);
 
 
@@ -240,30 +248,9 @@ namespace WindowsFormsApp4
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
-        {
-           //for ( int i = 0; i < listbtn.Length- 1;i++)
-           // {
-                
-           //     listbtn[i].Dispose();
-
-           // }
-           // for (int i = 0; i < listpnl.Length - 1; i++)
-           // {
-           //     listpnl[i].Controls.Clear();
-           //     listpnl[i].Visible = false;
-           //     listpnl[i].Dispose();
-           // }
-           // //foreach (var a in listbtn)
-           // //{                
-           // //    a.Dispose();
-           // //}
-           // //foreach (var a in listpnl)
-           // //{
-           // //    a.Dispose();
-           // //}
-           // this.Show();
+        {          
              this.RoomChose_Load(sender, e);
-            MessageBox.Show("Đã Reset","Thông Báo");
+            MessageBox.Show("Đã Reset","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
         }
 

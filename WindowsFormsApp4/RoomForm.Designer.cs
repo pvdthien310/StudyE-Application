@@ -40,6 +40,7 @@
             this.guna2HtmlLabel_status2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton_back = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.label_VS = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -136,7 +137,7 @@
             this.guna2HtmlLabel_name1.Name = "guna2HtmlLabel_name1";
             this.guna2HtmlLabel_name1.Size = new System.Drawing.Size(125, 31);
             this.guna2HtmlLabel_name1.TabIndex = 10;
-            this.guna2HtmlLabel_name1.Text = "guna2HtmlLabel1";
+            this.guna2HtmlLabel_name1.Text = "Host Name";
             this.guna2HtmlLabel_name1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2HtmlLabel_name2
@@ -149,7 +150,7 @@
             this.guna2HtmlLabel_name2.Name = "guna2HtmlLabel_name2";
             this.guna2HtmlLabel_name2.Size = new System.Drawing.Size(126, 31);
             this.guna2HtmlLabel_name2.TabIndex = 11;
-            this.guna2HtmlLabel_name2.Text = "guna2HtmlLabel2";
+            this.guna2HtmlLabel_name2.Text = "Guest Name";
             this.guna2HtmlLabel_name2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.guna2HtmlLabel_name2.Visible = false;
             // 
@@ -211,6 +212,19 @@
             this.guna2CircleButton_back.TabIndex = 15;
             this.guna2CircleButton_back.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // label_VS
+            // 
+            this.label_VS.AutoSize = true;
+            this.label_VS.BackColor = System.Drawing.Color.Transparent;
+            this.label_VS.Font = new System.Drawing.Font("Showcard Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_VS.ForeColor = System.Drawing.Color.Maroon;
+            this.label_VS.Location = new System.Drawing.Point(457, 390);
+            this.label_VS.Name = "label_VS";
+            this.label_VS.Size = new System.Drawing.Size(52, 36);
+            this.label_VS.TabIndex = 16;
+            this.label_VS.Text = "VS";
+            this.label_VS.Visible = false;
+            // 
             // RoomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,6 +232,7 @@
             this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.background3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.label_VS);
             this.Controls.Add(this.guna2CircleButton_back);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2HtmlLabel_status2);
@@ -255,5 +270,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel_status2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton_back;
+        private System.Windows.Forms.Label label_VS;
     }
 }

@@ -93,68 +93,12 @@ namespace WindowsFormsApp4
                 try
                 {
                     time += 0.1;
-                    if (time > 200)
-                    {
-                        timer3.Enabled = false;
+                    if (time > 120)
+                    {                     
                         push_result_to_data();
                         gameForm.Invalidate();
-                        isdraw = 0;
-                        ResultForm2 resultform = new ResultForm2(roomform.parent, result);
-                        for ( int i = 3; i < 9; i++)
-                        {
-                            if (result[i] == "") result[i] = "0";
-                        }
-                        switch (check_result())
-                        {
-                            case 1:
-                                {
-                                    //if (roomform.ishost == 1)
-                                    //resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
-                                    //else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
-                                    resultform.guna2HtmlLabel1.Text = roomform.Playername;
-                                    resultform.guna2HtmlLabel2.Text = "VICTORY";
-                                    resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.ForestGreen;
-                                    break;
-                                }
-                            case 2:
-                                {
-                                    //if (roomform.ishost == 1)
-                                    //    resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
-                                    //else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
-                                    resultform.guna2HtmlLabel1.Text = roomform.Playername;
-
-                                    resultform.guna2HtmlLabel2.Text = "DRAW";
-                                    resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkOrange;
-
-                                    break;
-                                }
-                            case 0:
-                                {
-                                    //if (roomform.ishost == 1)
-                                    //    resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
-                                    //else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
-                                    resultform.guna2HtmlLabel1.Text = roomform.Playername;
-
-                                    resultform.guna2HtmlLabel2.Text = "DEFEAT";
-                                    resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkOliveGreen;
-
-                                    break;
-                                }
-                        }
-                        if (roomform.ishost == 1)
-                        {
-                            resultform.guna2HtmlLabel_Score.Text = result[3];
-                            resultform.guna2HtmlLabel_TIME.Text = result[7];
-                        }
-                        else
-                        {
-                            resultform.guna2HtmlLabel_Score.Text = result[4];
-                            resultform.guna2HtmlLabel_TIME.Text = result[8];
-                        }
-                        this.Close();
-                        resultform.Show();
-                        timer2.Enabled = false;
-                    }
+                        isdraw = 0;                  
+                   }
                 }
                 catch(Exception)
                 {
@@ -199,6 +143,7 @@ namespace WindowsFormsApp4
                             result.Add(dt.Rows[0][i].ToString());
                     }
                     Mycnt.Close();
+                  
                 }
                 catch(Exception)
                 {
@@ -240,12 +185,7 @@ namespace WindowsFormsApp4
         }
         private void check()
         {
-            int s = 0; // dem xem 2 nguoi choi d a choi xong chua 
             if (result.Count > 0)
-            // foreach( string a in result)
-            //{
-            //    if (a != "0") s++;
-            //}
             {
                 if (result[7] != "0" && result[8] != "0")
                 {
@@ -256,9 +196,6 @@ namespace WindowsFormsApp4
                     {
                         case 1:
                             {
-                                //if (roomform.ishost == 1)
-                                //resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
-                                //else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
                                 resultform.guna2HtmlLabel1.Text = roomform.Playername;
                                 resultform.guna2HtmlLabel2.Text = "VICTORY";
                                 resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.ForestGreen;
@@ -266,11 +203,7 @@ namespace WindowsFormsApp4
                             }
                         case 2:
                             {
-                                //if (roomform.ishost == 1)
-                                //    resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
-                                //else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
                                 resultform.guna2HtmlLabel1.Text = roomform.Playername;
-
                                 resultform.guna2HtmlLabel2.Text = "DRAW";
                                 resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkOrange;
 
@@ -278,11 +211,7 @@ namespace WindowsFormsApp4
                             }
                         case 0:
                             {
-                                //if (roomform.ishost == 1)
-                                //    resultform.guna2HtmlLabel1.Text = roomform.room_info.HostID;
-                                //else resultform.guna2HtmlLabel1.Text = roomform.room_info.GuestID;
                                 resultform.guna2HtmlLabel1.Text = roomform.Playername;
-
                                 resultform.guna2HtmlLabel2.Text = "DEFEAT";
                                 resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkOliveGreen;
 
@@ -341,10 +270,7 @@ namespace WindowsFormsApp4
             }
         }
 
-        //public void questionForm_paint(object sender, PaintEventArgs e)
-        //{
-        //    e.Graphics.DrawString(time.ToString(), new Font("Serif", 24, FontStyle.Bold),Brushes.Black,new Point(10,590));
-        //}
+       
         static int count = 0; // dem so cau dung
         static int count_question = 0;  // dem so cau da tra loi
         public void gameForm_paint(object sender, PaintEventArgs e)
@@ -363,7 +289,6 @@ namespace WindowsFormsApp4
             for ( int i = 0; i< 10;i++)
             {
                 if (game_creep[i].isCorrect == 2)
-                   // e.Graphics.DrawImage(creep, new Rectangle(game_creep[i].X_creep, game_creep[i].Y_creep, 60, 45), new Rectangle(0, 0, 90, 70), GraphicsUnit.Pixel);
                     e.Graphics.DrawImage(carrot, new Rectangle(game_creep[i].X_creep, game_creep[i].Y_creep, 60, 45), new Rectangle(0, 0, 900, 512), GraphicsUnit.Pixel);
                 else
                 {                    
@@ -372,15 +297,7 @@ namespace WindowsFormsApp4
                
                 if (count_question == 10)
                 {
-                   
-
                     push_result_to_data();
-
-                    //DialogResult dialogResult = MessageBox.Show("Hay qua dkmm !! {0}", (count - 10).ToString(),MessageBoxButtons.OK);
-                    //if (dialogResult == DialogResult.OK)
-                    //{
-                       
-                    //}
                 }
                
             }
@@ -434,6 +351,7 @@ namespace WindowsFormsApp4
             {
                 try
                 {
+                    time += 0.1;
                     isdraw = 0;
                     if (Mycnt.State != ConnectionState.Open)
                     {
@@ -453,6 +371,56 @@ namespace WindowsFormsApp4
                     }
                     Mycnt.Close();
                     gameForm.Invalidate();
+                    ///////////////////////////
+                    if (time > 150)
+                    {
+                        
+                        ResultForm2 resultform = new ResultForm2(roomform.parent, result);
+                        for (int i = 3; i < 9; i++)
+                        {
+                            if (result[i] == "") result[i] = "0";
+                        }
+                        switch (check_result())
+                        {
+                            case 1:
+                                {                                 
+                                    resultform.guna2HtmlLabel1.Text = roomform.Playername;
+                                    resultform.guna2HtmlLabel2.Text = "VICTORY";
+                                    resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.ForestGreen;
+                                    break;
+                                }
+                            case 2:
+                                {                                 
+                                    resultform.guna2HtmlLabel1.Text = roomform.Playername;
+                                    resultform.guna2HtmlLabel2.Text = "DRAW";
+                                    resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkOrange;
+
+                                    break;
+                                }
+                            case 0:
+                                {                               
+                                    resultform.guna2HtmlLabel1.Text = roomform.Playername;
+                                    resultform.guna2HtmlLabel2.Text = "DEFEAT";
+                                    resultform.guna2HtmlLabel2.ForeColor = System.Drawing.Color.DarkOliveGreen;
+
+                                    break;
+                                }
+                        }
+                        if (roomform.ishost == 1)
+                        {
+                            resultform.guna2HtmlLabel_Score.Text = result[3];
+                            resultform.guna2HtmlLabel_TIME.Text = result[7];
+                        }
+                        else
+                        {
+                            resultform.guna2HtmlLabel_Score.Text = result[4];
+                            resultform.guna2HtmlLabel_TIME.Text = result[8];
+                        }
+                        this.Close();
+                        resultform.Show();
+                        timer2.Enabled = false;
+                        timer3.Enabled = false;
+                    }
                 }
                 catch(Exception)
                 {

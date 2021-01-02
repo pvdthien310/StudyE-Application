@@ -132,6 +132,7 @@ namespace WindowsFormsApp4
                     guna2HtmlLabel_status1.Text = "Host";
                     if (room_info.GuestID != "")
                     {
+                        label_VS.Visible = true;
                         pictureBox2.Visible = true;
                         guna2HtmlLabel_name2.Text = room_info.GuestID;
                         guna2HtmlLabel_name2.Visible = true;
@@ -144,6 +145,7 @@ namespace WindowsFormsApp4
                     }
                     else
                     {
+                        label_VS.Visible = false;
                         pictureBox2.Visible = false;
                         guna2HtmlLabel_name2.Visible = false;
                         guna2HtmlLabel_status2.Visible = false;
