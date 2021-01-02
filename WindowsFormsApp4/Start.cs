@@ -372,9 +372,9 @@ namespace WindowsFormsApp4
                     Mycnt.Close();
                     gameForm.Invalidate();
                     ///////////////////////////
-                    if (time > 150)
+                    if (time > 150 && (result[7] == "0" || result[8] == "0"))
                     {
-                        
+                        timer2.Enabled = false;
                         ResultForm2 resultform = new ResultForm2(roomform.parent, result);
                         for (int i = 3; i < 9; i++)
                         {
