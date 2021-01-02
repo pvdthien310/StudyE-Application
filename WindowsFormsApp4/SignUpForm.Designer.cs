@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpForm));
             this.Pass_label = new System.Windows.Forms.Label();
             this.Name_label = new System.Windows.Forms.Label();
             this.Pass_textbox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -325,6 +326,7 @@
             this.Controls.Add(this.SignUp_button);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SignUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUpForm";

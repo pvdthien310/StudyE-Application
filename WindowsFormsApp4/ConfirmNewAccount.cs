@@ -47,6 +47,7 @@ namespace WindowsFormsApp4
             {
                 SupportUtility.CreateAccount(signUpForm.Email_textbox.Text, signUpForm.Name_textbox.Text, signUpForm.Pass_textbox.Text);
                 roomChose = new RoomChose(signUpForm.Name_textbox.Text,signUpForm.logInForm);
+                this.signUpForm.logInForm.inRoom = roomChose;
                 roomChose.Show();
                 signUpForm.Dispose();
                 this.Dispose();

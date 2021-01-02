@@ -292,5 +292,21 @@ namespace WindowsFormsApp4
                 return false;
             }
         }
+        public static string FindNameFromEmail(string Email)
+        {
+            string result = "";
+            MyCnt.Open();
+            string query = "select UserName from UserAccount where Email = '" + Email + "'";
+            SqlCommand com = new SqlCommand(query, MyCnt);
+            SqlDataAdapter ada = new SqlDataAdapter(com);
+            DataTable da = new DataTable();
+            ada.Fill(da);
+            MyCnt.Close();
+            if(da.Rows.Count > 0)
+            {
+                result = da.Rows[0][0].ToString();
+            }    
+            return result;
+        }
     }
 }

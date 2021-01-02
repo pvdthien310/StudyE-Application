@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResetPass));
             this.ConfirmCode_label = new System.Windows.Forms.Label();
             this.ConfirmCode_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.NewPass_label = new System.Windows.Forms.Label();
@@ -341,6 +342,7 @@
             this.Controls.Add(this.ConfirmCode_textbox);
             this.Controls.Add(this.ConfirmCode_label);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ResetPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResetPass";

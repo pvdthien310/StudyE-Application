@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultForm));
             this.panel_Question = new System.Windows.Forms.Panel();
             this.guna2ButtonD = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ButtonC = new Guna.UI2.WinForms.Guna2Button();
@@ -197,7 +198,7 @@
             this.guna2TextBox_SearchWord.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox_SearchWord.HoverState.Parent = this.guna2TextBox_SearchWord;
             this.guna2TextBox_SearchWord.Location = new System.Drawing.Point(27, 71);
-            this.guna2TextBox_SearchWord.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.guna2TextBox_SearchWord.Margin = new System.Windows.Forms.Padding(6);
             this.guna2TextBox_SearchWord.Multiline = true;
             this.guna2TextBox_SearchWord.Name = "guna2TextBox_SearchWord";
             this.guna2TextBox_SearchWord.PasswordChar = '\0';
@@ -318,6 +319,7 @@
             this.Controls.Add(this.panel_Question_2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ResultForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResultForm";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(supportForm));
             this.textBox_support = new System.Windows.Forms.TextBox();
             this.textBox_support1 = new System.Windows.Forms.TextBox();
             this.label_support = new System.Windows.Forms.Label();
@@ -71,11 +72,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            //this.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.hinh_nen_dep_cho_laptop_1366x768_1;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label_support);
             this.Controls.Add(this.textBox_support1);
             this.Controls.Add(this.textBox_support);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "supportForm";
             this.Text = "Tra Từ Nhanh";
             this.ResumeLayout(false);

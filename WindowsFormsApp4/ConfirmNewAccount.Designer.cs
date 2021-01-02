@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfirmNewAccount));
             this.TypeCode_label = new System.Windows.Forms.Label();
             this.TypeCode_textbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.Cancel_button = new Guna.UI2.WinForms.Guna2Button();
@@ -190,6 +191,7 @@
             this.Controls.Add(this.TypeCode_textbox);
             this.Controls.Add(this.TypeCode_label);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConfirmNewAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfirmNewAccount";

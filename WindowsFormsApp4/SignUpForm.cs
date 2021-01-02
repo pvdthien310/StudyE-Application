@@ -13,11 +13,10 @@ namespace WindowsFormsApp4
 {
     public partial class SignUpForm : Form
     {
-        bool isSuccess = true;
         //parent form
         public LogInForm logInForm;
         //child form
-        ConfirmNewAccount confirmNewAccount;
+        public ConfirmNewAccount confirmNewAccount;
         //property
         public static Random rdCode = new Random();
         public string verifyCode;

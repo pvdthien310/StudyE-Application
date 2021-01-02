@@ -113,7 +113,7 @@ namespace WindowsFormsApp4
                     {
                         SupportUtility.ResetPassword(Email_textbox.Text, NewPass_textbox.Text);
                         logInForm.Show();
-                        logInForm.Name_textbox.Text = Email_textbox.Text;
+                        logInForm.Name_textbox.Text = SupportUtility.FindNameFromEmail(Email_textbox.Text);
                         logInForm.Pass_textbox.Text = NewPass_textbox.Text;
                         this.Dispose();
                     }

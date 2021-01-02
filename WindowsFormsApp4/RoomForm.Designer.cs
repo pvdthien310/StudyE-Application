@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RoomForm));
             this.Label_RoomID = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button_Ready = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button_Start = new Guna.UI2.WinForms.Guna2Button();
@@ -247,6 +248,7 @@
             this.Controls.Add(this.Label_RoomID);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RoomForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RoomForm";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuestionForm));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button_answerD = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button_answerC = new Guna.UI2.WinForms.Guna2Button();
@@ -249,6 +250,7 @@
             this.Controls.Add(this.guna2CircleButton1);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuestionForm";
             this.Text = "Question";
             this.guna2Panel1.ResumeLayout(false);

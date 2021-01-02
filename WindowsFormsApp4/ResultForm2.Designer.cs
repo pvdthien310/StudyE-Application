@@ -29,6 +29,7 @@ namespace WindowsFormsApp4
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultForm2));
             this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -156,6 +157,7 @@ namespace WindowsFormsApp4
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.guna2CircleButton2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ResultForm2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -15,9 +15,9 @@ namespace WindowsFormsApp4
     {
         public mainForm parent;
         //child form
-        RoomChose inRoom = null;
-        SignUpForm signUpForm;
-        ResetPass resetPass;
+        public RoomChose inRoom = null;
+        public SignUpForm signUpForm;
+        public ResetPass resetPass;
         //property
         public LogInForm()
         {
@@ -206,7 +206,7 @@ namespace WindowsFormsApp4
             {
                 parent.canRunTimer = false;
                 CheckInternet_timer.Enabled = false;
-                DialogResult result = MessageBox.Show("Mất kết nói, vui lòng chờ hoặc nhấn \"OK \" để quay lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Mất kết nói, nhấn \"OK \" để quay lại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 if (result == DialogResult.OK)
                 {
                     if(inRoom != null)
@@ -234,7 +234,19 @@ namespace WindowsFormsApp4
                             inRoom.room.Dispose();
                         }
                         inRoom.Dispose();
-                    }       
+                    } 
+                    else if(resetPass != null)
+                    {
+                        resetPass.Dispose();
+                    }   
+                    else if (signUpForm != null)
+                    {
+                        if(signUpForm.confirmNewAccount != null)
+                        {
+                            signUpForm.confirmNewAccount.Dispose();
+                        }    
+                        signUpForm.Dispose();
+                    }    
                     parent.Show();
                     this.Dispose();
                 }
