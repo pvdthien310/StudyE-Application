@@ -36,6 +36,7 @@ namespace WindowsFormsApp4
         public GameManager_2 game_host;
         public List<Question_Creep> game_creep;
         public static SqlConnection Mycnt = new SqlConnection(@"Server=tcp:40.83.97.14,1433;Initial Catalog=StudyE;Persist Security Info=False;User ID=sa;Password=ThangThienThuc123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
+        public ResultForm2 resultform;
         //public Start()
         //{
         //    InitializeComponent();
@@ -191,7 +192,8 @@ namespace WindowsFormsApp4
                 {
                     push_result_to_data();
                     timer.Enabled = false;
-                    ResultForm2 resultform = new ResultForm2(roomform.parent, result);
+                    if (resultform != null) return;
+                    resultform = new ResultForm2(roomform.parent, result);
                     switch (check_result())
                     {
                         case 1:
@@ -372,10 +374,11 @@ namespace WindowsFormsApp4
                     Mycnt.Close();
                     gameForm.Invalidate();
                     ///////////////////////////
-                    if (time > 150 && (result[7] == "0" || result[8] == "0"))
+                    if (time > 150 && (result[7] == "0" || result[8] == "0" ))
                     {
                         timer2.Enabled = false;
-                        ResultForm2 resultform = new ResultForm2(roomform.parent, result);
+                        if (resultform != null) return;
+                        resultform = new ResultForm2(roomform.parent, result);
                         for (int i = 3; i < 9; i++)
                         {
                             if (result[i] == "") result[i] = "0";
