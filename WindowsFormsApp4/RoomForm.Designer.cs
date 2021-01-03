@@ -246,7 +246,6 @@
             this.Controls.Add(this.guna2Button_Start);
             this.Controls.Add(this.guna2Button_Ready);
             this.Controls.Add(this.Label_RoomID);
-            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RoomForm";

@@ -188,7 +188,7 @@ namespace WindowsFormsApp4
         {
             if (result.Count > 0)
             {
-                if (result[7] != "0" && result[8] != "0")
+                if ((result[7] != "0" && result[8] != "0") || (result[5] != "0" && result[6] != "0"))
                 {
                     push_result_to_data();
                     timer.Enabled = false;
@@ -539,7 +539,8 @@ namespace WindowsFormsApp4
 
         private void Start_Activated(object sender, EventArgs e)
         {
-            
+            timer.Enabled = true;
+            timer3.Enabled = true;
         }
 
         private void Start_Shown(object sender, EventArgs e)
