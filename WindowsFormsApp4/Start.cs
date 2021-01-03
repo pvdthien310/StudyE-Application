@@ -223,12 +223,12 @@ namespace WindowsFormsApp4
                     if (roomform.ishost == 1)
                     {
                         resultform.guna2HtmlLabel_Score.Text = result[3];
-                        resultform.guna2HtmlLabel_TIME.Text = result[7];
+                        
                     }
                     else
                     {
                         resultform.guna2HtmlLabel_Score.Text = result[4];
-                        resultform.guna2HtmlLabel_TIME.Text = result[8];
+                       
                     }
                     this.Close();
                     resultform.Show();
@@ -413,17 +413,18 @@ namespace WindowsFormsApp4
                         if (roomform.ishost == 1)
                         {
                             resultform.guna2HtmlLabel_Score.Text = result[3];
-                            resultform.guna2HtmlLabel_TIME.Text = result[7];
+                            
                         }
                         else
                         {
                             resultform.guna2HtmlLabel_Score.Text = result[4];
-                            resultform.guna2HtmlLabel_TIME.Text = result[8];
+                            
                         }
                         this.Close();
                         resultform.Show();
                         timer2.Enabled = false;
                         timer3.Enabled = false;
+                        
                     }
                 }
                 catch(Exception)
