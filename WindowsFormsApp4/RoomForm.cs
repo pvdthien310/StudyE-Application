@@ -330,6 +330,72 @@ namespace WindowsFormsApp4
             check_timer.Enabled = true;
             guna2HtmlLabel_name1.Text = room_info.HostID;
             guna2HtmlLabel_status1.Text = "Host";
+
+            if (ishost == 1)
+            {
+                if (room_info.IsReady == 1 && room_info.IsStart == 0)
+                {
+                    guna2HtmlLabel1.Text = "Let's Start !!";
+                    guna2HtmlLabel1.Visible = true;
+
+                }
+                else guna2HtmlLabel1.Text = "Your competitor is not ready !!";
+            }
+
+            else if (ishost == 0)
+            {
+                if (room_info.IsReady == 1 && room_info.IsStart == 0)
+                {
+                    guna2HtmlLabel1.Text = "Let's Start !!";
+                    guna2HtmlLabel1.Visible = true;
+
+                }
+                else guna2HtmlLabel1.Text = "Your competitor is not ready !!";
+                if (room_info.IsReady == 1 && room_info.IsStart == 1)
+                {
+
+                    check_timer.Enabled = false;
+                    game = new Start(this, game_host);
+                    this.Hide();
+                    game.Show();
+                }
+            }
+
+            if (room_info.HostID == Playername && room_info.GuestID == "")
+            {
+                if (ishost == 0)
+                {
+                    ishost = 1;
+                    guna2Button_Ready.Enabled = false;
+                    guna2Button_Start.Enabled = true;
+                    room_info.GuestID = "";
+                    room_info.HostID = Playername;
+                    room_info.IsClosed = room_info.IsReady = room_info.IsStart = 0;
+                }
+            }
+            guna2HtmlLabel_name1.Text = room_info.HostID;
+            guna2HtmlLabel_status1.Text = "Host";
+            if (room_info.GuestID != "")
+            {
+                label_VS.Visible = true;
+                pictureBox2.Visible = true;
+                guna2HtmlLabel_name2.Text = room_info.GuestID;
+                guna2HtmlLabel_name2.Visible = true;
+                if (room_info.IsReady == 1)
+                    guna2HtmlLabel_status2.Text = "Ready";
+                else
+                    guna2HtmlLabel_status2.Text = "Not Ready";
+                guna2HtmlLabel_status2.Visible = true;
+                guna2HtmlLabel1.Visible = true;
+            }
+            else
+            {
+                label_VS.Visible = false;
+                pictureBox2.Visible = false;
+                guna2HtmlLabel_name2.Visible = false;
+                guna2HtmlLabel_status2.Visible = false;
+                guna2HtmlLabel1.Visible = false;
+            }
         }
     }
 }
