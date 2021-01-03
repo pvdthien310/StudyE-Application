@@ -537,5 +537,16 @@ namespace WindowsFormsApp4
             return show_line;
         }
 
+        private void Start_Activated(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Start_Shown(object sender, EventArgs e)
+        {
+            timer.Enabled = true;
+            timer3.Enabled = true;
+           
+        }
     }
 }

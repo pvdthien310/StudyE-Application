@@ -39,7 +39,7 @@ namespace WindowsFormsApp4
          //   Label_RoomID.Text = room_info.RoomID.ToString();
             check_timer = new Timer();
             check_timer.Tick += new EventHandler(timer_tick);
-            check_timer.Interval = 1000;
+            check_timer.Interval = 300;
             check_timer.Enabled = true;
             if (ishost == 1)
             {
@@ -323,6 +323,13 @@ namespace WindowsFormsApp4
             }
             Mycnt.Close();
 
+        }
+
+        private void RoomForm_Activated(object sender, EventArgs e)
+        {
+            check_timer.Enabled = true;
+            guna2HtmlLabel_name1.Text = room_info.HostID;
+            guna2HtmlLabel_status1.Text = "Host";
         }
     }
 }

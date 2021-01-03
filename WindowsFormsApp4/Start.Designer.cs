@@ -41,7 +41,9 @@
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Name = "Start";
+            this.Activated += new System.EventHandler(this.Start_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Start_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Start_KeyDown);
             this.ResumeLayout(false);
 
