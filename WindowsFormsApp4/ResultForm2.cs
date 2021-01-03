@@ -46,7 +46,7 @@ namespace WindowsFormsApp4
             SqlCommand com = new SqlCommand(query, Mycnt);
             com.ExecuteNonQuery();
             Mycnt.Close();
-            this.Close();
+            this.Dispose();
             this.parent.Show();
             
         }

@@ -145,6 +145,7 @@ namespace WindowsFormsApp4
                                 }
                                 room = new RoomForm(this, roomList[aa], PlayerName, game_host, 0); // dùng chung biến room
                                 room.Show();
+                                room.check_timer.Enabled = true;
                                 this.Hide();
                                 int concat = 10;
 

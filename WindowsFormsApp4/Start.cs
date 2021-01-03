@@ -321,6 +321,7 @@ namespace WindowsFormsApp4
             {
                 if (game_creep[j].isCorrect == 1) count++;
             }
+            if (time == 0) time = 99;
             if (roomform.ishost == 1 && isupdate != 0)
             {
                 query = string.Format("UPDATE ROOMRESULT" +
@@ -374,7 +375,7 @@ namespace WindowsFormsApp4
                     Mycnt.Close();
                     gameForm.Invalidate();
                     ///////////////////////////
-                    if (time > 150 && (result[7] == "0" || result[8] == "0" ))
+                    if (time > 150 && (result[7] == "0" || result[8] == "0" || result[7] != "0" && result[8] != "0"))
                     {
                         timer2.Enabled = false;
                         if (resultform != null) return;

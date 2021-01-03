@@ -250,7 +250,12 @@ namespace WindowsFormsApp4
             com.ExecuteNonQuery();
             Mycnt.Close();
             //RoomChose newroomchose = new RoomChose(Playername,this.parent.loginForm);
-            parent = new RoomChose(Playername, this.parent.loginForm);// sua ở đây
+
+
+            LogInForm a = this.parent.loginForm;
+            string b = Playername;
+            this.parent.Dispose();
+            parent = new RoomChose(b, a);// sua ở đây
             this.Close();
             this.parent.Show();
 
