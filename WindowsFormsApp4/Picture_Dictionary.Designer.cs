@@ -81,7 +81,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(705, 433);
             this.panel1.TabIndex = 1;
@@ -94,7 +94,7 @@
             this.paneloneSourse.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.paneloneSourse.Controls.Add(this.deleteOneSourse);
             this.paneloneSourse.Location = new System.Drawing.Point(0, 43);
-            this.paneloneSourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paneloneSourse.Margin = new System.Windows.Forms.Padding(2);
             this.paneloneSourse.Name = "paneloneSourse";
             this.paneloneSourse.ShadowDecoration.Parent = this.paneloneSourse;
             this.paneloneSourse.Size = new System.Drawing.Size(101, 39);
@@ -110,7 +110,7 @@
             this.deleteOneSourse.ForeColor = System.Drawing.Color.Black;
             this.deleteOneSourse.HoverState.Parent = this.deleteOneSourse;
             this.deleteOneSourse.Location = new System.Drawing.Point(2, 2);
-            this.deleteOneSourse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteOneSourse.Margin = new System.Windows.Forms.Padding(2);
             this.deleteOneSourse.Name = "deleteOneSourse";
             this.deleteOneSourse.ShadowDecoration.Parent = this.deleteOneSourse;
             this.deleteOneSourse.Size = new System.Drawing.Size(96, 34);
@@ -124,8 +124,8 @@
             this.textName.BackColor = System.Drawing.Color.White;
             this.textName.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textName.Location = new System.Drawing.Point(220, 270);
-            this.textName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textName.Location = new System.Drawing.Point(163, 270);
+            this.textName.Margin = new System.Windows.Forms.Padding(2);
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(383, 36);
             this.textName.TabIndex = 10;
@@ -145,7 +145,7 @@
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton2.HoverState.Parent = this.guna2CircleButton2;
             this.guna2CircleButton2.Location = new System.Drawing.Point(11, 255);
-            this.guna2CircleButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2CircleButton2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton2.ShadowDecoration.Parent = this.guna2CircleButton2;
@@ -158,7 +158,7 @@
             this.pictureBoxInsert.BackColor = System.Drawing.Color.White;
             this.pictureBoxInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBoxInsert.Location = new System.Drawing.Point(249, 60);
-            this.pictureBoxInsert.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxInsert.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxInsert.Name = "pictureBoxInsert";
             this.pictureBoxInsert.ShadowDecoration.Parent = this.pictureBoxInsert;
             this.pictureBoxInsert.Size = new System.Drawing.Size(215, 183);
@@ -171,7 +171,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Location = new System.Drawing.Point(551, 322);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(93, 68);
             this.panel4.TabIndex = 7;
@@ -180,7 +180,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Location = new System.Drawing.Point(62, 330);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(85, 60);
             this.panel3.TabIndex = 6;
@@ -193,7 +193,7 @@
             this.panel2.Controls.Add(this.Right);
             this.panel2.Controls.Add(this.Left);
             this.panel2.Location = new System.Drawing.Point(208, 317);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(288, 75);
             this.panel2.TabIndex = 5;
@@ -211,7 +211,7 @@
             this.Pause.ForeColor = System.Drawing.Color.Transparent;
             this.Pause.HoverState.Parent = this.Pause;
             this.Pause.Location = new System.Drawing.Point(75, 4);
-            this.Pause.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Pause.Margin = new System.Windows.Forms.Padding(2);
             this.Pause.Name = "Pause";
             this.Pause.ShadowDecoration.Parent = this.Pause;
             this.Pause.Size = new System.Drawing.Size(67, 66);
@@ -231,7 +231,7 @@
             this.Speak.ForeColor = System.Drawing.Color.Transparent;
             this.Speak.HoverState.Parent = this.Speak;
             this.Speak.Location = new System.Drawing.Point(145, 4);
-            this.Speak.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Speak.Margin = new System.Windows.Forms.Padding(2);
             this.Speak.Name = "Speak";
             this.Speak.ShadowDecoration.Parent = this.Speak;
             this.Speak.Size = new System.Drawing.Size(67, 66);
@@ -250,7 +250,7 @@
             this.Right.ForeColor = System.Drawing.Color.Transparent;
             this.Right.HoverState.Parent = this.Right;
             this.Right.Location = new System.Drawing.Point(215, 4);
-            this.Right.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Right.Margin = new System.Windows.Forms.Padding(2);
             this.Right.Name = "Right";
             this.Right.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Right.ShadowDecoration.Parent = this.Right;
@@ -270,7 +270,7 @@
             this.Left.ForeColor = System.Drawing.Color.Transparent;
             this.Left.HoverState.Parent = this.Left;
             this.Left.Location = new System.Drawing.Point(7, 4);
-            this.Left.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Left.Margin = new System.Windows.Forms.Padding(2);
             this.Left.Name = "Left";
             this.Left.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Left.ShadowDecoration.Parent = this.Left;
@@ -284,7 +284,7 @@
             this.pictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.nen;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(63, 27);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(581, 363);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -323,7 +323,7 @@
             this.creatButton.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.creatButton.HoverState.Parent = this.creatButton;
             this.creatButton.Location = new System.Drawing.Point(11, 338);
-            this.creatButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.creatButton.Margin = new System.Windows.Forms.Padding(2);
             this.creatButton.Name = "creatButton";
             this.creatButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.creatButton.ShadowDecoration.Parent = this.creatButton;
@@ -342,7 +342,7 @@
             this.panel5.Controls.Add(this.nameGroup);
             this.panel5.Controls.Add(this.guna2HtmlLabel1);
             this.panel5.Location = new System.Drawing.Point(188, 134);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(329, 231);
             this.panel5.TabIndex = 6;
@@ -378,7 +378,7 @@
             this.addImage.ForeColor = System.Drawing.Color.White;
             this.addImage.HoverState.Parent = this.addImage;
             this.addImage.Location = new System.Drawing.Point(121, 42);
-            this.addImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addImage.Margin = new System.Windows.Forms.Padding(2);
             this.addImage.Name = "addImage";
             this.addImage.ShadowDecoration.Parent = this.addImage;
             this.addImage.Size = new System.Drawing.Size(101, 91);
@@ -395,7 +395,7 @@
             this.Exit.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Exit.HoverState.Parent = this.Exit;
             this.Exit.Location = new System.Drawing.Point(68, 184);
-            this.Exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Exit.Margin = new System.Windows.Forms.Padding(2);
             this.Exit.Name = "Exit";
             this.Exit.ShadowDecoration.Parent = this.Exit;
             this.Exit.Size = new System.Drawing.Size(92, 25);
@@ -413,7 +413,7 @@
             this.Add.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Add.HoverState.Parent = this.Add;
             this.Add.Location = new System.Drawing.Point(183, 184);
-            this.Add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Add.Margin = new System.Windows.Forms.Padding(2);
             this.Add.Name = "Add";
             this.Add.ShadowDecoration.Parent = this.Add;
             this.Add.Size = new System.Drawing.Size(92, 25);
@@ -427,7 +427,7 @@
             this.guna2PictureBox1.BackgroundImage = global::WindowsFormsApp4.Properties.Resources.interface_77_512;
             this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2PictureBox1.Location = new System.Drawing.Point(129, 42);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
             this.guna2PictureBox1.Size = new System.Drawing.Size(93, 91);
@@ -469,7 +469,7 @@
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(32, 148);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(54, 25);
             this.guna2HtmlLabel1.TabIndex = 0;
@@ -482,7 +482,7 @@
             this.menuStrip.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.menuStrip.Controls.Add(this.Delete);
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuStrip.Margin = new System.Windows.Forms.Padding(2);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.ShadowDecoration.Parent = this.menuStrip;
             this.menuStrip.Size = new System.Drawing.Size(101, 39);
@@ -498,7 +498,7 @@
             this.Delete.ForeColor = System.Drawing.Color.Black;
             this.Delete.HoverState.Parent = this.Delete;
             this.Delete.Location = new System.Drawing.Point(2, 2);
-            this.Delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Delete.Margin = new System.Windows.Forms.Padding(2);
             this.Delete.Name = "Delete";
             this.Delete.ShadowDecoration.Parent = this.Delete;
             this.Delete.Size = new System.Drawing.Size(96, 34);
@@ -518,7 +518,7 @@
             this.leftPanel.ForeColor = System.Drawing.Color.White;
             this.leftPanel.HoverState.Parent = this.leftPanel;
             this.leftPanel.Location = new System.Drawing.Point(12, 157);
-            this.leftPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.leftPanel.Margin = new System.Windows.Forms.Padding(2);
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.leftPanel.ShadowDecoration.Parent = this.leftPanel;
@@ -538,7 +538,7 @@
             this.rightPannel.ForeColor = System.Drawing.Color.White;
             this.rightPannel.HoverState.Parent = this.rightPannel;
             this.rightPannel.Location = new System.Drawing.Point(648, 164);
-            this.rightPannel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rightPannel.Margin = new System.Windows.Forms.Padding(2);
             this.rightPannel.Name = "rightPannel";
             this.rightPannel.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.rightPannel.ShadowDecoration.Parent = this.rightPannel;
@@ -564,7 +564,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Picture_Dictionary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Picture_Dictionary";
